@@ -13,8 +13,8 @@ class GeminiTranslationService
 
     public function __construct()
     {
-        $this->apiKey = config('services.gemini.api_key', '');
-        $this->model = config('services.gemini.model', env('GEMINI_MODEL', 'gemini-3.1-flash-lite'));
+        $this->apiKey = (string) (config('services.gemini.api_key') ?: env('GEMINI_API_KEY', ''));
+        $this->model = (string) (config('services.gemini.model') ?: env('GEMINI_MODEL', 'gemini-3.1-flash-lite'));
     }
 
     /**
@@ -25,6 +25,10 @@ class GeminiTranslationService
     {
         $text = trim($text);
         if (empty($text) || $targetLang === $sourceLang) {
+            return $text;
+        }
+
+        if (empty($this->apiKey)) {
             return $text;
         }
 
@@ -41,6 +45,10 @@ class GeminiTranslationService
     public function translateBatch(array $texts, string $targetLang = 'en', string $sourceLang = 'ta'): array
     {
         if (empty($texts) || $targetLang === $sourceLang) {
+            return $texts;
+        }
+
+        if (empty($this->apiKey)) {
             return $texts;
         }
 
@@ -132,6 +140,10 @@ class GeminiTranslationService
      */
     protected function callGeminiApi(string $text, string $targetLang, string $sourceLang): string
     {
+        if (empty($this->apiKey)) {
+            return $text;
+        }
+
         try {
             $langNames = ['ta' => 'Tamil', 'en' => 'English', 'hi' => 'Hindi', 'te' => 'Telugu'];
             $srcName = $langNames[$sourceLang] ?? $sourceLang;
