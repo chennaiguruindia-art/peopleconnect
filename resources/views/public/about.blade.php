@@ -460,7 +460,7 @@
             <!-- Key Operating Principles -->
             <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white">
                 <h3 class="fw-bold text-dark mb-4 text-center">
-                    {{ app()->getLocale() === 'en' ? 'Core Pillars of Virudhunagar Makkal Kural' : 'விருதுநகர் மக்கள் குரலின் முதன்மைக் கொள்கைகள்' }}
+                    {{ app()->getLocale() === 'en' ? 'Core Pillars of Tamil Nadu Makkal Kural' : 'தமிழ்நாடு மக்கள் குரலின் முதன்மைக் கொள்கைகள்' }}
                 </h3>
                 <div class="row g-4">
                     <div class="col-md-4 text-center">

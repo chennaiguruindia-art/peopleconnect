@@ -23,11 +23,11 @@
                     <div class="row g-3 mb-3">
                         <div class="col-md-6">
                             <label class="form-label small fw-bold">Site Name (English)</label>
-                            <input type="text" name="site_name_en" class="form-control" value="{{ \App\Models\SystemSetting::get('site_name_en', 'குரலற்ற மகளின் குரல்') }}" required>
+                            <input type="text" name="site_name_en" class="form-control" value="{{ \App\Models\SystemSetting::get('site_name_en', 'Tamil Nadu Makkal Kural') }}" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label small fw-bold">Site Name (Tamil)</label>
-                            <input type="text" name="site_name_ta" class="form-control" value="{{ \App\Models\SystemSetting::get('site_name_ta', 'விருதுநகர் மக்கள் குரல்') }}" required>
+                            <input type="text" name="site_name_ta" class="form-control" value="{{ \App\Models\SystemSetting::get('site_name_ta', 'தமிழ்நாடு மக்கள் குரல்') }}" required>
                         </div>
                     </div>
 
