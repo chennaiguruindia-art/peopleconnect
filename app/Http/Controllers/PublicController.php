@@ -47,9 +47,8 @@ class PublicController extends Controller
 
     public function updates(Request $request, VirudhunagarNewsService $newsService): View
     {
-        if ($request->has('refresh') || PublicUpdate::where('is_active', true)->count() === 0) {
-            $newsService->syncLatestNews(force: $request->has('refresh'));
-        }
+        // Automatically fetch new news if 30 mins elapsed or user clicked refresh
+        $newsService->syncLatestNews(force: $request->has('refresh'));
 
         $query = PublicUpdate::where('is_active', true);
 
