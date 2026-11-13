@@ -15,19 +15,33 @@
                 </ol>
             </nav>
 
-            <!-- Page Header -->
+            <!-- Page Header: Tamil Nadu Scope with Deep Virudhunagar Focus -->
             <div class="text-center mb-5">
-                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1 rounded-pill mb-2 fw-bold">
-                    {{ __('messages.tagline') }}
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5 rounded-pill mb-3 fw-bold shadow-xs">
+                    <i class="bi bi-geo-alt-fill text-danger me-1"></i>
+                    {{ app()->getLocale() === 'en' ? 'Statewide Vision — Virudhunagar District Grassroots Hub' : 'தமிழ்நாடு அளவிலான தொலைநோக்கு — விருதுநகர் மாவட்டத்திற்கான சிறப்பு களப்பணி' }}
                 </span>
-                <h1 class="fw-bold text-dark display-6">{{ __('messages.site_name') }}</h1>
-                <p class="text-muted fs-5 mx-auto" style="max-width: 750px;">
+                <h1 class="fw-bold text-dark display-5 mb-3">{{ __('messages.site_name') }}</h1>
+                <p class="text-muted fs-5 mx-auto leading-relaxed" style="max-width: 820px;">
                     @if(app()->getLocale() === 'en')
-                        A transparent, direct citizen grievance redressal and civic facilitation platform addressing drinking water, roads, sanitation, electricity, and public infrastructure needs across Virudhunagar District.
+                        <strong>Tamil Nadu Makkal Kural</strong> is a dedicated civic facilitation and public grievance redressal initiative empowering the citizens of Tamil Nadu, with a pioneering, intensive grassroots focus on the agrarian families, hardworking labourers, and rural communities across all 10 Taluks of <strong>Virudhunagar District</strong>.
                     @else
-                        விருதுநகர் மாவட்ட மக்களின் குடிநீர், சாலை, சுகாதாரம் உள்ளிட்ட அனைத்து அடிப்படை பிரச்சனைகளுக்கும் வெளிப்படைத்தன்மையுடன் உடனடி தீர்வு காணும் மக்கள் சேவைத் தளம்.
+                        <strong>தமிழ்நாடு மக்கள் குரல்</strong> என்பது ஒட்டுமொத்த தமிழ்நாட்டு மக்களின் குரலாகவும், குறிப்பாக <strong>விருதுநகர் மாவட்டத்தின்</strong> உழவர்கள், தொழிலாளர்கள், வணிகர்கள் மற்றும் கடைக்கோடி கிராமத்து பாமர மக்களின் குடிநீர், சாலை, மின்சாரம், சுகாதாரம் உள்ளிட்ட அனைத்து அடிப்படை பிரச்சனைகளுக்கும் இடைத்தரகர்கள் இன்றி வெளிப்படைத்தன்மையுடன் உடனடி தீர்வு காணும் அர்ப்பணிப்புமிக்க மக்கள் சேவைத் தளமாகும்.
                     @endif
                 </p>
+
+                <!-- District Highlights Quick Counter Badge Row -->
+                <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill small">
+                        <i class="bi bi-compass-fill text-primary me-1"></i> {{ app()->getLocale() === 'en' ? 'Tamil Nadu 38 Districts Outreach' : 'தமிழ்நாட்டின் 38 மாவட்டங்களுக்கான குரல்' }}
+                    </span>
+                    <span class="badge bg-warning-subtle text-dark border border-warning px-3 py-2 rounded-pill small fw-semibold">
+                        <i class="bi bi-pin-map-fill text-danger me-1"></i> {{ app()->getLocale() === 'en' ? 'Virudhunagar: 3 Divisions | 10 Taluks | 600 Villages' : 'விருதுநகர்: 3 கோட்டங்கள் | 10 தாலுகாக்கள் | 600 கிராமங்கள்' }}
+                    </span>
+                    <span class="badge bg-success-subtle text-success border border-success px-3 py-2 rounded-pill small fw-semibold">
+                        <i class="bi bi-shield-check me-1"></i> {{ app()->getLocale() === 'en' ? 'Zero Middlemen • 100% Direct Action' : 'இடைத்தரகர்கள் இல்லாத நேரடி தீர்வு' }}
+                    </span>
+                </div>
             </div>
 
             <!-- =========================================================================
@@ -60,7 +74,7 @@
                                     {{ app()->getLocale() === 'en' ? 'Project Visionary & Guide' : 'திட்டத்தின் வழிகாட்டி & தொலைநோக்காளர்' }}
                                 </span>
                                 <span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1 fw-bold" style="font-size: 0.75rem;">
-                                    State Vice President of Kisan Morcha
+                                    {{ app()->getLocale() === 'en' ? 'State Leadership — Kisan Morcha' : 'மாநில தலைமை — விவசாய அணி' }}
                                 </span>
                             </div>
 
@@ -71,11 +85,11 @@
                                 </div>
 
                                 <p class="text-secondary leading-relaxed mb-3">
-                                    The visionary and brain behind this civic grievance redressal initiative is <strong>Thiru. Rajesh Gurusamy</strong>. With a quarter-century of disciplined public service and grassroots leadership, he initiated this platform to ensure that the voice of every rural citizen, family, and agricultural producer in Virudhunagar District reaches administrative authorities directly without intermediaries or delays.
+                                    The visionary and architect behind <strong>Tamil Nadu Makkal Kural</strong> is <strong>Thiru. Rajesh Gurusamy</strong>. Deeply rooted in the soil of Watrap and Virudhunagar, he initiated this civic grievance facilitation platform to ensure that the genuine concerns of common citizens, agricultural families, trade communities, and daily-wage workers reach government authorities directly without hurdles, paperwork exhaustion, or middlemen delays.
                                 </p>
 
                                 <p class="text-muted small mb-4">
-                                    Beginning his public service in 2001 as Watrap Union Yuva Morcha President in Virudhunagar District, he has served across district executive bodies, statewide IT cell modernisation, state call centre leadership, Commerce Cell State Secretary, and Kisan Morcha State Secretary. He currently serves as the State Vice President of Kisan Morcha, BJP Tamil Nadu, championing farmers' rights, central agricultural schemes, and rural economic upliftment.
+                                    Beginning his dedicated public life in 2001 as Watrap Union Yuva Morcha President in Virudhunagar District, he has devoted 25 continuous years to grassroots leadership. Serving successively across district executive bodies, statewide IT cell modernisation, state election call center leadership, Commerce Cell State Secretary, and Kisan Morcha State Secretary, he currently guides statewide farmer empowerment as the State Vice President of Kisan Morcha, BJP Tamil Nadu, while keeping his heartbeat firmly anchored in the welfare of Virudhunagar District.
                                 </p>
                             @else
                                 <h2 class="fw-bold text-dark mb-1 fs-3">திரு. ராஜேஷ் குருசாமி</h2>
@@ -84,11 +98,11 @@
                                 </div>
 
                                 <p class="text-secondary leading-relaxed mb-3">
-                                    விருதுநகர் மாவட்டத்தின் கடைக்கோடி கிராமத்து பாமர மக்களின் குரலும், உழவர்களின் நியாயமான கோரிக்கைகளும் எந்தவொரு இடைத்தரகரும் இன்றி நேரடியாக அதிகாரிகளையும் மக்கள் பிரதிநிதிகளையும் சென்றடைய வேண்டும் என்ற உயரிய தொலைநோக்கோடு இத்திட்டத்தை வடிவமைத்தவர் <strong>திரு. ராஜேஷ் குருசாமி</strong> அவர்கள்.
+                                    <strong>தமிழ்நாடு மக்கள் குரல்</strong> மக்கள் நலக் குறைதீர்க்கும் தளத்தின் வழிகாட்டியும், தொலைநோக்காளருமான <strong>திரு. ராஜேஷ் குருசாமி</strong> அவர்கள், விருதுநகர் மாவட்டத்தின் வத்திராயிருப்பு மண்ணின் மைந்தராவார். தமிழ்நாட்டு மக்களின் பொதுவான பிரச்சினைகளைத் தீர்ப்பதோடு, குறிப்பாக தனது சொந்த மாவட்டமான விருதுநகர் மாவட்டத்தின் கடைக்கோடி கிராமத்து பாமர மக்களின் குரலும், உழவர்கள் மற்றும் பட்டாசு-தீப்பெட்டி-நெசவுத் தொழிலாளர்களின் நியாயமான கோரிக்கைகளும் எந்தவொரு இடைத்தரகரும் இன்றி நேரடியாக அதிகாரிகளையும் மக்கள் பிரதிநிதிகளையும் சென்றடைய வேண்டும் என்ற உயரிய இலக்கோடு இத்தளத்தை வடிவமைத்துள்ளார்.
                                 </p>
 
                                 <p class="text-muted small mb-4">
-                                    2001-ஆம் ஆண்டு விருதுநகர் மாவட்டம் வத்திராயிருப்பு ஒன்றிய இளைஞரணித் தலைவராக தனது மக்கள் பணியைத் தொடங்கி, மாவட்டச் செயற்குழு உறுப்பினர், மாநில தகவல் தொழில்நுட்பப் பிரிவு, வணிகர் அணி மாநிலச் செயலாளர், விவசாய அணி மாநிலச் செயலாளர் என 25 ஆண்டுகளாக பாரதிய ஜனதா கட்சியில் அர்ப்பணிப்புடன் செயலாற்றி, தற்போது தமிழ்நாடு விவசாய அணியின் மாநில துணைத் தலைவராக உழவர் நலம் மற்றும் கிராமப்புற மேம்பாட்டிற்காகத் தொடர்ந்து அயராது பாடுபட்டு வருகிறார்.
+                                    2001-ஆம் ஆண்டு விருதுநகர் மாவட்டம் வத்திராயிருப்பு ஒன்றிய இளைஞரணித் தலைவராக தனது மக்கள் பணியைத் தொடங்கி, மாவட்டச் செயற்குழு உறுப்பினர், மாநில தகவல் தொழில்நுட்பப் பிரிவு, மாநில தேர்தல் அழைப்பு மையத் தலைமை, வணிகர் அணி மாநிலச் செயலாளர், விவசாய அணி மாநிலச் செயலாளர் என 25 ஆண்டுகளாக பாரதிய ஜனதா கட்சியில் அர்ப்பணிப்புடன் செயலாற்றி, தற்போது தமிழ்நாடு விவசாய அணியின் மாநில துணைத் தலைவராக உழவர் நலம், ஊரக வளர்ச்சி மற்றும் விருதுநகர் மக்களின் உரிமைக்காகத் தொடர்ந்து அயராது பாடுபட்டு வருகிறார்.
                                 </p>
                             @endif
 
@@ -103,6 +117,73 @@
                                     <span>{{ app()->getLocale() === 'en' ? 'Public Office Helpline: +91 81481 45222' : 'மக்கள் உதவி எண்: +91 81481 45222' }}</span>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================================================
+                 SPECIAL FOCUS: WHY VIRUDHUNAGAR DISTRICT IS THE PRIMARY OPERATIONAL HUB
+                 ========================================================================= -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white" style="border-left: 5px solid #ff7722 !important;">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-warning text-dark px-2.5 py-1 fw-bold small">
+                                <i class="bi bi-bullseye me-1"></i> {{ app()->getLocale() === 'en' ? 'Special Ground Focus' : 'சிறப்பு களப்பணி மையம்' }}
+                            </span>
+                            <span class="text-muted small fw-semibold">
+                                {{ app()->getLocale() === 'en' ? 'Virudhunagar District' : 'விருதுநகர் மாவட்டம்' }}
+                            </span>
+                        </div>
+
+                        @if(app()->getLocale() === 'en')
+                            <h3 class="fw-bold text-dark mb-3">Dedicated to the Pride and Welfare of Virudhunagar District</h3>
+                            <p class="text-secondary leading-relaxed mb-3">
+                                Virudhunagar District—the revered birthplace of <em>Karma Veerar Perunthalaivar Kamarajar</em>—is renowned for its entrepreneurial energy, commercial trade, match works, fireworks clusters, printing presses, cotton handlooms, and resilient farmers. Yet, across rural taluks like Watrap, Rajapalayam, Sattur, and Aruppukkottai, thousands of families face chronic drinking water shortages, unpaved agricultural link roads, irrigation channel blocks, and delayed civic amenities.
+                            </p>
+                            <p class="text-muted small mb-0">
+                                <strong>Tamil Nadu Makkal Kural</strong> directly bridges this gap. With complete geographic mapping across all <strong>3 Revenue Divisions</strong> (Aruppukkottai, Sivakasi, Sattur), <strong>10 Taluks</strong>, 39 Firkas, and <strong>600 Revenue Villages</strong>, every village petition is logged with authentic GPS proof and tracked till actual on-ground resolution.
+                            </p>
+                        @else
+                            <h3 class="fw-bold text-dark mb-3">விருதுநகர் மாவட்ட மக்களின் உரிமையும், உடனடி களத் தீர்வுகளும்</h3>
+                            <p class="text-secondary leading-relaxed mb-3">
+                                கர்மவீரர் பெருந்தலைவர் காமராஜர் அவதரித்த புண்ணிய பூமி விருதுநகர் மாவட்டம்! கடுமையான உழைப்பிற்கும், வணிகத் திறனுக்கும், பட்டாசு-தீப்பெட்டி-அச்சுத் தொழில்களுக்கும், பருத்தி மற்றும் உழவுத் தொழிலுக்கும் உலகளவில் பெயர்பெற்ற இம்மாவட்டத்தில், இன்றும் பல கிராமங்களில் குடிநீர் பற்றாக்குறை, சேதமடைந்த ஊரகச் சாலைகள், பாசனக் கால்வாய் தூர்வாரப்படாமை மற்றும் அடிப்படை உட்கட்டமைப்புத் தேவைகள் தீர்க்கப்படாமல் உள்ளன.
+                            </p>
+                            <p class="text-muted small mb-0">
+                                <strong>தமிழ்நாடு மக்கள் குரல்</strong> தளம், விருதுநகர் மாவட்டத்தின் <strong>3 வருவாய் கோட்டங்கள்</strong> (அருப்புக்கோட்டை, சிவகாசி, சாத்தூர்), <strong>10 வட்டங்கள்</strong> (விருதுநகர், சிவகாசி, ராஜபாளையம், ஸ்ரீவில்லிபுத்தூர், வத்திராயிருப்பு, சாத்தூர், அருப்புக்கோட்டை, காரியாபட்டி, திருச்சுழி, வெம்பக்கோட்டை) மற்றும் <strong>600 வருவாய் கிராமங்களில்</strong> உள்ள மக்களின் மனுக்களை எவ்வித அலைச்சலுமின்றி உடனடியாகப் பதிவு செய்து, சம்பந்தப்பட்ட துறை அதிகாரிகளிடம் முறையிட்டு தீர்வு காண முன்னுரிமை அளிக்கிறது.
+                            </p>
+                        @endif
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="p-3.5 rounded-4 bg-light border">
+                            <h6 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+                                <i class="bi bi-building-check text-primary"></i>
+                                {{ app()->getLocale() === 'en' ? 'Virudhunagar Administrative Coverage' : 'விருதுநகர் நிர்வாக வரைபடம்' }}
+                            </h6>
+                            <ul class="list-unstyled mb-0 small text-secondary">
+                                <li class="py-1.5 border-bottom d-flex justify-content-between align-items-center">
+                                    <span><i class="bi bi-geo-alt text-danger me-1"></i> {{ app()->getLocale() === 'en' ? 'Revenue Divisions (3)' : 'வருவாய் கோட்டங்கள் (3)' }}</span>
+                                    <strong class="text-dark">Aruppukkottai, Sivakasi, Sattur</strong>
+                                </li>
+                                <li class="py-1.5 border-bottom d-flex justify-content-between align-items-center">
+                                    <span><i class="bi bi-diagram-3 text-primary me-1"></i> {{ app()->getLocale() === 'en' ? 'Taluks Covered (10)' : 'தாலுகாக்கள் (10)' }}</span>
+                                    <strong class="text-dark">10 Taluks</strong>
+                                </li>
+                                <li class="py-1.5 border-bottom d-flex justify-content-between align-items-center">
+                                    <span><i class="bi bi-houses-fill text-success me-1"></i> {{ app()->getLocale() === 'en' ? 'Revenue Villages' : 'வருவாய் கிராமங்கள்' }}</span>
+                                    <strong class="text-dark">600 Villages</strong>
+                                </li>
+                                <li class="py-1.5 border-bottom d-flex justify-content-between align-items-center">
+                                    <span><i class="bi bi-people-fill text-warning me-1"></i> {{ app()->getLocale() === 'en' ? 'Firkas Covered' : 'உள்வட்டங்கள் (Firkas)' }}</span>
+                                    <strong class="text-dark">39 Firkas</strong>
+                                </li>
+                                <li class="pt-1.5 d-flex justify-content-between align-items-center">
+                                    <span><i class="bi bi-globe-central-south text-info me-1"></i> {{ app()->getLocale() === 'en' ? 'Tamil Nadu Coverage' : 'தமிழ்நாடு முழுமைக்குமான கட்டமைப்பு' }}</span>
+                                    <strong class="text-success fw-bold">38 Districts</strong>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -248,7 +329,7 @@
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">மாநில துணைத் தலைவர் — விவசாய அணி (Kisan Morcha)</h5>
                                 <p class="text-muted small mb-0">
-                                    பாரதிய ஜனதா கட்சி — தமிழ்நாடு. மாநிலம் தழுவிய விவசாயிகள் விழிப்புணர்வு, மத்திய அரசின் உழவர் நலத் திட்டங்களை கடைக்கோடி விவசாயிகளிடம் சேர்த்தல் மற்றும் கிராமப்புற வளர்ச்சிப் பணிகள்.
+                                    பாரதிய ஜனதா கட்சி (BJP) — தமிழ்நாடு. மாநிலம் தழுவிய உழவர் நலம், விவசாயக் குறைதீர்க்கும் முன்னெடுப்புகள், மத்திய அரசு திட்டங்களை மக்களிடம் கொண்டு சேர்த்தல் மற்றும் கிராமப்புற கட்டமைப்புப் பணிகள்.
                                 </p>
                             </div>
                         </div>
@@ -260,9 +341,9 @@
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2022 — 2025</span>
                                     <small class="text-muted">மாநிலச் செயற்குழு</small>
                                 </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலச் செயலாளர் — விவசாய அணி (Kisan Morcha)</h5>
+                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலச் செயலாளர் — விவசாய அணி, பாஜக தமிழ்நாடு</h5>
                                 <p class="text-muted small mb-0">
-                                    தமிழ்நாடு முழுவதும் விவசாயிகள் மாநாடுகள், வேளாண் விழிப்புணர்வு முகாம்கள் மற்றும் மத்திய அரசின் நலத்திட்டப் பயணங்களை வெற்றிகரமாக முன்னெடுத்தார்.
+                                    விவசாயிகள் மாநாடுகள், கள ஆய்வு முகாம்கள், உழவர் விழிப்புணர்வுப் பயணங்கள் மற்றும் தென் மாவட்ட விவசாயிகளின் பாசனப் பிரச்சனைகளுக்குத் தீர்வு காணும் போராட்டங்களை முன்னின்று நடத்தினார்.
                                 </p>
                             </div>
                         </div>
@@ -272,11 +353,11 @@
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0284c7 !important;">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2020 — 2025</span>
-                                    <small class="text-muted">திட்ட ஒருங்கிணைப்பு</small>
+                                    <small class="text-muted">மத்திய திட்டங்கள்</small>
                                 </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மத்திய அரசுத் திட்டங்கள் & கன்னியாகுமரி மண்டல இணைப் பொறுப்பாளர்</h5>
+                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலப் பொறுப்பாளர் (மத்திய திட்டங்கள்) & மண்டல இணைப் பொறுப்பாளர்</h5>
                                 <p class="text-muted small mb-0">
-                                    PM-Kisan Samman Nidhi, கிசான் கடன் அட்டை (KCC) மற்றும் இயற்கை விவசாய ஊக்குவிப்புத் திட்டங்களின் மாநிலப் பொறுப்பாளராக களப்பணி ஆற்றினார்.
+                                    பிரதமரின் கிசான் சம்மான் நிதி (PM-Kisan), கிசான் கடன் அட்டை (KCC) மற்றும் இயற்கை விவசாய ஊக்குவிப்பு திட்டங்களுக்கான மாநிலப் பொறுப்பாளராகச் செயல்பட்டார்.
                                 </p>
                             </div>
                         </div>
@@ -288,9 +369,9 @@
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2020</span>
                                     <small class="text-muted">கொரோனா கால சேவை</small>
                                 </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">MSME மற்றும் சிறு வணிகர்களுக்கான கடன் உதவி இயக்கம்</h5>
+                                <h5 class="fw-bold text-dark fs-6 mb-1">சிறு, குறு வணிகர்கள் மற்றும் MSME கடன் வழிகாட்டுதல்</h5>
                                 <p class="text-muted small mb-0">
-                                    பெருந்தொற்று காலத்தில் வாழ்வாதாரம் பாதிக்கப்பட்ட சிறு வணிகர்கள் மற்றும் தொழில் முனைவோருக்கு மத்திய அரசின் பிணையில்லா அவசரகால கடன் திட்டத்தை (ECLGS) பெற்றுத்தந்தார்.
+                                    கொரோனா பெருந்தொற்றுப் பொதுமுடக்கத்தால் பாதிக்கப்பட்ட வணிகர்கள் மற்றும் சிறு நிறுவனங்களுக்கு மத்திய அரசின் பிணையில்லா அவசரகாலக் கடன் (ECLGS) கிடைக்க வங்கிகளுடன் ஒருங்கிணைந்து வழிகாட்டினார்.
                                 </p>
                             </div>
                         </div>
@@ -300,11 +381,11 @@
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #6366f1 !important;">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2014 — 2017</span>
-                                    <small class="text-muted">வர்த்தகப் பிரிவு</small>
+                                    <small class="text-muted">வணிகர் அணி</small>
                                 </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலச் செயலாளர் — வர்த்தகர் அணி (Commerce Cell)</h5>
+                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலச் செயலாளர் — வணிகர் அணி, பாஜக தமிழ்நாடு</h5>
                                 <p class="text-muted small mb-0">
-                                    வணிகர் சங்கங்கள், மொத்த வியாபாரக் கூட்டமைப்புகள் மற்றும் தொழில் அமைப்புகளுடன் இணைந்து மத்திய அரசின் பொருளாதாரச் சீர்திருத்தங்களை மக்களிடம் கொண்டு சேர்த்தார்.
+                                    தமிழ்நாடு முழுவதும் உள்ள வணிகர் சங்கங்கள், மொத்த விற்பனை அமைப்புகள் மற்றும் தொழில்முனைவோரை ஒருங்கிணைத்து வர்த்தக வளர்ச்சிக்கு உறுதுணையாக நின்றார்.
                                 </p>
                             </div>
                         </div>
@@ -314,11 +395,11 @@
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ec4899 !important;">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2012 — 2016</span>
-                                    <small class="text-muted">டிஜிட்டல் கட்டமைப்பு</small>
+                                    <small class="text-muted">தகவல் தொழில்நுட்பம்</small>
                                 </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநில தேர்தல் அழைப்பு மையம் & உறுப்பினர் சேர்க்கை ஒருங்கிணைப்பாளர்</h5>
+                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநில தகவல் தொழில்நுட்பப் பிரிவு & அழைப்பு மையத் தலைமை</h5>
                                 <p class="text-muted small mb-0">
-                                    தமிழ்நாடு பாஜகவின் மாநில தேர்தல் அழைப்பு மையக் கட்டமைப்பை நிறுவி, சாதனை அளவிலான மாநில அளவிலான உறுப்பினர் சேர்க்கைப் பணிகளை வெற்றிகரமாக வழிநடத்தினார்.
+                                    தமிழ்நாடு மாநில அளவிலான தேர்தல் அழைப்பு மையம் (State Call Centre) மற்றும் தகவல் தொழில்நுட்ப உள்கட்டமைப்பை நிறுவி, சாதனை அளவிலான உறுப்பினர் சேர்க்கையை ஒருங்கிணைத்தார்.
                                 </p>
                             </div>
                         </div>
@@ -328,7 +409,7 @@
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0d9488 !important;">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2003 — 2008</span>
-                                    <small class="text-muted">மாவட்டப் பணி</small>
+                                    <small class="text-muted">விருதுநகர் மாவட்ட நிர்வாகம்</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">விருதுநகர் மாவட்ட செயற்குழு உறுப்பினர் & இளைஞரணி</h5>
                                 <p class="text-muted small mb-0">
@@ -344,9 +425,9 @@
                                     <span class="badge bg-dark text-white" style="font-size: 0.72rem;">2001 — அடித்தள ஆரம்பம்</span>
                                     <small class="text-muted">விருதுநகர் மாவட்டம்</small>
                                 </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">வத்திராயிருப்பு ஒன்றிய இளைஞரணித் தலைவர் (Watrap Union)</h5>
+                                <h5 class="fw-bold text-dark fs-6 mb-1">வத்திராயிருப்பு ஒன்றிய இளைஞரணித் தலைவர்</h5>
                                 <p class="text-muted small mb-0">
-                                    வத்திராயிருப்பு ஒன்றியத்தின் கிராமப்புறப் பகுதிகளில் கட்சியின் அடித்தளத்தை உருவாக்கி, அடிமட்டத் தொண்டனாய் தனது பொதுவாழ்வுப் பயணத்தைத் தொடங்கினார்.
+                                    விருதுநகர் மாவட்டம் வத்திராயிருப்பு ஒன்றிய அளவில் தனது நேரடி மக்கள் பணியைத் தொடங்கி, கிராமப்புற அடித்தள மக்களின் நலனுக்காகச் செயலாற்றினார்.
                                 </p>
                             </div>
                         </div>
@@ -355,7 +436,7 @@
             </div>
 
             <!-- =========================================================================
-                 BJP CIVIC VISION: ANTYODAYA & DIGITAL GOVERNANCE
+                 THE GUIDING IDEOLOGY: ANTYODAYA & DIGITAL CITIZEN SERVICE
                  ========================================================================= -->
             <div class="row g-4 mb-5">
                 <div class="col-md-4">
@@ -364,13 +445,13 @@
                             <i class="bi bi-people-fill"></i>
                         </div>
                         <h5 class="fw-bold text-dark mb-2">
-                            {{ app()->getLocale() === 'en' ? 'Antyodaya (Serving the Last Person)' : 'அந்தியோதயா (Antyodaya)' }}
+                            {{ app()->getLocale() === 'en' ? 'Antyodaya Civic Mission' : 'கடைக்கோடி மனிதனுக்கும் சேவை (அந்தியோதயா)' }}
                         </h5>
                         <p class="text-muted small mb-0">
                             @if(app()->getLocale() === 'en')
-                                Inspired by Pandit Deendayal Upadhyaya's philosophy of Antyodaya, ensuring that essential government services, civic amenities, and justice reach the poorest citizen standing at the very end of the line.
+                                Inspired by Pandit Deendayal Upadhyaya's Antyodaya principle, ensuring that government welfare and basic civic infrastructure reach the most underprivileged rural family in Virudhunagar and across Tamil Nadu.
                             @else
-                                வரிசையில் நிற்கும் கடைசி மனிதருக்கும் அரசின் அடிப்படை சேவைகள் மற்றும் உரிமைகள் நேரடியாகச் சென்றடைய வேண்டும் என்ற பண்டிட் தீனதயாள் உபாத்யாயாவின் மக்கள் தத்துவமே இதன் அடித்தளம்.
+                                பண்டிட் தீனதயாள் உபாத்யாயாவின் 'அந்தியோதயா' தத்துவத்தின்படி, வரிசையில் நிற்கும் கடைக்கோடி மனிதனுக்கும் அடிப்படை அரசு நலன்களும் பொது உட்கட்டமைப்புகளும் சென்றடைவதை உறுதி செய்தல்.
                             @endif
                         </p>
                     </div>
@@ -430,11 +511,11 @@
                             <span class="badge bg-warning text-dark p-2 rounded-3"><i class="bi bi-bullseye fs-5"></i></span>
                             <h4 class="fw-bold mb-0">{{ app()->getLocale() === 'en' ? 'Our Mission' : 'நோக்கம் (Our Mission)' }}</h4>
                         </div>
-                        <p class="text-secondary mb-0">
+                        <p class="text-secondary mb-0 leading-relaxed">
                             @if(app()->getLocale() === 'en')
-                                To bridge the gap between citizens and local administrative bodies across all 10 taluks of Virudhunagar by offering a transparent, bilingual, digital petition portal that tracks resolutions step-by-step.
+                                To provide the people of Tamil Nadu, and specifically every citizen across the 10 taluks and 600 villages of Virudhunagar District, a transparent, bilingual, digital petition portal that eliminates middlemen, ensures administrative accountability, and follows through until issues are resolved.
                             @else
-                                விருதுநகர் மாவட்டத்தின் 10 வட்டங்களிலும் உள்ள பாமர மக்களின் அடிப்படைத் தேவைகளுக்கும் அரசு நிர்வாகத்திற்கும் இடையே பாலமாக அமைந்து, ஒவ்வொரு மனுவையும் வெளிப்படைத்தன்மையுடன் தீர்வு காண்பதே எங்களின் முதன்மை நோக்கம்.
+                                தமிழ்நாட்டின் அனைத்து பகுதி மக்களுக்கும், குறிப்பாக விருதுநகர் மாவட்டத்தின் 10 வட்டங்கள் மற்றும் 600 வருவாய் கிராமங்களில் வாழும் அடித்தட்டு உழவர்கள், தொழிலாளர்கள் மற்றும் குடும்பங்களின் அடிப்படைத் தேவைகளுக்கும் அரசு நிர்வாகத்திற்கும் இடையே நம்பகமான பாலமாக அமைந்து, ஒவ்வொரு கோரிக்கையையும் வெளிப்படைத்தன்மையுடன் தீர்வு காண்பதே எங்களின் முதன்மை நோக்கம்.
                             @endif
                         </p>
                     </div>
@@ -446,11 +527,11 @@
                             <span class="badge bg-success text-white p-2 rounded-3"><i class="bi bi-eye-fill fs-5"></i></span>
                             <h4 class="fw-bold mb-0">{{ app()->getLocale() === 'en' ? 'Our Vision' : 'தொலைநோக்கு (Our Vision)' }}</h4>
                         </div>
-                        <p class="text-secondary mb-0">
+                        <p class="text-secondary mb-0 leading-relaxed">
                             @if(app()->getLocale() === 'en')
                                 A responsive, citizen-first civic ecosystem where community problems—from drinking water pipeline leakages to rural road repairs—are documented with authentic geolocation data and resolved with measurable service level agreements.
                             @else
-                                குடிநீர் குழாய் உடைப்பு முதல் கிராமப்புற சாலை சீரமைப்பு வரை அனைத்து பொதுப் பிரச்சனைகளும் உண்மையான களத்தரவுகளுடன் ஆவணப்படுத்தப்பட்டு, காலக்கெடுவுடன் தீர்க்கப்படும் ஒரு முன்மாதிரி மாவட்ட மக்கள் நிர்வாகத்தை உருவாக்குதல்.
+                                குடிநீர் குழாய் உடைப்பு முதல் கிராமப்புற சாலை சீரமைப்பு வரை அனைத்து பொதுப் பிரச்சனைகளும் உண்மையான களத்தரவுகளுடன் ஆவணப்படுத்தப்பட்டு, காலக்கெடுவுடன் தீர்க்கப்படும் ஒரு முன்மாதிரி மாவட்ட மக்கள் நிர்வாகத்தை உருவாக்கி அதைத் தமிழ்நாடு முழுமைக்கும் முன்மாதிரியாக மாற்றுதல்.
                             @endif
                         </p>
                     </div>
