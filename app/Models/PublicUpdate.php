@@ -12,6 +12,8 @@ class PublicUpdate extends Model
         'content_en',
         'content_ta',
         'category',
+        'source_name',
+        'source_url',
         'featured_image',
         'published_at',
         'is_active',

@@ -12,6 +12,7 @@ use App\Models\RevenueDivision;
 use App\Models\SystemSetting;
 use App\Models\Taluk;
 use App\Models\TownPanchayat;
+use App\Services\VirudhunagarNewsService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -44,13 +45,31 @@ class PublicController extends Controller
         ));
     }
 
-    public function updates(): View
+    public function updates(Request $request, VirudhunagarNewsService $newsService): View
     {
-        $updates = PublicUpdate::where('is_active', true)
-            ->orderBy('published_at', 'desc')
-            ->paginate(6);
+        if ($request->has('refresh') || PublicUpdate::where('is_active', true)->count() === 0) {
+            $newsService->syncLatestNews(force: $request->has('refresh'));
+        }
 
-        return view('public.updates', compact('updates'));
+        $query = PublicUpdate::where('is_active', true);
+
+        if ($request->filled('category') && $request->category !== 'all') {
+            $query->where('category', $request->category);
+        }
+
+        if ($request->filled('q')) {
+            $search = '%' . $request->q . '%';
+            $query->where(function ($q) use ($search) {
+                $q->where('title_ta', 'like', $search)
+                  ->orWhere('title_en', 'like', $search)
+                  ->orWhere('source_name', 'like', $search);
+            });
+        }
+
+        $updates = $query->orderBy('published_at', 'desc')->paginate(9)->withQueryString();
+        $categories = PublicUpdate::where('is_active', true)->select('category')->distinct()->pluck('category');
+
+        return view('public.updates', compact('updates', 'categories'));
     }
 
     public function contact(): View
