@@ -832,3 +832,92 @@ body {
   background: none !important;
   box-shadow: none !important;
 }
+
+/* ==========================================================================
+   Modern Civic Pagination Design (Redesigned from Default Boxy Look)
+   ========================================================================== */
+.pagination-container-custom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pagination-result-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 5px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.pagination-result-pill strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.pagination-pill-nav {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 5px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  gap: 4px;
+}
+
+.pagination-pill-nav .page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 9999px;
+  color: #475569;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.pagination-pill-nav .page-btn:hover:not(.disabled):not(.active) {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.pagination-pill-nav .page-btn.active {
+  background: linear-gradient(135deg, #ff7722, #ea580c) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+  font-weight: 700;
+}
+
+.pagination-pill-nav .page-btn.disabled {
+  color: #cbd5e1;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.pagination-pill-nav .page-dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
