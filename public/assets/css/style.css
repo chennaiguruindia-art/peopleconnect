@@ -1,0 +1,834 @@
+/* ==========================================================================
+   குரலற்ற மகளின் குரல் - Public Theme
+   Colors: Saffron/Orange (#e65100), Dark Green (#1b5e20), Clean White (#ffffff)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #e65100;
+  --primary-hover: #bf360c;
+  --primary-light: #fff3e0;
+  --secondary-color: #1b5e20;
+  --secondary-hover: #0b3d10;
+  --secondary-light: #e8f5e9;
+  --accent-gold: #ff9800;
+  --dark-slate: #1e293b;
+  --text-muted: #64748b;
+  --border-light: #e2e8f0;
+  --bg-subtle: #f8fafc;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+body {
+  font-family: 'Mukta Malar', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--dark-slate);
+  background-color: #ffffff;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Header & Top Utility Bar (Modern Civic Design)
+   ========================================================================== */
+.top-utility-bar {
+  background: #08162b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+}
+
+.badge-notice-orange {
+  background: #ff6a00;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 2.5px 10px;
+  border-radius: 9999px;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(255, 106, 0, 0.3);
+}
+
+.top-bar-divider {
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0 3px;
+  font-weight: 300;
+}
+
+.top-notice-text {
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+.top-helpline-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 2.5px 10px 2.5px 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.top-helpline-pill:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.helpline-icon-circle {
+  width: 20px;
+  height: 20px;
+  background: #10b981;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.65rem;
+}
+
+.top-utility-bar .language-switcher .btn {
+  background: rgba(37, 99, 235, 0.22);
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 2.5px 11px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.top-utility-bar .language-switcher .btn:hover {
+  background: rgba(37, 99, 235, 0.38);
+  border-color: rgba(96, 165, 250, 0.7);
+  color: #ffffff;
+}
+
+/* Main Brand Header */
+.brand-header {
+  background: #ffffff;
+  border-bottom: 2px solid #ff9933;
+  padding: 10px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.brand-identity-link {
+  transition: opacity 0.2s ease;
+}
+
+.brand-identity-link:hover {
+  opacity: 0.96;
+}
+
+.brand-v-divider {
+  height: 42px;
+  width: 1px;
+  background: #e2e8f0;
+  margin: 0 4px;
+}
+
+.brand-title-navy {
+  color: #0b2545;
+  font-weight: 800;
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-title-orange {
+  color: #ea580c;
+  font-weight: 800;
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-sub-caps {
+  color: #0b2545;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.brand-tagline-motto {
+  font-size: 0.78rem;
+  color: #475569;
+}
+
+/* Civic Center Motto Pillar */
+.header-civic-center {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+  border-top: 2.5px solid #ff9933;
+  border-radius: 10px;
+  padding: 6px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  max-width: 440px;
+}
+
+.civic-motto-headline {
+  color: #0b2545;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.civic-motto-subline {
+  font-size: 0.76rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* Modi Leadership Dignity Unit (Always on Far Right) */
+.modi-header-unit {
+  flex-shrink: 0;
+}
+
+.modi-portrait-img {
+  max-height: 68px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.modi-portrait-img:hover {
+  transform: scale(1.03);
+}
+
+.modi-card-box {
+  background: linear-gradient(180deg, #ffffff 0%, #fffbf5 100%);
+  border: 1px solid #fed7aa;
+  border-left: 3px solid #ea580c;
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.08);
+  min-width: 140px;
+}
+
+.badge-modi-pill {
+  background: #ea580c;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 1.5px 8px;
+  border-radius: 9999px;
+  display: inline-block;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+/* CTA Header Buttons (Compact BJP Aesthetic) */
+.btn-civic-track {
+  background: #ffffff;
+  color: #1e293b;
+  border: 1.5px solid #cbd5e1;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
+}
+
+.btn-civic-track:hover {
+  background: #f8fafc;
+  border-color: #ea580c;
+  color: #ea580c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.btn-civic-submit {
+  background: linear-gradient(135deg, #ff6f00, #ea580c);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.28);
+  white-space: nowrap;
+}
+
+.btn-civic-submit:hover {
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(234, 88, 12, 0.38);
+}
+
+/* ==========================================================================
+   Main Civic Navigation Bar (BJP Green & Saffron Theme)
+   ========================================================================== */
+.navbar-civic {
+  background: #15803d;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  padding: 1px 0;
+  border-top: 3px solid #ff9933;
+  border-bottom: 2px solid #166534;
+}
+
+.navbar-civic .nav-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.94);
+  padding: 9px 12px !important;
+  margin: 2px 1px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.navbar-civic .nav-link i {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.navbar-civic .nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.navbar-civic .nav-link.active {
+  color: #ffffff;
+  background: #ea580c;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.4);
+}
+
+.navbar-civic .nav-link.active i {
+  opacity: 1;
+}
+
+.btn-admin-nav {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  padding: 7px 16px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-admin-nav:hover {
+  background: #ffffff;
+  color: #1b5e20;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-admin-nav:hover i {
+  color: #e65100 !important;
+}
+
+/* Buttons */
+.btn-primary-civic {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.btn-primary-civic:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.25);
+}
+
+.btn-secondary-civic {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.btn-secondary-civic:hover {
+  background-color: var(--secondary-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.25);
+}
+
+.btn-outline-civic {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-outline-civic:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(255, 243, 224, 0.85), rgba(232, 245, 233, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 0 L60 30 L30 60 L0 30 Z" fill="none" stroke="%23e2e8f0" stroke-width="0.7"/></svg>');
+  background-size: cover, 40px 40px;
+  padding: 60px 0 50px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* Stats Counter Grid */
+.stat-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 22px 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--primary-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 6px;
+}
+
+/* Category Cards */
+.category-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  transition: all 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.category-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--primary-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.category-card:hover .category-icon-box {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+.category-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.category-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  flex-grow: 1;
+}
+
+.category-dept {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-light);
+}
+
+/* Multi-Section Form Styling */
+.form-section-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.form-section-header {
+  background: var(--bg-subtle);
+  padding: 14px 20px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-section-body {
+  padding: 24px 20px;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.form-control, .form-select {
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.15);
+}
+
+.required-star {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* Timeline for Tracking */
+.tracking-timeline {
+  position: relative;
+  padding-left: 30px;
+  margin-top: 24px;
+}
+
+.tracking-timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 9px;
+  width: 2px;
+  background: #cbd5e1;
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -30px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.2);
+}
+
+.timeline-marker.active {
+  background: var(--primary-color);
+}
+
+.timeline-marker.resolved {
+  border-color: #16a34a;
+  background: #16a34a;
+}
+
+.timeline-content {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+}
+
+.timeline-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Disclaimer Banner */
+.disclaimer-banner {
+  background: #fef2f2;
+  border-left: 5px solid #dc2626;
+  padding: 14px 18px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.88rem;
+  color: #991b1b;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.footer-civic {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 50px 0 20px;
+  margin-top: 60px;
+  font-size: 0.92rem;
+}
+
+.footer-civic h5 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+
+.footer-civic a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-civic a:hover {
+  color: var(--primary-light);
+}
+
+.footer-bottom {
+  border-top: 1px solid #1e293b;
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Loading Spinner Overlay */
+.loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+}
+
+.spinner-civic {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-width: 0.35rem;
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Select2 Searchable Dropdown Custom Styles (Bootstrap 5 Alignment)
+   ========================================================================== */
+.select2-container--bootstrap-5 .select2-selection {
+  border-radius: var(--radius-sm);
+  border-color: #cbd5e1;
+  min-height: 42px;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+  color: var(--dark-slate);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.select2-container--bootstrap-5.select2-container--focus .select2-selection,
+.select2-container--bootstrap-5.select2-container--open .select2-selection {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(230, 81, 0, 0.15);
+}
+
+.select2-container--bootstrap-5 .select2-dropdown {
+  border-color: var(--primary-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.92rem;
+  z-index: 1060;
+}
+
+.select2-container--bootstrap-5 .select2-search--dropdown {
+  padding: 8px 10px;
+}
+
+.select2-container--bootstrap-5 .select2-search__field {
+  border-radius: 6px;
+  border-color: #cbd5e1;
+  padding: 8px 12px;
+  font-size: 0.92rem;
+}
+
+.select2-container--bootstrap-5 .select2-search__field:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(230, 81, 0, 0.15);
+}
+
+.select2-container--bootstrap-5 .select2-results__option {
+  padding: 8px 12px;
+  font-size: 0.92rem;
+}
+
+.select2-container--bootstrap-5 .select2-results__option--highlighted[aria-selected] {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Fix Select2 inside Bootstrap 5 .input-group (e.g. Village dropdown + Type manually button) */
+.input-group > .select2-container--bootstrap-5 {
+  flex: 1 1 auto !important;
+  width: 1% !important;
+}
+
+.input-group > .select2-container--bootstrap-5 .select2-selection {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* ==========================================================================
+   Google Translate Widget Custom Styling (Civic Topbar Integration)
+   ========================================================================== */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+#google_translate_element {
+  display: inline-flex;
+  align-items: center;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  margin: 0 !important;
+  padding: 2px 8px !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  outline: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.goog-te-gadget .goog-te-combo:hover,
+.goog-te-gadget .goog-te-combo:focus {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: #ffffff !important;
+}
+
+.goog-te-gadget .goog-te-combo option {
+  background: #08162b !important;
+  color: #ffffff !important;
+}
+
+.goog-logo-link,
+.goog-te-gadget span,
+.goog-te-gadget > span {
+  display: none !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
