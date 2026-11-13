@@ -23,11 +23,13 @@ class FetchVirudhunagarNewsCommand extends Command
     public function handle(VirudhunagarNewsService $newsService): int
     {
         $force = (bool) $this->option('force');
-        $this->info('Fetching live news updates for Virudhunagar District...');
+        $this->info('Sanitizing existing records and fetching live news updates...');
+
+        $cleaned = $newsService->cleanExistingDatabaseRecords();
+        $this->info("Sanitized {$cleaned} existing news records (removed #tags, &nbsp;, and spam).");
 
         $count = $newsService->syncLatestNews($force);
-
-        $this->info("Successfully synced {$count} new Virudhunagar news articles.");
+        $this->info("Successfully synced {$count} fresh Virudhunagar news articles.");
 
         return Command::SUCCESS;
     }

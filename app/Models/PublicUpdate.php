@@ -26,11 +26,13 @@ class PublicUpdate extends Model
 
     public function getTitleAttribute(): string
     {
-        return app()->getLocale() === 'ta' && !empty($this->title_ta) ? $this->title_ta : $this->title_en;
+        $raw = app()->getLocale() === 'ta' && !empty($this->title_ta) ? $this->title_ta : $this->title_en;
+        return \App\Services\VirudhunagarNewsService::sanitizeText($raw ?? '', (string)$this->source_name);
     }
 
     public function getContentAttribute(): string
     {
-        return app()->getLocale() === 'ta' && !empty($this->content_ta) ? $this->content_ta : $this->content_en;
+        $raw = app()->getLocale() === 'ta' && !empty($this->content_ta) ? $this->content_ta : $this->content_en;
+        return \App\Services\VirudhunagarNewsService::sanitizeText($raw ?? '', (string)$this->source_name);
     }
 }

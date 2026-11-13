@@ -17,6 +17,58 @@ class VirudhunagarNewsService
     protected string $englishFeedUrl = 'https://news.google.com/rss/search?q=Virudhunagar&hl=en-IN&gl=IN&ceid=IN:en';
 
     /**
+     * Clean and sanitize news text:
+     * - Strips HTML entities like &nbsp;, &#160;
+     * - Strips hashtags (#Virudhunagar #PMMITRA etc.)
+     * - Strips channel branding prefixes (BREAKING ||, ZEE Tamil News, etc.)
+     * - Strips trailing publisher suffixes (- Dinamalar, - Facebook, etc.)
+     * - Cleans up irregular whitespace and punctuation
+     */
+    public static function sanitizeText(string $text, string $sourceName = ''): string
+    {
+        if (empty($text)) {
+            return '';
+        }
+
+        // 1. Decode HTML entities
+        $text = html_entity_decode($text, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $text = str_replace(
+            ['&nbsp;', '&#160;', '&amp;', '&quot;', '&#39;', '&lt;', '&gt;'],
+            [' ', ' ', '&', '"', "'", '<', '>'],
+            $text
+        );
+
+        // 2. Remove all social media hashtags (#Virudhunagar #PMMITRA etc.)
+        $text = preg_replace('/#[\w\x{0B80}-\x{0BFF}]+/u', '', $text);
+
+        // 3. Remove common news breaking prefixes (BREAKING ||, BREAKING NEWS, அதிர்ச்சி ||)
+        $text = preg_replace('/^(BREAKING\s*\|\|?|BREAKING\s*NEWS\s*[:\-|\|]?|அதிர்ச்சி\s*\|\|?|பரபரப்பு\s*\|\|?)\s*/iu', '', $text);
+
+        // 4. Remove leading media channel tags like "ZEE Tamil News. ." or "Thanthi TV -"
+        $text = preg_replace('/^(ZEE Tamil News\s*[\.\-:]*|News18 Tamil Nadu\s*[\.\-:]*|Thanthi TV\s*[\.\-:]*|Puthiyathalaimurai\s*[\.\-:]*)\s*/iu', '', $text);
+
+        // 5. Remove trailing source names (e.g. " - Dinamalar", " - Daily Thanthi", " - Facebook", " - Thanthi TV")
+        if (!empty($sourceName)) {
+            $escapedSource = preg_quote($sourceName, '/');
+            $text = preg_replace('/\s*[-|:]\s*' . $escapedSource . '\s*$/iu', '', $text);
+        }
+        $commonSources = [
+            'Dinamalar', 'Daily Thanthi', 'Dinamani', 'The Hindu', 'Thanthi TV', 
+            'Polimer News', 'News18', 'Puthiyathalaimurai', 'Facebook', 'YouTube', 
+            'ZigWheels\.com', 'CarDekho', 'Oneindia Tamil', 'News 18'
+        ];
+        foreach ($commonSources as $src) {
+            $text = preg_replace('/\s*[-|:]\s*' . $src . '\s*$/iu', '', $text);
+        }
+
+        // 6. Clean multiple spaces, non-breaking whitespace chars, and trim edges
+        $text = preg_replace('/[\s\x{00A0}\x{200B}]+/u', ' ', $text);
+        $text = trim($text, " \t\n\r\0\x0B-|:.,");
+
+        return $text;
+    }
+
+    /**
      * Synchronize latest Virudhunagar news into public_updates table.
      * Throttled with a 30-minute cache lock to ensure high performance.
      */
@@ -30,7 +82,7 @@ class VirudhunagarNewsService
 
         $items = $this->fetchFromRss($this->tamilFeedUrl, 'ta', $limit);
         
-        // Also fetch English items if needed
+        // Also fetch English items
         $enItems = $this->fetchFromRss($this->englishFeedUrl, 'en', 10);
         $allItems = array_merge($items, $enItems);
 
@@ -41,34 +93,99 @@ class VirudhunagarNewsService
                 continue;
             }
 
+            // Skip commercial price spam like vehicle on-road prices
+            if (str_contains($item['title'], 'On Road Price') || 
+                str_contains($item['source'], 'ZigWheels') || 
+                str_contains($item['source'], 'CarDekho')) {
+                continue;
+            }
+
+            $sourceName = $item['source'] ?: 'Virudhunagar News';
+            $cleanTitle = self::sanitizeText($item['title'], $sourceName);
+            $cleanDescription = self::sanitizeText($item['description'], $sourceName);
+
+            if (empty($cleanTitle)) {
+                continue;
+            }
+
             // Check if article with this link or title already exists
             $existing = PublicUpdate::where('source_url', $item['link'])
-                ->orWhere('title_ta', $item['title'])
-                ->orWhere('title_en', $item['title'])
+                ->orWhere('title_ta', $cleanTitle)
+                ->orWhere('title_en', $cleanTitle)
                 ->first();
 
-            $category = $this->detectCategory($item['title'] . ' ' . $item['description']);
+            $category = $this->detectCategory($cleanTitle . ' ' . $cleanDescription);
+
+            $contentTa = !empty($cleanDescription) ? $cleanDescription : 'விருதுநகர் மாவட்டத்திற்கான செய்தி அறிக்கை (' . $sourceName . ').';
+            $contentEn = !empty($cleanDescription) ? $cleanDescription : 'News report from Virudhunagar District via ' . $sourceName . '.';
 
             if (!$existing) {
                 PublicUpdate::create([
-                    'title_en' => $item['lang'] === 'en' ? $item['title'] : ($item['title'] . ' (' . ($item['source'] ?? 'Virudhunagar News') . ')'),
-                    'title_ta' => $item['lang'] === 'ta' ? $item['title'] : $item['title'],
-                    'content_en' => !empty($item['description']) ? $item['description'] : 'Latest news update reported from Virudhunagar District via ' . ($item['source'] ?? 'News Media') . '.',
-                    'content_ta' => !empty($item['description']) ? $item['description'] : 'விருதுநகர் மாவட்டத்தில் இருந்து ' . ($item['source'] ?? 'செய்தி ஊடகம்') . ' வெளியிட்ட சமீபத்திய தகவல்.',
+                    'title_en' => $cleanTitle,
+                    'title_ta' => $cleanTitle,
+                    'content_en' => $contentEn,
+                    'content_ta' => $contentTa,
                     'category' => $category,
-                    'source_name' => $item['source'] ?? 'News Portal',
+                    'source_name' => $sourceName,
                     'source_url' => $item['link'],
                     'published_at' => $item['pubDate'],
                     'is_active' => true,
                 ]);
                 $savedCount++;
+            } else {
+                // Update existing record with sanitized content
+                $existing->update([
+                    'title_ta' => $cleanTitle,
+                    'title_en' => $cleanTitle,
+                    'content_ta' => $contentTa,
+                    'content_en' => $contentEn,
+                    'source_name' => $sourceName,
+                ]);
             }
         }
+
+        // Also clean up any lingering old dirty records
+        $this->cleanExistingDatabaseRecords();
 
         // Cache sync time for 30 minutes
         Cache::put($cacheKey, now()->toDateTimeString(), 1800);
 
         return $savedCount;
+    }
+
+    /**
+     * Clean and sanitize all existing records in public_updates table.
+     */
+    public function cleanExistingDatabaseRecords(): int
+    {
+        $records = PublicUpdate::all();
+        $updated = 0;
+
+        foreach ($records as $record) {
+            // Delete commercial price spam
+            if (str_contains($record->title_en, 'On Road Price') || 
+                str_contains($record->title_ta, 'On Road Price') || 
+                str_contains((string)$record->source_name, 'ZigWheels')) {
+                $record->delete();
+                continue;
+            }
+
+            $source = $record->source_name ?: '';
+            $newTitleTa = self::sanitizeText($record->title_ta, $source);
+            $newTitleEn = self::sanitizeText($record->title_en, $source);
+            $newContentTa = self::sanitizeText($record->content_ta, $source);
+            $newContentEn = self::sanitizeText($record->content_en, $source);
+
+            $record->update([
+                'title_ta' => $newTitleTa,
+                'title_en' => $newTitleEn,
+                'content_ta' => $newContentTa,
+                'content_en' => $newContentEn,
+            ]);
+            $updated++;
+        }
+
+        return $updated;
     }
 
     /**
@@ -93,7 +210,6 @@ class VirudhunagarNewsService
                 return [];
             }
 
-            // Disable libxml errors display, handle internally
             libxml_use_internal_errors(true);
             $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
 
@@ -114,7 +230,7 @@ class VirudhunagarNewsService
                 $pubDateStr = (string) $item->pubDate;
                 $description = strip_tags((string) $item->description);
 
-                // Source extraction: Google News titles often end with " - SourceName"
+                // Source extraction
                 $sourceName = '';
                 if (isset($item->source)) {
                     $sourceName = (string) $item->source;
@@ -162,13 +278,13 @@ class VirudhunagarNewsService
         if (str_contains($text, 'விவசாய') || str_contains($text, 'உழவர்') || str_contains($text, 'மழை') || str_contains($text, 'பயிர்') || str_contains($text, 'farmer') || str_contains($text, 'agriculture')) {
             return 'Agriculture';
         }
-        if (str_contains($text, 'குடிநீர்') || str_contains($text, 'சாலை') || str_contains($text, 'மின்சாரம்') || str_contains($text, 'கால்வாய்') || str_contains($text, 'water') || str_contains($text, 'road')) {
+        if (str_contains($text, 'குடிநீர்') || str_contains($text, 'சாலை') || str_contains($text, 'மின்சாரம்') || str_contains($text, 'கால்வாய்') || str_contains($text, 'water') || str_contains($text, 'road') || str_contains($text, 'துறை')) {
             return 'Infrastructure';
         }
-        if (str_contains($text, 'ஆட்சியர்') || str_contains($text, 'கலெக்டர்') || str_contains($text, 'அரசு') || str_contains($text, 'திட்டம்') || str_contains($text, 'collector') || str_contains($text, 'scheme')) {
+        if (str_contains($text, 'ஆட்சியர்') || str_contains($text, 'கலெக்டர்') || str_contains($text, 'அரசு') || str_contains($text, 'திட்டம்') || str_contains($text, 'collector') || str_contains($text, 'scheme') || str_contains($text, 'மனு')) {
             return 'Civic Welfare';
         }
-        if (str_contains($text, 'பட்டாசு') || str_contains($text, 'தீப்பெட்டி') || str_contains($text, 'வணிக') || str_contains($text, 'தொழில்') || str_contains($text, 'industry') || str_contains($text, 'business')) {
+        if (str_contains($text, 'பட்டாசு') || str_contains($text, 'தீப்பெட்டி') || str_contains($text, 'வணிக') || str_contains($text, 'தொழில்') || str_contains($text, 'textile') || str_contains($text, 'industry') || str_contains($text, 'business')) {
             return 'Industry & Trade';
         }
 

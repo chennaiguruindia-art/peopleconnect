@@ -77,40 +77,69 @@
     <!-- News Grid -->
     <div class="row g-4">
         @forelse($updates as $update)
+            @php
+                $cleanHeadline = $update->title;
+                $cleanDesc = $update->content;
+                // If description is identical or almost identical to headline, provide clean excerpt
+                if (empty($cleanDesc) || trim($cleanDesc) === trim($cleanHeadline) || strlen($cleanDesc) < 15) {
+                    $cleanDesc = (app()->getLocale() === 'en')
+                        ? 'Detailed news bulletin published from Virudhunagar District. Click full story to read the complete coverage.'
+                        : 'விருதுநகர் மாவட்டத்திலிருந்து வெளியான முக்கிய செய்தி அறிக்கை. விரிவான தகவல்களை வாசிக்க கீழே உள்ள முழு செய்தி பொத்தானை அழுத்தவும்.';
+                }
+            @endphp
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100 border-0 rounded-4 shadow-sm hover-shadow d-flex flex-column bg-white overflow-hidden" style="transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                <div class="card h-100 border-0 rounded-4 shadow-sm hover-shadow d-flex flex-column bg-white overflow-hidden" style="transition: all 0.25s ease;">
                     <div class="p-1" style="background: linear-gradient(90deg, #ff7722, #0284c7);"></div>
                     <div class="card-body p-4 flex-grow-1 d-flex flex-column">
                         <!-- Top Metadata: Category & Date -->
                         <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-1">
-                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-2.5 py-1 small fw-bold">
-                                {{ $update->category }}
-                            </span>
+                            @if($update->category === 'Agriculture')
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-2.5 py-1 small fw-bold">
+                                    🌾 {{ app()->getLocale() === 'en' ? 'Agriculture' : 'விவசாயம்' }}
+                                </span>
+                            @elseif($update->category === 'Infrastructure')
+                                <span class="badge bg-info-subtle text-primary border border-info-subtle rounded-pill px-2.5 py-1 small fw-bold">
+                                    🚰 {{ app()->getLocale() === 'en' ? 'Infrastructure' : 'உட்கட்டமைப்பு' }}
+                                </span>
+                            @elseif($update->category === 'Civic Welfare')
+                                <span class="badge bg-warning-subtle text-dark border border-warning-subtle rounded-pill px-2.5 py-1 small fw-bold">
+                                    🏛️ {{ app()->getLocale() === 'en' ? 'Civic Welfare' : 'மக்கள் நலம்' }}
+                                </span>
+                            @elseif($update->category === 'Industry & Trade')
+                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill px-2.5 py-1 small fw-bold">
+                                    🏭 {{ app()->getLocale() === 'en' ? 'Trade & Industry' : 'தொழில் & வணிகம்' }}
+                                </span>
+                            @else
+                                <span class="badge bg-secondary-subtle text-secondary border rounded-pill px-2.5 py-1 small fw-bold">
+                                    📰 {{ $update->category }}
+                                </span>
+                            @endif
+
                             <span class="text-muted small d-inline-flex align-items-center gap-1" title="{{ $update->published_at->format('d M Y, h:i A') }}">
                                 <i class="bi bi-clock-history"></i>
                                 {{ $update->published_at->diffForHumans() }}
                             </span>
                         </div>
 
-                        <!-- Headline -->
-                        <h5 class="fw-bold text-dark mb-3 lh-sm" style="font-size: 1.05rem;">
-                            {{ $update->title }}
+                        <!-- Headline (Clean, no #tags or &nbsp;) -->
+                        <h5 class="fw-bold text-dark mb-3 lh-sm" style="font-size: 1.05rem; line-height: 1.45;">
+                            {{ $cleanHeadline }}
                         </h5>
 
-                        <!-- Excerpt/Content -->
-                        <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.55;">
-                            {{ Str::limit($update->content, 160) }}
+                        <!-- Clean Excerpt -->
+                        <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.6;">
+                            {{ Str::limit($cleanDesc, 160) }}
                         </p>
 
                         <!-- Source Badge & Link -->
                         <div class="pt-3 border-top mt-auto d-flex justify-content-between align-items-center">
-                            <span class="badge bg-light text-secondary border small px-2.5 py-1.5" title="News Source">
+                            <span class="badge bg-light text-secondary border small px-2.5 py-1.5" title="News Publisher">
                                 <i class="bi bi-newspaper text-danger me-1"></i>
                                 <strong>{{ $update->source_name ?: 'Daily News' }}</strong>
                             </span>
 
                             @if(!empty($update->source_url))
-                                <a href="{{ $update->source_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm rounded-pill px-3 py-1 fw-semibold d-inline-flex align-items-center gap-1" style="font-size: 0.78rem;">
+                                <a href="{{ $update->source_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm rounded-pill px-3 py-1 fw-semibold d-inline-flex align-items-center gap-1 shadow-xs" style="font-size: 0.78rem;">
                                     <span>{{ app()->getLocale() === 'en' ? 'Full Story' : 'முழு செய்தி' }}</span>
                                     <i class="bi bi-arrow-up-right small"></i>
                                 </a>
