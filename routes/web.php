@@ -120,3 +120,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/settings', [AdminSettingController::class, 'update'])->name('settings.update');
     });
 });
+
+Route::get('/run-migrations', function () {
+\Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+return '<pre>' . \Illuminate\Support\Facades\Artisan::output() . '</pre>';
+});
+
+Route::get('/run-migrations-fresh-seed', function () {
+    \Illuminate\Support\Facades\Artisan::call('migrate:fresh', [
+        '--seed' => true,
+        '--force' => true,
+    ]);
+    return '<pre>' . \Illuminate\Support\Facades\Artisan::output() . '</pre>';
+});
+
+Route::get('/run-seed', function () {
+    \Illuminate\Support\Facades\Artisan::call('db:seed', [
+        '--force' => true,
+    ]);
+    return '<pre>' . \Illuminate\Support\Facades\Artisan::output() . '</pre>';
+});
