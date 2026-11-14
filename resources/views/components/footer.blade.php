@@ -4,7 +4,7 @@
             <!-- Col 1: About Portal -->
             <div class="col-lg-4 col-md-6">
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <img src="{{ asset('assets/images/logo/logo.png') }}" alt="Logo" class="rounded-2 bg-white p-1 shadow-sm" style="height: 52px; width: auto; object-fit: contain;">
+                    <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="rounded-2 bg-white p-1 shadow-sm" style="height: 52px; width: auto; object-fit: contain;">
                     <span class="fs-5 fw-bold text-white ms-1">{{ __('messages.site_name') }}</span>
                 </div>
                 <p class="text-secondary small">

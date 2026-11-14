@@ -33,7 +33,7 @@
         <div class="d-flex align-items-center justify-content-between flex-nowrap gap-2 gap-xl-4">
             <!-- Left: Our Logo + Brand Identity -->
             <a href="{{ route('home') }}" class="brand-identity-link d-flex align-items-center gap-2 text-decoration-none text-reset flex-shrink-0">
-                <img src="{{ asset('assets/images/logo/logo.png') }}" alt="{{ __('messages.site_name') }}" class="brand-logo-img flex-shrink-0" style="height: 54px; width: auto; object-fit: contain;">
+                <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="{{ __('messages.site_name') }}" class="brand-logo-img flex-shrink-0" style="height: 54px; width: auto; object-fit: contain;">
                 <div class="brand-v-divider d-none d-sm-block"></div>
                 <div class="brand-text-block ms-1">
                     <div class="brand-title lh-1">
