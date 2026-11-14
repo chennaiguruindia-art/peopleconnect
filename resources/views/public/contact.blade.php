@@ -26,7 +26,7 @@
                 </div>
                 <h5 class="fw-bold mb-1">Helpline Desk</h5>
                 <p class="text-muted small mb-2">Available Mon - Sat (9:00 AM - 6:00 PM)</p>
-                <a href="tel:+914562252500" class="fw-bold text-primary fs-5 text-decoration-none">+91 4562 252500</a>
+                <a href="tel:+919384995222" class="fw-bold text-primary fs-5 text-decoration-none">+91 9384995222</a>
             </div>
         </div>
 

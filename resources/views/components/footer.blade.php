@@ -64,7 +64,7 @@
                     </li>
                     <li class="d-flex align-items-center gap-2">
                         <i class="bi bi-telephone-fill text-success"></i>
-                        <a href="tel:+914562252500" class="text-secondary">+91 4562 252500</a>
+                        <a href="tel:+919384995222" class="text-secondary">+91 9384995222</a>
                     </li>
                     <li class="d-flex align-items-center gap-2">
                         <i class="bi bi-envelope-fill text-warning"></i>

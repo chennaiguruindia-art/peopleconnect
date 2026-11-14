@@ -17,9 +17,9 @@
 
         <!-- Right: Helpline Pill + Language Switcher Pill -->
         <div class="d-flex align-items-center gap-2 ms-auto py-0.5 flex-shrink-0">
-            <a href="tel:+914562252500" class="top-helpline-pill text-decoration-none">
+            <a href="tel:+919384995222" class="top-helpline-pill text-decoration-none">
                 <span class="helpline-icon-circle"><i class="bi bi-telephone-fill"></i></span>
-                <span class="helpline-text">{{ app()->getLocale() === 'en' ? 'Helpline: +91 4562 252500' : 'உதவி எண்: +91 4562 252500' }}</span>
+                <span class="helpline-text">{{ app()->getLocale() === 'en' ? 'Helpline: +91 9384995222' : 'உதவி எண்: +91 9384995222' }}</span>
             </a>
             <span class="top-bar-divider d-none d-sm-inline">|</span>
             @include('components.language-switcher')

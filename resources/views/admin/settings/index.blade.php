@@ -52,7 +52,7 @@
                     <div class="row g-3 mb-3">
                         <div class="col-md-6">
                             <label class="form-label small fw-bold">Helpline Phone Number</label>
-                            <input type="text" name="contact_phone" class="form-control" value="{{ \App\Models\SystemSetting::get('contact_phone', '+91 4562 252500') }}" required>
+                            <input type="text" name="contact_phone" class="form-control" value="{{ \App\Models\SystemSetting::get('contact_phone', '+91 9384995222') }}" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label small fw-bold">Contact Email</label>

@@ -349,7 +349,7 @@ class DatabaseSeeder extends Seeder
             ['key' => 'site_name_ta', 'value' => 'விருதுநகர் மக்கள் குரல்', 'group' => 'general', 'description' => 'Portal Name in Tamil'],
             ['key' => 'tagline_en', 'value' => 'Your Voice, Your Community, Your Development.', 'group' => 'general', 'description' => 'English Tagline'],
             ['key' => 'tagline_ta', 'value' => 'மக்களின் குரல், மக்களின் கோரிக்கை.', 'group' => 'general', 'description' => 'Tamil Tagline'],
-            ['key' => 'contact_phone', 'value' => '+91 4562 252500', 'group' => 'contact', 'description' => 'Helpline Phone Number'],
+            ['key' => 'contact_phone', 'value' => '+91 9384995222', 'group' => 'contact', 'description' => 'Helpline Phone Number'],
             ['key' => 'contact_email', 'value' => 'kural@virudhunagar.org', 'group' => 'contact', 'description' => 'Portal Contact Email'],
             ['key' => 'office_address', 'value' => 'Civic Grievance Facilitation Center, Madurai Main Road, Virudhunagar - 626001', 'group' => 'contact', 'description' => 'Office Address'],
             ['key' => 'disclaimer_en', 'value' => 'குரலற்ற மகளின் குரல் is an independent civic-service grievance facilitation platform. It is not an official government agency and is dedicated to public welfare and civic coordination.', 'group' => 'legal', 'description' => 'Independent disclaimer'],
