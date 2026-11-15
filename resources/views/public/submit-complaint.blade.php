@@ -3,7 +3,7 @@
 @section('title', __('messages.form_title'))
 
 @section('content')
-<div class="container py-5">
+<div class="container py-4 py-md-5 px-3 px-sm-4">
     <div class="row justify-content-center">
         <div class="col-lg-10">
 
@@ -17,8 +17,8 @@
 
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <div>
-                    <h2 class="fw-bold text-dark mb-1">{{ __('messages.form_title') }}</h2>
-                    <p class="text-muted mb-0">{{ __('messages.form_subtitle') }}</p>
+                    <h2 class="fw-bold text-dark fs-2 fs-md-1 mb-1">{{ __('messages.form_title') }}</h2>
+                    <p class="text-muted mb-0 small">{{ __('messages.form_subtitle') }}</p>
                 </div>
                 <div class="badge bg-warning-subtle text-dark border border-warning px-3 py-2 small d-none d-md-block">
                     <i class="bi bi-shield-lock-fill text-warning me-1"></i> SSL Encrypted & Verifiable
@@ -53,7 +53,7 @@
                     <div class="small text-secondary mt-1">Please note this reference number for SMS updates and online tracking.</div>
                 </div>
 
-                <div class="d-flex justify-content-center gap-3 mt-4">
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 mt-4">
                     <a href="#" id="trackLinkBtn" class="btn btn-primary-civic btn-lg">
                         <i class="bi bi-search me-1"></i> Track Grievance Status
                     </a>
@@ -261,7 +261,7 @@
                                 </label>
                             </div>
 
-                            <div class="d-flex flex-wrap gap-3">
+                            <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3">
                                 <button type="submit" class="btn btn-primary-civic btn-lg px-4" id="btnSubmitComplaint">
                                     <i class="bi bi-send-fill me-2"></i> {{ __('messages.btn_submit_complaint') }}
                                 </button>

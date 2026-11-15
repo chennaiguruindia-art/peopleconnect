@@ -19,12 +19,12 @@
                 <p class="hero-subtitle">
                     {{ __('messages.hero_subtitle') }}
                 </p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="{{ route('complaints.create') }}" class="btn btn-primary-civic btn-lg d-inline-flex align-items-center gap-2">
+                <div class="d-flex flex-column flex-sm-row flex-wrap gap-2 gap-sm-3">
+                    <a href="{{ route('complaints.create') }}" class="btn btn-primary-civic btn-lg d-inline-flex align-items-center justify-content-center gap-2">
                         <i class="bi bi-pencil-square"></i>
                         <span>{{ __('messages.btn_submit_now') }}</span>
                     </a>
-                    <a href="{{ route('complaints.track') }}" class="btn btn-outline-civic btn-lg d-inline-flex align-items-center gap-2">
+                    <a href="{{ route('complaints.track') }}" class="btn btn-outline-civic btn-lg d-inline-flex align-items-center justify-content-center gap-2">
                         <i class="bi bi-search"></i>
                         <span>{{ __('messages.btn_track_now') }}</span>
                     </a>
@@ -204,11 +204,11 @@
         <p class="text-secondary mb-4 mx-auto" style="max-width: 650px;">
             Join hands with fellow citizens. Report water leaks, road potholes, streetlight outages, or garbage pileups directly for official coordination.
         </p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="{{ route('complaints.create') }}" class="btn btn-primary-civic btn-lg">
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3">
+            <a href="{{ route('complaints.create') }}" class="btn btn-primary-civic btn-lg d-inline-flex align-items-center justify-content-center gap-2">
                 <i class="bi bi-plus-circle me-1"></i> {{ __('messages.btn_submit_now') }}
             </a>
-            <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
+            <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg d-inline-flex align-items-center justify-content-center gap-2">
                 <i class="bi bi-telephone me-1"></i> Contact Facilitation Cell
             </a>
         </div>

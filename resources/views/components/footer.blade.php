@@ -79,11 +79,11 @@
             </div>
         </div>
 
-        <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div class="footer-bottom d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 text-center text-sm-start">
             <div>
                 © {{ date('Y') }} {{ __('messages.site_name') }}. {{ __('messages.all_rights_reserved') }}
             </div>
-            <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
                 <a href="{{ route('privacy') }}" class="text-secondary text-decoration-none">{{ __('messages.nav_privacy') }}</a>
                 <span class="text-secondary">•</span>
                 <a href="{{ route('terms') }}" class="text-secondary text-decoration-none">{{ __('messages.nav_terms') }}</a>

@@ -3,7 +3,7 @@
 @section('title', __('messages.track_title'))
 
 @section('content')
-<div class="container py-5">
+<div class="container py-4 py-md-5 px-3 px-sm-4">
     <div class="row justify-content-center">
         <div class="col-lg-9">
 
@@ -16,13 +16,13 @@
             </nav>
 
             <div class="text-center mb-4">
-                <h2 class="fw-bold text-dark mb-1">{{ __('messages.track_title') }}</h2>
-                <p class="text-muted mx-auto" style="max-width: 600px;">{{ __('messages.track_subtitle') }}</p>
+                <h2 class="fw-bold text-dark fs-2 fs-md-1 mb-1">{{ __('messages.track_title') }}</h2>
+                <p class="text-muted mx-auto small" style="max-width: 600px;">{{ __('messages.track_subtitle') }}</p>
             </div>
 
             <!-- Tracking Input Card -->
             <div class="card border-0 shadow-sm rounded-4 mb-4">
-                <div class="card-body p-4">
+                <div class="card-body p-3 p-sm-4">
                     <div id="trackAlertContainer"></div>
 
                     <form id="trackingForm">

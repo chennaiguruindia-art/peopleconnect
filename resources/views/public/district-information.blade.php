@@ -3,7 +3,7 @@
 @section('title', __('messages.nav_district_info') . ' - ' . __('messages.site_name'))
 
 @section('content')
-<div class="container py-5">
+<div class="container py-4 py-md-5 px-3 px-sm-4">
     <nav aria-label="breadcrumb" class="mb-3">
         <ol class="breadcrumb small">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('messages.nav_home') }}</a></li>
@@ -12,11 +12,11 @@
     </nav>
 
     <div class="text-center mb-4">
-        <span class="badge bg-secondary-subtle text-secondary border px-3 py-1 rounded-pill mb-2 fw-bold">
+        <span class="badge bg-secondary-subtle text-secondary border px-3 py-1.5 rounded-pill mb-2 fw-bold text-wrap">
             Administrative Directory • நிர்வாக விபரம்
         </span>
-        <h1 class="fw-bold text-dark display-6">{{ $district?->name }} ({{ $district?->name_en }}) Revenue Setup</h1>
-        <p class="text-muted fs-5 mx-auto" style="max-width: 750px;">
+        <h1 class="fw-bold text-dark fs-2 fs-md-1">{{ $district?->name }} ({{ $district?->name_en }}) Revenue Setup</h1>
+        <p class="text-muted fs-6 fs-md-5 mx-auto" style="max-width: 750px;">
             Official Revenue Administration: {{ $divisions->count() }} Revenue Divisions and {{ $divisions->sum(fn($d) => $d->taluks->count()) }} Taluks.
         </p>
     </div>
@@ -26,7 +26,7 @@
         <div class="col-md-6 col-lg-5">
             <form method="GET" action="{{ route('district.info') }}" class="d-flex align-items-center gap-2 bg-white p-2 rounded-3 shadow-sm border">
                 <label for="districtSelectNav" class="small fw-bold text-nowrap text-secondary ms-1">
-                    <i class="bi bi-geo-alt-fill text-danger me-1"></i>மாவட்டம் / District:
+                    <i class="bi bi-geo-alt-fill text-danger me-1"></i>மாவட்டம்:
                 </label>
                 <select name="district_id" id="districtSelectNav" class="form-select form-select-sm" onchange="this.form.submit()">
                     @foreach($districts as $d)
@@ -40,24 +40,24 @@
     </div>
 
     <!-- Administrative Hierarchy Tabs -->
-    <ul class="nav nav-pills justify-content-center mb-4 gap-2" id="districtTabs" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active px-4 fw-bold" id="divisions-tab" data-bs-toggle="pill" data-bs-target="#divisions-pane" type="button" role="tab">
+    <ul class="nav nav-pills justify-content-center mb-4 gap-2 flex-column flex-sm-row" id="districtTabs" role="tablist">
+        <li class="nav-item flex-fill text-center" role="presentation">
+            <button class="nav-link active px-3 py-2 fw-bold w-100" id="divisions-tab" data-bs-toggle="pill" data-bs-target="#divisions-pane" type="button" role="tab">
                 <i class="bi bi-diagram-3 me-1"></i> Revenue Divisions & Taluks (10)
             </button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link px-4 fw-bold" id="urban-tab" data-bs-toggle="pill" data-bs-target="#urban-pane" type="button" role="tab">
-                <i class="bi bi-buildings me-1"></i> Municipalities & Corporation (6)
+        <li class="nav-item flex-fill text-center" role="presentation">
+            <button class="nav-link px-3 py-2 fw-bold w-100" id="urban-tab" data-bs-toggle="pill" data-bs-target="#urban-pane" type="button" role="tab">
+                <i class="bi bi-buildings me-1"></i> Municipalities & Corp (6)
             </button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link px-4 fw-bold" id="town-tab" data-bs-toggle="pill" data-bs-target="#town-pane" type="button" role="tab">
+        <li class="nav-item flex-fill text-center" role="presentation">
+            <button class="nav-link px-3 py-2 fw-bold w-100" id="town-tab" data-bs-toggle="pill" data-bs-target="#town-pane" type="button" role="tab">
                 <i class="bi bi-shop me-1"></i> Town Panchayats (9)
             </button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link px-4 fw-bold" id="blocks-tab" data-bs-toggle="pill" data-bs-target="#blocks-pane" type="button" role="tab">
+        <li class="nav-item flex-fill text-center" role="presentation">
+            <button class="nav-link px-3 py-2 fw-bold w-100" id="blocks-tab" data-bs-toggle="pill" data-bs-target="#blocks-pane" type="button" role="tab">
                 <i class="bi bi-tree me-1"></i> Development Blocks (11)
             </button>
         </li>

@@ -3,7 +3,7 @@
 @section('title', (app()->getLocale() === 'en' ? 'Virudhunagar Live News & Updates' : 'விருதுநகர் மாவட்ட நேரடி செய்திகள்') . ' - ' . __('messages.site_name'))
 
 @section('content')
-<div class="container py-5">
+<div class="container py-4 py-md-5 px-3 px-sm-4">
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-3">
         <ol class="breadcrumb small">
@@ -13,15 +13,15 @@
     </nav>
 
     <!-- Page Header & Live Pulse -->
-    <div class="text-center mb-5">
-        <div class="d-inline-flex align-items-center gap-2 bg-danger-subtle text-danger border border-danger-subtle px-3 py-1.5 rounded-pill mb-3 fw-bold small shadow-xs">
-            <span class="spinner-grow spinner-grow-sm text-danger" role="status" style="width: 10px; height: 10px;"></span>
+    <div class="text-center mb-4 mb-md-5">
+        <div class="d-inline-flex align-items-center justify-content-center gap-2 bg-danger-subtle text-danger border border-danger-subtle px-3 py-1.5 rounded-pill mb-3 fw-bold small shadow-xs text-wrap" style="max-width: 100%;">
+            <span class="spinner-grow spinner-grow-sm text-danger flex-shrink-0" role="status" style="width: 10px; height: 10px;"></span>
             <span>{{ app()->getLocale() === 'en' ? 'LIVE VIRUDHUNAGAR NEWS FEED' : 'நேரடி செய்தி அலைவரிசை • LIVE UPDATES' }}</span>
         </div>
-        <h1 class="fw-bold text-dark display-6 mb-2">
+        <h1 class="fw-bold text-dark fs-2 fs-md-1 mb-2">
             {{ app()->getLocale() === 'en' ? 'Virudhunagar District News & Bulletins' : 'விருதுநகர் மாவட்ட செய்திகள் & அறிவிப்புகள்' }}
         </h1>
-        <p class="text-muted fs-5 mx-auto" style="max-width: 720px;">
+        <p class="text-muted fs-6 fs-md-5 mx-auto" style="max-width: 720px;">
             @if(app()->getLocale() === 'en')
                 Real-time civic alerts, agricultural updates, district administration notices, and local press reports from all across Virudhunagar District.
             @else
@@ -30,18 +30,18 @@
         </p>
 
         <!-- Search Bar & Refresh Trigger -->
-        <div class="row justify-content-center mt-4">
+        <div class="row justify-content-center mt-3 mt-md-4">
             <div class="col-md-8 col-lg-7">
                 <form action="{{ route('updates') }}" method="GET" class="d-flex gap-2 align-items-center">
                     @if(request('category'))
                         <input type="hidden" name="category" value="{{ request('category') }}">
                     @endif
-                    <div class="input-group shadow-sm rounded-pill overflow-hidden border">
+                    <div class="input-group shadow-sm rounded-pill overflow-hidden border flex-grow-1">
                         <span class="input-group-text bg-white border-0 ps-3 text-muted"><i class="bi bi-search"></i></span>
                         <input type="text" name="q" value="{{ request('q') }}" class="form-control border-0 ps-1 py-2" placeholder="{{ app()->getLocale() === 'en' ? 'Search Virudhunagar news by keywords...' : 'விருதுநகர் செய்திகளைத் தேடுக...' }}">
-                        <button class="btn btn-primary px-4 fw-semibold" type="submit">{{ app()->getLocale() === 'en' ? 'Search' : 'தேடு' }}</button>
+                        <button class="btn btn-primary px-3 px-sm-4 fw-semibold" type="submit">{{ app()->getLocale() === 'en' ? 'Search' : 'தேடு' }}</button>
                     </div>
-                    <a href="{{ route('updates', ['refresh' => 1]) }}" class="btn btn-light border shadow-sm rounded-pill text-nowrap px-3 py-2 text-dark" title="{{ app()->getLocale() === 'en' ? 'Fetch Latest News' : 'சமீபத்திய செய்திகளைப் புதுப்பி' }}">
+                    <a href="{{ route('updates', ['refresh' => 1]) }}" class="btn btn-light border shadow-sm rounded-pill text-nowrap px-3 py-2 text-dark flex-shrink-0" title="{{ app()->getLocale() === 'en' ? 'Fetch Latest News' : 'சமீபத்திய செய்திகளைப் புதுப்பி' }}">
                         <i class="bi bi-arrow-repeat text-primary me-1"></i>
                         <span class="d-none d-sm-inline">{{ app()->getLocale() === 'en' ? 'Refresh' : 'புதுப்பி' }}</span>
                     </a>
@@ -50,14 +50,14 @@
         </div>
 
         <!-- Category Filters -->
-        <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+        <div class="d-flex flex-wrap justify-content-center gap-1.5 gap-sm-2 mt-3 mt-md-4">
             <a href="{{ route('updates', array_merge(request()->except('category', 'page'), ['category' => 'all'])) }}" 
-               class="badge {{ !request('category') || request('category') === 'all' ? 'bg-primary text-white' : 'bg-light text-dark border' }} text-decoration-none px-3 py-2 rounded-pill fw-semibold">
+               class="badge {{ !request('category') || request('category') === 'all' ? 'bg-primary text-white' : 'bg-light text-dark border' }} text-decoration-none px-3 py-2 rounded-pill fw-semibold text-wrap">
                 {{ app()->getLocale() === 'en' ? 'All News' : 'அனைத்து செய்திகள்' }}
             </a>
             @foreach($categories as $cat)
                 <a href="{{ route('updates', array_merge(request()->except('category', 'page'), ['category' => $cat])) }}" 
-                   class="badge {{ request('category') === $cat ? 'bg-primary text-white' : 'bg-light text-dark border' }} text-decoration-none px-3 py-2 rounded-pill fw-semibold">
+                   class="badge {{ request('category') === $cat ? 'bg-primary text-white' : 'bg-light text-dark border' }} text-decoration-none px-3 py-2 rounded-pill fw-semibold text-wrap">
                     @if($cat === 'Agriculture')
                         🌾 {{ app()->getLocale() === 'en' ? 'Agriculture' : 'விவசாயம் & உழவர்' }}
                     @elseif($cat === 'Infrastructure')

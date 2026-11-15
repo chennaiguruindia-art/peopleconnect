@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Administrative Login - குரலற்ற மகளின் குரல்</title>
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo/logo.png') }}?v=2">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +16,7 @@
     <div class="container" style="max-width: 440px;">
         <div class="text-center mb-4">
             <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-                <img src="{{ asset('assets/images/logo/logo.png') }}" alt=" Logo" class="rounded-3 shadow-sm bg-white p-2" style="height: 64px; width: auto; object-fit: contain; max-width: 100px;">
+                <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt=" Logo" class="rounded-3 shadow-sm bg-white p-2" style="height: 64px; width: auto; object-fit: contain; max-width: 100px;">
                 <img src="{{ asset('assets/images/bjp/image.png') }}" alt="BJP Logo" class="rounded-3 shadow-sm bg-white p-2" style="height: 64px; width: 64px; object-fit: contain;">
             </div>
             <h4 class="fw-bold text-dark mb-0">குரலற்ற மகளின் குரல்</h4>

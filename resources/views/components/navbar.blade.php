@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-civic sticky-top">
     <div class="container-fluid px-2 px-md-3 px-xl-4">
         <a class="navbar-brand d-lg-none d-flex align-items-center gap-2 py-0 text-white" href="{{ route('home') }}">
-            <img src="{{ asset('assets/images/logo/logo.png') }}" alt="Logo" style="height: 32px; width: auto; object-fit: contain;">
+            <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" style="height: 32px; width: auto; object-fit: contain;">
             <span class="fw-bold fs-6 text-white">{{ __('messages.site_name') }}</span>
         </a>
 

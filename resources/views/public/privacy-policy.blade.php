@@ -3,7 +3,7 @@
 @section('title', __('messages.nav_privacy') . ' - ' . __('messages.site_name'))
 
 @section('content')
-<div class="container py-5">
+<div class="container py-4 py-md-5 px-3 px-sm-4">
     <div class="row justify-content-center">
         <div class="col-lg-9">
             <nav aria-label="breadcrumb" class="mb-3">
@@ -13,8 +13,8 @@
                 </ol>
             </nav>
 
-            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
-                <h1 class="fw-bold text-dark mb-4">Privacy Policy & Citizen Data Protection</h1>
+            <div class="card border-0 shadow-sm rounded-4 p-3 p-sm-4 p-md-5 bg-white">
+                <h1 class="fw-bold text-dark fs-2 fs-md-1 mb-4">Privacy Policy & Citizen Data Protection</h1>
                 <p class="text-muted">Effective Date: November 2026</p>
 
                 <div class="border-bottom pb-3 mb-4">
