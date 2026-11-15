@@ -4,10 +4,8 @@
     $switchRoute = $isAdmin ? 'admin.locale.set' : 'locale.set';
 @endphp
 
-@if(!$isAdmin)
-    <!-- Google Translate Official Widget kept intact in background but hidden per user request -->
-    <div id="google_translate_element" class="d-none" style="display: none !important;" aria-hidden="true"></div>
-@endif
+<!-- Google Translate Official Element (Active across both Public & Admin for 100% automatic page translation) -->
+<div id="google_translate_element" class="d-none" style="display: none !important;" aria-hidden="true"></div>
 
 <div class="dropdown language-switcher d-inline-block">
     <button class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1.5 py-1 px-2.5" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="{{ $isAdmin ? 'Admin Language' : 'Site Language (Powered by Gemini AI Translator)' }}">
@@ -47,17 +45,18 @@
 <script>
 function handleLanguageSwitch(event, lang, fallbackUrl) {
     try {
-        var cookieVal = (lang === 'en') ? '/ta/en' : '/ta/ta';
         var host = window.location.hostname;
+        var cookies = (lang === 'en') ? ['/auto/en', '/ta/en', '/en/en'] : ['/auto/ta', '/en/ta', '/ta/ta'];
         
-        // Set cookie for Google Translate
-        document.cookie = "googtrans=" + cookieVal + "; path=/;";
-        document.cookie = "googtrans=" + cookieVal + "; path=/; domain=" + host + ";";
-        if (host && host.indexOf('.') !== -1) {
-            document.cookie = "googtrans=" + cookieVal + "; path=/; domain=." + host + ";";
-        }
+        cookies.forEach(function(val) {
+            document.cookie = "googtrans=" + val + "; path=/;";
+            document.cookie = "googtrans=" + val + "; path=/; domain=" + host + ";";
+            if (host && host.indexOf('.') !== -1) {
+                document.cookie = "googtrans=" + val + "; path=/; domain=." + host + ";";
+            }
+        });
 
-        // If Google Translate combo exists, dispatch change
+        // If Google Translate dropdown exists, trigger change immediately
         var combo = document.querySelector('.goog-te-combo');
         if (combo) {
             combo.value = lang;
@@ -69,4 +68,19 @@ function handleLanguageSwitch(event, lang, fallbackUrl) {
     // Continue navigation to set Laravel session
     return true;
 }
+
+// Ensure automatic translation is active on page load
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        var currentLocale = '{{ $currentLocale }}';
+        var host = window.location.hostname;
+        var targetVal = (currentLocale === 'en') ? '/auto/en' : '/auto/ta';
+        
+        document.cookie = "googtrans=" + targetVal + "; path=/;";
+        document.cookie = "googtrans=" + targetVal + "; path=/; domain=" + host + ";";
+        if (host && host.indexOf('.') !== -1) {
+            document.cookie = "googtrans=" + targetVal + "; path=/; domain=." + host + ";";
+        }
+    } catch(e) {}
+});
 </script>
