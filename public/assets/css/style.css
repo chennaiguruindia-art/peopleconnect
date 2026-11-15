@@ -280,30 +280,45 @@ body {
    Main Civic Navigation Bar (BJP Green & Saffron Theme)
    ========================================================================== */
 .navbar-civic {
-  background: #15803d;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  padding: 1px 0;
+  background: linear-gradient(135deg, #0d542d 0%, #15803d 50%, #166534 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding: 3px 0;
   border-top: 3px solid #ff9933;
-  border-bottom: 2px solid #166534;
+  border-bottom: 2px solid #0f4021;
+}
+
+.mobile-nav-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1.05rem;
 }
 
 .navbar-civic .nav-link {
   font-size: 0.88rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.94);
-  padding: 9px 12px !important;
-  margin: 2px 1px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 8px 14px !important;
+  margin: 2px 2px;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   white-space: nowrap;
 }
 
-.navbar-civic .nav-link i {
-  font-size: 0.95rem;
-  opacity: 0.9;
+.nav-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.92rem;
+  color: #ff9933;
 }
 
 .navbar-civic .nav-link:hover {
@@ -313,14 +328,47 @@ body {
 }
 
 .navbar-civic .nav-link.active {
-  color: #ffffff;
-  background: #ea580c;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ff7722, #ea580c) !important;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.4);
+  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.45);
 }
 
-.navbar-civic .nav-link.active i {
-  opacity: 1;
+.navbar-civic .nav-link.active .nav-icon-wrapper {
+  color: #ffffff;
+}
+
+/* Mobile Drawer specific styling */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: #0f4728;
+    border-radius: 14px;
+    padding: 12px;
+    margin-top: 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .navbar-civic .nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 11px 14px !important;
+    border-radius: 10px;
+    margin: 3px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .navbar-civic .nav-link:hover,
+  .navbar-civic .nav-link:focus {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .navbar-civic .nav-link.active {
+    background: linear-gradient(135deg, #ff7722, #ea580c) !important;
+    border-color: #f97316 !important;
+  }
 }
 
 .btn-admin-nav {
@@ -977,28 +1025,42 @@ img {
   /* Brand Header Mobile Optimization */
   .brand-header {
     padding: 6px 0;
+    overflow: visible !important;
+  }
+
+  .brand-identity-link {
+    max-width: calc(100% - 62px);
   }
 
   .brand-logo-img {
-    height: 44px !important;
+    height: 42px !important;
   }
 
   .brand-title {
-    font-size: 1.1rem !important;
+    font-size: 1.02rem !important;
     line-height: 1.15 !important;
   }
 
   .brand-sub-caps {
-    font-size: 0.7rem !important;
+    font-size: 0.68rem !important;
   }
 
   .brand-tagline-motto {
     display: none !important;
   }
 
-  /* Modi Header on Small Phones: Show portrait image, hide wide card box to prevent overflow */
+  /* Modi Header on Small Phones: Show portrait image prominently on right */
+  .modi-header-unit {
+    display: flex !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+
   .modi-portrait-img {
+    height: 52px !important;
     max-height: 52px !important;
+    width: auto !important;
+    display: block !important;
   }
 
   .modi-card-box {

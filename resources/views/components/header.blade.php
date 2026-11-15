@@ -28,33 +28,33 @@
 </div>
 
 <!-- Main Branding Header: Single Row, Modi Fixed on Far Right -->
-<header class="brand-header position-relative overflow-hidden py-2">
+<header class="brand-header position-relative py-2">
     <div class="container-fluid px-2 px-md-3 px-xl-4">
-        <div class="d-flex align-items-center justify-content-between flex-nowrap gap-2 gap-xl-4">
+        <div class="d-flex align-items-center justify-content-between gap-1 gap-md-3">
             <!-- Left: Our Logo + Brand Identity -->
-            <a href="{{ route('home') }}" class="brand-identity-link d-flex align-items-center gap-2 text-decoration-none text-reset flex-shrink-0">
-                <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="{{ __('messages.site_name') }}" class="brand-logo-img flex-shrink-0" style="height: 54px; width: auto; object-fit: contain;">
+            <a href="{{ route('home') }}" class="brand-identity-link d-flex align-items-center gap-1.5 gap-sm-2 text-decoration-none text-reset min-w-0 flex-shrink-1">
+                <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="{{ __('messages.site_name') }}" class="brand-logo-img flex-shrink-0" style="height: 48px; width: auto; object-fit: contain;">
                 <div class="brand-v-divider d-none d-sm-block"></div>
-                <div class="brand-text-block ms-1">
-                    <div class="brand-title lh-1">
+                <div class="brand-text-block ms-1 overflow-hidden">
+                    <div class="brand-title lh-sm text-truncate">
                         @if(app()->getLocale() === 'en')
                             <span class="brand-title-navy">Tamil Nadu</span> <span class="brand-title-orange">Makkal Kural</span>
                         @else
                             <span class="brand-title-navy">தமிழ்நாடு</span> <span class="brand-title-orange">மக்கள் குரல்</span>
                         @endif
                     </div>
-                    <div class="brand-sub-caps mt-1">
+                    <div class="brand-sub-caps mt-0.5 text-truncate" style="font-size: 0.72rem;">
                         @if(app()->getLocale() === 'en')
                             — Voice of the People —
                         @else
-                            — குரலற்ற மகளின் குரல்  —
+                            — குரலற்ற மகளின் குரல் —
                         @endif
                     </div>
-                    <div class="brand-tagline-motto mt-1 d-flex align-items-center gap-2 flex-wrap">
+                    <div class="brand-tagline-motto mt-1 d-none d-md-flex align-items-center gap-2 flex-wrap">
                         <span class="badge bg-warning-subtle text-dark border border-warning py-0 px-1.5 rounded-pill fw-bold" style="font-size: 0.68rem;">
                             {{ app()->getLocale() === 'en' ? 'BJP Citizen Service Center' : 'பாஜக மக்கள் சேவை மையம்' }}
                         </span>
-                        <span class="text-secondary small d-none d-md-inline" style="font-size: 0.74rem;">
+                        <span class="text-secondary small d-none d-lg-inline" style="font-size: 0.74rem;">
                             <i class="bi bi-check-circle-fill text-success me-1"></i>{{ __('messages.tagline') }}
                         </span>
                     </div>
@@ -84,25 +84,28 @@
                 @endif
             </div>
 
-            <!-- Right: Hon'ble PM Narendra Modi (Always pinned to the right side) -->
-            <div class="modi-header-unit d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
-                <img src="{{ asset('assets/images/bjp/modi.png') }}" alt="PM Narendra Modi" class="modi-portrait-img" style="height: 68px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.15));">
-                <div class="modi-card-box bg-white rounded-3 px-2.5 py-1 shadow-xs border border-warning-subtle text-center">
+            <!-- Right: Hon'ble PM Narendra Modi (Always visible and anchored on right on Mobile & Desktop) -->
+            <div class="modi-header-unit d-flex align-items-center gap-1.5 gap-sm-2 flex-shrink-0 ms-auto">
+                <img src="{{ asset('assets/images/bjp/modi.png') }}" alt="PM Narendra Modi" class="modi-portrait-img" style="height: 58px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.15));">
+                <div class="modi-card-box bg-white rounded-3 px-2 py-1 shadow-xs border border-warning-subtle text-center d-none d-sm-block">
                     @if(app()->getLocale() === 'en')
-                        <div class="fw-bold text-dark lh-sm" style="font-size: 0.92rem; white-space: nowrap;">Narendra Modi</div>
+                        <div class="fw-bold text-dark lh-sm" style="font-size: 0.88rem; white-space: nowrap;">Narendra Modi</div>
                         <div class="badge-modi-pill my-0.5">
-                            Prime Minister of India
+                            Prime Minister
                         </div>
-                        <small class="text-muted d-block" style="font-size: 0.68rem; white-space: nowrap;">Hon'ble Prime Minister</small>
+                        <small class="text-muted d-block" style="font-size: 0.65rem; white-space: nowrap;">Hon'ble PM</small>
                     @else
-                        <div class="fw-bold text-dark lh-sm" style="font-size: 0.92rem; white-space: nowrap;">நரேந்திர மோடி</div>
+                        <div class="fw-bold text-dark lh-sm" style="font-size: 0.88rem; white-space: nowrap;">நரேந்திர மோடி</div>
                         <div class="badge-modi-pill my-0.5">
                             பாரதப் பிரதமர்
                         </div>
-                        <small class="text-muted d-block" style="font-size: 0.68rem; white-space: nowrap;">மாண்புமிகு பாரதப் பிரதமர்</small>
+                        <small class="text-muted d-block" style="font-size: 0.65rem; white-space: nowrap;">மாண்புமிகு பிரதமர்</small>
                     @endif
                 </div>
             </div>
+        </div>
+    </div>
+</header>
         </div>
     </div>
 </header>
