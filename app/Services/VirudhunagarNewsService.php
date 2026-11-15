@@ -76,8 +76,12 @@ class VirudhunagarNewsService
     {
         $cacheKey = 'virudhunagar_news_last_sync_time';
 
-        if (!$force && Cache::has($cacheKey) && PublicUpdate::count() > 0) {
-            return 0; // Already synced recently
+        try {
+            if (!$force && Cache::has($cacheKey) && PublicUpdate::count() > 0) {
+                return 0; // Already synced recently
+            }
+        } catch (\Throwable $e) {
+            Log::warning('News sync cache check failed: ' . $e->getMessage());
         }
 
         $items = $this->fetchFromRss($this->tamilFeedUrl, 'ta', $limit);
@@ -148,7 +152,11 @@ class VirudhunagarNewsService
         $this->cleanExistingDatabaseRecords();
 
         // Cache sync time for 30 minutes
-        Cache::put($cacheKey, now()->toDateTimeString(), 1800);
+        try {
+            Cache::put($cacheKey, now()->toDateTimeString(), 1800);
+        } catch (\Throwable $e) {
+            Log::warning('News sync cache put failed: ' . $e->getMessage());
+        }
 
         return $savedCount;
     }

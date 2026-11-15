@@ -23,6 +23,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Auto-create cache/data directory if missing on Windows IIS/Plesk
+        try {
+            $dataDir = storage_path('framework/cache/data');
+            if (!is_dir($dataDir)) {
+                @mkdir($dataDir, 0777, true);
+            }
+        } catch (\Throwable $e) {
+            // Ignore
+        }
+
         Blade::directive('aitrans', function ($expression) {
             return "<?php echo app(\\App\\Services\\GeminiTranslationService::class)->translate({$expression}, app()->getLocale()); ?>";
         });

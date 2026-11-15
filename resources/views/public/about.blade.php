@@ -3,7 +3,7 @@
 @section('title', __('messages.nav_about') . ' - ' . __('messages.site_name'))
 
 @section('content')
-<div class="container py-5">
+<div class="container py-4 py-md-5 px-3 px-sm-4">
     <div class="row justify-content-center">
         <div class="col-lg-10">
 
@@ -16,13 +16,13 @@
             </nav>
 
             <!-- Page Header: Tamil Nadu Scope with Deep Virudhunagar Focus -->
-            <div class="text-center mb-5">
-                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5 rounded-pill mb-3 fw-bold shadow-xs">
+            <div class="text-center mb-4 mb-md-5">
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5 rounded-pill mb-3 fw-bold shadow-xs text-wrap text-center" style="max-width: 100%; line-height: 1.5; font-size: 0.85rem;">
                     <i class="bi bi-geo-alt-fill text-danger me-1"></i>
                     {{ app()->getLocale() === 'en' ? 'Statewide Vision — Virudhunagar District Grassroots Hub' : 'தமிழ்நாடு அளவிலான தொலைநோக்கு — விருதுநகர் மாவட்டத்திற்கான சிறப்பு களப்பணி' }}
                 </span>
-                <h1 class="fw-bold text-dark display-5 mb-3">{{ __('messages.site_name') }}</h1>
-                <p class="text-muted fs-5 mx-auto leading-relaxed" style="max-width: 820px;">
+                <h1 class="fw-bold text-dark fs-2 fs-md-1 mb-3">{{ __('messages.site_name') }}</h1>
+                <p class="text-muted fs-6 fs-md-5 mx-auto leading-relaxed" style="max-width: 820px;">
                     @if(app()->getLocale() === 'en')
                         <strong>Tamil Nadu Makkal Kural</strong> is a dedicated civic facilitation and public grievance redressal initiative empowering the citizens of Tamil Nadu, with a pioneering, intensive grassroots focus on the agrarian families, hardworking labourers, and rural communities across all 10 Taluks of <strong>Virudhunagar District</strong>.
                     @else
@@ -32,13 +32,13 @@
 
                 <!-- District Highlights Quick Counter Badge Row -->
                 <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill small">
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill small text-wrap text-center" style="max-width: 100%; line-height: 1.4;">
                         <i class="bi bi-compass-fill text-primary me-1"></i> {{ app()->getLocale() === 'en' ? 'Tamil Nadu 38 Districts Outreach' : 'தமிழ்நாட்டின் 38 மாவட்டங்களுக்கான குரல்' }}
                     </span>
-                    <span class="badge bg-warning-subtle text-dark border border-warning px-3 py-2 rounded-pill small fw-semibold">
+                    <span class="badge bg-warning-subtle text-dark border border-warning px-3 py-2 rounded-pill small fw-semibold text-wrap text-center" style="max-width: 100%; line-height: 1.4;">
                         <i class="bi bi-pin-map-fill text-danger me-1"></i> {{ app()->getLocale() === 'en' ? 'Virudhunagar: 3 Divisions | 10 Taluks | 600 Villages' : 'விருதுநகர்: 3 கோட்டங்கள் | 10 தாலுகாக்கள் | 600 கிராமங்கள்' }}
                     </span>
-                    <span class="badge bg-success-subtle text-success border border-success px-3 py-2 rounded-pill small fw-semibold">
+                    <span class="badge bg-success-subtle text-success border border-success px-3 py-2 rounded-pill small fw-semibold text-wrap text-center" style="max-width: 100%; line-height: 1.4;">
                         <i class="bi bi-shield-check me-1"></i> {{ app()->getLocale() === 'en' ? 'Zero Middlemen • 100% Direct Action' : 'இடைத்தரகர்கள் இல்லாத நேரடி தீர்வு' }}
                     </span>
                 </div>
@@ -47,22 +47,22 @@
             <!-- =========================================================================
                  THE VISIONARY & BRAIN BEHIND THE PROJECT: THIRU. RAJESH GURUSAMY
                  ========================================================================= -->
-            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 bg-white">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4 mb-md-5 bg-white">
                 <div class="p-1" style="background: linear-gradient(90deg, #ff7722, #ffffff, #138808);"></div>
-                <div class="card-body p-4 p-md-5">
+                <div class="card-body p-3 p-sm-4 p-md-5">
                     <div class="row g-4 align-items-center">
                         <div class="col-md-4 text-center">
-                            <div class="position-relative d-inline-block">
+                            <div class="position-relative d-inline-block mx-auto" style="max-width: 280px; width: 100%;">
                                 <img src="{{ asset('assets/images/rajesh/rajesh.png') }}" 
                                      alt="Rajesh Gurusamy - State Vice President, Kisan Morcha, BJP Tamil Nadu" 
-                                     class="img-fluid rounded-4 shadow-sm border border-3 border-white"
+                                     class="img-fluid rounded-4 shadow-sm border border-3 border-white mx-auto d-block"
                                      style="max-height: 290px; width: 100%; object-fit: cover; object-position: top center;">
-                                <span class="badge bg-warning text-dark position-absolute bottom-0 start-50 translate-middle-x mb-2 shadow-sm px-3 py-1.5 fw-bold rounded-pill text-nowrap" style="font-size: 0.76rem;">
+                                <span class="badge bg-warning text-dark position-absolute bottom-0 start-50 translate-middle-x mb-2 shadow-sm px-3 py-1.5 fw-bold rounded-pill text-nowrap" style="font-size: 0.74rem;">
                                     <i class="bi bi-star-fill text-danger me-1"></i> {{ app()->getLocale() === 'en' ? '25 Years Public Service' : '25 ஆண்டுகால மக்கள் பணி' }}
                                 </span>
                             </div>
                             <div class="mt-3">
-                                <span class="badge bg-light text-secondary border px-2.5 py-1 small">
+                                <span class="badge bg-light text-secondary border px-2.5 py-1 small text-wrap">
                                     <i class="bi bi-geo-alt-fill text-danger me-1"></i> Watrap & Virudhunagar Roots
                                 </span>
                             </div>
@@ -70,10 +70,10 @@
 
                         <div class="col-md-8">
                             <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2.5 py-1 fw-bold" style="font-size: 0.75rem;">
+                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2.5 py-1 fw-bold text-wrap" style="font-size: 0.75rem;">
                                     {{ app()->getLocale() === 'en' ? 'Project Visionary & Guide' : 'திட்டத்தின் வழிகாட்டி & தொலைநோக்காளர்' }}
                                 </span>
-                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1 fw-bold" style="font-size: 0.75rem;">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1 fw-bold text-wrap" style="font-size: 0.75rem;">
                                     {{ app()->getLocale() === 'en' ? 'State Leadership — Kisan Morcha' : 'மாநில தலைமை — விவசாய அணி' }}
                                 </span>
                             </div>
@@ -106,15 +106,15 @@
                                 </p>
                             @endif
 
-                            <div class="d-flex flex-wrap gap-2">
-                                <a href="https://www.rajeshgurusamy.com/public-life.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm px-3 py-2 fw-semibold d-inline-flex align-items-center gap-1 shadow-sm">
-                                    <i class="bi bi-globe2"></i>
+                            <div class="d-flex flex-column flex-sm-row flex-wrap gap-2 mt-3">
+                                <a href="https://www.rajeshgurusamy.com/public-life.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm px-3 py-2 fw-semibold d-inline-flex align-items-center justify-content-center gap-1 shadow-sm text-wrap text-center">
+                                    <i class="bi bi-globe2 flex-shrink-0"></i>
                                     <span>{{ app()->getLocale() === 'en' ? 'Official Public Portfolio (rajeshgurusamy.com)' : 'அதிகாரப்பூர்வ பொதுவாழ்க்கை விபரங்கள் (rajeshgurusamy.com)' }}</span>
-                                    <i class="bi bi-box-arrow-up-right small ms-1"></i>
+                                    <i class="bi bi-box-arrow-up-right small ms-1 flex-shrink-0"></i>
                                 </a>
-                                <a href="tel:+918148145222" class="btn btn-light border btn-sm px-3 py-2 text-dark d-inline-flex align-items-center gap-1">
-                                    <i class="bi bi-telephone-fill text-success"></i>
-                                    <span>{{ app()->getLocale() === 'en' ? 'Public Office Helpline: +91 81481 45222' : 'மக்கள் உதவி எண்: +91 81481 45222' }}</span>
+                                <a href="tel:+919384995222" class="btn btn-light border btn-sm px-3 py-2 text-dark d-inline-flex align-items-center justify-content-center gap-1 text-wrap text-center">
+                                    <i class="bi bi-telephone-fill text-success flex-shrink-0"></i>
+                                    <span>{{ app()->getLocale() === 'en' ? 'Public Office Helpline: +91 9384995222' : 'மக்கள் உதவி எண்: +91 9384995222' }}</span>
                                 </a>
                             </div>
                         </div>
@@ -125,11 +125,11 @@
             <!-- =========================================================================
                  SPECIAL FOCUS: WHY VIRUDHUNAGAR DISTRICT IS THE PRIMARY OPERATIONAL HUB
                  ========================================================================= -->
-            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white" style="border-left: 5px solid #ff7722 !important;">
+            <div class="card border-0 shadow-sm rounded-4 p-3 p-sm-4 p-md-5 mb-4 mb-md-5 bg-white" style="border-left: 5px solid #ff7722 !important;">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-7">
-                        <div class="d-flex align-items-center gap-2 mb-2">
-                            <span class="badge bg-warning text-dark px-2.5 py-1 fw-bold small">
+                        <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                            <span class="badge bg-warning text-dark px-2.5 py-1 fw-bold small text-wrap">
                                 <i class="bi bi-bullseye me-1"></i> {{ app()->getLocale() === 'en' ? 'Special Ground Focus' : 'சிறப்பு களப்பணி மையம்' }}
                             </span>
                             <span class="text-muted small fw-semibold">
@@ -138,7 +138,7 @@
                         </div>
 
                         @if(app()->getLocale() === 'en')
-                            <h3 class="fw-bold text-dark mb-3">Dedicated to the Pride and Welfare of Virudhunagar District</h3>
+                            <h3 class="fw-bold text-dark fs-4 fs-md-3 mb-3">Dedicated to the Pride and Welfare of Virudhunagar District</h3>
                             <p class="text-secondary leading-relaxed mb-3">
                                 Virudhunagar District—the revered birthplace of <em>Karma Veerar Perunthalaivar Kamarajar</em>—is renowned for its entrepreneurial energy, commercial trade, match works, fireworks clusters, printing presses, cotton handlooms, and resilient farmers. Yet, across rural taluks like Watrap, Rajapalayam, Sattur, and Aruppukkottai, thousands of families face chronic drinking water shortages, unpaved agricultural link roads, irrigation channel blocks, and delayed civic amenities.
                             </p>
@@ -146,7 +146,7 @@
                                 <strong>Tamil Nadu Makkal Kural</strong> directly bridges this gap. With complete geographic mapping across all <strong>3 Revenue Divisions</strong> (Aruppukkottai, Sivakasi, Sattur), <strong>10 Taluks</strong>, 39 Firkas, and <strong>600 Revenue Villages</strong>, every village petition is logged with authentic GPS proof and tracked till actual on-ground resolution.
                             </p>
                         @else
-                            <h3 class="fw-bold text-dark mb-3">விருதுநகர் மாவட்ட மக்களின் உரிமையும், உடனடி களத் தீர்வுகளும்</h3>
+                            <h3 class="fw-bold text-dark fs-4 fs-md-3 mb-3">விருதுநகர் மாவட்ட மக்களின் உரிமையும், உடனடி களத் தீர்வுகளும்</h3>
                             <p class="text-secondary leading-relaxed mb-3">
                                 கர்மவீரர் பெருந்தலைவர் காமராஜர் அவதரித்த புண்ணிய பூமி விருதுநகர் மாவட்டம்! கடுமையான உழைப்பிற்கும், வணிகத் திறனுக்கும், பட்டாசு-தீப்பெட்டி-அச்சுத் தொழில்களுக்கும், பருத்தி மற்றும் உழவுத் தொழிலுக்கும் உலகளவில் பெயர்பெற்ற இம்மாவட்டத்தில், இன்றும் பல கிராமங்களில் குடிநீர் பற்றாக்குறை, சேதமடைந்த ஊரகச் சாலைகள், பாசனக் கால்வாய் தூர்வாரப்படாமை மற்றும் அடிப்படை உட்கட்டமைப்புத் தேவைகள் தீர்க்கப்படாமல் உள்ளன.
                             </p>
@@ -157,29 +157,29 @@
                     </div>
 
                     <div class="col-lg-5">
-                        <div class="p-3.5 rounded-4 bg-light border">
+                        <div class="p-3 p-sm-3.5 rounded-4 bg-light border mt-2 mt-lg-0">
                             <h6 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
                                 <i class="bi bi-building-check text-primary"></i>
                                 {{ app()->getLocale() === 'en' ? 'Virudhunagar Administrative Coverage' : 'விருதுநகர் நிர்வாக வரைபடம்' }}
                             </h6>
                             <ul class="list-unstyled mb-0 small text-secondary">
-                                <li class="py-1.5 border-bottom d-flex justify-content-between align-items-center">
+                                <li class="py-2 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
                                     <span><i class="bi bi-geo-alt text-danger me-1"></i> {{ app()->getLocale() === 'en' ? 'Revenue Divisions (3)' : 'வருவாய் கோட்டங்கள் (3)' }}</span>
                                     <strong class="text-dark">Aruppukkottai, Sivakasi, Sattur</strong>
                                 </li>
-                                <li class="py-1.5 border-bottom d-flex justify-content-between align-items-center">
+                                <li class="py-2 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
                                     <span><i class="bi bi-diagram-3 text-primary me-1"></i> {{ app()->getLocale() === 'en' ? 'Taluks Covered (10)' : 'தாலுகாக்கள் (10)' }}</span>
                                     <strong class="text-dark">10 Taluks</strong>
                                 </li>
-                                <li class="py-1.5 border-bottom d-flex justify-content-between align-items-center">
+                                <li class="py-2 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
                                     <span><i class="bi bi-houses-fill text-success me-1"></i> {{ app()->getLocale() === 'en' ? 'Revenue Villages' : 'வருவாய் கிராமங்கள்' }}</span>
                                     <strong class="text-dark">600 Villages</strong>
                                 </li>
-                                <li class="py-1.5 border-bottom d-flex justify-content-between align-items-center">
+                                <li class="py-2 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
                                     <span><i class="bi bi-people-fill text-warning me-1"></i> {{ app()->getLocale() === 'en' ? 'Firkas Covered' : 'உள்வட்டங்கள் (Firkas)' }}</span>
                                     <strong class="text-dark">39 Firkas</strong>
                                 </li>
-                                <li class="pt-1.5 d-flex justify-content-between align-items-center">
+                                <li class="pt-2 d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
                                     <span><i class="bi bi-globe-central-south text-info me-1"></i> {{ app()->getLocale() === 'en' ? 'Tamil Nadu Coverage' : 'தமிழ்நாடு முழுமைக்குமான கட்டமைப்பு' }}</span>
                                     <strong class="text-success fw-bold">38 Districts</strong>
                                 </li>
@@ -192,12 +192,12 @@
             <!-- =========================================================================
                  25 YEARS UNBROKEN PUBLIC SERVICE & LEADERSHIP TIMELINE
                  ========================================================================= -->
-            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white">
+            <div class="card border-0 shadow-sm rounded-4 p-3 p-sm-4 p-md-5 mb-4 mb-md-5 bg-white">
                 <div class="text-center mb-4">
-                    <span class="badge bg-warning-subtle text-dark border border-warning-subtle px-3 py-1 rounded-pill fw-bold mb-2">
+                    <span class="badge bg-warning-subtle text-dark border border-warning-subtle px-3 py-1 rounded-pill fw-bold mb-2 text-wrap">
                         {{ app()->getLocale() === 'en' ? 'Track Record: 2001 to Present' : '2001 முதல் இன்று வரை' }}
                     </span>
-                    <h3 class="fw-bold text-dark">
+                    <h3 class="fw-bold text-dark fs-4 fs-md-3">
                         {{ app()->getLocale() === 'en' ? '25 Years of Unbroken Organizational Service' : '25 ஆண்டுகால மக்கள் சேவை & கட்சிப் பொறுப்புகள்' }}
                     </h3>
                     <p class="text-muted small mx-auto" style="max-width: 650px;">
@@ -210,7 +210,7 @@
                         <!-- 2025 - Present -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #e65100 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
                                     <span class="badge bg-danger text-white fw-bold" style="font-size: 0.72rem;">2025 — PRESENT</span>
                                     <small class="text-primary fw-semibold">Current Responsibility</small>
                                 </div>
@@ -224,7 +224,7 @@
                         <!-- 2022 - 2025 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #1b5e20 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2022 — 2025</span>
                                     <small class="text-muted">State Executive</small>
                                 </div>
@@ -238,7 +238,7 @@
                         <!-- 2020 - 2025 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0284c7 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2020 — 2025</span>
                                     <small class="text-muted">Central Schemes Leadership</small>
                                 </div>
@@ -252,7 +252,7 @@
                         <!-- 2020 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #eab308 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2020</span>
                                     <small class="text-muted">Pandemic Economic Relief</small>
                                 </div>
@@ -266,7 +266,7 @@
                         <!-- 2014 - 2017 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #6366f1 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2014 — 2017</span>
                                     <small class="text-muted">State Commerce Cell</small>
                                 </div>
@@ -280,7 +280,7 @@
                         <!-- 2012 - 2016 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ec4899 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2012 — 2016</span>
                                     <small class="text-muted">IT & Call Centre</small>
                                 </div>
@@ -294,7 +294,7 @@
                         <!-- 2003 - 2008 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0d9488 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
                                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2003 — 2008</span>
                                     <small class="text-muted">District Leadership</small>
                                 </div>
@@ -308,7 +308,7 @@
                         <!-- 2001 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ea580c !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
                                     <span class="badge bg-dark text-white" style="font-size: 0.72rem;">2001 — Grassroots Beginning</span>
                                     <small class="text-muted">Virudhunagar District</small>
                                 </div>
@@ -323,8 +323,8 @@
                         <!-- 2025 - Present -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #e65100 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-danger text-white fw-bold" style="font-size: 0.72rem;">2025 — இன்று வரை</span>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
+                                    <span class="badge bg-danger text-white fw-bold text-wrap" style="font-size: 0.72rem;">2025 — இன்று வரை</span>
                                     <small class="text-primary fw-semibold">தற்போதைய பொறுப்பு</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">மாநில துணைத் தலைவர் — விவசாய அணி (Kisan Morcha)</h5>
@@ -337,8 +337,8 @@
                         <!-- 2022 - 2025 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #1b5e20 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2022 — 2025</span>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
+                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2022 — 2025</span>
                                     <small class="text-muted">மாநிலச் செயற்குழு</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலச் செயலாளர் — விவசாய அணி, பாஜக தமிழ்நாடு</h5>
@@ -351,8 +351,8 @@
                         <!-- 2020 - 2025 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0284c7 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2020 — 2025</span>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
+                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2020 — 2025</span>
                                     <small class="text-muted">மத்திய திட்டங்கள்</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலப் பொறுப்பாளர் (மத்திய திட்டங்கள்) & மண்டல இணைப் பொறுப்பாளர்</h5>
@@ -365,8 +365,8 @@
                         <!-- 2020 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #eab308 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2020</span>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
+                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2020</span>
                                     <small class="text-muted">கொரோனா கால சேவை</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">சிறு, குறு வணிகர்கள் மற்றும் MSME கடன் வழிகாட்டுதல்</h5>
@@ -379,8 +379,8 @@
                         <!-- 2014 - 2017 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #6366f1 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2014 — 2017</span>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
+                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2014 — 2017</span>
                                     <small class="text-muted">வணிகர் அணி</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலச் செயலாளர் — வணிகர் அணி, பாஜக தமிழ்நாடு</h5>
@@ -393,8 +393,8 @@
                         <!-- 2012 - 2016 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ec4899 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2012 — 2016</span>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
+                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2012 — 2016</span>
                                     <small class="text-muted">தகவல் தொழில்நுட்பம்</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">மாநில தகவல் தொழில்நுட்பப் பிரிவு & அழைப்பு மையத் தலைமை</h5>
@@ -407,8 +407,8 @@
                         <!-- 2003 - 2008 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0d9488 !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2003 — 2008</span>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
+                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2003 — 2008</span>
                                     <small class="text-muted">விருதுநகர் மாவட்ட நிர்வாகம்</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">விருதுநகர் மாவட்ட செயற்குழு உறுப்பினர் & இளைஞரணி</h5>
@@ -421,8 +421,8 @@
                         <!-- 2001 -->
                         <div class="col-md-6">
                             <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ea580c !important;">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-dark text-white" style="font-size: 0.72rem;">2001 — அடித்தள ஆரம்பம்</span>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
+                                    <span class="badge bg-dark text-white text-wrap" style="font-size: 0.72rem;">2001 — அடித்தள ஆரம்பம்</span>
                                     <small class="text-muted">விருதுநகர் மாவட்டம்</small>
                                 </div>
                                 <h5 class="fw-bold text-dark fs-6 mb-1">வத்திராயிருப்பு ஒன்றிய இளைஞரணித் தலைவர்</h5>
@@ -438,13 +438,13 @@
             <!-- =========================================================================
                  THE GUIDING IDEOLOGY: ANTYODAYA & DIGITAL CITIZEN SERVICE
                  ========================================================================= -->
-            <div class="row g-4 mb-5">
+            <div class="row g-3 g-md-4 mb-4 mb-md-5">
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="border-top: 4px solid #ff7722 !important;">
-                        <div class="rounded-circle bg-warning-subtle text-danger d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px; font-size: 22px;">
+                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-top: 4px solid #ff7722 !important;">
+                        <div class="rounded-circle bg-warning-subtle text-danger d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px; font-size: 20px;">
                             <i class="bi bi-people-fill"></i>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">
+                        <h5 class="fw-bold text-dark mb-2 fs-5">
                             {{ app()->getLocale() === 'en' ? 'Antyodaya Civic Mission' : 'கடைக்கோடி மனிதனுக்கும் சேவை (அந்தியோதயா)' }}
                         </h5>
                         <p class="text-muted small mb-0">
@@ -458,11 +458,11 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="border-top: 4px solid #0284c7 !important;">
-                        <div class="rounded-circle bg-info-subtle text-info d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px; font-size: 22px;">
+                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-top: 4px solid #0284c7 !important;">
+                        <div class="rounded-circle bg-info-subtle text-info d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px; font-size: 20px;">
                             <i class="bi bi-laptop"></i>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">
+                        <h5 class="fw-bold text-dark mb-2 fs-5">
                             {{ app()->getLocale() === 'en' ? 'Digital India Transparency' : 'டிஜிட்டல் இந்தியா வெளிப்படைத்தன்மை' }}
                         </h5>
                         <p class="text-muted small mb-0">
@@ -476,11 +476,11 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="border-top: 4px solid #138808 !important;">
-                        <div class="rounded-circle bg-success-subtle text-success d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px; font-size: 22px;">
+                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-top: 4px solid #138808 !important;">
+                        <div class="rounded-circle bg-success-subtle text-success d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px; font-size: 20px;">
                             <i class="bi bi-tree-fill"></i>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2">
+                        <h5 class="fw-bold text-dark mb-2 fs-5">
                             {{ app()->getLocale() === 'en' ? 'Farmers & Rural Development' : 'உழவர் & ஊரக வளர்ச்சி' }}
                         </h5>
                         <p class="text-muted small mb-0">
@@ -495,23 +495,23 @@
             </div>
 
             <!-- Disclaimer Notice -->
-            <div class="disclaimer-banner d-flex align-items-center gap-3 p-4 mb-5">
+            <div class="disclaimer-banner d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2 gap-sm-3 p-3 p-sm-4 mb-4 mb-md-5 rounded-3">
                 <i class="bi bi-shield-exclamation fs-2 text-danger flex-shrink-0"></i>
                 <div>
-                    <h5 class="fw-bold text-danger mb-1">{{ __('messages.disclaimer_title') }}</h5>
+                    <h5 class="fw-bold text-danger mb-1 fs-6">{{ __('messages.disclaimer_title') }}</h5>
                     <p class="mb-0 text-dark small">{{ __('messages.disclaimer_text') }}</p>
                 </div>
             </div>
 
             <!-- Mission & Vision -->
-            <div class="row g-4 mb-5">
+            <div class="row g-3 g-md-4 mb-4 mb-md-5">
                 <div class="col-md-6">
-                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="border-left: 5px solid var(--primary-color) !important;">
+                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-left: 5px solid var(--primary-color) !important;">
                         <div class="d-flex align-items-center gap-2 mb-3">
                             <span class="badge bg-warning text-dark p-2 rounded-3"><i class="bi bi-bullseye fs-5"></i></span>
-                            <h4 class="fw-bold mb-0">{{ app()->getLocale() === 'en' ? 'Our Mission' : 'நோக்கம் (Our Mission)' }}</h4>
+                            <h4 class="fw-bold mb-0 fs-5">{{ app()->getLocale() === 'en' ? 'Our Mission' : 'நோக்கம் (Our Mission)' }}</h4>
                         </div>
-                        <p class="text-secondary mb-0 leading-relaxed">
+                        <p class="text-secondary mb-0 leading-relaxed small">
                             @if(app()->getLocale() === 'en')
                                 To provide the people of Tamil Nadu, and specifically every citizen across the 10 taluks and 600 villages of Virudhunagar District, a transparent, bilingual, digital petition portal that eliminates middlemen, ensures administrative accountability, and follows through until issues are resolved.
                             @else
@@ -522,12 +522,12 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="border-left: 5px solid var(--secondary-color) !important;">
+                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-left: 5px solid var(--secondary-color) !important;">
                         <div class="d-flex align-items-center gap-2 mb-3">
                             <span class="badge bg-success text-white p-2 rounded-3"><i class="bi bi-eye-fill fs-5"></i></span>
-                            <h4 class="fw-bold mb-0">{{ app()->getLocale() === 'en' ? 'Our Vision' : 'தொலைநோக்கு (Our Vision)' }}</h4>
+                            <h4 class="fw-bold mb-0 fs-5">{{ app()->getLocale() === 'en' ? 'Our Vision' : 'தொலைநோக்கு (Our Vision)' }}</h4>
                         </div>
-                        <p class="text-secondary mb-0 leading-relaxed">
+                        <p class="text-secondary mb-0 leading-relaxed small">
                             @if(app()->getLocale() === 'en')
                                 A responsive, citizen-first civic ecosystem where community problems—from drinking water pipeline leakages to rural road repairs—are documented with authentic geolocation data and resolved with measurable service level agreements.
                             @else
@@ -539,37 +539,37 @@
             </div>
 
             <!-- Key Operating Principles -->
-            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white">
-                <h3 class="fw-bold text-dark mb-4 text-center">
+            <div class="card border-0 shadow-sm rounded-4 p-3 p-sm-4 p-md-5 mb-5 bg-white">
+                <h3 class="fw-bold text-dark mb-4 text-center fs-4 fs-md-3">
                     {{ app()->getLocale() === 'en' ? 'Core Pillars of Tamil Nadu Makkal Kural' : 'தமிழ்நாடு மக்கள் குரலின் முதன்மைக் கொள்கைகள்' }}
                 </h3>
                 <div class="row g-4">
                     <div class="col-md-4 text-center">
-                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 28px; color: var(--primary-color);">
+                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; font-size: 24px; color: var(--primary-color);">
                             <i class="bi bi-shield-lock"></i>
                         </div>
-                        <h5 class="fw-bold mb-2">{{ app()->getLocale() === 'en' ? 'Privacy & Citizen Security' : 'தனியுரிமை & தகவல் பாதுகாப்பு' }}</h5>
-                        <p class="text-muted small">
+                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Privacy & Citizen Security' : 'தனியுரிமை & தகவல் பாதுகாப்பு' }}</h5>
+                        <p class="text-muted small mb-0">
                             {{ app()->getLocale() === 'en' ? 'Citizen phone numbers and private addresses are strictly protected and never disclosed on public feeds.' : 'மனுதாரர்களின் தொலைபேசி எண் மற்றும் வீட்டு முகவரி போன்ற தனிப்பட்ட விபரங்கள் பொதுவெளியில் பகிரப்படாமல் முழுமையாகப் பாதுகாக்கப்படுகின்றன.' }}
                         </p>
                     </div>
 
                     <div class="col-md-4 text-center">
-                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 28px; color: var(--secondary-color);">
+                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; font-size: 24px; color: var(--secondary-color);">
                             <i class="bi bi-diagram-3"></i>
                         </div>
-                        <h5 class="fw-bold mb-2">{{ app()->getLocale() === 'en' ? 'Accurate Administrative Mapping' : 'துல்லியமான நிர்வாகக் கட்டமைப்பு' }}</h5>
-                        <p class="text-muted small">
+                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Accurate Administrative Mapping' : 'துல்லியமான நிர்வாகக் கட்டமைப்பு' }}</h5>
+                        <p class="text-muted small mb-0">
                             {{ app()->getLocale() === 'en' ? 'Covers all 3 Revenue Divisions (Aruppukkottai, Sivakasi, Sattur) and 10 Revenue Taluks with authentic revenue village datasets.' : 'அருப்புக்கோட்டை, சிவகாசி, சாத்தூர் ஆகிய 3 வருவாய் கோட்டங்கள், 10 தாலுகாக்கள் மற்றும் 600 வருவாய் கிராமங்களையும் உள்ளடக்கிய நேரடி கட்டமைப்பு.' }}
                         </p>
                     </div>
 
                     <div class="col-md-4 text-center">
-                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 28px; color: #0284c7;">
+                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; font-size: 24px; color: #0284c7;">
                             <i class="bi bi-clock-history"></i>
                         </div>
-                        <h5 class="fw-bold mb-2">{{ app()->getLocale() === 'en' ? 'Clear Accountability' : 'வெளிப்படையான கண்காணிப்பு' }}</h5>
-                        <p class="text-muted small">
+                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Clear Accountability' : 'வெளிப்படையான கண்காணிப்பு' }}</h5>
+                        <p class="text-muted small mb-0">
                             {{ app()->getLocale() === 'en' ? 'Every grievance gets an immutable audit log from registration, officer assignment, and department referral to verified on-site resolution.' : 'மனு பதிவு முதல் அதிகாரி நியமனம், துறைக்குப் பரிந்துரை மற்றும் களத் தீர்வு வரை ஒவ்வொரு கட்டமும் வெளிப்படையாக ஆவணப்படுத்தப்படுகிறது.' }}
                         </p>
                     </div>
