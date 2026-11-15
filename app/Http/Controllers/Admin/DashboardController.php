@@ -37,12 +37,13 @@ class DashboardController extends Controller
     public function chartData(): JsonResponse
     {
         // 1. Monthly Complaints (Last 6 Months) from MySQL
+        Carbon::setLocale(app()->getLocale());
         $monthlyLabels = [];
         $monthlyValues = [];
 
         for ($i = 5; $i >= 0; $i--) {
             $monthDate = Carbon::now()->subMonths($i);
-            $monthKey = $monthDate->format('M Y');
+            $monthKey = $monthDate->translatedFormat('M Y');
             $count = Complaint::whereYear('created_at', $monthDate->year)
                 ->whereMonth('created_at', $monthDate->month)
                 ->count();

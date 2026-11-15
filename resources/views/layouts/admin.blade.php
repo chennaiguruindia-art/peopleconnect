@@ -27,7 +27,7 @@
                     <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="rounded-2 bg-white p-1 shadow-sm flex-shrink-0" style="height: 38px; width: auto; object-fit: contain;">
                     <div>
                         <div class="lh-1 fw-bold text-white" style="font-size: 0.95rem;">{{ config('app.name', 'People Connect') }}</div>
-                        <small class="text-white-50" style="font-size: 0.72rem;">Admin Portal</small>
+                        <small class="text-white-50" style="font-size: 0.72rem;">{{ __('messages.admin_portal') }}</small>
                     </div>
                 </a>
                 <button class="btn btn-sm btn-link text-white-50 d-lg-none p-1 text-decoration-none" type="button" onclick="closeAdminSidebar()" aria-label="Close menu">
@@ -36,63 +36,63 @@
             </div>
 
             <ul class="sidebar-menu">
-                <li class="menu-header">OVERVIEW</li>
+                <li class="menu-header">{{ __('messages.admin_menu_overview') }}</li>
                 <li class="nav-item">
                     <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                         <i class="bi bi-speedometer2"></i>
-                        <span>Dashboard</span>
+                        <span>{{ __('messages.admin_dashboard') }}</span>
                     </a>
                 </li>
 
-                <li class="menu-header">GRIEVANCE OPERATIONS</li>
+                <li class="menu-header">{{ __('messages.admin_menu_grievance_ops') }}</li>
                 <li class="nav-item">
                     <a href="{{ route('admin.complaints.index') }}" class="nav-link {{ request()->routeIs('admin.complaints.*') ? 'active' : '' }}">
                         <i class="bi bi-inbox-fill"></i>
-                        <span>Complaints</span>
+                        <span>{{ __('messages.admin_menu_complaints') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.reports.index') }}" class="nav-link {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
                         <i class="bi bi-bar-chart-line-fill"></i>
-                        <span>Reports & Analytics</span>
+                        <span>{{ __('messages.admin_menu_reports') }}</span>
                     </a>
                 </li>
 
-                <li class="menu-header">MASTER DATA</li>
+                <li class="menu-header">{{ __('messages.admin_menu_master_data') }}</li>
                 <li class="nav-item">
                     <a href="{{ route('admin.locations.index') }}" class="nav-link {{ request()->routeIs('admin.locations.*') ? 'active' : '' }}">
                         <i class="bi bi-geo-alt-fill"></i>
-                        <span>Location Management</span>
+                        <span>{{ __('messages.admin_menu_locations') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.categories.index') }}" class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
                         <i class="bi bi-grid-fill"></i>
-                        <span>Categories</span>
+                        <span>{{ __('messages.admin_menu_categories') }}</span>
                     </a>
                 </li>
 
-                <li class="menu-header">COMMUNICATION & SETTINGS</li>
+                <li class="menu-header">{{ __('messages.admin_menu_comm_settings') }}</li>
                 <li class="nav-item">
                     <a href="{{ route('admin.updates.index') }}" class="nav-link {{ request()->routeIs('admin.updates.*') ? 'active' : '' }}">
                         <i class="bi bi-megaphone-fill"></i>
-                        <span>Public Updates</span>
+                        <span>{{ __('messages.admin_menu_updates') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.settings.index') }}" class="nav-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
                         <i class="bi bi-gear-fill"></i>
-                        <span>Settings</span>
+                        <span>{{ __('messages.admin_menu_settings') }}</span>
                     </a>
                 </li>
 
-                <li class="menu-header">ACCOUNT</li>
+                <li class="menu-header">{{ __('messages.admin_menu_account') }}</li>
                 <li class="nav-item">
                     <form method="POST" action="{{ route('admin.logout') }}" id="sidebarLogoutForm">
                         @csrf
                         <a href="javascript:void(0)" onclick="document.getElementById('sidebarLogoutForm').submit()" class="nav-link text-danger">
                             <i class="bi bi-box-arrow-right"></i>
-                            <span>Logout</span>
+                            <span>{{ __('messages.admin_menu_logout') }}</span>
                         </a>
                     </form>
                 </li>
@@ -110,13 +110,13 @@
                     <button class="btn btn-sm btn-outline-secondary d-lg-none px-2 py-1" type="button" onclick="openAdminSidebar()" aria-label="Toggle Navigation">
                         <i class="bi bi-list fs-5"></i>
                     </button>
-                    <span class="fw-bold text-secondary d-none d-md-inline" style="font-size: 0.95rem;">Virudhunagar Grievance Facilitation Administration</span>
+                    <span class="fw-bold text-secondary d-none d-md-inline" style="font-size: 0.95rem;">{{ __('messages.admin_topbar_title') }}</span>
                 </div>
 
                 <div class="d-flex align-items-center gap-2 gap-sm-3">
                     <a href="{{ route('home') }}" target="_blank" class="btn btn-sm btn-outline-primary d-none d-sm-inline-flex align-items-center gap-1">
                         <i class="bi bi-box-arrow-up-right"></i>
-                        <span>View Public Portal</span>
+                        <span>{{ __('messages.admin_view_public') }}</span>
                     </a>
 
                     @include('components.language-switcher')
@@ -137,7 +137,7 @@
                                 <form method="POST" action="{{ route('admin.logout') }}">
                                     @csrf
                                     <button type="submit" class="dropdown-item text-danger small py-2">
-                                        <i class="bi bi-box-arrow-right me-2"></i> Logout
+                                        <i class="bi bi-box-arrow-right me-2"></i> {{ __('messages.admin_menu_logout') }}
                                     </button>
                                 </form>
                             </li>
