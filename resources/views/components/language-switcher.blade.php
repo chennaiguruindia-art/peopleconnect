@@ -17,7 +17,7 @@
             <span class="badge bg-warning text-dark py-0 px-1 rounded-pill fw-bold ms-1" style="font-size: 0.62rem;" title="AI Powered Translation">AI</span>
         @endif
         @if($isAdmin)
-            <span class="badge bg-secondary-subtle text-secondary ms-1 py-0 px-1" style="font-size: 0.65rem;">Admin</span>
+            <span class="badge bg-secondary-subtle text-secondary ms-1 py-0 px-1 d-none d-sm-inline" style="font-size: 0.65rem;">Admin</span>
         @endif
     </button>
     <ul class="dropdown-menu dropdown-menu-end shadow-sm">

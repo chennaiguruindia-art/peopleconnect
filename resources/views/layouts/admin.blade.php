@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <!-- Admin Theme CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}?v=1.2">
     @stack('styles')
 </head>
 <body class="admin-body">
@@ -22,14 +22,17 @@
     <div class="admin-wrapper">
         <!-- Sidebar -->
         <aside class="admin-sidebar" id="adminSidebar">
-            <div class="sidebar-header">
-                <a href="{{ route('admin.dashboard') }}" class="sidebar-brand">
-                    <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="" class="rounded-2 bg-white p-1 shadow-sm flex-shrink-0" style="height: 42px; width: auto; object-fit: contain;">
+            <div class="sidebar-header d-flex align-items-center justify-content-between">
+                <a href="{{ route('admin.dashboard') }}" class="sidebar-brand text-decoration-none">
+                    <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="rounded-2 bg-white p-1 shadow-sm flex-shrink-0" style="height: 38px; width: auto; object-fit: contain;">
                     <div>
-                        <div class="lh-1"></div>
+                        <div class="lh-1 fw-bold text-white" style="font-size: 0.95rem;">{{ config('app.name', 'People Connect') }}</div>
                         <small class="text-white-50" style="font-size: 0.72rem;">Admin Portal</small>
                     </div>
                 </a>
+                <button class="btn btn-sm btn-link text-white-50 d-lg-none p-1 text-decoration-none" type="button" onclick="closeAdminSidebar()" aria-label="Close menu">
+                    <i class="bi bi-x-lg fs-5"></i>
+                </button>
             </div>
 
             <ul class="sidebar-menu">
@@ -96,18 +99,21 @@
             </ul>
         </aside>
 
+        <!-- Mobile Sidebar Backdrop Overlay -->
+        <div class="admin-sidebar-backdrop d-lg-none" id="sidebarBackdrop" onclick="closeAdminSidebar()"></div>
+
         <!-- Main Content -->
         <div class="admin-main">
             <!-- Topbar -->
             <header class="admin-topbar">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-sm btn-outline-secondary d-lg-none" type="button" onclick="document.getElementById('adminSidebar').classList.toggle('show')">
+                <div class="d-flex align-items-center gap-2 gap-sm-3">
+                    <button class="btn btn-sm btn-outline-secondary d-lg-none px-2 py-1" type="button" onclick="openAdminSidebar()" aria-label="Toggle Navigation">
                         <i class="bi bi-list fs-5"></i>
                     </button>
-                    <span class="fw-bold text-secondary d-none d-md-inline">Virudhunagar Grievance Facilitation Administration</span>
+                    <span class="fw-bold text-secondary d-none d-md-inline" style="font-size: 0.95rem;">Virudhunagar Grievance Facilitation Administration</span>
                 </div>
 
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2 gap-sm-3">
                     <a href="{{ route('home') }}" target="_blank" class="btn btn-sm btn-outline-primary d-none d-sm-inline-flex align-items-center gap-1">
                         <i class="bi bi-box-arrow-up-right"></i>
                         <span>View Public Portal</span>
@@ -158,6 +164,23 @@
     <!-- Admin JS Assets -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/js/admin.js') }}"></script>
+
+    <script>
+        function openAdminSidebar() {
+            var sidebar = document.getElementById('adminSidebar');
+            var backdrop = document.getElementById('sidebarBackdrop');
+            if (sidebar) sidebar.classList.add('show');
+            if (backdrop) backdrop.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeAdminSidebar() {
+            var sidebar = document.getElementById('adminSidebar');
+            var backdrop = document.getElementById('sidebarBackdrop');
+            if (sidebar) sidebar.classList.remove('show');
+            if (backdrop) backdrop.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    </script>
 
     @stack('scripts')
 </body>

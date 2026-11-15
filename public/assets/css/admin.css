@@ -2,13 +2,15 @@
    குரலற்ற மகளின் குரல் - Admin Dashboard Theme
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Mukta+Malar:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Mukta+Malar:wght@400;600;700&display=swap');
 
 :root {
-  --admin-sidebar-bg: #1e293b;
-  --admin-sidebar-hover: #334155;
+  --admin-sidebar-bg: #0f172a;
+  --admin-sidebar-header-bg: #090d16;
+  --admin-sidebar-hover: #1e293b;
   --admin-sidebar-active: #e65100;
   --admin-primary: #e65100;
+  --admin-primary-gradient: linear-gradient(135deg, #ff7722, #ea580c);
   --admin-secondary: #1b5e20;
   --admin-bg: #f8fafc;
   --admin-card-border: #e2e8f0;
@@ -17,19 +19,23 @@
 }
 
 body.admin-body {
-  font-family: 'Plus Jakarta Sans', 'Mukta Malar', system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Mukta Malar', system-ui, -apple-system, sans-serif;
   background-color: var(--admin-bg);
   color: var(--admin-text-main);
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 .admin-wrapper {
   display: flex;
   min-height: 100vh;
   align-items: stretch;
+  position: relative;
 }
 
-/* Sidebar - Sticky */
+/* Sidebar - Desktop Sticky */
 .admin-sidebar {
   width: 260px;
   background: var(--admin-sidebar-bg);
@@ -37,7 +43,7 @@ body.admin-body {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
   position: sticky;
   top: 0;
@@ -48,7 +54,7 @@ body.admin-body {
 }
 
 .admin-sidebar::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
 
 .admin-sidebar::-webkit-scrollbar-track {
@@ -65,8 +71,8 @@ body.admin-body {
 }
 
 .sidebar-header {
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.25);
+  padding: 16px 20px;
+  background: var(--admin-sidebar-header-bg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
@@ -74,13 +80,13 @@ body.admin-body {
 }
 
 .sidebar-brand {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .sidebar-menu {
@@ -92,16 +98,16 @@ body.admin-body {
 }
 
 .sidebar-menu .menu-header {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #94a3b8;
-  padding: 12px 14px 6px;
+  color: #64748b;
+  padding: 14px 14px 6px;
 }
 
 .sidebar-menu .nav-item {
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .sidebar-menu .nav-link {
@@ -111,7 +117,7 @@ body.admin-body {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -123,16 +129,37 @@ body.admin-body {
 }
 
 .sidebar-menu .nav-link.active {
-  background: var(--admin-sidebar-active);
+  background: var(--admin-primary-gradient);
   color: #ffffff;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(230, 81, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.35);
 }
 
 .sidebar-menu .nav-link i {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   width: 20px;
   text-align: center;
+}
+
+/* Mobile Sidebar Backdrop */
+.admin-sidebar-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.admin-sidebar-backdrop.show {
+  display: block;
+  opacity: 1;
 }
 
 /* Main Content Area */
@@ -151,10 +178,14 @@ body.admin-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 990;
 }
 
 .admin-content {
-  padding: 28px;
+  padding: 24px 28px;
   flex-grow: 1;
 }
 
@@ -162,8 +193,8 @@ body.admin-body {
 .admin-card {
   background: #ffffff;
   border: 1px solid var(--admin-card-border);
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   margin-bottom: 24px;
   overflow: hidden;
 }
@@ -178,34 +209,37 @@ body.admin-body {
 }
 
 .admin-card-title {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--admin-text-main);
   margin: 0;
+  letter-spacing: -0.2px;
 }
 
 .admin-card-body {
   padding: 20px;
 }
 
-/* Stat Cards */
+/* Stat Cards (Metric Cards) */
 .metric-card {
   background: #ffffff;
   border: 1px solid var(--admin-card-border);
   border-radius: 12px;
-  padding: 20px;
+  padding: 18px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .metric-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
 }
 
 .metric-card::after {
@@ -227,33 +261,40 @@ body.admin-body {
 .metric-card.border-rejected::after { background: #ef4444; }
 
 .metric-value {
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--admin-text-main);
-  line-height: 1;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 .metric-label {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--admin-text-muted);
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .metric-icon {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Subtle Shadows & UI helpers */
+.shadow-xs {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Data Tables */
 .table-admin {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
 }
 
 .table-admin th {
@@ -263,6 +304,9 @@ body.admin-body {
   border-bottom: 2px solid var(--admin-card-border);
   padding: 12px 14px;
   white-space: nowrap;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 .table-admin td {
@@ -272,18 +316,94 @@ body.admin-body {
 }
 
 .table-admin tr:hover td {
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
 }
 
-/* Responsive sidebar */
-@media (max-width: 991px) {
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablet & Smaller (< 992px) */
+@media (max-width: 991.98px) {
   .admin-sidebar {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: -260px;
+    left: -280px;
+    width: 275px;
+    z-index: 1050;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
   .admin-sidebar.show {
     left: 0;
+  }
+
+  .admin-topbar {
+    padding: 10px 16px;
+  }
+
+  .admin-content {
+    padding: 18px 16px;
+  }
+}
+
+/* Mobile Devices (< 576px) */
+@media (max-width: 575.98px) {
+  .admin-topbar {
+    padding: 8px 12px;
+  }
+
+  .admin-content {
+    padding: 12px 10px;
+  }
+
+  /* Metric cards: 2x2 grid compact styling */
+  .metric-card {
+    padding: 12px 12px;
+    border-radius: 10px;
+    min-height: 74px;
+    gap: 6px;
+  }
+
+  .metric-value {
+    font-size: 1.35rem;
+    letter-spacing: -0.3px;
+  }
+
+  .metric-label {
+    font-size: 0.72rem;
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+
+  .metric-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  .admin-card {
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .admin-card-header {
+    padding: 12px 14px;
+  }
+
+  .admin-card-title {
+    font-size: 0.92rem;
+  }
+
+  .admin-card-body {
+    padding: 14px 12px;
+  }
+
+  /* Buttons on mobile */
+  .btn-sm {
+    font-size: 0.8rem;
   }
 }
