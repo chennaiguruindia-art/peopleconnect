@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-people sticky-top bg-white py-2 shadow-sm border-bottom">
+<nav class="navbar navbar-expand-lg navbar-people sticky-top bg-white py-2.5 shadow-sm border-bottom">
     <div class="container-fluid px-2 px-md-3 px-xl-4">
-        <!-- Brand Identity: Logo + Public Grievance Management Platform -->
+        <!-- Brand Identity: Logo + Public Grievance Platform -->
         <a class="navbar-brand d-flex align-items-center gap-2 gap-md-2.5 py-0 text-decoration-none notranslate flex-shrink-0" translate="no" href="{{ route('home') }}">
-            <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="brand-logo-nav" style="height: 46px; width: auto; object-fit: contain;">
+            <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="brand-logo-nav" style="height: 52px; width: auto; object-fit: contain;">
             <div class="brand-text-nav lh-sm">
-                <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PUBLIC GRIEVANCE MANAGEMENT PLATFORM</div>
-                <div class="text-orange fw-bold text-uppercase brand-sub-voice" style="font-size: 0.65rem; letter-spacing: 0.8px;">
+                <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PUBLIC GRIEVANCE PLATFORM</div>
+                <div class="text-orange fw-bold text-uppercase brand-sub-voice" style="font-size: 0.70rem; letter-spacing: 0.8px;">
                     VOICE OF THE VOICELESS <span class="text-secondary fw-normal d-none d-sm-inline ms-1">| குரலற்ற மக்களின் குரல்</span>
                 </div>
             </div>
@@ -14,7 +14,7 @@
         <!-- Mobile Toggler Button -->
         <button class="navbar-toggler border-0 p-1 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#peopleNavbarNav" aria-controls="peopleNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="d-inline-flex align-items-center justify-content-center p-2 rounded-3 bg-light text-navy">
-                <i class="bi bi-list fs-3"></i>
+                <i class="bi bi-list fs-2"></i>
             </span>
         </button>
 
