@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', (app()->getLocale() === 'en' ? 'About Us' : 'எங்களைப் பற்றி') . ' - Public Grievance Management Platform')
+@section('title', (app()->getLocale() === 'en' ? 'About Us' : 'எங்களைப் பற்றி') . ' - People Grievance Management Platform')
 
 @section('content')
 <div class="container py-4 py-md-5 px-3 px-sm-4">
@@ -23,14 +23,14 @@
                 </span>
 
                 <h1 class="fw-extrabold text-navy fs-2 fs-md-1 mb-3">
-                    {{ app()->getLocale() === 'en' ? 'About Public Grievance Management Platform' : 'பொது மக்கள் குறைதீர்க்கும் தளம் — எங்களைப் பற்றி' }}
+                    {{ app()->getLocale() === 'en' ? 'About People Grievance Management Platform' : 'மக்கள் குறைதீர்க்கும் தளம் — எங்களைப் பற்றி' }}
                 </h1>
 
                 <p class="text-muted fs-6 fs-md-5 mx-auto leading-relaxed" style="max-width: 820px;">
                     @if(app()->getLocale() === 'en')
-                        <strong>Public Grievance Management Platform</strong> is an independent, citizen-first civic facilitation network established to bridge the gap between citizens and administrative bodies. We empower residents across Tamil Nadu to report, document, and resolve community problems transparently without middlemen or procedural delays.
+                        <strong>People Grievance Management Platform</strong> is an independent, citizen-first civic facilitation network established to bridge the gap between citizens and administrative bodies. We empower residents across Tamil Nadu to report, document, and resolve community problems transparently without middlemen or procedural delays.
                     @else
-                        <strong>பொது மக்கள் குறைதீர்க்கும் தளம் (Public Grievance Management Platform)</strong> என்பது பொதுமக்களுக்கும் அரசு நிர்வாக அமைப்புகளுக்கும் இடையே வெளிப்படையான பாலமாகச் செயல்படும் ஒரு சுயாதீன மக்கள் சேவைத் தளமாகும். தமிழ்நாட்டு மக்கள் தங்கள் பகுதியில் உள்ள குடிநீர், சாலை, மின்சாரம், சுகாதாரம் உள்ளிட்ட அனைத்து அடிப்படைப் பொதுப் பிரச்சனைகளையும் இடைத்தரகர்கள் இன்றி நேரடியாகப் பதிவு செய்து துரித தீர்வு காண இத்தளம் உதவுகிறது.
+                        <strong>மக்கள் குறைதீர்க்கும் தளம் (People Grievance Management Platform)</strong> என்பது பொதுமக்களுக்கும் அரசு நிர்வாக அமைப்புகளுக்கும் இடையே வெளிப்படையான பாலமாகச் செயல்படும் ஒரு சுயாதீன மக்கள் சேவைத் தளமாகும். தமிழ்நாட்டு மக்கள் தங்கள் பகுதியில் உள்ள குடிநீர், சாலை, மின்சாரம், சுகாதாரம் உள்ளிட்ட அனைத்து அடிப்படைப் பொதுப் பிரச்சனைகளையும் இடைத்தரகர்கள் இன்றி நேரடியாகப் பதிவு செய்து துரித தீர்வு காண இத்தளம் உதவுகிறது.
                     @endif
                 </p>
 

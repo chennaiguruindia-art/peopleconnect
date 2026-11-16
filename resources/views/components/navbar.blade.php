@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-people sticky-top bg-white py-2 shadow-sm border-bottom">
     <div class="container-fluid px-2 px-md-3 px-xl-4">
-        <!-- Brand Identity: Logo + Public Grievance Platform -->
+        <!-- Brand Identity: Logo + People Grievance Platform -->
         <a class="navbar-brand d-flex align-items-center py-0 text-decoration-none notranslate flex-shrink-0" translate="no" href="{{ route('home') }}">
             <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
             <div class="brand-divider-v mx-2 mx-sm-2.5"></div>
             <div class="brand-text-nav lh-sm ps-1 ps-sm-1.5">
-                <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PUBLIC GRIEVANCE PLATFORM</div>
+                <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PEOPLE GRIEVANCE PLATFORM</div>
                 <div class="text-orange fw-bold text-uppercase brand-sub-voice notranslate" translate="no" style="font-size: 0.68rem; letter-spacing: 0.6px;">
                 <span class="brand-tamil-sub text-orange fw-bold text-secondary fw-semibold ms-1 notranslate" translate="no"> குரலற்ற மக்களின் குரல்</span>
                 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Public Grievance Management Platform - குரலற்ற மக்களின் குரல்')
+@section('title', 'People Grievance Management Platform - குரலற்ற மக்களின் குரல்')
 
 @section('content')
 
@@ -82,7 +82,7 @@
     <!-- 1. Mobile People Photo with Curved Accent Wave Bottom -->
     <div class="mobile-hero-photo-wrapper position-relative overflow-hidden">
         <img src="{{ asset('assets/images/banner/banner1.png') }}?v=3.2" 
-             alt="Public Grievance Platform - People" 
+             alt="People Grievance Platform - People" 
              class="img-fluid w-100 mobile-hero-photo">
         
         <!-- Curved Wave at the bottom of the photo -->
@@ -155,7 +155,7 @@
             <h2 class="fw-extrabold text-navy mb-1 fs-2 fs-md-1">
                 தமிழ்நாட்டின் 38 மாவட்டங்களிலும் நேரடி மக்கள் சேவை
             </h2>
-            <p class="text-secondary small mb-0">Real-Time District Public Grievance Resolution Metrics Across Tamil Nadu</p>
+            <p class="text-secondary small mb-0">Real-Time District People Grievance Resolution Metrics Across Tamil Nadu</p>
         </div>
 
         <div class="row g-3 justify-content-center">
