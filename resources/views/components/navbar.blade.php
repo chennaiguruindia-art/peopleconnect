@@ -1,8 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-people sticky-top bg-white py-2 shadow-sm border-bottom">
     <div class="container-fluid px-2 px-md-3 px-xl-4">
-        <!-- Brand Identity: Logo + People Grievance Platform -->
+        <!-- Brand Identity: Logo + Lotus Symbol + People Grievance Platform -->
         <a class="navbar-brand d-flex align-items-center py-0 text-decoration-none notranslate flex-shrink-0" translate="no" href="{{ route('home') }}">
-            <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
+            <div class="d-flex align-items-center gap-1.5 gap-sm-2 flex-shrink-0">
+                <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="The People Connect Logo" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
+                <img src="{{ asset('assets/images/bjp/lotus.png') }}" alt="Lotus Symbol" class="brand-lotus-nav" style="height: 42px; width: 42px; object-fit: contain;">
+            </div>
             <div class="brand-divider-v mx-2 mx-sm-2.5"></div>
             <div class="brand-text-nav lh-sm ps-1 ps-sm-1.5">
                 <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PEOPLE GRIEVANCE PLATFORM</div>
