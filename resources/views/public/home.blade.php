@@ -34,13 +34,13 @@
 
                     <h1 class="hero-people-heading mb-2 notranslate" translate="no">
                         @if(app()->getLocale() === 'en')
-                            <span class="d-block text-navy" style="font-weight: 800;">People's Voice.</span>
-                            <span class="d-block text-navy" style="font-weight: 800;">Direct Service.</span>
-                            <span class="d-block text-orange" style="font-weight: 900; color: #ea580c !important;">Fast Redressal!</span>
+                            <span class="d-block text-navy" style="font-weight: 800;">Your Voice.</span>
+                            <span class="d-block text-navy" style="font-weight: 800;">Your Area.</span>
+                            <span class="d-block text-orange" style="font-weight: 900; color: #ea580c !important;">Your Connection.</span>
                         @else
-                            <span class="d-block text-navy" style="font-weight: 800;">மக்களின் குரல்.</span>
-                            <span class="d-block text-navy" style="font-weight: 800;">நேரடி சேவை.</span>
-                            <span class="d-block text-orange" style="font-weight: 900; color: #ea580c !important;">உடனடி தீர்வு!</span>
+                            <span class="d-block text-navy" style="font-weight: 800;">உங்கள் குரல்.</span>
+                            <span class="d-block text-navy" style="font-weight: 800;">உங்கள் பகுதி.</span>
+                            <span class="d-block text-orange" style="font-weight: 900; color: #ea580c !important;">உங்கள் இணைப்பு.</span>
                         @endif
                     </h1>
                     
@@ -104,13 +104,13 @@
 
         <h1 class="hero-people-heading-mobile mb-2 notranslate" translate="no">
             @if(app()->getLocale() === 'en')
-                <span class="d-block text-navy">People's Voice.</span>
-                <span class="d-block text-navy">Direct Service.</span>
-                <span class="d-block text-orange">Fast Redressal!</span>
+                <span class="d-block text-navy">Your Voice.</span>
+                <span class="d-block text-navy">Your Area.</span>
+                <span class="d-block text-orange">Your Connection.</span>
             @else
-                <span class="d-block text-navy">மக்களின் குரல்.</span>
-                <span class="d-block text-navy">நேரடி சேவை.</span>
-                <span class="d-block text-orange">உடனடி தீர்வு!</span>
+                <span class="d-block text-navy">உங்கள் குரல்.</span>
+                <span class="d-block text-navy">உங்கள் பகுதி.</span>
+                <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
             @endif
         </h1>
 
@@ -163,7 +163,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #ea580c !important;">
                     <div class="stat-number fw-extrabold" style="font-size: 2.15rem; color: #ea580c; line-height: 1.1;">
-                        1,520+
+                       0
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         மொத்த<br>கோரிக்கைகள்
@@ -175,7 +175,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #16a34a !important;">
                     <div class="stat-number fw-extrabold text-success" style="font-size: 2.15rem; line-height: 1.1;">
-                        1,385+
+                        0
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         தீர்வு<br>காணப்பட்டவை
@@ -187,7 +187,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #2563eb !important;">
                     <div class="stat-number fw-extrabold text-primary" style="font-size: 2.15rem; line-height: 1.1;">
-                        142
+                        0
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         நடவடிக்கையில்<br>உள்ளவை
@@ -199,7 +199,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #0891b2 !important;">
                     <div class="stat-number fw-extrabold" style="font-size: 2.15rem; color: #0891b2; line-height: 1.1;">
-                        98
+                        0
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         துறைக்கு<br>பரிந்துரைக்கப்பட்டவை
@@ -211,7 +211,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #d97706 !important;">
                     <div class="stat-number fw-extrabold" style="font-size: 2.15rem; color: #d97706; line-height: 1.1;">
-                        309
+                        0
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         வருவாய் வட்டங்கள்<br>(தாலுகாக்கள்)
@@ -223,7 +223,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #7c3aed !important;">
                     <div class="stat-number fw-extrabold" style="font-size: 2.15rem; color: #7c3aed; line-height: 1.1;">
-                        18,478
+                        0
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         வருவாய்<br>கிராமங்கள்
