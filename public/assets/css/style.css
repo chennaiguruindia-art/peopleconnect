@@ -1441,6 +1441,8 @@ img {
   height: 34px;
   background-color: #cbd5e1;
   border-radius: 1px;
+  flex-shrink: 0;
+  display: block !important;
 }
 
 .brand-heading-title {
@@ -1515,7 +1517,11 @@ img {
   }
 
   .brand-divider-v {
-    display: none;
+    display: block !important;
+    height: 28px !important;
+    margin-left: 8px !important;
+    margin-right: 10px !important;
+    background-color: #cbd5e1 !important;
   }
 
   .brand-heading-title {

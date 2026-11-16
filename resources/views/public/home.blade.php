@@ -19,7 +19,7 @@
     <!-- Floating Badge over photo on bottom right -->
     <div class="position-absolute bottom-0 end-0 m-3 p-2 px-3 rounded-pill bg-dark bg-opacity-75 text-white small fw-bold shadow-lg d-none d-xl-flex align-items-center gap-2 z-3 border border-white border-opacity-25" style="backdrop-filter: blur(8px);">
         <span class="d-inline-block rounded-circle bg-success" style="width: 8px; height: 8px;"></span>
-        <span>மக்களோடு நாம் • அந்தியோதயா மக்கள் சேவை</span>
+        <span>மக்களோடு நாம் •</span>
     </div>
 
     <!-- Desktop Banner Text Content -->
@@ -29,7 +29,6 @@
                 <div class="hero-text-wrapper" style="max-width: 430px;">
                     <!-- Hooky Mission Pill Badge -->
                     <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-warning bg-opacity-10 text-dark border border-warning border-opacity-50 fw-bold small mb-2">
-                        <span class="badge rounded-pill text-white" style="background-color: #ea580c; font-size: 0.70rem;">அந்தியோதயா</span>
                         <span style="font-size: 0.80rem; color: #0b1f3a;">கடைக்கோடி மக்களின் நேரடி குறைதீர்ப்பு தளம்</span>
                     </div>
 
@@ -100,7 +99,6 @@
     <!-- 2. Mobile Hero Content Below Photo -->
     <div class="container px-3 pt-2">
         <div class="d-inline-flex align-items-center gap-1.5 px-2.5 py-0.5 rounded-pill bg-warning bg-opacity-10 text-dark border border-warning border-opacity-50 fw-bold small mb-2">
-            <span class="badge rounded-pill text-white" style="background-color: #ea580c; font-size: 0.68rem;">அந்தியோதயா</span>
             <span style="font-size: 0.75rem; color: #0b1f3a;">கடைக்கோடி மக்களின் நேரடி குறைதீர்ப்பு</span>
         </div>
 
