@@ -1266,5 +1266,33 @@ img {
   color: #ffffff !important;
 }
 
+@media (max-width: 575.98px) {
+  .brand-text-nav .fw-extrabold {
+    font-size: 0.82rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .brand-logo-nav {
+    height: 38px !important;
+  }
+
+  .stat-number {
+    font-size: 1.55rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.74rem !important;
+  }
+
+  .stat-number.fw-extrabold {
+    font-size: 1.55rem !important;
+  }
+
+  .track-banner-dark h4 {
+    font-size: 1.05rem !important;
+  }
+}
+
+
 
 

@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-people sticky-top bg-white py-2 shadow-sm border-bottom">
     <div class="container-fluid px-2 px-md-4">
-        <!-- Brand Identity: Logo + The People Connect -->
+        <!-- Brand Identity: Logo + Public Grievance Management Platform -->
         <a class="navbar-brand d-flex align-items-center gap-2.5 py-0 text-decoration-none" href="{{ route('home') }}">
-            <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="The People Connect" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
+            <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
             <div class="brand-text-nav lh-sm">
-                <div class="fw-extrabold text-navy" style="font-size: 1.05rem; letter-spacing: 0.3px;">THE PEOPLE CONNECT</div>
+                <div class="fw-extrabold text-navy" style="font-size: 1.05rem; letter-spacing: 0.3px;">PUBLIC GRIEVANCE MANAGEMENT PLATFORM</div>
                 <div class="text-orange fw-bold text-uppercase" style="font-size: 0.68rem; letter-spacing: 0.8px;">VOICE OF THE VOICELESS</div>
                 <div class="text-secondary" style="font-size: 0.70rem;">குரலற்ற மக்களின் குரல்</div>
             </div>
