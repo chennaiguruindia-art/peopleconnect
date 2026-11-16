@@ -25,7 +25,9 @@ class HomeController extends Controller
 
         $categories = ComplaintCategory::where('is_active', true)->get();
         $updates = PublicUpdate::where('is_active', true)->orderBy('published_at', 'desc')->take(3)->get();
+        $districts = District::where('is_active', true)->get();
+        $taluks = Taluk::where('is_active', true)->get();
 
-        return view('public.home', compact('stats', 'categories', 'updates'));
+        return view('public.home', compact('stats', 'categories', 'updates', 'districts', 'taluks'));
     }
 }

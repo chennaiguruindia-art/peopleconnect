@@ -1,218 +1,326 @@
 @extends('layouts.app')
 
-@section('title', __('messages.site_name'))
+@section('title', 'The People Connect - குரலற்ற மக்களின் குரல்')
 
 @section('content')
 
-<!-- Hero Banner Section -->
-<section class="hero-section">
+<!-- 1. HERO SECTION -->
+<section class="hero-section py-4 py-lg-5 bg-white position-relative overflow-hidden">
     <div class="container">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-                <span class="badge bg-success-subtle text-success px-3 py-1.5 rounded-pill mb-3 fw-bold border border-success-subtle d-inline-flex align-items-center gap-1.5">
-                    <i class="bi bi-geo-alt-fill text-success"></i>
-                    {{ __('messages.district_name') }} • தமிழ்நாடு
-                </span>
-                <h1 class="hero-title">
-                    {{ __('messages.hero_title') }}
+        <div class="row align-items-center g-4 g-lg-5">
+            <!-- Left Column: Big Catchy Title & CTAs -->
+            <div class="col-lg-6">
+                <h1 class="hero-people-heading mb-3">
+                    <span class="d-block text-navy">உங்கள் குரல்.</span>
+                    <span class="d-block text-navy">உங்கள் பகுதி.</span>
+                    <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
                 </h1>
-                <p class="hero-subtitle">
-                    {{ __('messages.hero_subtitle') }}
-                </p>
-                <div class="d-flex flex-column flex-sm-row flex-wrap gap-2 gap-sm-3">
-                    <a href="{{ route('complaints.create') }}" class="btn btn-primary-civic btn-lg d-inline-flex align-items-center justify-content-center gap-2">
-                        <i class="bi bi-pencil-square"></i>
-                        <span>{{ __('messages.btn_submit_now') }}</span>
+                
+                <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-3 my-md-4">
+                    <p class="hero-desc-text text-secondary mb-0 fw-medium">
+                        உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
+                    </p>
+                </div>
+
+                <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-4">
+                    <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2">
+                        <i class="bi bi-pencil-fill"></i>
+                        <span>புகாரைப் பதிவு செய்யுங்கள்</span>
                     </a>
-                    <a href="{{ route('complaints.track') }}" class="btn btn-outline-civic btn-lg d-inline-flex align-items-center justify-content-center gap-2">
+                    <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2">
                         <i class="bi bi-search"></i>
-                        <span>{{ __('messages.btn_track_now') }}</span>
+                        <span>புகார் நிலையை அறியுங்கள்</span>
                     </a>
                 </div>
             </div>
 
-            <div class="col-lg-5">
-                <!-- PM Modi Leadership Badge -->
-                <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-4 shadow-sm border mb-3">
-                    <img src="{{ asset('assets/images/bjp/modi.png') }}" alt="PM Narendra Modi" style="height: 62px; width: auto; object-fit: contain; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.12));">
-                    <div class="lh-sm">
-                        <div class="fw-bold text-dark small">நரேந்திர மோடி அவர்களின் வழிகாட்டுதலில்</div>
-                        <small class="text-muted" style="font-size: 0.78rem;">தமிழ்நாட்டின் அனைத்து மாவட்ட மக்களின் தேவைகளுக்கான துரித தீர்வுத் தளம்</small>
-                    </div>
-                </div>
-
-                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
-                    <div class="card-header bg-dark text-white p-3 border-0 d-flex align-items-center justify-content-between">
-                        <span class="fw-bold"><i class="bi bi-lightning-charge-fill text-warning me-2"></i>{{ __('messages.btn_track_now') }}</span>
-                        <span class="badge bg-primary">Live Tracking</span>
-                    </div>
-                    <div class="card-body p-4 bg-white">
-                        <form action="{{ route('complaints.track') }}" method="GET">
-                            <div class="mb-3">
-                                <label for="homeComplaintId" class="form-label small fw-bold">{{ __('messages.lbl_complaint_id') }}</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-light"><i class="bi bi-ticket-detailed"></i></span>
-                                    <input type="text" name="complaint_id" id="homeComplaintId" class="form-control" placeholder="e.g. VNK-20261101-0012" required>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="homeMobile" class="form-label small fw-bold">{{ __('messages.lbl_registered_mobile') }}</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-light"><i class="bi bi-phone"></i></span>
-                                    <input type="tel" name="mobile" id="homeMobile" class="form-control" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" required>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary-civic w-100 fw-bold py-2">
-                                <i class="bi bi-arrow-right-circle me-1"></i> {{ __('messages.btn_track') }}
-                            </button>
-                        </form>
-                    </div>
+            <!-- Right Column: User's Banner Image (banner1.png) -->
+            <div class="col-lg-6 text-center">
+                <div class="hero-banner-frame position-relative d-inline-block">
+                    <img src="{{ asset('assets/images/banner/banner1.png') }}?v={{ time() }}" alt="The People Connect - Citizen Grievance Portal" class="img-fluid rounded-4 shadow-sm hero-banner-img">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Live Database Statistics Section -->
-<section class="py-5 bg-white border-bottom">
+<!-- 2. QUICK COMPLAINT INTAKE CARD ("மக்கள் குறை பதிவு" / Register Your Complaint) -->
+<section class="quick-intake-section py-3 py-md-4 bg-light">
     <div class="container">
-        <div class="text-center mb-4">
-            <span class="text-primary fw-bold text-uppercase small tracking-wide">Live Transparency / நேரடி புள்ளிவிவரங்கள்</span>
-            <h2 class="fw-bold mt-1">Real-Time District Grievance Metrics</h2>
-        </div>
+        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 bg-white intake-card">
+            <!-- Header -->
+            <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                <div class="intake-icon-badge rounded-3 d-inline-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 46px; height: 46px; background: linear-gradient(135deg, #ff7722, #ea580c);">
+                    <i class="bi bi-pencil-square fs-4"></i>
+                </div>
+                <div>
+                    <h3 class="fw-bold text-dark mb-0 fs-5 fs-md-4">மக்கள் குறை பதிவு</h3>
+                    <small class="text-muted fw-semibold">Register Your Complaint</small>
+                </div>
+            </div>
 
-        <div class="row g-3">
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="stat-card text-center">
-                    <div class="stat-number">1,520+</div>
-                    <div class="stat-label">{{ __('messages.stat_total') }}</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="stat-card text-center" style="border-top-color: #16a34a;">
-                    <div class="stat-number text-success">1,385+</div>
-                    <div class="stat-label">{{ __('messages.stat_resolved') }}</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="stat-card text-center" style="border-top-color: #2563eb;">
-                    <div class="stat-number text-primary">142</div>
-                    <div class="stat-label">{{ __('messages.stat_in_progress') }}</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="stat-card text-center" style="border-top-color: #0891b2;">
-                    <div class="stat-number text-info">98</div>
-                    <div class="stat-label">{{ __('messages.stat_referred') }}</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="stat-card text-center" style="border-top-color: #d97706;">
-                    <div class="stat-number text-warning">309</div>
-                    <div class="stat-label">{{ __('messages.stat_taluks') }}</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="stat-card text-center" style="border-top-color: #7c3aed;">
-                    <div class="stat-number text-purple" style="color: #7c3aed;">18,478</div>
-                    <div class="stat-label">{{ __('messages.stat_villages') }}</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            <form action="{{ route('complaints.create') }}" method="GET" id="quickIntakeForm">
+                <!-- Row 1: 3 Dropdown Fields -->
+                <div class="row g-3 mb-3">
+                    <div class="col-md-4">
+                        <label for="quickDistrict" class="form-label small fw-bold text-dark">
+                            மாவட்டம் தேர்வு <span class="text-danger">*</span>
+                        </label>
+                        <select name="district_id" id="quickDistrict" class="form-select select-civic" required>
+                            <option value="">மாவட்டத்தை தேர்வு செய்யவும்</option>
+                            @foreach($districts as $d)
+                                <option value="{{ $d->id }}" {{ $d->name_en === 'Virudhunagar' ? 'selected' : '' }}>
+                                    {{ app()->getLocale() === 'ta' ? ($d->name_ta ?? $d->name_en) : $d->name_en }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
 
-<!-- Grievance Categories Section -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
-            <div>
-                <span class="text-primary fw-bold text-uppercase small">Civic Departments / துறைகள்</span>
-                <h2 class="fw-bold mt-1">Grievance Service Categories</h2>
-                <p class="text-muted mb-0">Select your issue category to register an actionable petition.</p>
-            </div>
-            <a href="{{ route('complaints.create') }}" class="btn btn-outline-civic mt-2 mt-md-0">
-                Register Grievance <i class="bi bi-arrow-right ms-1"></i>
-            </a>
-        </div>
+                    <div class="col-md-4">
+                        <label for="quickTaluk" class="form-label small fw-bold text-dark">
+                            சட்டமன்றத் தொகுதி <span class="text-danger">*</span>
+                        </label>
+                        <select name="taluk_id" id="quickTaluk" class="form-select select-civic" required>
+                            <option value="">தொகுதியை தேர்வு செய்யவும்</option>
+                            @foreach($taluks as $t)
+                                <option value="{{ $t->id }}">
+                                    {{ app()->getLocale() === 'ta' ? ($t->name_ta ?? $t->name_en) : $t->name_en }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
 
-        <div class="row g-4">
-            @foreach($categories as $category)
-                <div class="col-md-6 col-lg-4">
-                    <div class="category-card">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div class="category-icon-box">
-                                <i class="bi {{ $category->icon }}"></i>
-                            </div>
-                            <span class="badge bg-light text-secondary border small">SLA: {{ $category->sla_days }} Days</span>
+                    <div class="col-md-4">
+                        <label for="quickCategory" class="form-label small fw-bold text-dark">
+                            பிரச்சினை வகை <span class="text-danger">*</span>
+                        </label>
+                        <select name="category_id" id="quickCategory" class="form-select select-civic" required>
+                            <option value="">பிரச்சினை வகையை தேர்வு செய்யவும்</option>
+                            @foreach($categories as $cat)
+                                <option value="{{ $cat->id }}">
+                                    {{ app()->getLocale() === 'ta' ? ($cat->name_ta ?? $cat->name_en) : $cat->name_en }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row 2: Description & Photo Upload Box -->
+                <div class="row g-3 mb-3 align-items-stretch">
+                    <div class="col-lg-8">
+                        <label for="quickDescription" class="form-label small fw-bold text-dark">
+                            பிரச்சினையின் விவரம் <span class="text-danger">*</span>
+                        </label>
+                        <textarea name="description" id="quickDescription" class="form-control" rows="4" maxlength="1000" placeholder="உங்கள் பகுதியில் உள்ள பிரச்சினையை விரிவாக எழுதுங்கள்... (எ.கா., சாலை சேதம், குடிநீர் பற்றாக்குறை, தெரு விளக்கு செயலிழப்பு போன்றவை)" required></textarea>
+                        <div class="d-flex justify-content-end text-muted small mt-1" style="font-size: 0.75rem;">
+                            <span id="quickCharCount">0</span> / 1000
                         </div>
-                        <h4 class="category-title">{{ $category->name }}</h4>
-                        <p class="category-desc">{{ $category->description }}</p>
-                        <div class="category-dept">
-                            <i class="bi bi-building me-1"></i> {{ $category->department_name }}
+                    </div>
+
+                    <div class="col-lg-4">
+                        <label class="form-label small fw-bold text-dark">ஆதாரப் படம் / வீடியோ</label>
+                        <div class="upload-dashed-card text-center p-3 border border-2 border-dashed rounded-3 bg-light d-flex flex-column align-items-center justify-content-center h-75 cursor-pointer" onclick="document.getElementById('quickDescription').focus();">
+                            <i class="bi bi-camera fs-2 text-secondary mb-1"></i>
+                            <span class="small fw-bold text-dark">புகைப்படம் / வீடியோ பதிவேற்றம்</span>
+                            <small class="text-muted" style="font-size: 0.72rem;">(JPG, PNG, MP4 - அதிகபட்சம் 10 MB)</small>
                         </div>
                     </div>
                 </div>
-            @endforeach
+
+                <!-- Bottom Row inside Card -->
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 pt-3 border-top mt-2">
+                    <div class="d-flex align-items-center gap-2 text-muted small">
+                        <i class="bi bi-shield-lock-fill text-warning fs-5"></i>
+                        <span>உங்கள் புகார் விவரங்கள் தனிப்பட்ட முறையில் பாதுகாக்கப்படும்.</span>
+                    </div>
+                    <button type="submit" class="btn btn-hero-orange rounded-pill px-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2">
+                        <i class="bi bi-send-fill"></i>
+                        <span>தொடர்ந்து புகார் பதிவு செய்யுங்கள்</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </section>
 
-<!-- Latest District Updates Section -->
-<section class="py-5 bg-white border-top">
+<!-- 3. "எந்தப் பிரச்சினையைப் பதிவு செய்ய விரும்புகிறீர்கள்?" (CATEGORY GRID) -->
+<section class="py-5 bg-white">
     <div class="container">
-        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
-            <div>
-                <span class="text-primary fw-bold text-uppercase small">Civic News & Alerts / அறிவிப்புகள்</span>
-                <h2 class="fw-bold mt-1">{{ __('messages.latest_news') }}</h2>
+        <h3 class="fw-bold text-dark text-center mb-4 fs-3">எந்தப் பிரச்சினையைப் பதிவு செய்ய விரும்புகிறீர்கள்?</h3>
+
+        <div class="row g-3 justify-content-center">
+            <!-- 1. சாலை வசதி -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="{{ route('complaints.create') }}" class="card text-center p-3 border-0 rounded-4 shadow-xs hover-lift text-decoration-none h-100" style="background-color: #f1f5f9;">
+                    <div class="category-icon-round mx-auto mb-2 d-flex align-items-center justify-content-center text-dark" style="width: 50px; height: 50px; font-size: 26px;">
+                        <i class="bi bi-signpost-2-fill"></i>
+                    </div>
+                    <div class="fw-bold text-dark small">சாலை வசதி</div>
+                </a>
             </div>
-            <a href="{{ route('updates') }}" class="btn btn-outline-secondary mt-2 mt-md-0">
-                {{ __('messages.read_more') }} <i class="bi bi-arrow-right ms-1"></i>
-            </a>
+
+            <!-- 2. குடிநீர் -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="{{ route('complaints.create') }}" class="card text-center p-3 border-0 rounded-4 shadow-xs hover-lift text-decoration-none h-100" style="background-color: #eff6ff;">
+                    <div class="category-icon-round mx-auto mb-2 d-flex align-items-center justify-content-center text-primary" style="width: 50px; height: 50px; font-size: 26px;">
+                        <i class="bi bi-droplet-fill"></i>
+                    </div>
+                    <div class="fw-bold text-dark small">குடிநீர்</div>
+                </a>
+            </div>
+
+            <!-- 3. மின்சாரம் -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="{{ route('complaints.create') }}" class="card text-center p-3 border-0 rounded-4 shadow-xs hover-lift text-decoration-none h-100" style="background-color: #fefce8;">
+                    <div class="category-icon-round mx-auto mb-2 d-flex align-items-center justify-content-center text-warning" style="width: 50px; height: 50px; font-size: 26px;">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                    </div>
+                    <div class="fw-bold text-dark small">மின்சாரம்</div>
+                </a>
+            </div>
+
+            <!-- 4. சுகாதாரம் -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="{{ route('complaints.create') }}" class="card text-center p-3 border-0 rounded-4 shadow-xs hover-lift text-decoration-none h-100" style="background-color: #f0fdf4;">
+                    <div class="category-icon-round mx-auto mb-2 d-flex align-items-center justify-content-center text-success" style="width: 50px; height: 50px; font-size: 26px;">
+                        <i class="bi bi-trash3-fill"></i>
+                    </div>
+                    <div class="fw-bold text-dark small">சுகாதாரம்</div>
+                </a>
+            </div>
+
+            <!-- 5. கல்வி -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="{{ route('complaints.create') }}" class="card text-center p-3 border-0 rounded-4 shadow-xs hover-lift text-decoration-none h-100" style="background-color: #faf5ff;">
+                    <div class="category-icon-round mx-auto mb-2 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 26px; color: #8b5cf6;">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <div class="fw-bold text-dark small">கல்வி</div>
+                </a>
+            </div>
+
+            <!-- 6. மருத்துவம் -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="{{ route('complaints.create') }}" class="card text-center p-3 border-0 rounded-4 shadow-xs hover-lift text-decoration-none h-100" style="background-color: #fff1f2;">
+                    <div class="category-icon-round mx-auto mb-2 d-flex align-items-center justify-content-center text-danger" style="width: 50px; height: 50px; font-size: 26px;">
+                        <i class="bi bi-hospital-fill"></i>
+                    </div>
+                    <div class="fw-bold text-dark small">மருத்துவம்</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. "புகார் பதிவு முதல் நடவடிக்கை வரை — எளிய செயல்முறை" (PROCESS STEPS) -->
+<section class="py-5 bg-light border-top border-bottom">
+    <div class="container">
+        <!-- Divider Heading -->
+        <div class="text-center mb-5 position-relative">
+            <h4 class="fw-bold text-dark mb-0 d-inline-block bg-light px-3 position-relative z-1" style="font-size: 1.15rem; letter-spacing: 0.3px;">
+                — புகார் பதிவு முதல் நடவடிக்கை வரை — எளிய செயல்முறை —
+            </h4>
+            <div class="position-absolute top-50 start-0 end-0 border-top border-2 border-warning opacity-75 z-0" style="transform: translateY(-50%);"></div>
         </div>
 
-        <div class="row g-4">
-            @forelse($updates as $update)
-                <div class="col-md-4">
-                    <div class="card h-100 border rounded-4 shadow-sm hover-shadow d-flex flex-column">
-                        <div class="card-body p-4 flex-grow-1">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1">{{ $update->category }}</span>
-                                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>{{ $update->published_at->format('d M Y') }}</small>
-                            </div>
-                            <h5 class="fw-bold text-dark mt-2 mb-2 lh-base">{{ $update->title }}</h5>
-                            <p class="text-secondary small mb-0 lh-base">{{ Str::limit($update->content, 140) }}</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 px-4 text-end">
-                            <a href="{{ route('updates') }}" class="text-primary text-decoration-none small fw-semibold">
-                                {{ __('messages.read_more') }} <i class="bi bi-arrow-right small"></i>
-                            </a>
+        <div class="row g-4 justify-content-center align-items-center text-center">
+            <!-- Step 1 -->
+            <div class="col-6 col-md-3">
+                <div class="step-card">
+                    <div class="step-circle-icon mx-auto mb-3 text-white rounded-circle d-flex align-items-center justify-content-center shadow-xs" style="width: 60px; height: 60px; background: #ea580c; font-size: 24px;">
+                        <i class="bi bi-pencil-square"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-1 fs-6">1. புகார் பதிவு</h5>
+                    <small class="text-muted d-block">உங்கள் பிரச்சினையை பதிவு செய்யுங்கள்</small>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="col-6 col-md-3">
+                <div class="step-card">
+                    <div class="step-circle-icon mx-auto mb-3 text-white rounded-circle d-flex align-items-center justify-content-center shadow-xs" style="width: 60px; height: 60px; background: #0284c7; font-size: 24px;">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-1 fs-6">2. சரிபார்ப்பு</h5>
+                    <small class="text-muted d-block">புகார் விவரங்கள் சரிபார்க்கப்படும்</small>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="col-6 col-md-3">
+                <div class="step-card">
+                    <div class="step-circle-icon mx-auto mb-3 text-white rounded-circle d-flex align-items-center justify-content-center shadow-xs" style="width: 60px; height: 60px; background: #16a34a; font-size: 24px;">
+                        <i class="bi bi-bank2"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-1 fs-6">3. அரசுத் துறைக்கு அனுப்புதல்</h5>
+                    <small class="text-muted d-block">சம்பந்தப்பட்ட அரசு துறைக்கு புகார் அனுப்பப்படும்</small>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="col-6 col-md-3">
+                <div class="step-card">
+                    <div class="step-circle-icon mx-auto mb-3 text-white rounded-circle d-flex align-items-center justify-content-center shadow-xs" style="width: 60px; height: 60px; background: #7c3aed; font-size: 24px;">
+                        <i class="bi bi-clipboard2-check-fill"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-1 fs-6">4. நடவடிக்கை கண்காணிப்பு</h5>
+                    <small class="text-muted d-block">புகாரின் நடவடிக்கை நிலையை நீங்கள் அறியலாம்</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. "உங்கள் புகாரின் நிலையை அறியுங்கள் | Track Your Complaint" (NAVY BAR) -->
+<section class="py-4 bg-white">
+    <div class="container">
+        <div class="track-banner-dark p-3 p-md-4 rounded-4 shadow-sm" style="background-color: #0b1f3a;">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-5">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="bi bi-search text-warning fs-2 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="fw-bold text-white mb-0 fs-5">உங்கள் புகாரின் நிலையை அறியுங்கள்</h4>
+                            <small class="text-white-50">Track Your Complaint</small>
                         </div>
                     </div>
                 </div>
-            @empty
-                <div class="col-12 text-center text-muted py-4">No recent updates published.</div>
-            @endforelse
+                <div class="col-lg-7">
+                    <form action="{{ route('complaints.track') }}" method="GET" class="d-flex flex-column flex-sm-row gap-2">
+                        <input type="text" name="complaint_id" class="form-control rounded-pill px-3 py-2 border-0" placeholder="Complaint ID-ஐ உள்ளிடுங்கள் (e.g. VNK-20261101-0012)" required>
+                        <button type="submit" class="btn btn-warning rounded-pill px-4 py-2 fw-bold text-white text-nowrap d-inline-flex align-items-center justify-content-center gap-1 shadow-sm">
+                            <span>நிலையைப் பார்க்கவும்</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Call to Action Banner -->
-<section class="py-5 bg-dark text-white text-center">
+<!-- 6. SECURITY & TRUST BANNER -->
+<section class="pb-5 bg-white">
     <div class="container">
-        <h3 class="fw-bold mb-2">Have an unresolved issue in your neighborhood?</h3>
-        <p class="text-secondary mb-4 mx-auto" style="max-width: 650px;">
-            Join hands with fellow citizens. Report water leaks, road potholes, streetlight outages, or garbage pileups directly for official coordination.
-        </p>
-        <div class="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3">
-            <a href="{{ route('complaints.create') }}" class="btn btn-primary-civic btn-lg d-inline-flex align-items-center justify-content-center gap-2">
-                <i class="bi bi-plus-circle me-1"></i> {{ __('messages.btn_submit_now') }}
-            </a>
-            <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg d-inline-flex align-items-center justify-content-center gap-2">
-                <i class="bi bi-telephone me-1"></i> Contact Facilitation Cell
-            </a>
+        <div class="p-3 rounded-4 d-flex align-items-center justify-content-center gap-2 text-center" style="background-color: #f0f9ff; border: 1px solid #bae6fd; color: #0284c7;">
+            <i class="bi bi-shield-lock-fill fs-4 flex-shrink-0"></i>
+            <span class="fw-semibold small">உங்கள் தனிப்பட்ட தகவல்கள் உங்களுக்கும் அங்கீகரிக்கப்பட்ட நிர்வாகிகளுக்கும் மட்டுமே அணுகக்கூடியவை.</span>
         </div>
     </div>
 </section>
 
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var textarea = document.getElementById('quickDescription');
+        var counter = document.getElementById('quickCharCount');
+        if (textarea && counter) {
+            textarea.addEventListener('input', function() {
+                counter.textContent = textarea.value.length;
+            });
+        }
+    });
+</script>
+@endpush

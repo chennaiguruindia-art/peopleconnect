@@ -1105,4 +1105,166 @@ img {
   }
 }
 
+/* ==========================================================================
+   The People Connect - Modern Grievance Portal (Mockup Design Styles)
+   ========================================================================== */
+.text-navy {
+  color: #0b1f3a !important;
+}
+
+.text-orange {
+  color: #ea580c !important;
+}
+
+.fw-extrabold {
+  font-weight: 800 !important;
+}
+
+/* Hero Section */
+.hero-people-heading {
+  font-size: 2.85rem;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 767.98px) {
+  .hero-people-heading {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+}
+
+.hero-quote-bar {
+  border-left: 4px solid #f59e0b !important;
+}
+
+.hero-desc-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.btn-hero-orange {
+  background: linear-gradient(135deg, #ff7722, #ea580c) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-size: 0.98rem;
+  transition: all 0.25s ease;
+}
+
+.btn-hero-orange:hover {
+  background: linear-gradient(135deg, #ea580c, #c2410c) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.4) !important;
+}
+
+.btn-hero-outline {
+  background: #ffffff !important;
+  color: #0b1f3a !important;
+  border: 1.5px solid #0b1f3a !important;
+  font-size: 0.98rem;
+  transition: all 0.25s ease;
+}
+
+.btn-hero-outline:hover {
+  background: #0b1f3a !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.hero-banner-img {
+  max-height: 420px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Quick Intake Card */
+.intake-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.select-civic {
+  border-radius: 8px !important;
+  border: 1px solid #cbd5e1 !important;
+  padding: 10px 14px !important;
+  font-size: 0.92rem !important;
+}
+
+.select-civic:focus {
+  border-color: #ea580c !important;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15) !important;
+}
+
+.upload-dashed-card {
+  border: 2px dashed #cbd5e1 !important;
+  transition: all 0.25s ease;
+}
+
+.upload-dashed-card:hover {
+  border-color: #ea580c !important;
+  background-color: #fff7ed !important;
+}
+
+/* Categories & Lift cards */
+.hover-lift {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+.category-icon-round {
+  border-radius: 14px;
+}
+
+/* Modern White Navbar Matching Mockup */
+.navbar-people {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nav-pill-link {
+  color: #334155 !important;
+  font-weight: 600;
+  padding: 8px 16px !important;
+  border-radius: 9999px !important;
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-pill-link:hover {
+  color: #ea580c !important;
+  background-color: #fff7ed !important;
+}
+
+.nav-pill-link.active-pill {
+  background: linear-gradient(135deg, #ff7722, #ea580c) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.35) !important;
+}
+
+.btn-navy-pill {
+  background-color: #0b1f3a !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-size: 0.88rem;
+  transition: all 0.2s ease;
+}
+
+.btn-navy-pill:hover {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.hover-white:hover {
+  color: #ffffff !important;
+}
+
+
 

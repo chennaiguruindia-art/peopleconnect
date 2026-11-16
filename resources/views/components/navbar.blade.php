@@ -1,67 +1,61 @@
-<nav class="navbar navbar-expand-lg navbar-civic sticky-top py-1.5">
-    <div class="container-fluid px-2 px-md-3 px-xl-4">
-        <!-- Mobile Left Label: No Image (As requested), Clean Civic Menu Badge -->
-        <a class="navbar-brand d-lg-none d-flex align-items-center gap-2 py-1 text-white text-decoration-none" href="{{ route('home') }}">
-            <span class="mobile-nav-icon-badge"><i class="bi bi-grid-3x3-gap-fill text-warning"></i></span>
-            <span class="fw-bold fs-6 text-white tracking-wide">{{ __('messages.site_name') }}</span>
+<nav class="navbar navbar-expand-lg navbar-people sticky-top bg-white py-2 shadow-sm border-bottom">
+    <div class="container-fluid px-2 px-md-4">
+        <!-- Brand Identity: Logo + The People Connect -->
+        <a class="navbar-brand d-flex align-items-center gap-2.5 py-0 text-decoration-none" href="{{ route('home') }}">
+            <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="The People Connect" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
+            <div class="brand-text-nav lh-sm">
+                <div class="fw-extrabold text-navy" style="font-size: 1.05rem; letter-spacing: 0.3px;">THE PEOPLE CONNECT</div>
+                <div class="text-orange fw-bold text-uppercase" style="font-size: 0.68rem; letter-spacing: 0.8px;">VOICE OF THE VOICELESS</div>
+                <div class="text-secondary" style="font-size: 0.70rem;">குரலற்ற மக்களின் குரல்</div>
+            </div>
         </a>
 
-        <!-- Mobile Modern Hamburger Button -->
-        <button class="navbar-toggler text-white my-1 border border-white border-opacity-25 rounded-pill px-3 py-1 shadow-none d-flex align-items-center gap-1.5" type="button" data-bs-toggle="collapse" data-bs-target="#civicNavbarNav" aria-controls="civicNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list fs-4 text-white"></i>
-            <span class="small fw-bold text-white d-none d-sm-inline">{{ app()->getLocale() === 'en' ? 'MENU' : 'பட்டி' }}</span>
+        <!-- Mobile Toggler Button -->
+        <button class="navbar-toggler border-0 p-1 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#peopleNavbarNav" aria-controls="peopleNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="d-inline-flex align-items-center justify-content-center p-2 rounded-3 bg-light text-navy">
+                <i class="bi bi-list fs-3"></i>
+            </span>
         </button>
 
-        <div class="collapse navbar-collapse" id="civicNavbarNav">
-            <ul class="navbar-nav w-100 d-flex flex-wrap align-items-lg-center mb-0 py-2 py-lg-1 gap-1">
+        <!-- Navbar Links & Actions -->
+        <div class="collapse navbar-collapse" id="peopleNavbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-1 gap-lg-2 my-2 my-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
-                        <span class="nav-icon-wrapper"><i class="bi bi-house-door-fill"></i></span>
-                        <span class="nav-label-text">{{ __('messages.nav_home') }}</span>
-                        <i class="bi bi-chevron-right d-lg-none ms-auto text-white-50 small"></i>
+                    <a class="nav-link nav-pill-link {{ request()->routeIs('home') ? 'active-pill' : '' }}" href="{{ route('home') }}">
+                        <span>{{ __('messages.nav_home') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">
-                        <span class="nav-icon-wrapper"><i class="bi bi-info-circle-fill"></i></span>
-                        <span class="nav-label-text">{{ __('messages.nav_about') }}</span>
-                        <i class="bi bi-chevron-right d-lg-none ms-auto text-white-50 small"></i>
+                    <a class="nav-link nav-pill-link {{ request()->routeIs('complaints.create') ? 'active-pill' : '' }}" href="{{ route('complaints.create') }}">
+                        <span>{{ __('messages.nav_submit_complaint') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('complaints.create') ? 'active' : '' }}" href="{{ route('complaints.create') }}">
-                        <span class="nav-icon-wrapper"><i class="bi bi-pencil-square"></i></span>
-                        <span class="nav-label-text">{{ __('messages.nav_submit_complaint') }}</span>
-                        <i class="bi bi-chevron-right d-lg-none ms-auto text-white-50 small"></i>
+                    <a class="nav-link nav-pill-link {{ request()->routeIs('complaints.track') ? 'active-pill' : '' }}" href="{{ route('complaints.track') }}">
+                        <span>{{ __('messages.nav_track_complaint') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('complaints.track') ? 'active' : '' }}" href="{{ route('complaints.track') }}">
-                        <span class="nav-icon-wrapper"><i class="bi bi-search"></i></span>
-                        <span class="nav-label-text">{{ __('messages.nav_track_complaint') }}</span>
-                        <i class="bi bi-chevron-right d-lg-none ms-auto text-white-50 small"></i>
+                    <a class="nav-link nav-pill-link {{ request()->routeIs('about') ? 'active-pill' : '' }}" href="{{ route('about') }}">
+                        <span>{{ __('messages.nav_about') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('updates') ? 'active' : '' }}" href="{{ route('updates') }}">
-                        <span class="nav-icon-wrapper"><i class="bi bi-newspaper"></i></span>
-                        <span class="nav-label-text">{{ __('messages.nav_updates') }}</span>
-                        <i class="bi bi-chevron-right d-lg-none ms-auto text-white-50 small"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">
-                        <span class="nav-icon-wrapper"><i class="bi bi-envelope-fill"></i></span>
-                        <span class="nav-label-text">{{ __('messages.nav_contact') }}</span>
-                        <i class="bi bi-chevron-right d-lg-none ms-auto text-white-50 small"></i>
+                    <a class="nav-link nav-pill-link {{ request()->routeIs('contact') ? 'active-pill' : '' }}" href="{{ route('contact') }}">
+                        <span>{{ __('messages.nav_contact') }}</span>
                     </a>
                 </li>
 
-                <!-- Mobile Quick Helpline Card inside Drawer -->
-                <li class="nav-item d-lg-none w-100 pt-2 mt-2 border-top border-white border-opacity-15">
-                    <a href="tel:+919384995222" class="btn btn-warning w-100 fw-bold rounded-pill py-2 d-flex align-items-center justify-content-center gap-2 text-dark shadow-sm">
-                        <i class="bi bi-telephone-fill text-danger"></i>
-                        <span>{{ app()->getLocale() === 'en' ? 'Helpline: +91 9384995222' : 'உதவி எண்: +91 9384995222' }}</span>
+                <!-- Language Switcher Pill -->
+                <li class="nav-item ms-lg-2 my-1 my-lg-0">
+                    @include('components.language-switcher')
+                </li>
+
+                <!-- Citizen Login Navy Pill Button -->
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                    <a href="{{ route('admin.login') }}" class="btn btn-navy-pill rounded-pill px-3.5 py-1.5 fw-bold d-inline-flex align-items-center justify-content-center gap-1.5 text-white shadow-xs">
+                        <i class="bi bi-person-fill"></i>
+                        <span>Citizen Login</span>
                     </a>
                 </li>
             </ul>
