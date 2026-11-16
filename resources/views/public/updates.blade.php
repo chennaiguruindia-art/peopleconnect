@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', (app()->getLocale() === 'en' ? 'Virudhunagar Live News & Updates' : 'விருதுநகர் மாவட்ட நேரடி செய்திகள்') . ' - ' . __('messages.site_name'))
+@section('title', (app()->getLocale() === 'en' ? 'Tamil Nadu Live Civic News & District Bulletins' : 'தமிழ்நாடு மாநில & மாவட்ட நேரடி செய்திகள்') . ' - ' . __('messages.site_name'))
 
 @section('content')
 <div class="container py-4 py-md-5 px-3 px-sm-4">
@@ -16,16 +16,16 @@
     <div class="text-center mb-4 mb-md-5">
         <div class="d-inline-flex align-items-center justify-content-center gap-2 bg-danger-subtle text-danger border border-danger-subtle px-3 py-1.5 rounded-pill mb-3 fw-bold small shadow-xs text-wrap" style="max-width: 100%;">
             <span class="spinner-grow spinner-grow-sm text-danger flex-shrink-0" role="status" style="width: 10px; height: 10px;"></span>
-            <span>{{ app()->getLocale() === 'en' ? 'LIVE VIRUDHUNAGAR NEWS FEED' : 'நேரடி செய்தி அலைவரிசை • LIVE UPDATES' }}</span>
+            <span>{{ app()->getLocale() === 'en' ? 'LIVE TAMIL NADU NEWS FEED' : 'தமிழ்நாடு நேரடி செய்தி அலைவரிசை • LIVE UPDATES' }}</span>
         </div>
         <h1 class="fw-bold text-dark fs-2 fs-md-1 mb-2">
-            {{ app()->getLocale() === 'en' ? 'Virudhunagar District News & Bulletins' : 'விருதுநகர் மாவட்ட செய்திகள் & அறிவிப்புகள்' }}
+            {{ app()->getLocale() === 'en' ? 'Tamil Nadu State & District News Bulletins' : 'தமிழ்நாடு மாநில & மாவட்ட செய்திகள் மற்றும் அறிவிப்புகள்' }}
         </h1>
-        <p class="text-muted fs-6 fs-md-5 mx-auto" style="max-width: 720px;">
+        <p class="text-muted fs-6 fs-md-5 mx-auto" style="max-width: 760px;">
             @if(app()->getLocale() === 'en')
-                Real-time civic alerts, agricultural updates, district administration notices, and local press reports from all across Virudhunagar District.
+                Real-time civic alerts, public welfare developments, government schemes, infrastructure updates, and press reports from all 38 districts across Tamil Nadu.
             @else
-                விருதுநகர் மாவட்டத்தின் தினசரி முக்கிய நிகழ்வுகள், உழவர் நலம், குடிநீர் மற்றும் உட்கட்டமைப்பு மேம்பாட்டுப் பணிகள், மற்றும் பத்திரிகைச் செய்திகளின் நேரடித் தொகுப்பு.
+                தமிழ்நாட்டின் 38 மாவட்டங்களின் தினசரி முக்கிய மக்கள் நல நிகழ்வுகள், அரசு திட்டங்கள், குடிநீர், சாலை மற்றும் உட்கட்டமைப்பு மேம்பாட்டுப் பணிகள், மற்றும் பத்திரிகைச் செய்திகளின் நேரடித் தொகுப்பு.
             @endif
         </p>
 
@@ -38,7 +38,7 @@
                     @endif
                     <div class="input-group shadow-sm rounded-pill overflow-hidden border flex-grow-1">
                         <span class="input-group-text bg-white border-0 ps-3 text-muted"><i class="bi bi-search"></i></span>
-                        <input type="text" name="q" value="{{ request('q') }}" class="form-control border-0 ps-1 py-2" placeholder="{{ app()->getLocale() === 'en' ? 'Search Virudhunagar news by keywords...' : 'விருதுநகர் செய்திகளைத் தேடுக...' }}">
+                        <input type="text" name="q" value="{{ request('q') }}" class="form-control border-0 ps-1 py-2" placeholder="{{ app()->getLocale() === 'en' ? 'Search Tamil Nadu or district news by keywords...' : 'தமிழ்நாடு அல்லது மாவட்டச் செய்திகளைத் தேடுக...' }}">
                         <button class="btn btn-primary px-3 px-sm-4 fw-semibold" type="submit">{{ app()->getLocale() === 'en' ? 'Search' : 'தேடு' }}</button>
                     </div>
                     <a href="{{ route('updates', ['refresh' => 1]) }}" class="btn btn-light border shadow-sm rounded-pill text-nowrap px-3 py-2 text-dark flex-shrink-0" title="{{ app()->getLocale() === 'en' ? 'Fetch Latest News' : 'சமீபத்திய செய்திகளைப் புதுப்பி' }}">
@@ -61,11 +61,13 @@
                     @if($cat === 'Agriculture')
                         🌾 {{ app()->getLocale() === 'en' ? 'Agriculture' : 'விவசாயம் & உழவர்' }}
                     @elseif($cat === 'Infrastructure')
-                        🚰 {{ app()->getLocale() === 'en' ? 'Infrastructure' : 'குடிநீர் & சாலை' }}
+                        🚰 {{ app()->getLocale() === 'en' ? 'Infrastructure' : 'குடிநீர் & உள்கட்டமைப்பு' }}
                     @elseif($cat === 'Civic Welfare')
-                        🏛️ {{ app()->getLocale() === 'en' ? 'Civic Welfare' : 'மாவட்ட நிர்வாகம்' }}
+                        🏛️ {{ app()->getLocale() === 'en' ? 'Civic Welfare' : 'மக்கள் நல்வாழ்வு & அரசுத் திட்டம்' }}
                     @elseif($cat === 'Industry & Trade')
-                        🏭 {{ app()->getLocale() === 'en' ? 'Industry & Trade' : 'வணிகம் & பட்டாசு' }}
+                        🏭 {{ app()->getLocale() === 'en' ? 'Industry & Trade' : 'தொழில் & வணிகம்' }}
+                    @elseif($cat === 'Education & Health')
+                        🏥 {{ app()->getLocale() === 'en' ? 'Education & Health' : 'கல்வி & மருத்துவம்' }}
                     @else
                         📰 {{ $cat }}
                     @endif
@@ -83,8 +85,8 @@
                 // If description is identical or almost identical to headline, provide clean excerpt
                 if (empty($cleanDesc) || trim($cleanDesc) === trim($cleanHeadline) || strlen($cleanDesc) < 15) {
                     $cleanDesc = (app()->getLocale() === 'en')
-                        ? 'Detailed news bulletin published from Virudhunagar District. Click full story to read the complete coverage.'
-                        : 'விருதுநகர் மாவட்டத்திலிருந்து வெளியான முக்கிய செய்தி அறிக்கை. விரிவான தகவல்களை வாசிக்க கீழே உள்ள முழு செய்தி பொத்தானை அழுத்தவும்.';
+                        ? 'Detailed public welfare news bulletin published across Tamil Nadu. Click full story to read the complete coverage.'
+                        : 'தமிழ்நாடு மாநில & மாவட்ட அளவிலான முக்கிய மக்கள் நல செய்தி அறிக்கை. விரிவான தகவல்களை வாசிக்க கீழே உள்ள முழு செய்தி பொத்தானை அழுத்தவும்.';
                 }
             @endphp
             <div class="col-md-6 col-lg-4">
@@ -108,6 +110,10 @@
                             @elseif($update->category === 'Industry & Trade')
                                 <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill px-2.5 py-1 small fw-bold">
                                     🏭 {{ app()->getLocale() === 'en' ? 'Trade & Industry' : 'தொழில் & வணிகம்' }}
+                                </span>
+                            @elseif($update->category === 'Education & Health')
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-2.5 py-1 small fw-bold">
+                                    🏥 {{ app()->getLocale() === 'en' ? 'Education & Health' : 'கல்வி & மருத்துவம்' }}
                                 </span>
                             @else
                                 <span class="badge bg-secondary-subtle text-secondary border rounded-pill px-2.5 py-1 small fw-bold">

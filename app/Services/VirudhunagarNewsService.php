@@ -11,10 +11,30 @@ use Illuminate\Support\Facades\Log;
 class VirudhunagarNewsService
 {
     /**
-     * Google News RSS Search Feed URLs for Virudhunagar
+     * Google News RSS Search Feed URLs for Tamil Nadu State & Districts
      */
-    protected string $tamilFeedUrl = 'https://news.google.com/rss/search?q=Virudhunagar+விருதுநகர்&hl=ta&gl=IN&ceid=IN:ta';
-    protected string $englishFeedUrl = 'https://news.google.com/rss/search?q=Virudhunagar&hl=en-IN&gl=IN&ceid=IN:en';
+    protected array $feeds = [
+        [
+            'url' => 'https://news.google.com/rss/search?q=Tamil+Nadu+தமிழ்நாடு+செய்திகள்&hl=ta&gl=IN&ceid=IN:ta',
+            'lang' => 'ta',
+            'limit' => 20,
+        ],
+        [
+            'url' => 'https://news.google.com/rss/search?q=தமிழ்நாடு+அரசு+திட்டம்+மக்கள்+நலம்&hl=ta&gl=IN&ceid=IN:ta',
+            'lang' => 'ta',
+            'limit' => 15,
+        ],
+        [
+            'url' => 'https://news.google.com/rss/search?q=Virudhunagar+விருதுநகர்&hl=ta&gl=IN&ceid=IN:ta',
+            'lang' => 'ta',
+            'limit' => 10,
+        ],
+        [
+            'url' => 'https://news.google.com/rss/search?q=Tamil+Nadu+civic+news+welfare&hl=en-IN&gl=IN&ceid=IN:en',
+            'lang' => 'en',
+            'limit' => 10,
+        ],
+    ];
 
     /**
      * Clean and sanitize news text:
@@ -84,11 +104,11 @@ class VirudhunagarNewsService
             Log::warning('News sync cache check failed: ' . $e->getMessage());
         }
 
-        $items = $this->fetchFromRss($this->tamilFeedUrl, 'ta', $limit);
-        
-        // Also fetch English items
-        $enItems = $this->fetchFromRss($this->englishFeedUrl, 'en', 10);
-        $allItems = array_merge($items, $enItems);
+        $allItems = [];
+        foreach ($this->feeds as $feedConfig) {
+            $feedItems = $this->fetchFromRss($feedConfig['url'], $feedConfig['lang'], $feedConfig['limit']);
+            $allItems = array_merge($allItems, $feedItems);
+        }
 
         $savedCount = 0;
 
@@ -104,7 +124,7 @@ class VirudhunagarNewsService
                 continue;
             }
 
-            $sourceName = $item['source'] ?: 'Virudhunagar News';
+            $sourceName = $item['source'] ?: 'Tamil Nadu News';
             $cleanTitle = self::sanitizeText($item['title'], $sourceName);
             $cleanDescription = self::sanitizeText($item['description'], $sourceName);
 
@@ -120,8 +140,8 @@ class VirudhunagarNewsService
 
             $category = $this->detectCategory($cleanTitle . ' ' . $cleanDescription);
 
-            $contentTa = !empty($cleanDescription) ? $cleanDescription : 'விருதுநகர் மாவட்டத்திற்கான செய்தி அறிக்கை (' . $sourceName . ').';
-            $contentEn = !empty($cleanDescription) ? $cleanDescription : 'News report from Virudhunagar District via ' . $sourceName . '.';
+            $contentTa = !empty($cleanDescription) ? $cleanDescription : 'தமிழ்நாடு மாநில மக்கள் நல செய்தி அறிக்கை (' . $sourceName . ').';
+            $contentEn = !empty($cleanDescription) ? $cleanDescription : 'Public welfare news report from Tamil Nadu via ' . $sourceName . '.';
 
             if (!$existing) {
                 PublicUpdate::create([
@@ -283,17 +303,20 @@ class VirudhunagarNewsService
     {
         $text = mb_strtolower($text);
 
-        if (str_contains($text, 'விவசாய') || str_contains($text, 'உழவர்') || str_contains($text, 'மழை') || str_contains($text, 'பயிர்') || str_contains($text, 'farmer') || str_contains($text, 'agriculture')) {
+        if (str_contains($text, 'விவசாய') || str_contains($text, 'உழவர்') || str_contains($text, 'மழை') || str_contains($text, 'பயிர்') || str_contains($text, 'farmer') || str_contains($text, 'agriculture') || str_contains($text, 'விவசாயி')) {
             return 'Agriculture';
         }
-        if (str_contains($text, 'குடிநீர்') || str_contains($text, 'சாலை') || str_contains($text, 'மின்சாரம்') || str_contains($text, 'கால்வாய்') || str_contains($text, 'water') || str_contains($text, 'road') || str_contains($text, 'துறை')) {
+        if (str_contains($text, 'குடிநீர்') || str_contains($text, 'சாலை') || str_contains($text, 'மின்சாரம்') || str_contains($text, 'கால்வாய்') || str_contains($text, 'பாலம்') || str_contains($text, 'மெட்ரோ') || str_contains($text, 'ரயில்') || str_contains($text, 'water') || str_contains($text, 'road') || str_contains($text, 'துறை')) {
             return 'Infrastructure';
         }
-        if (str_contains($text, 'ஆட்சியர்') || str_contains($text, 'கலெக்டர்') || str_contains($text, 'அரசு') || str_contains($text, 'திட்டம்') || str_contains($text, 'collector') || str_contains($text, 'scheme') || str_contains($text, 'மனு')) {
+        if (str_contains($text, 'ஆட்சியர்') || str_contains($text, 'கலெக்டர்') || str_contains($text, 'அரசு') || str_contains($text, 'திட்டம்') || str_contains($text, 'நலத்திட்டம்') || str_contains($text, 'collector') || str_contains($text, 'scheme') || str_contains($text, 'மனு') || str_contains($text, 'நிதி')) {
             return 'Civic Welfare';
         }
-        if (str_contains($text, 'பட்டாசு') || str_contains($text, 'தீப்பெட்டி') || str_contains($text, 'வணிக') || str_contains($text, 'தொழில்') || str_contains($text, 'textile') || str_contains($text, 'industry') || str_contains($text, 'business')) {
+        if (str_contains($text, 'பட்டாசு') || str_contains($text, 'தீப்பெட்டி') || str_contains($text, 'வணிக') || str_contains($text, 'தொழில்') || str_contains($text, 'வேலைவாய்ப்பு') || str_contains($text, 'textile') || str_contains($text, 'industry') || str_contains($text, 'business') || str_contains($text, 'sipcot')) {
             return 'Industry & Trade';
+        }
+        if (str_contains($text, 'பள்ளி') || str_contains($text, 'கல்லூரி') || str_contains($text, 'மருத்துவ') || str_contains($text, 'ஆரோக்கிய') || str_contains($text, 'hospital') || str_contains($text, 'school') || str_contains($text, 'health')) {
+            return 'Education & Health';
         }
 
         return 'General News';
