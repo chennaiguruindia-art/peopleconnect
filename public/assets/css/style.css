@@ -1204,11 +1204,11 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  width: 66%;
+  width: 62%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 85% center;
+  background-position: 90% center;
   z-index: 1;
 }
 

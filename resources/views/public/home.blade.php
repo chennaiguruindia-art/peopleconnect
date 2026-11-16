@@ -11,38 +11,40 @@
 
     <!-- Curved SVG Panel on Left (Desktop & Tablet) -->
     <svg class="banner-curve-svg d-none d-lg-block" viewBox="0 0 1000 560" preserveAspectRatio="none">
-        <path d="M 0,0 L 400,0 C 455,30 435,300 535,560 L 0,560 Z" fill="#ffffff" />
-        <path d="M 400,0 C 455,30 435,300 535,560" fill="none" stroke="#ea580c" stroke-width="7" stroke-linecap="round" />
+        <path d="M 0,0 L 440,0 C 495,30 475,300 565,560 L 0,560 Z" fill="#ffffff" />
+        <path d="M 440,0 C 495,30 475,300 565,560" fill="none" stroke="#ea580c" stroke-width="7" stroke-linecap="round" />
     </svg>
 
     <!-- Mobile Gradient Overlay for Phone Screens (< lg) -->
     <div class="banner-mobile-overlay d-lg-none"></div>
 
     <!-- Banner Text Content -->
-    <div class="container-fluid px-3 px-md-5 px-xl-5 position-relative z-2 h-100">
+    <div class="container-fluid px-3 px-md-4 px-xl-5 position-relative z-2 h-100">
         <div class="row align-items-center h-100">
-            <div class="col-lg-7 col-xl-6 py-4 py-lg-5 ps-lg-4 ps-xl-5 pe-2">
-                <h1 class="hero-people-heading mb-2 mb-md-3 notranslate" translate="no">
-                    <span class="d-block text-navy">உங்கள் குரல்.</span>
-                    <span class="d-block text-navy">உங்கள் பகுதி.</span>
-                    <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
-                </h1>
-                
-                <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-3 my-md-4 notranslate" translate="no">
-                    <p class="hero-desc-text text-secondary mb-0 fw-medium">
-                        உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
-                    </p>
-                </div>
+            <div class="col-lg-5 col-xl-5 py-4 py-lg-5 ps-2 ps-md-4 ps-lg-5">
+                <div class="hero-text-wrapper" style="max-width: 440px;">
+                    <h1 class="hero-people-heading mb-2 mb-md-3 notranslate" translate="no">
+                        <span class="d-block text-navy">உங்கள் குரல்.</span>
+                        <span class="d-block text-navy">உங்கள் பகுதி.</span>
+                        <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
+                    </h1>
+                    
+                    <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-3 my-md-4 notranslate" translate="no">
+                        <p class="hero-desc-text text-secondary mb-0 fw-medium">
+                            உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
+                        </p>
+                    </div>
 
-                <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-4 notranslate" translate="no">
-                    <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2 text-nowrap">
-                        <i class="bi bi-pencil-fill"></i>
-                        <span>புகாரைப் பதிவு செய்யுங்கள்</span>
-                    </a>
-                    <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 text-nowrap">
-                        <i class="bi bi-search"></i>
-                        <span>புகார் நிலையை அறியுங்கள்</span>
-                    </a>
+                    <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-4 notranslate" translate="no">
+                        <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-3.5 px-md-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2 text-nowrap">
+                            <i class="bi bi-pencil-fill"></i>
+                            <span>புகாரைப் பதிவு செய்யுங்கள்</span>
+                        </a>
+                        <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-3.5 px-md-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 text-nowrap">
+                            <i class="bi bi-search"></i>
+                            <span>புகார் நிலையை அறியுங்கள்</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
