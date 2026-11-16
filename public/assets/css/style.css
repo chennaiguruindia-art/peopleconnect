@@ -25,12 +25,37 @@
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
+/* ==========================================================================
+   Completely Suppress Any Google Translate Top Banner Frame & Reset Body Top
+   ========================================================================== */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+body > .skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  border: none !important;
+  pointer-events: none !important;
+}
+
 body {
+  top: 0px !important;
+  position: static !important;
   font-family: 'Mukta Malar', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--dark-slate);
   background-color: #ffffff;
   line-height: 1.65;
   overflow-x: hidden;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
 }
 
 /* ==========================================================================

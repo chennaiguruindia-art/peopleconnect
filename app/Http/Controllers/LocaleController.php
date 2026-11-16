@@ -20,11 +20,7 @@ class LocaleController extends Controller
             Session::put('locale', $locale);
         }
 
-        $targetLang = $locale === 'en' ? 'en' : 'ta';
-        $cookieVal = "/ta/{$targetLang}";
-
-        return redirect()->back()
-            ->cookie('googtrans', $cookieVal, 60 * 24 * 30, '/', null, false, false);
+        return redirect()->back()->withoutCookie('googtrans');
     }
 
     /**

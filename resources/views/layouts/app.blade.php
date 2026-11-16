@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/select2-bootstrap-5-theme.min.css') }}">
 
     <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v=2.6">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v=2.7">
     @stack('styles')
 </head>
 <body>
@@ -52,19 +52,6 @@
     <script src="{{ asset('assets/js/complaint.js') }}"></script>
     <!-- Gemini AI Dynamic Page Translator -->
     <script src="{{ asset('assets/js/api-translator.js') }}"></script>
-
-    <!-- Google Translate Integration (Kept Intact & Running, Widget Hidden) -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'ta',
-                includedLanguages: 'ta,en,hi,te,ml,kn',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     @stack('scripts')
 </body>
