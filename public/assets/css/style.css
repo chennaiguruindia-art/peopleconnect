@@ -1656,6 +1656,53 @@ img {
   }
 }
 
+/* ----------------------------------------------------
+   CIVIC FOOTER & PARLIAMENT LEADERSHIP BANNER
+---------------------------------------------------- */
+.footer-banner-parliament {
+  position: relative;
+  background-color: #061527;
+}
+
+.footer-modi-card {
+  border: 2px solid #f59e0b;
+  border-radius: 22px;
+  background: rgba(6, 21, 39, 0.90);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer-modi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(245, 158, 11, 0.25);
+}
+
+.footer-col-divider {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 991.98px) {
+  .footer-col-divider {
+    border-right: none !important;
+  }
+}
+
+.btn-officer-login {
+  transition: all 0.2s ease;
+}
+
+.btn-officer-login:hover {
+  background: #f59e0b !important;
+  color: #000000 !important;
+  border-color: #f59e0b !important;
+}
+
+.btn-officer-login:hover i {
+  color: #000000 !important;
+}
+
+
 
 
 
