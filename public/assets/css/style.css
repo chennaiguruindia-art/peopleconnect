@@ -37,6 +37,8 @@ body {
    Header & Top Utility Bar (Modern Civic Design)
    ========================================================================== */
 .top-utility-bar {
+  position: relative;
+  z-index: 1050;
   background: #08162b;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   color: #cbd5e1;
@@ -90,6 +92,11 @@ body {
   }
 }
 
+.top-lang-wrapper {
+  position: relative;
+  z-index: 1060;
+}
+
 .top-lang-wrapper .language-switcher .btn {
   background: rgba(255, 255, 255, 0.12) !important;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
@@ -103,6 +110,18 @@ body {
 .top-lang-wrapper .language-switcher .btn:hover {
   background: rgba(255, 255, 255, 0.22) !important;
   color: #ffffff !important;
+}
+
+.top-lang-wrapper .dropdown-menu {
+  z-index: 1070 !important;
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  left: auto !important;
+  margin-top: 6px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
 }
 
 .top-bar-divider {

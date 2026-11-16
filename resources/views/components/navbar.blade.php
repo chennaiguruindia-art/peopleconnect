@@ -42,6 +42,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link nav-pill-link text-nowrap {{ request()->routeIs('updates*') ? 'active-pill' : '' }}" href="{{ route('updates') }}">
+                        <span>{{ __('messages.nav_updates') }}</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link nav-pill-link text-nowrap {{ request()->routeIs('contact') ? 'active-pill' : '' }}" href="{{ route('contact') }}">
                         <span>{{ __('messages.nav_contact') }}</span>
                     </a>

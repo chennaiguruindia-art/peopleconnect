@@ -269,6 +269,49 @@
     </div>
 </section>
 
+<!-- 4.5. LATEST UPDATES & CIVIC NEWS (/updates) -->
+<section class="py-5 bg-white border-top">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+            <div>
+                <span class="text-primary fw-bold text-uppercase small" style="letter-spacing: 0.5px;">CIVIC NEWS & ALERTS / அறிவிப்புகள்</span>
+                <h3 class="fw-bold text-navy mt-1 mb-0 fs-3">{{ __('messages.latest_news') }}</h3>
+            </div>
+            <a href="{{ route('updates') }}" class="btn btn-outline-secondary rounded-pill px-3.5 py-1.5 fw-semibold mt-2 mt-md-0 d-inline-flex align-items-center gap-1.5">
+                <span>{{ __('messages.read_more') }}</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="row g-4">
+            @forelse($updates as $update)
+                <div class="col-md-4">
+                    <div class="card h-100 border rounded-4 shadow-xs hover-lift d-flex flex-column">
+                        <div class="card-body p-4 flex-grow-1">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill">{{ $update->category }}</span>
+                                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>{{ $update->published_at ? $update->published_at->format('d M Y') : date('d M Y') }}</small>
+                            </div>
+                            <h5 class="fw-bold text-dark mt-2 mb-2 lh-base fs-6">{{ $update->title }}</h5>
+                            <p class="text-secondary small mb-0 lh-base">{{ Str::limit($update->content, 130) }}</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 px-4 text-end">
+                            <a href="{{ route('updates') }}" class="text-primary text-decoration-none small fw-semibold">
+                                {{ __('messages.read_more') }} <i class="bi bi-arrow-right small"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <div class="col-12 text-center text-muted py-4">
+                    <i class="bi bi-newspaper fs-1 text-secondary opacity-50 d-block mb-2"></i>
+                    <span>செய்திகள் எதுவும் தற்போது பதிவேற்றப்படவில்லை.</span>
+                </div>
+            @endforelse
+        </div>
+    </div>
+</section>
+
 <!-- 5. "உங்கள் புகாரின் நிலையை அறியுங்கள் | Track Your Complaint" (NAVY BAR) -->
 <section class="py-4 bg-white">
     <div class="container">
