@@ -1188,22 +1188,23 @@ img {
 }
 
 /* ==========================================================================
-   Hero Curved Banner (Exact Panoramic Mockup matching Image 2)
+   Hero Curved Banner (Full-Screen Panoramic Mockup matching Image 2)
    ========================================================================== */
 .hero-curved-banner {
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  min-height: 500px;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 520px;
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 0 !important;
+  width: 100%;
 }
 
 .hero-curved-banner .banner-photo-bg {
   position: absolute;
   top: 0;
   right: 0;
-  width: 68%;
+  width: 66%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1231,9 +1232,10 @@ img {
   z-index: 2;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .hero-curved-banner {
-    min-height: 520px;
+    min-height: calc(100vh - 110px);
+    max-height: 700px;
   }
 }
 
