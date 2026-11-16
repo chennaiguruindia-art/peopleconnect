@@ -1,11 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-people sticky-top bg-white py-2 shadow-sm border-bottom">
     <div class="container-fluid px-2 px-md-3 px-xl-4">
-        <!-- Brand Identity: Logo + Lotus Symbol + People Grievance Platform -->
+        <!-- Brand Identity: Logo + People Grievance Platform -->
         <a class="navbar-brand d-flex align-items-center py-0 text-decoration-none notranslate flex-shrink-0" translate="no" href="{{ route('home') }}">
-            <div class="d-flex align-items-center gap-1.5 gap-sm-2 flex-shrink-0">
-                <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="The People Connect Logo" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
-                <img src="{{ asset('assets/images/bjp/lotus.png') }}" alt="Lotus Symbol" class="brand-lotus-nav" style="height: 42px; width: 42px; object-fit: contain;">
-            </div>
+            <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="The People Connect Logo" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
             <div class="brand-divider-v mx-2 mx-sm-2.5"></div>
             <div class="brand-text-nav lh-sm ps-1 ps-sm-1.5">
                 <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PEOPLE GRIEVANCE PLATFORM</div>
@@ -15,12 +12,15 @@
             </div>
         </a>
 
-        <!-- Mobile Toggler Button -->
-        <button class="navbar-toggler border-0 p-1 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#peopleNavbarNav" aria-controls="peopleNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="d-inline-flex align-items-center justify-content-center p-2 rounded-3 bg-light text-navy">
-                <i class="bi bi-list fs-2"></i>
-            </span>
-        </button>
+        <!-- Mobile Right Unit: Lotus Logo + Hamburger Button -->
+        <div class="d-flex align-items-center gap-2 ms-auto d-lg-none">
+            <img src="{{ asset('assets/images/bjp/lotus.png') }}" alt="Lotus Symbol" class="rounded-circle shadow-xs" style="height: 38px; width: 38px; object-fit: contain;">
+            <button class="navbar-toggler border-0 p-1 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#peopleNavbarNav" aria-controls="peopleNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="d-inline-flex align-items-center justify-content-center p-2 rounded-3 bg-light text-navy">
+                    <i class="bi bi-list fs-2"></i>
+                </span>
+            </button>
+        </div>
 
         <!-- Navbar Links & Actions -->
         <div class="collapse navbar-collapse" id="peopleNavbarNav">
@@ -62,12 +62,9 @@
                     </a>
                 </li>
 
-                <!-- Citizen Login Navy Pill Button -->
-                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                    <a href="{{ route('admin.login') }}" class="btn btn-navy-pill rounded-pill px-3.5 py-1.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2 text-white shadow-xs text-nowrap">
-                        <i class="bi bi-person-fill"></i>
-                        <span>Citizen Login</span>
-                    </a>
+                <!-- Lotus Symbol (Replaces Citizen Login Button on Desktop) -->
+                <li class="nav-item ms-lg-3 d-none d-lg-flex align-items-center">
+                    <img src="{{ asset('assets/images/bjp/lotus.png') }}" alt="Lotus Symbol" class="rounded-circle shadow-xs" style="height: 44px; width: 44px; object-fit: contain;" title="Bharatiya Janata Party">
                 </li>
             </ul>
         </div>
