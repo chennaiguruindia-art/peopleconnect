@@ -1,23 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-people sticky-top bg-white py-2 shadow-sm border-bottom">
-    <div class="container-fluid px-2 px-md-3 px-xl-4">
+    <div class="container-fluid px-2 px-md-3 px-xl-4 d-flex align-items-center justify-content-between">
         <!-- Brand Identity: Logo + People Grievance Platform -->
-        <a class="navbar-brand d-flex align-items-center py-0 text-decoration-none notranslate flex-shrink-0" translate="no" href="{{ route('home') }}">
+        <a class="navbar-brand d-flex align-items-center py-0 text-decoration-none notranslate me-0" translate="no" href="{{ route('home') }}">
             <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="The People Connect Logo" class="brand-logo-nav" style="height: 48px; width: auto; object-fit: contain;">
             <div class="brand-divider-v mx-2 mx-sm-2.5"></div>
-            <div class="brand-text-nav lh-sm ps-1 ps-sm-1.5">
+            <div class="brand-text-nav lh-sm ps-1">
                 <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PEOPLE GRIEVANCE PLATFORM</div>
                 <div class="text-orange fw-bold text-uppercase brand-sub-voice notranslate" translate="no" style="font-size: 0.68rem; letter-spacing: 0.6px;">
-                <span class="brand-tamil-sub text-orange fw-bold text-secondary fw-semibold ms-1 notranslate" translate="no"> குரலற்ற மக்களின் குரல்</span>
+                    <span class="brand-tamil-sub text-orange fw-bold text-secondary fw-semibold ms-1 notranslate" translate="no">குரலற்ற மக்களின் குரல்</span>
                 </div>
             </div>
         </a>
 
         <!-- Mobile Right Unit: Lotus Logo + Hamburger Button -->
-        <div class="d-flex align-items-center gap-2 ms-auto d-lg-none">
-            <img src="{{ asset('assets/images/bjp/lotus.png') }}" alt="Lotus Symbol" class="rounded-circle shadow-xs" style="height: 38px; width: 38px; object-fit: contain;">
-            <button class="navbar-toggler border-0 p-1 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#peopleNavbarNav" aria-controls="peopleNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="d-inline-flex align-items-center justify-content-center p-2 rounded-3 bg-light text-navy">
-                    <i class="bi bi-list fs-2"></i>
+        <div class="d-flex align-items-center gap-2 ms-auto flex-shrink-0 d-lg-none">
+            <img src="{{ asset('assets/images/bjp/lotus.png') }}" alt="Lotus Symbol" class="brand-lotus-mobile rounded-circle shadow-xs" style="height: 34px; width: 34px; object-fit: contain;">
+            <button class="navbar-toggler border-0 p-0 shadow-none d-flex align-items-center justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#peopleNavbarNav" aria-controls="peopleNavbarNav" aria-expanded="false" aria-label="Toggle navigation" style="width: 38px; height: 38px;">
+                <span class="d-inline-flex align-items-center justify-content-center w-100 h-100 rounded-3 bg-light text-navy">
+                    <i class="bi bi-list fs-3"></i>
                 </span>
             </button>
         </div>

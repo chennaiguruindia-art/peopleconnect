@@ -1525,39 +1525,44 @@ img {
 
 @media (max-width: 575.98px) {
   .navbar-people {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    min-height: 68px;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    min-height: 64px;
   }
 
   .brand-logo-nav {
-    height: 44px !important;
+    height: 42px !important;
   }
 
-  .brand-lotus-nav {
+  .brand-lotus-mobile {
     height: 34px !important;
     width: 34px !important;
+    border: 1px solid rgba(245, 158, 11, 0.45) !important;
+    background-color: #ffffff !important;
+    padding: 1px;
+    border-radius: 50% !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12) !important;
   }
 
   .brand-divider-v {
     display: block !important;
-    height: 28px !important;
-    margin-left: 8px !important;
-    margin-right: 10px !important;
+    height: 26px !important;
+    margin-left: 6px !important;
+    margin-right: 8px !important;
     background-color: #cbd5e1 !important;
   }
 
   .brand-heading-title {
-    font-size: 0.95rem !important;
+    font-size: 0.88rem !important;
     font-weight: 800 !important;
-    line-height: 1.18 !important;
-    letter-spacing: 0.1px !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.15px !important;
     white-space: normal !important;
   }
 
   .brand-sub-voice {
-    font-size: 0.62rem !important;
-    letter-spacing: 0.4px !important;
+    font-size: 0.60rem !important;
+    letter-spacing: 0.3px !important;
   }
 }
 
