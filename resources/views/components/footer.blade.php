@@ -1,4 +1,47 @@
 <footer class="footer-civic" style="background-color: #0b1f3a; color: #cbd5e1;">
+    <!-- 1. Leadership & Inspiration Strip: Lotus Symbol & Hon'ble PM Modi -->
+    <div class="footer-leadership-strip border-bottom border-white border-opacity-10 py-3 py-md-4 notranslate" translate="no" style="background: linear-gradient(90deg, rgba(234, 88, 12, 0.15) 0%, rgba(11, 31, 58, 0.8) 50%, rgba(22, 163, 74, 0.15) 100%);">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-3">
+                <!-- Left: Lotus Symbol & Good Governance Slogan -->
+                <div class="col-md-7 col-lg-6">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="lotus-logo-badge p-1.5 bg-white rounded-circle shadow-sm flex-shrink-0 d-flex align-items-center justify-content-center border border-2 border-warning" style="width: 64px; height: 64px;">
+                            <img src="{{ asset('assets/images/bjp/image.png') }}" alt="Lotus Symbol" class="img-fluid" style="max-height: 44px; max-width: 44px; object-fit: contain;">
+                        </div>
+                        <div>
+                            <div class="d-inline-flex align-items-center gap-1.5 px-2.5 py-0.5 rounded-pill bg-warning text-dark fw-bold small mb-1" style="font-size: 0.70rem;">
+                                <i class="bi bi-star-fill text-dark" style="font-size: 0.65rem;"></i>
+                                <span>மக்கள் நலன் & நல்லாட்சித் தளம்</span>
+                            </div>
+                            <h5 class="fw-bold text-white mb-0 fs-6 lh-sm">
+                                "சேவையே சிறந்த அரசியல் • மக்களின் குரலே எங்கள் பாதை"
+                            </h5>
+                            <p class="text-white-50 small mb-0 mt-1" style="font-size: 0.78rem;">
+                                அந்தியோதயா தொலைநோக்கு — கடைக்கோடி மனிதனின் குறைகளுக்கும் உடனடி தீர்வு.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: PM Narendra Modi Card -->
+                <div class="col-md-5 col-lg-5">
+                    <div class="d-flex align-items-center justify-content-between justify-content-md-end gap-3 p-2 p-sm-2.5 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-15 shadow-sm">
+                        <div class="text-start text-md-end lh-sm">
+                            <span class="badge bg-warning text-dark fw-bold px-2 py-0.5 rounded-pill mb-1" style="font-size: 0.68rem;">Hon'ble Prime Minister</span>
+                            <div class="fw-extrabold text-white" style="font-size: 1.02rem; letter-spacing: 0.3px;">நரேந்திர மோடி</div>
+                            <div class="text-warning small fw-bold" style="font-size: 0.74rem;">பாரதப் பிரதமர் | Prime Minister of India</div>
+                        </div>
+                        <div class="modi-avatar-frame rounded-circle overflow-hidden border border-2 border-warning shadow flex-shrink-0" style="width: 64px; height: 64px; background: #ffffff;">
+                            <img src="{{ asset('assets/images/bjp/modi.png') }}" alt="Shri Narendra Modi" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Main Footer Content (4 Columns) -->
     <div class="container py-5">
         <div class="row g-4 justify-content-between">
             <!-- Col 1: Brand & Logo -->
