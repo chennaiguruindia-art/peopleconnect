@@ -4,21 +4,19 @@
 
 @section('content')
 
-<!-- 1. HERO PANORAMIC CURVED BANNER (Full-Screen Edge-to-Edge) -->
-<section class="hero-curved-banner position-relative overflow-hidden w-100 border-bottom">
+<!-- 1. HERO SECTION -->
+<!-- A. DESKTOP PANORAMIC CURVED HERO (d-none d-lg-block) -->
+<section class="hero-curved-banner position-relative overflow-hidden w-100 border-bottom d-none d-lg-block">
     <!-- Background Image on Right (Using existing banner1.png with proper positioning) -->
-    <div class="banner-photo-bg" style="background-image: url('{{ asset('assets/images/banner/banner1.png') }}');"></div>
+    <div class="banner-photo-bg" style="background-image: url('{{ asset('assets/images/banner/banner.jpg') }}');"></div>
 
     <!-- Curved SVG Panel on Left (Desktop & Tablet) -->
-    <svg class="banner-curve-svg d-none d-lg-block" viewBox="0 0 1000 560" preserveAspectRatio="none">
+    <svg class="banner-curve-svg" viewBox="0 0 1000 560" preserveAspectRatio="none">
         <path d="M 0,0 L 440,0 C 495,30 475,300 565,560 L 0,560 Z" fill="#ffffff" />
         <path d="M 440,0 C 495,30 475,300 565,560" fill="none" stroke="#ea580c" stroke-width="7" stroke-linecap="round" />
     </svg>
 
-    <!-- Mobile Gradient Overlay for Phone Screens (< lg) -->
-    <div class="banner-mobile-overlay d-lg-none"></div>
-
-    <!-- Banner Text Content -->
+    <!-- Desktop Banner Text Content -->
     <div class="container-fluid px-3 px-md-4 px-xl-5 position-relative z-2 h-100">
         <div class="row align-items-center h-100">
             <div class="col-lg-5 col-xl-5 py-4 py-lg-5 ps-2 ps-md-4 ps-lg-5">
@@ -57,6 +55,59 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- B. MOBILE DEDICATED HERO (d-lg-none) — Vibrant People Photo + Curved Wave + Bold Content -->
+<section class="mobile-hero-section d-lg-none bg-white border-bottom pb-4">
+    <!-- 1. Mobile People Photo with Curved Accent Wave Bottom -->
+    <div class="mobile-hero-photo-wrapper position-relative overflow-hidden">
+        <img src="{{ asset('assets/images/banner/banner.png') }}" 
+             alt="Public Grievance Platform - People" 
+             class="img-fluid w-100 mobile-hero-photo">
+        
+        <!-- Curved Wave at the bottom of the photo -->
+        <svg class="mobile-photo-curve position-absolute bottom-0 start-0 w-100" viewBox="0 0 500 36" preserveAspectRatio="none" style="height: 26px; z-index: 2;">
+            <path d="M 0,36 Q 250,0 500,36 L 500,36 L 0,36 Z" fill="#ffffff" />
+            <path d="M 0,34 Q 250,-2 500,34" fill="none" stroke="#ea580c" stroke-width="4" />
+        </svg>
+    </div>
+
+    <!-- 2. Mobile Hero Content Below Photo -->
+    <div class="container px-3 pt-2">
+        <h1 class="hero-people-heading-mobile mb-2 notranslate" translate="no">
+            @if(app()->getLocale() === 'en')
+                <span class="d-block text-navy">Your Voice.</span>
+                <span class="d-block text-navy">Your Community.</span>
+                <span class="d-block text-orange">Your Connection.</span>
+            @else
+                <span class="d-block text-navy">உங்கள் குரல்.</span>
+                <span class="d-block text-navy">உங்கள் பகுதி.</span>
+                <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
+            @endif
+        </h1>
+
+        <div class="hero-quote-bar-mobile border-start border-4 border-warning ps-3 my-3 notranslate" translate="no">
+            <p class="text-secondary mb-0 fw-medium" style="font-size: 0.92rem; line-height: 1.55;">
+                @if(app()->getLocale() === 'en')
+                    Register public issues in your area and securely track administrative action in real-time.
+                @else
+                    உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
+                @endif
+            </p>
+        </div>
+
+        <!-- Touch-Friendly Full-Width Action Buttons -->
+        <div class="d-flex flex-column gap-2 mt-3 notranslate" translate="no">
+            <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill py-2.5 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2">
+                <i class="bi bi-pencil-fill"></i>
+                <span>{{ app()->getLocale() === 'en' ? 'Submit Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
+            </a>
+            <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill py-2.5 fw-bold d-flex align-items-center justify-content-center gap-2">
+                <i class="bi bi-search"></i>
+                <span>{{ app()->getLocale() === 'en' ? 'Track Grievance' : 'புகார் நிலையை அறியுங்கள்' }}</span>
+            </a>
         </div>
     </div>
 </section>

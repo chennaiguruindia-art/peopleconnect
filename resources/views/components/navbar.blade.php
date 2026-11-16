@@ -4,7 +4,7 @@
         <a class="navbar-brand d-flex align-items-center gap-2 gap-md-2.5 py-0 text-decoration-none notranslate flex-shrink-0" translate="no" href="{{ route('home') }}">
             <img src="{{ asset('assets/images/logo/logo.png') }}?v=2" alt="Logo" class="brand-logo-nav" style="height: 46px; width: auto; object-fit: contain;">
             <div class="brand-text-nav lh-sm">
-                <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PUBLIC GRIEVANCE PLATFORM</div>
+                <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PUBLIC GRIEVANCE MANAGEMENT PLATFORM</div>
                 <div class="text-orange fw-bold text-uppercase brand-sub-voice" style="font-size: 0.65rem; letter-spacing: 0.8px;">
                     VOICE OF THE VOICELESS <span class="text-secondary fw-normal d-none d-sm-inline ms-1">| குரலற்ற மக்களின் குரல்</span>
                 </div>

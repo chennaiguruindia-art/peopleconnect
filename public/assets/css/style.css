@@ -1274,6 +1274,41 @@ img {
   }
 }
 
+/* Mobile Dedicated Hero Section */
+.mobile-hero-section {
+  background-color: #ffffff;
+}
+
+.mobile-hero-photo-wrapper {
+  position: relative;
+  background-color: #0b1f3a;
+  width: 100%;
+}
+
+.mobile-hero-photo {
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 80% center;
+  display: block;
+}
+
+.hero-people-heading-mobile {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 400px) {
+  .mobile-hero-photo {
+    height: 190px;
+  }
+  .hero-people-heading-mobile {
+    font-size: 1.75rem;
+  }
+}
+
 /* Hero Section */
 .hero-people-heading {
   font-size: clamp(2rem, 3.2vw, 2.75rem);
