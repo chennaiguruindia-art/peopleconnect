@@ -8,16 +8,16 @@
 <!-- A. DESKTOP PANORAMIC CURVED HERO (d-none d-lg-block) -->
 <section class="hero-curved-banner position-relative overflow-hidden w-100 border-bottom d-none d-lg-block">
     <!-- Background Image on Right with crisp framing of Modi ji and the people -->
-    <div class="banner-photo-bg" style="background-image: url('{{ asset('assets/images/banner/banner1.jpg') }}');"></div>
+    <div class="banner-photo-bg" style="background-image: url('{{ asset('assets/images/banner/banner1.png') }}?v=3.2');"></div>
 
-    <!-- Curved SVG Panel on Left - Slimmer & smoother curve so full crowd and Modi ji are visible without any cut-off -->
-    <svg class="banner-curve-svg" viewBox="0 0 1000 560" preserveAspectRatio="none">
-        <path d="M 0,0 L 350,0 C 400,30 380,300 440,560 L 0,560 Z" fill="#ffffff" />
-        <path d="M 350,0 C 400,30 380,300 440,560" fill="none" stroke="#ea580c" stroke-width="6" stroke-linecap="round" />
+    <!-- Curved SVG Panel on Left - Graceful curve separating text and photo -->
+    <svg class="banner-curve-svg" viewBox="0 0 1000 540" preserveAspectRatio="none">
+        <path d="M 0,0 L 440,0 C 490,40 460,300 530,540 L 0,540 Z" fill="#ffffff" />
+        <path d="M 440,0 C 490,40 460,300 530,540" fill="none" stroke="#ea580c" stroke-width="6" stroke-linecap="round" />
     </svg>
 
     <!-- Floating Badge over photo on bottom right -->
-    <div class="position-absolute bottom-0 end-0 m-3 m-xl-4 p-2 px-3 rounded-pill bg-dark bg-opacity-75 text-white small fw-bold shadow-lg d-none d-xl-flex align-items-center gap-2 z-3 border border-white border-opacity-25" style="backdrop-filter: blur(8px);">
+    <div class="position-absolute bottom-0 end-0 m-3 p-2 px-3 rounded-pill bg-dark bg-opacity-75 text-white small fw-bold shadow-lg d-none d-xl-flex align-items-center gap-2 z-3 border border-white border-opacity-25" style="backdrop-filter: blur(8px);">
         <span class="d-inline-block rounded-circle bg-success" style="width: 8px; height: 8px;"></span>
         <span>மக்களோடு நாம் • அந்தியோதயா மக்கள் சேவை</span>
     </div>
@@ -25,15 +25,15 @@
     <!-- Desktop Banner Text Content -->
     <div class="container-fluid px-3 px-md-4 px-xl-5 position-relative z-2 h-100">
         <div class="row align-items-center h-100">
-            <div class="col-lg-5 col-xl-5 py-4 py-lg-5 ps-2 ps-md-4 ps-lg-5">
-                <div class="hero-text-wrapper" style="max-width: 440px;">
+            <div class="col-lg-5 col-xl-5 py-3 py-lg-4 ps-2 ps-md-4 ps-lg-5">
+                <div class="hero-text-wrapper" style="max-width: 430px;">
                     <!-- Hooky Mission Pill Badge -->
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-warning bg-opacity-10 text-dark border border-warning border-opacity-50 fw-bold small mb-3">
-                        <span class="badge rounded-pill text-white" style="background-color: #ea580c; font-size: 0.72rem;">அந்தியோதயா</span>
-                        <span style="font-size: 0.82rem; color: #0b1f3a;">கடைக்கோடி மக்களின் நேரடி குறைதீர்ப்பு தளம்</span>
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-warning bg-opacity-10 text-dark border border-warning border-opacity-50 fw-bold small mb-2">
+                        <span class="badge rounded-pill text-white" style="background-color: #ea580c; font-size: 0.70rem;">அந்தியோதயா</span>
+                        <span style="font-size: 0.80rem; color: #0b1f3a;">கடைக்கோடி மக்களின் நேரடி குறைதீர்ப்பு தளம்</span>
                     </div>
 
-                    <h1 class="hero-people-heading mb-2 mb-md-3 notranslate" translate="no">
+                    <h1 class="hero-people-heading mb-2 notranslate" translate="no">
                         @if(app()->getLocale() === 'en')
                             <span class="d-block text-navy" style="font-weight: 800;">People's Voice.</span>
                             <span class="d-block text-navy" style="font-weight: 800;">Direct Service.</span>
@@ -45,15 +45,15 @@
                         @endif
                     </h1>
                     
-                    <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-3 my-md-4 notranslate" translate="no">
-                        <p class="hero-desc-text text-dark mb-1 fw-semibold" style="font-size: 0.98rem; line-height: 1.6;">
+                    <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-2 my-lg-3 notranslate" translate="no">
+                        <p class="hero-desc-text text-dark mb-1 fw-semibold" style="font-size: 0.90rem; line-height: 1.45;">
                             @if(app()->getLocale() === 'en')
-                                "Direct bridge between citizens and administration — ensuring transparency, zero middlemen, and fast-track resolution for every community across Tamil Nadu."
+                                "Direct bridge between citizens and administration — ensuring transparency, zero middlemen, and fast-track resolution."
                             @else
                                 "மக்களின் குறைகளை நேரடியாகக் கேட்டு, இடைத்தரகர்கள் இன்றி உடனடி தீர்வு காண்பதே நல்லாட்சியின் அடையாளம். உங்கள் பகுதி பிரச்சனைகளை இன்றே பதிவு செய்யுங்கள்!"
                             @endif
                         </p>
-                        <div class="d-flex flex-wrap gap-2 pt-1 text-secondary" style="font-size: 0.80rem;">
+                        <div class="d-flex flex-wrap gap-2 pt-1 text-secondary" style="font-size: 0.76rem;">
                             <span><i class="bi bi-check-circle-fill text-success me-1"></i>100% வெளிப்படையானது</span>
                             <span>•</span>
                             <span><i class="bi bi-lightning-charge-fill text-warning me-1"></i>நேரடி கண்காணிப்பு</span>
@@ -62,12 +62,12 @@
                         </div>
                     </div>
 
-                    <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-4 notranslate" translate="no">
-                        <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-3.5 px-md-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2 text-nowrap">
+                    <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-3 notranslate" translate="no">
+                        <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-3.5 py-2 fw-bold shadow-sm d-inline-flex align-items-center gap-2 text-nowrap">
                             <i class="bi bi-pencil-fill"></i>
                             <span>{{ app()->getLocale() === 'en' ? 'Register Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
                         </a>
-                        <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-3.5 px-md-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 text-nowrap">
+                        <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-3.5 py-2 fw-bold d-inline-flex align-items-center gap-2 text-nowrap">
                             <i class="bi bi-search"></i>
                             <span>{{ app()->getLocale() === 'en' ? 'Track Status' : 'புகார் நிலையை அறியுங்கள்' }}</span>
                         </a>
@@ -82,7 +82,7 @@
 <section class="mobile-hero-section d-lg-none bg-white border-bottom pb-4">
     <!-- 1. Mobile People Photo with Curved Accent Wave Bottom -->
     <div class="mobile-hero-photo-wrapper position-relative overflow-hidden">
-        <img src="{{ asset('assets/images/banner/banner1.jpg') }}" 
+        <img src="{{ asset('assets/images/banner/banner1.png') }}?v=3.2" 
              alt="Public Grievance Platform - People" 
              class="img-fluid w-100 mobile-hero-photo">
         
@@ -116,8 +116,8 @@
             @endif
         </h1>
 
-        <div class="hero-quote-bar-mobile border-start border-4 border-warning ps-3 my-3 notranslate" translate="no">
-            <p class="text-dark mb-1 fw-semibold" style="font-size: 0.90rem; line-height: 1.55;">
+        <div class="hero-quote-bar-mobile border-start border-4 border-warning ps-3 my-2 notranslate" translate="no">
+            <p class="text-dark mb-1 fw-semibold" style="font-size: 0.88rem; line-height: 1.5;">
                 @if(app()->getLocale() === 'en')
                     "Direct bridge between citizens and administration — ensuring transparency, zero middlemen, and fast-track resolution."
                 @else
@@ -134,7 +134,7 @@
         </div>
 
         <!-- Touch-Friendly Full-Width Action Buttons -->
-        <div class="d-flex flex-column gap-2 mt-3 notranslate" translate="no">
+        <div class="d-flex flex-column gap-2 mt-2 notranslate" translate="no">
             <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill py-2.5 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2">
                 <i class="bi bi-pencil-fill"></i>
                 <span>{{ app()->getLocale() === 'en' ? 'Register Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
