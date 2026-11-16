@@ -4,40 +4,49 @@
 
 @section('content')
 
-<!-- 1. HERO SECTION -->
-<section class="hero-section py-4 py-lg-5 bg-white position-relative overflow-hidden">
-    <div class="container">
-        <div class="row align-items-center g-4 g-lg-5">
-            <!-- Left Column: Big Catchy Title & CTAs -->
-            <div class="col-lg-6">
-                <h1 class="hero-people-heading mb-3">
-                    <span class="d-block text-navy">உங்கள் குரல்.</span>
-                    <span class="d-block text-navy">உங்கள் பகுதி.</span>
-                    <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
-                </h1>
-                
-                <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-3 my-md-4">
-                    <p class="hero-desc-text text-secondary mb-0 fw-medium">
-                        உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
-                    </p>
-                </div>
+<!-- 1. HERO PANORAMIC CURVED BANNER (Exact Mockup Design from Image 2) -->
+<section class="py-3 py-lg-4 bg-white">
+    <div class="container-fluid px-2 px-md-4 px-xl-5">
+        <div class="hero-curved-banner position-relative overflow-hidden rounded-4 shadow-sm">
+            <!-- Background Image on Right (Using existing banner1.png) -->
+            <div class="banner-photo-bg" style="background-image: url('{{ asset('assets/images/banner/banner1.png') }}');"></div>
 
-                <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-4">
-                    <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2">
-                        <i class="bi bi-pencil-fill"></i>
-                        <span>புகாரைப் பதிவு செய்யுங்கள்</span>
-                    </a>
-                    <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2">
-                        <i class="bi bi-search"></i>
-                        <span>புகார் நிலையை அறியுங்கள்</span>
-                    </a>
-                </div>
-            </div>
+            <!-- Curved SVG Panel on Left (Desktop & Tablet) -->
+            <svg class="banner-curve-svg d-none d-lg-block" viewBox="0 0 1000 480" preserveAspectRatio="none">
+                <path d="M 0,0 L 430,0 C 485,30 460,240 565,480 L 0,480 Z" fill="#ffffff" />
+                <path d="M 430,0 C 485,30 460,240 565,480" fill="none" stroke="#ea580c" stroke-width="7" stroke-linecap="round" />
+            </svg>
 
-            <!-- Right Column: User's Banner Image (banner1.png) -->
-            <div class="col-lg-6 text-center">
-                <div class="hero-banner-frame position-relative d-inline-block">
-                    <img src="{{ asset('assets/images/banner/banner1.png') }}?v={{ time() }}" alt="Public Grievance Management Platform" class="img-fluid rounded-4 shadow-sm hero-banner-image">
+            <!-- Mobile Gradient Overlay for Phone Screens (< lg) -->
+            <div class="banner-mobile-overlay d-lg-none"></div>
+
+            <!-- Banner Text Content -->
+            <div class="container-fluid position-relative z-2 h-100">
+                <div class="row align-items-center h-100">
+                    <div class="col-lg-6 col-xl-5 py-4 py-md-5 ps-3 ps-md-4 ps-xl-5 pe-3">
+                        <h1 class="hero-people-heading mb-3 notranslate" translate="no">
+                            <span class="d-block text-navy">உங்கள் குரல்.</span>
+                            <span class="d-block text-navy">உங்கள் பகுதி.</span>
+                            <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
+                        </h1>
+                        
+                        <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-3 my-md-4 notranslate" translate="no">
+                            <p class="hero-desc-text text-secondary mb-0 fw-medium">
+                                உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
+                            </p>
+                        </div>
+
+                        <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-4 notranslate" translate="no">
+                            <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2">
+                                <i class="bi bi-pencil-fill"></i>
+                                <span>புகாரைப் பதிவு செய்யுங்கள்</span>
+                            </a>
+                            <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2">
+                                <i class="bi bi-search"></i>
+                                <span>புகார் நிலையை அறியுங்கள்</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

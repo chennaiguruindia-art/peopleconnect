@@ -1120,6 +1120,60 @@ img {
   font-weight: 800 !important;
 }
 
+/* ==========================================================================
+   Hero Curved Banner (Exact Panoramic Mockup matching Image 2)
+   ========================================================================== */
+.hero-curved-banner {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  min-height: 460px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.hero-curved-banner .banner-photo-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+  z-index: 1;
+}
+
+.hero-curved-banner .banner-curve-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-curved-banner .banner-mobile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.92) 100%);
+  z-index: 2;
+}
+
+@media (max-width: 991.98px) {
+  .hero-curved-banner {
+    min-height: auto;
+  }
+  .hero-curved-banner .banner-photo-bg {
+    width: 100%;
+    opacity: 0.22;
+  }
+}
+
 /* Hero Section */
 .hero-people-heading {
   font-size: 2.85rem;
