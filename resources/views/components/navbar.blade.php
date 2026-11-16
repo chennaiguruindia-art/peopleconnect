@@ -7,7 +7,7 @@
             <div class="brand-text-nav lh-sm ps-1 ps-sm-1.5">
                 <div class="fw-extrabold text-navy brand-heading-title" style="letter-spacing: 0.2px;">PUBLIC GRIEVANCE PLATFORM</div>
                 <div class="text-orange fw-bold text-uppercase brand-sub-voice notranslate" translate="no" style="font-size: 0.68rem; letter-spacing: 0.6px;">
-                    VOICE OF THE VOICELESS | குரலற்ற மக்களின் குரல்</span>
+                <span class="brand-tamil-sub text-orange fw-bold text-secondary fw-semibold ms-1 notranslate" translate="no"> குரலற்ற மக்களின் குரல்</span>
                 </div>
             </div>
         </a>
