@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('messages.nav_about') . ' - ' . __('messages.site_name'))
+@section('title', (app()->getLocale() === 'en' ? 'About Us' : 'எங்களைப் பற்றி') . ' - Public Grievance Management Platform')
 
 @section('content')
 <div class="container py-4 py-md-5 px-3 px-sm-4">
@@ -10,569 +10,369 @@
             <!-- Breadcrumb Navigation -->
             <nav aria-label="breadcrumb" class="mb-3">
                 <ol class="breadcrumb small">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('messages.nav_home') }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-decoration-none">{{ __('messages.nav_home') }}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ __('messages.nav_about') }}</li>
                 </ol>
             </nav>
 
-            <!-- Page Header: Tamil Nadu Scope with Deep Virudhunagar Focus -->
+            <!-- 1. PAGE HERO HEADER: WHO WE ARE -->
             <div class="text-center mb-4 mb-md-5">
-                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5 rounded-pill mb-3 fw-bold shadow-xs text-wrap text-center" style="max-width: 100%; line-height: 1.5; font-size: 0.85rem;">
-                    <i class="bi bi-geo-alt-fill text-danger me-1"></i>
-                    {{ app()->getLocale() === 'en' ? 'Statewide Vision — Virudhunagar District Grassroots Hub' : 'தமிழ்நாடு அளவிலான தொலைநோக்கு — விருதுநகர் மாவட்டத்திற்கான சிறப்பு களப்பணி' }}
+                <span class="badge bg-warning-subtle text-dark border border-warning px-3 py-1.5 rounded-pill mb-3 fw-bold shadow-xs text-wrap text-center" style="font-size: 0.85rem; letter-spacing: 0.5px;">
+                    <i class="bi bi-megaphone-fill text-danger me-1"></i>
+                    {{ app()->getLocale() === 'en' ? 'VOICE OF THE VOICELESS — CITIZEN CIVIC PLATFORM' : 'குரலற்ற மக்களின் குரல் — பொது மக்கள் குறைதீர்க்கும் தளம்' }}
                 </span>
-                <h1 class="fw-bold text-dark fs-2 fs-md-1 mb-3">{{ __('messages.site_name') }}</h1>
+
+                <h1 class="fw-extrabold text-navy fs-2 fs-md-1 mb-3">
+                    {{ app()->getLocale() === 'en' ? 'About Public Grievance Management Platform' : 'பொது மக்கள் குறைதீர்க்கும் தளம் — எங்களைப் பற்றி' }}
+                </h1>
+
                 <p class="text-muted fs-6 fs-md-5 mx-auto leading-relaxed" style="max-width: 820px;">
                     @if(app()->getLocale() === 'en')
-                        <strong>Tamil Nadu Makkal Kural</strong> is a dedicated civic facilitation and public grievance redressal initiative empowering the citizens of Tamil Nadu, with a pioneering, intensive grassroots focus on the agrarian families, hardworking labourers, and rural communities across all 10 Taluks of <strong>Virudhunagar District</strong>.
+                        <strong>Public Grievance Management Platform</strong> is an independent, citizen-first civic facilitation network established to bridge the gap between citizens and administrative bodies. We empower residents across Tamil Nadu to report, document, and resolve community problems transparently without middlemen or procedural delays.
                     @else
-                        <strong>தமிழ்நாடு மக்கள் குரல்</strong> என்பது ஒட்டுமொத்த தமிழ்நாட்டு மக்களின் குரலாகவும், குறிப்பாக <strong>விருதுநகர் மாவட்டத்தின்</strong> உழவர்கள், தொழிலாளர்கள், வணிகர்கள் மற்றும் கடைக்கோடி கிராமத்து பாமர மக்களின் குடிநீர், சாலை, மின்சாரம், சுகாதாரம் உள்ளிட்ட அனைத்து அடிப்படை பிரச்சனைகளுக்கும் இடைத்தரகர்கள் இன்றி வெளிப்படைத்தன்மையுடன் உடனடி தீர்வு காணும் அர்ப்பணிப்புமிக்க மக்கள் சேவைத் தளமாகும்.
+                        <strong>பொது மக்கள் குறைதீர்க்கும் தளம் (Public Grievance Management Platform)</strong> என்பது பொதுமக்களுக்கும் அரசு நிர்வாக அமைப்புகளுக்கும் இடையே வெளிப்படையான பாலமாகச் செயல்படும் ஒரு சுயாதீன மக்கள் சேவைத் தளமாகும். தமிழ்நாட்டு மக்கள் தங்கள் பகுதியில் உள்ள குடிநீர், சாலை, மின்சாரம், சுகாதாரம் உள்ளிட்ட அனைத்து அடிப்படைப் பொதுப் பிரச்சனைகளையும் இடைத்தரகர்கள் இன்றி நேரடியாகப் பதிவு செய்து துரித தீர்வு காண இத்தளம் உதவுகிறது.
                     @endif
                 </p>
 
-                <!-- District Highlights Quick Counter Badge Row -->
+                <!-- Core Highlights Badge Row -->
                 <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill small text-wrap text-center" style="max-width: 100%; line-height: 1.4;">
-                        <i class="bi bi-compass-fill text-primary me-1"></i> {{ app()->getLocale() === 'en' ? 'Tamil Nadu 38 Districts Outreach' : 'தமிழ்நாட்டின் 38 மாவட்டங்களுக்கான குரல்' }}
+                    <span class="badge bg-light text-dark border px-3 py-2 rounded-pill small">
+                        <i class="bi bi-shield-check text-success me-1"></i>
+                        {{ app()->getLocale() === 'en' ? '100% Direct Citizen Action' : 'இடைத்தரகர்கள் இல்லாத நேரடி தீர்வு' }}
                     </span>
-                    <span class="badge bg-warning-subtle text-dark border border-warning px-3 py-2 rounded-pill small fw-semibold text-wrap text-center" style="max-width: 100%; line-height: 1.4;">
-                        <i class="bi bi-pin-map-fill text-danger me-1"></i> {{ app()->getLocale() === 'en' ? 'Virudhunagar: 3 Divisions | 10 Taluks | 600 Villages' : 'விருதுநகர்: 3 கோட்டங்கள் | 10 தாலுகாக்கள் | 600 கிராமங்கள்' }}
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill small fw-semibold">
+                        <i class="bi bi-geo-alt-fill text-danger me-1"></i>
+                        {{ app()->getLocale() === 'en' ? 'Grassroots District & Village Reach' : 'மாவட்டம், வட்டம் & கிராமப்புற நேரடி இணைப்பு' }}
                     </span>
-                    <span class="badge bg-success-subtle text-success border border-success px-3 py-2 rounded-pill small fw-semibold text-wrap text-center" style="max-width: 100%; line-height: 1.4;">
-                        <i class="bi bi-shield-check me-1"></i> {{ app()->getLocale() === 'en' ? 'Zero Middlemen • 100% Direct Action' : 'இடைத்தரகர்கள் இல்லாத நேரடி தீர்வு' }}
+                    <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill small fw-semibold">
+                        <i class="bi bi-broadcast me-1"></i>
+                        {{ app()->getLocale() === 'en' ? 'End-to-End Live Tracking' : 'முழுமையான நேரடி கண்காணிப்பு' }}
                     </span>
                 </div>
             </div>
 
-            <!-- =========================================================================
-                 THE VISIONARY & BRAIN BEHIND THE PROJECT: THIRU. RAJESH GURUSAMY
-                 ========================================================================= -->
+            <!-- 2. WHO WE ARE (OVERVIEW CARD) -->
             <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4 mb-md-5 bg-white">
-                <div class="p-1" style="background: linear-gradient(90deg, #ff7722, #ffffff, #138808);"></div>
-                <div class="card-body p-3 p-sm-4 p-md-5">
+                <div class="p-1" style="background: linear-gradient(90deg, #ea580c, #ffffff, #16a34a);"></div>
+                <div class="card-body p-4 p-md-5">
                     <div class="row g-4 align-items-center">
-                        <div class="col-md-4 text-center">
-                            <div class="position-relative d-inline-block mx-auto" style="max-width: 280px; width: 100%;">
-                                <img src="{{ asset('assets/images/rajesh/rajesh.png') }}" 
-                                     alt="Rajesh Gurusamy - State Vice President, Kisan Morcha, BJP Tamil Nadu" 
-                                     class="img-fluid rounded-4 shadow-sm border border-3 border-white mx-auto d-block"
-                                     style="max-height: 290px; width: 100%; object-fit: cover; object-position: top center;">
-                                <span class="badge bg-warning text-dark position-absolute bottom-0 start-50 translate-middle-x mb-2 shadow-sm px-3 py-1.5 fw-bold rounded-pill text-nowrap" style="font-size: 0.74rem;">
-                                    <i class="bi bi-star-fill text-danger me-1"></i> {{ app()->getLocale() === 'en' ? '25 Years Public Service' : '25 ஆண்டுகால மக்கள் பணி' }}
-                                </span>
-                            </div>
-                            <div class="mt-3">
-                                <span class="badge bg-light text-secondary border px-2.5 py-1 small text-wrap">
-                                    <i class="bi bi-geo-alt-fill text-danger me-1"></i> Watrap & Virudhunagar Roots
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-md-8">
-                            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2.5 py-1 fw-bold text-wrap" style="font-size: 0.75rem;">
-                                    {{ app()->getLocale() === 'en' ? 'Project Visionary & Guide' : 'திட்டத்தின் வழிகாட்டி & தொலைநோக்காளர்' }}
-                                </span>
-                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1 fw-bold text-wrap" style="font-size: 0.75rem;">
-                                    {{ app()->getLocale() === 'en' ? 'State Leadership — Kisan Morcha' : 'மாநில தலைமை — விவசாய அணி' }}
-                                </span>
-                            </div>
+                        <div class="col-lg-6">
+                            <span class="badge bg-primary text-white px-2.5 py-1 fw-bold small mb-2 text-uppercase" style="letter-spacing: 0.5px;">
+                                {{ app()->getLocale() === 'en' ? 'Who We Are' : 'நாம் யார்?' }}
+                            </span>
+                            <h2 class="fw-bold text-navy fs-3 mb-3">
+                                {{ app()->getLocale() === 'en' ? 'Empowering Citizens, Elevating Civic Life' : 'மக்களின் உரிமைகளுக்காக, மக்களின் குரலாக ஒலிக்கும் தளம்' }}
+                            </h2>
 
                             @if(app()->getLocale() === 'en')
-                                <h2 class="fw-bold text-dark mb-1 fs-3">Thiru. Rajesh Gurusamy</h2>
-                                <div class="text-primary fw-bold mb-3" style="font-size: 1.05rem;">
-                                    State Vice President — Kisan Morcha, Bharatiya Janata Party (BJP) Tamil Nadu
-                                </div>
-
                                 <p class="text-secondary leading-relaxed mb-3">
-                                    The visionary and architect behind <strong>Tamil Nadu Makkal Kural</strong> is <strong>Thiru. Rajesh Gurusamy</strong>. Deeply rooted in the soil of Watrap and Virudhunagar, he initiated this civic grievance facilitation platform to ensure that the genuine concerns of common citizens, agricultural families, trade communities, and daily-wage workers reach government authorities directly without hurdles, paperwork exhaustion, or middlemen delays.
+                                    In many localities, genuine civic difficulties—from contaminated drinking water and broken roads to non-functioning streetlights—often go unheard due to complicated administrative workflows or lack of documentation.
                                 </p>
-
-                                <p class="text-muted small mb-4">
-                                    Beginning his dedicated public life in 2001 as Watrap Union Yuva Morcha President in Virudhunagar District, he has devoted 25 continuous years to grassroots leadership. Serving successively across district executive bodies, statewide IT cell modernisation, state election call center leadership, Commerce Cell State Secretary, and Kisan Morcha State Secretary, he currently guides statewide farmer empowerment as the State Vice President of Kisan Morcha, BJP Tamil Nadu, while keeping his heartbeat firmly anchored in the welfare of Virudhunagar District.
+                                <p class="text-secondary leading-relaxed mb-0">
+                                    Our platform provides every citizen an equal, straightforward digital channel to document grievances with photos and location details. Once recorded, petitions are organized, verified, and officially presented to the respective municipal and government departments for measurable, time-bound action.
                                 </p>
                             @else
-                                <h2 class="fw-bold text-dark mb-1 fs-3">திரு. ராஜேஷ் குருசாமி</h2>
-                                <div class="text-primary fw-bold mb-3" style="font-size: 1.05rem;">
-                                    மாநில துணைத் தலைவர் — விவசாய அணி (Kisan Morcha), பாரதிய ஜனதா கட்சி (BJP) தமிழ்நாடு
-                                </div>
-
                                 <p class="text-secondary leading-relaxed mb-3">
-                                    <strong>தமிழ்நாடு மக்கள் குரல்</strong> மக்கள் நலக் குறைதீர்க்கும் தளத்தின் வழிகாட்டியும், தொலைநோக்காளருமான <strong>திரு. ராஜேஷ் குருசாமி</strong> அவர்கள், விருதுநகர் மாவட்டத்தின் வத்திராயிருப்பு மண்ணின் மைந்தராவார். தமிழ்நாட்டு மக்களின் பொதுவான பிரச்சினைகளைத் தீர்ப்பதோடு, குறிப்பாக தனது சொந்த மாவட்டமான விருதுநகர் மாவட்டத்தின் கடைக்கோடி கிராமத்து பாமர மக்களின் குரலும், உழவர்கள் மற்றும் பட்டாசு-தீப்பெட்டி-நெசவுத் தொழிலாளர்களின் நியாயமான கோரிக்கைகளும் எந்தவொரு இடைத்தரகரும் இன்றி நேரடியாக அதிகாரிகளையும் மக்கள் பிரதிநிதிகளையும் சென்றடைய வேண்டும் என்ற உயரிய இலக்கோடு இத்தளத்தை வடிவமைத்துள்ளார்.
+                                    பல கிராமங்களிலும் நகர்ப்புறப் பகுதிகளிலும் சேதமடைந்த சாலைகள், குடிநீர் பற்றாக்குறை, தெருவிளக்கு எரியாமை, சாக்கடை அடைப்பு போன்ற அன்றாடப் பொதுப் பிரச்சனைகள் உரிய அதிகாரிகளைச் சென்றடைவதில் தாமதம் ஏற்படுகிறது. மனுக்களை யாரிடம் கொடுப்பது என்ற விழிப்புணர்வு இன்மை மற்றும் முறையான ஆவணப்படுத்துதல் இல்லாததே இதற்கு முக்கிய காரணமாகும்.
                                 </p>
-
-                                <p class="text-muted small mb-4">
-                                    2001-ஆம் ஆண்டு விருதுநகர் மாவட்டம் வத்திராயிருப்பு ஒன்றிய இளைஞரணித் தலைவராக தனது மக்கள் பணியைத் தொடங்கி, மாவட்டச் செயற்குழு உறுப்பினர், மாநில தகவல் தொழில்நுட்பப் பிரிவு, மாநில தேர்தல் அழைப்பு மையத் தலைமை, வணிகர் அணி மாநிலச் செயலாளர், விவசாய அணி மாநிலச் செயலாளர் என 25 ஆண்டுகளாக பாரதிய ஜனதா கட்சியில் அர்ப்பணிப்புடன் செயலாற்றி, தற்போது தமிழ்நாடு விவசாய அணியின் மாநில துணைத் தலைவராக உழவர் நலம், ஊரக வளர்ச்சி மற்றும் விருதுநகர் மக்களின் உரிமைக்காகத் தொடர்ந்து அயராது பாடுபட்டு வருகிறார்.
+                                <p class="text-secondary leading-relaxed mb-0">
+                                    இச்சிக்கலுக்கு முற்றுப்புள்ளி வைக்கும் வகையில், இத்தளம் எளிய மக்களுக்கும் தொழில்நுட்பத்தின் வலிமையைக் கொண்டு சேர்க்கிறது. பொதுமக்கள் தங்கள் ஸ்மார்ட்போன் வழியாகவே புகைப்படங்களுடன் புகார்களைப் பதிவு செய்யலாம். அப்புகார்கள் சரிபார்க்கப்பட்டு, சம்பந்தப்பட்ட அரசு மற்றும் உள்ளாட்சித் துறைகளின் கவனத்திற்குக் கொண்டு செல்லப்பட்டு தீர்வு காண வழிவகை செய்யப்படுகிறது.
                                 </p>
                             @endif
+                        </div>
 
-                            <div class="d-flex flex-column flex-sm-row flex-wrap gap-2 mt-3">
-                                <a href="https://www.rajeshgurusamy.com/public-life.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm px-3 py-2 fw-semibold d-inline-flex align-items-center justify-content-center gap-1 shadow-sm text-wrap text-center">
-                                    <i class="bi bi-globe2 flex-shrink-0"></i>
-                                    <span>{{ app()->getLocale() === 'en' ? 'Official Public Portfolio (rajeshgurusamy.com)' : 'அதிகாரப்பூர்வ பொதுவாழ்க்கை விபரங்கள் (rajeshgurusamy.com)' }}</span>
-                                    <i class="bi bi-box-arrow-up-right small ms-1 flex-shrink-0"></i>
-                                </a>
-                                <a href="tel:+919384995222" class="btn btn-light border btn-sm px-3 py-2 text-dark d-inline-flex align-items-center justify-content-center gap-1 text-wrap text-center">
-                                    <i class="bi bi-telephone-fill text-success flex-shrink-0"></i>
-                                    <span>{{ app()->getLocale() === 'en' ? 'Public Office Helpline: +91 9384995222' : 'மக்கள் உதவி எண்: +91 9384995222' }}</span>
-                                </a>
+                        <div class="col-lg-6">
+                            <div class="p-4 rounded-4 bg-light border">
+                                <h5 class="fw-bold text-navy mb-3 d-flex align-items-center gap-2 fs-6">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    {{ app()->getLocale() === 'en' ? 'What Sets This Platform Apart?' : 'இத்தளத்தின் தனித்துவங்கள் என்ன?' }}
+                                </h5>
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-start gap-2.5">
+                                        <div class="rounded-circle bg-white text-primary shadow-xs d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;">
+                                            <i class="bi bi-check-lg fw-bold"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="d-block text-dark small fw-bold">
+                                                {{ app()->getLocale() === 'en' ? 'Direct Registration without Middlemen' : 'இடைத்தரகர்கள் இல்லாத நேரடி பதிவு' }}
+                                            </strong>
+                                            <small class="text-secondary">
+                                                {{ app()->getLocale() === 'en' ? 'Citizens register petitions directly without paying any fees or relying on intermediaries.' : 'பொதுமக்கள் யாரிடமும் கெஞ்சாமல், எந்தக் கட்டணமும் இன்றி தங்கள் புகார்களை நேரடியாகப் பதிவு செய்யலாம்.' }}
+                                            </small>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-start gap-2.5">
+                                        <div class="rounded-circle bg-white text-success shadow-xs d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;">
+                                            <i class="bi bi-camera-fill"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="d-block text-dark small fw-bold">
+                                                {{ app()->getLocale() === 'en' ? 'Authentic Photo & Location Proof' : 'உண்மையான புகைப்படச் சான்றுகள்' }}
+                                            </strong>
+                                            <small class="text-secondary">
+                                                {{ app()->getLocale() === 'en' ? 'Every petition is accompanied by real visual evidence ensuring authentic administrative review.' : 'புகைப்படம் மற்றும் பகுதி விவரங்களுடன் பதிவு செய்யப்படுவதால் அதிகாரிகள் உடனடியாக கள ஆய்வு செய்ய முடிகிறது.' }}
+                                            </small>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-start gap-2.5">
+                                        <div class="rounded-circle bg-white text-warning shadow-xs d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;">
+                                            <i class="bi bi-qr-code-scan"></i>
+                                        </div>
+                                        <div>
+                                            <strong class="d-block text-dark small fw-bold">
+                                                {{ app()->getLocale() === 'en' ? 'Unique Tracking ID' : 'தனித்துவமான புகார் அடையாள எண்' }}
+                                            </strong>
+                                            <small class="text-secondary">
+                                                {{ app()->getLocale() === 'en' ? 'Instant complaint tracking ID enables citizens to follow petition progress at every stage.' : 'ஒவ்வொரு புகாருக்கும் தனி எண் வழங்கப்பட்டு, அதன் நடவடிக்கை நிலை என்னவென்று வெளிப்படையாகத் தெரிந்து கொள்ளலாம்.' }}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- =========================================================================
-                 SPECIAL FOCUS: WHY VIRUDHUNAGAR DISTRICT IS THE PRIMARY OPERATIONAL HUB
-                 ========================================================================= -->
-            <div class="card border-0 shadow-sm rounded-4 p-3 p-sm-4 p-md-5 mb-4 mb-md-5 bg-white" style="border-left: 5px solid #ff7722 !important;">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-7">
-                        <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
-                            <span class="badge bg-warning text-dark px-2.5 py-1 fw-bold small text-wrap">
-                                <i class="bi bi-bullseye me-1"></i> {{ app()->getLocale() === 'en' ? 'Special Ground Focus' : 'சிறப்பு களப்பணி மையம்' }}
+            <!-- 3. MISSION & VISION -->
+            <div class="row g-3 g-md-4 mb-4 mb-md-5">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="border-left: 5px solid #ea580c !important;">
+                        <div class="d-flex align-items-center gap-2.5 mb-3">
+                            <span class="badge bg-warning-subtle text-warning p-2.5 rounded-3">
+                                <i class="bi bi-bullseye fs-4 text-danger"></i>
                             </span>
-                            <span class="text-muted small fw-semibold">
-                                {{ app()->getLocale() === 'en' ? 'Virudhunagar District' : 'விருதுநகர் மாவட்டம்' }}
-                            </span>
+                            <h4 class="fw-bold text-navy mb-0 fs-5">{{ app()->getLocale() === 'en' ? 'Our Mission' : 'எங்கள் நோக்கம் (Our Mission)' }}</h4>
                         </div>
-
-                        @if(app()->getLocale() === 'en')
-                            <h3 class="fw-bold text-dark fs-4 fs-md-3 mb-3">Dedicated to the Pride and Welfare of Virudhunagar District</h3>
-                            <p class="text-secondary leading-relaxed mb-3">
-                                Virudhunagar District—the revered birthplace of <em>Karma Veerar Perunthalaivar Kamarajar</em>—is renowned for its entrepreneurial energy, commercial trade, match works, fireworks clusters, printing presses, cotton handlooms, and resilient farmers. Yet, across rural taluks like Watrap, Rajapalayam, Sattur, and Aruppukkottai, thousands of families face chronic drinking water shortages, unpaved agricultural link roads, irrigation channel blocks, and delayed civic amenities.
-                            </p>
-                            <p class="text-muted small mb-0">
-                                <strong>Tamil Nadu Makkal Kural</strong> directly bridges this gap. With complete geographic mapping across all <strong>3 Revenue Divisions</strong> (Aruppukkottai, Sivakasi, Sattur), <strong>10 Taluks</strong>, 39 Firkas, and <strong>600 Revenue Villages</strong>, every village petition is logged with authentic GPS proof and tracked till actual on-ground resolution.
-                            </p>
-                        @else
-                            <h3 class="fw-bold text-dark fs-4 fs-md-3 mb-3">விருதுநகர் மாவட்ட மக்களின் உரிமையும், உடனடி களத் தீர்வுகளும்</h3>
-                            <p class="text-secondary leading-relaxed mb-3">
-                                கர்மவீரர் பெருந்தலைவர் காமராஜர் அவதரித்த புண்ணிய பூமி விருதுநகர் மாவட்டம்! கடுமையான உழைப்பிற்கும், வணிகத் திறனுக்கும், பட்டாசு-தீப்பெட்டி-அச்சுத் தொழில்களுக்கும், பருத்தி மற்றும் உழவுத் தொழிலுக்கும் உலகளவில் பெயர்பெற்ற இம்மாவட்டத்தில், இன்றும் பல கிராமங்களில் குடிநீர் பற்றாக்குறை, சேதமடைந்த ஊரகச் சாலைகள், பாசனக் கால்வாய் தூர்வாரப்படாமை மற்றும் அடிப்படை உட்கட்டமைப்புத் தேவைகள் தீர்க்கப்படாமல் உள்ளன.
-                            </p>
-                            <p class="text-muted small mb-0">
-                                <strong>தமிழ்நாடு மக்கள் குரல்</strong> தளம், விருதுநகர் மாவட்டத்தின் <strong>3 வருவாய் கோட்டங்கள்</strong> (அருப்புக்கோட்டை, சிவகாசி, சாத்தூர்), <strong>10 வட்டங்கள்</strong> (விருதுநகர், சிவகாசி, ராஜபாளையம், ஸ்ரீவில்லிபுத்தூர், வத்திராயிருப்பு, சாத்தூர், அருப்புக்கோட்டை, காரியாபட்டி, திருச்சுழி, வெம்பக்கோட்டை) மற்றும் <strong>600 வருவாய் கிராமங்களில்</strong> உள்ள மக்களின் மனுக்களை எவ்வித அலைச்சலுமின்றி உடனடியாகப் பதிவு செய்து, சம்பந்தப்பட்ட துறை அதிகாரிகளிடம் முறையிட்டு தீர்வு காண முன்னுரிமை அளிக்கிறது.
-                            </p>
-                        @endif
+                        <p class="text-secondary mb-0 leading-relaxed small">
+                            @if(app()->getLocale() === 'en')
+                                To provide an accessible, transparent, and bilingual grievance redressal portal where every citizen's voice is heard, accurately documented, and coordinated with public authorities to achieve measurable civic solutions.
+                            @else
+                                தமிழ்நாட்டின் ஒவ்வொரு குடிமகனும் தங்கள் பகுதிப் பொதுப் பிரச்சனைகளை எளிமையாகவும் வெளிப்படைத்தன்மையுடனும் பதிவு செய்யவும், அப்புகார்களை முறைப்படி ஆவணப்படுத்தி சம்பந்தப்பட்ட அரசு நிர்வாக அமைப்புகளுக்குக் கொண்டு சென்று மக்கள் நலனை உறுதி செய்வதே எங்களின் தலையாய நோக்கமாகும்.
+                            @endif
+                        </p>
                     </div>
+                </div>
 
-                    <div class="col-lg-5">
-                        <div class="p-3 p-sm-3.5 rounded-4 bg-light border mt-2 mt-lg-0">
-                            <h6 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
-                                <i class="bi bi-building-check text-primary"></i>
-                                {{ app()->getLocale() === 'en' ? 'Virudhunagar Administrative Coverage' : 'விருதுநகர் நிர்வாக வரைபடம்' }}
-                            </h6>
-                            <ul class="list-unstyled mb-0 small text-secondary">
-                                <li class="py-2 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
-                                    <span><i class="bi bi-geo-alt text-danger me-1"></i> {{ app()->getLocale() === 'en' ? 'Revenue Divisions (3)' : 'வருவாய் கோட்டங்கள் (3)' }}</span>
-                                    <strong class="text-dark">Aruppukkottai, Sivakasi, Sattur</strong>
-                                </li>
-                                <li class="py-2 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
-                                    <span><i class="bi bi-diagram-3 text-primary me-1"></i> {{ app()->getLocale() === 'en' ? 'Taluks Covered (10)' : 'தாலுகாக்கள் (10)' }}</span>
-                                    <strong class="text-dark">10 Taluks</strong>
-                                </li>
-                                <li class="py-2 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
-                                    <span><i class="bi bi-houses-fill text-success me-1"></i> {{ app()->getLocale() === 'en' ? 'Revenue Villages' : 'வருவாய் கிராமங்கள்' }}</span>
-                                    <strong class="text-dark">600 Villages</strong>
-                                </li>
-                                <li class="py-2 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
-                                    <span><i class="bi bi-people-fill text-warning me-1"></i> {{ app()->getLocale() === 'en' ? 'Firkas Covered' : 'உள்வட்டங்கள் (Firkas)' }}</span>
-                                    <strong class="text-dark">39 Firkas</strong>
-                                </li>
-                                <li class="pt-2 d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1">
-                                    <span><i class="bi bi-globe-central-south text-info me-1"></i> {{ app()->getLocale() === 'en' ? 'Tamil Nadu Coverage' : 'தமிழ்நாடு முழுமைக்குமான கட்டமைப்பு' }}</span>
-                                    <strong class="text-success fw-bold">38 Districts</strong>
-                                </li>
-                            </ul>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="border-left: 5px solid #16a34a !important;">
+                        <div class="d-flex align-items-center gap-2.5 mb-3">
+                            <span class="badge bg-success-subtle text-success p-2.5 rounded-3">
+                                <i class="bi bi-eye-fill fs-4 text-success"></i>
+                            </span>
+                            <h4 class="fw-bold text-navy mb-0 fs-5">{{ app()->getLocale() === 'en' ? 'Our Vision' : 'எங்கள் தொலைநோக்கு (Our Vision)' }}</h4>
                         </div>
+                        <p class="text-secondary mb-0 leading-relaxed small">
+                            @if(app()->getLocale() === 'en')
+                                To cultivate a modern, responsive civic ecosystem where community infrastructure needs—clean drinking water, proper drainage, safe roads, and reliable power—are addressed promptly with digital transparency and zero administrative apathy.
+                            @else
+                                சுத்தமான குடிநீர், பாதுகாப்பான சாலைகள், முறையான மின்சார வசதி மற்றும் தூய்மையான சுற்றுப்புறம் ஆகியவை ஒவ்வொரு குடிமகனுக்கும் தடையின்றி கிடைப்பதை உறுதி செய்து, மக்கள் குறைகள் உடனுக்குடன் தீர்க்கப்படும் ஒரு முன்மாதிரி டிஜிட்டல் சமூகத்தை உருவாக்குவதே எங்களின் தொலைநோக்காகும்.
+                            @endif
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- =========================================================================
-                 25 YEARS UNBROKEN PUBLIC SERVICE & LEADERSHIP TIMELINE
-                 ========================================================================= -->
-            <div class="card border-0 shadow-sm rounded-4 p-3 p-sm-4 p-md-5 mb-4 mb-md-5 bg-white">
+            <!-- 4. HOW THE PLATFORM WORKS (4-STEP PROCESS) -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4 mb-md-5 bg-white">
                 <div class="text-center mb-4">
-                    <span class="badge bg-warning-subtle text-dark border border-warning-subtle px-3 py-1 rounded-pill fw-bold mb-2 text-wrap">
-                        {{ app()->getLocale() === 'en' ? 'Track Record: 2001 to Present' : '2001 முதல் இன்று வரை' }}
+                    <span class="badge bg-secondary-subtle text-secondary px-3 py-1 rounded-pill small fw-bold text-uppercase" style="letter-spacing: 0.5px;">
+                        {{ app()->getLocale() === 'en' ? 'Workflow' : 'செயல்முறை' }}
                     </span>
-                    <h3 class="fw-bold text-dark fs-4 fs-md-3">
-                        {{ app()->getLocale() === 'en' ? '25 Years of Unbroken Organizational Service' : '25 ஆண்டுகால மக்கள் சேவை & கட்சிப் பொறுப்புகள்' }}
+                    <h3 class="fw-bold text-navy fs-4 fs-md-3 mt-1 mb-2">
+                        {{ app()->getLocale() === 'en' ? 'How the Grievance Redressal Platform Works' : 'புகார் பதிவு முதல் நடவடிக்கை வரை — எளிய செயல்முறை' }}
                     </h3>
-                    <p class="text-muted small mx-auto" style="max-width: 650px;">
-                        {{ app()->getLocale() === 'en' ? 'From youth mandal responsibilities in Watrap, Virudhunagar to statewide executive leadership in Tamil Nadu.' : 'விருதுநகர் மாவட்டத்தின் வத்திராயிருப்பு ஒன்றியத்தில் தொடங்கி தமிழ்நாடு மாநில அளவிலான மக்கள் நலப் பணிகள் வரையிலான வரலாற்றுப் பயணம்.' }}
+                    <p class="text-muted small mx-auto" style="max-width: 620px;">
+                        {{ app()->getLocale() === 'en' ? 'A systematic, step-by-step workflow designed to ensure every complaint is verified and addressed.' : 'உங்கள் புகார் உரிய அதிகாரிகளைச் சென்றடைய நாங்கள் பின்பற்றும் எளிய 4-படி நடைமுறை.' }}
                     </p>
                 </div>
 
+                <div class="row g-3 g-md-4 text-center">
+                    <!-- Step 1 -->
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 rounded-4 bg-light h-100 border">
+                            <div class="rounded-circle text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-xs" style="width: 52px; height: 52px; background: #ea580c; font-size: 20px;">
+                                <i class="bi bi-pencil-square"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark fs-6 mb-1">{{ app()->getLocale() === 'en' ? '1. Submit' : '1. புகார் பதிவு' }}</h5>
+                            <small class="text-muted d-block" style="font-size: 0.78rem;">
+                                {{ app()->getLocale() === 'en' ? 'Register details with photos and location' : 'விவரங்கள் & புகைப்படங்களுடன் புகாரைப் பதிவு செய்யவும்' }}
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 rounded-4 bg-light h-100 border">
+                            <div class="rounded-circle text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-xs" style="width: 52px; height: 52px; background: #0284c7; font-size: 20px;">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark fs-6 mb-1">{{ app()->getLocale() === 'en' ? '2. Verification' : '2. சரிபார்ப்பு' }}</h5>
+                            <small class="text-muted d-block" style="font-size: 0.78rem;">
+                                {{ app()->getLocale() === 'en' ? 'Our civic team reviews authenticity' : 'புகார் விவரங்கள் எங்கள் குழுவால் சரிபார்க்கப்படும்' }}
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 rounded-4 bg-light h-100 border">
+                            <div class="rounded-circle text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-xs" style="width: 52px; height: 52px; background: #16a34a; font-size: 20px;">
+                                <i class="bi bi-bank2"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark fs-6 mb-1">{{ app()->getLocale() === 'en' ? '3. Official Escalation' : '3. அரசுத் துறைக்கு அனுப்புதல்' }}</h5>
+                            <small class="text-muted d-block" style="font-size: 0.78rem;">
+                                {{ app()->getLocale() === 'en' ? 'Forwarded to the concerned civic department' : 'சம்பந்தப்பட்ட அரசு அல்லது உள்ளாட்சித் துறைக்கு அனுப்பப்படும்' }}
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 rounded-4 bg-light h-100 border">
+                            <div class="rounded-circle text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-xs" style="width: 52px; height: 52px; background: #7c3aed; font-size: 20px;">
+                                <i class="bi bi-clipboard2-check-fill"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark fs-6 mb-1">{{ app()->getLocale() === 'en' ? '4. Tracking' : '4. கண்காணிப்பு' }}</h5>
+                            <small class="text-muted d-block" style="font-size: 0.78rem;">
+                                {{ app()->getLocale() === 'en' ? 'Follow resolution status live with Complaint ID' : 'புகாரின் நடவடிக்கை நிலையை ஆன்லைனில் அறியலாம்' }}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. CATEGORIES OF GRIEVANCES WE ADDRESS -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4 mb-md-5 bg-white">
+                <div class="text-center mb-4">
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1 rounded-pill small fw-bold text-uppercase" style="letter-spacing: 0.5px;">
+                        {{ app()->getLocale() === 'en' ? 'Scope of Service' : 'சேவை வகைகள்' }}
+                    </span>
+                    <h3 class="fw-bold text-navy fs-4 fs-md-3 mt-1 mb-2">
+                        {{ app()->getLocale() === 'en' ? 'Civic Categories We Cover' : 'நாங்கள் தீர்வு காணும் பொதுப் பிரச்சனைகள்' }}
+                    </h3>
+                </div>
+
                 <div class="row g-3">
-                    @if(app()->getLocale() === 'en')
-                        <!-- 2025 - Present -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #e65100 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-danger text-white fw-bold" style="font-size: 0.72rem;">2025 — PRESENT</span>
-                                    <small class="text-primary fw-semibold">Current Responsibility</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">State Vice President — Kisan Morcha</h5>
-                                <p class="text-muted small mb-0">
-                                    Bharatiya Janata Party (BJP) — Tamil Nadu. Directing statewide farmer empowerment initiatives, agricultural grievance representations, rural economic policy dialogues, and grassroots civic coordination.
-                                </p>
-                            </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 rounded-4 bg-light border text-center h-100">
+                            <div class="fs-2 text-dark mb-2"><i class="bi bi-signpost-2-fill"></i></div>
+                            <h6 class="fw-bold text-navy mb-1 small">{{ app()->getLocale() === 'en' ? 'Roads & Bridges' : 'சாலை வசதி' }}</h6>
+                            <small class="text-muted" style="font-size: 0.75rem;">சேதமடைந்த சாலைகள், பாலங்கள் & போக்குவரத்து</small>
                         </div>
-
-                        <!-- 2022 - 2025 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #1b5e20 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2022 — 2025</span>
-                                    <small class="text-muted">State Executive</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">State Secretary — Kisan Morcha, Tamil Nadu BJP</h5>
-                                <p class="text-muted small mb-0">
-                                    Executed statewide agricultural seminars, farmer outreach camps, and led central agricultural welfare awareness tours across southern and delta districts.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2020 - 2025 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0284c7 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2020 — 2025</span>
-                                    <small class="text-muted">Central Schemes Leadership</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">State In-Charge (Central Schemes) & Co-Zonal In-charge</h5>
-                                <p class="text-muted small mb-0">
-                                    State In-charge for PM-Kisan Samman Nidhi, Kisan Credit Card (KCC), and Organic Agriculture promotion. Oversaw organizational synchronization in the southern zones.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2020 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #eab308 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2020</span>
-                                    <small class="text-muted">Pandemic Economic Relief</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">MSME Loan Initiative & Small Business Support</h5>
-                                <p class="text-muted small mb-0">
-                                    Coordinated with banks and business chambers to facilitate collateral-free Emergency Credit Line Guarantee Scheme (ECLGS) loans to pandemic-affected small businesses and traders.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2014 - 2017 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #6366f1 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2014 — 2017</span>
-                                    <small class="text-muted">State Commerce Cell</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">State Secretary — Commerce Cell, Tamil Nadu BJP</h5>
-                                <p class="text-muted small mb-0">
-                                    Engaged commercial associations, wholesale trade bodies, and industry leaders to communicate central economic reforms and foster commercial enterprise confidence.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2012 - 2016 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ec4899 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2012 — 2016</span>
-                                    <small class="text-muted">IT & Call Centre</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">State Organisation & IT Support; Call Centre In-charge</h5>
-                                <p class="text-muted small mb-0">
-                                    Built and managed state-wide election call centre infrastructure and coordinated record-breaking state membership enrollment drives across Tamil Nadu.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2003 - 2008 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0d9488 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">2003 — 2008</span>
-                                    <small class="text-muted">District Leadership</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">District Yuva Morcha / District Executive Member</h5>
-                                <p class="text-muted small mb-0">
-                                    Virudhunagar District, Tamil Nadu. Organized youth conventions, anti-corruption rallies, voter awareness campaigns, and civic welfare drives across the district.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2001 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ea580c !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-dark text-white" style="font-size: 0.72rem;">2001 — Grassroots Beginning</span>
-                                    <small class="text-muted">Virudhunagar District</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">Watrap Union Yuva Morcha President / Leader</h5>
-                                <p class="text-muted small mb-0">
-                                    Entered active public service at the grassroots union level, establishing party presence and community welfare activities across rural villages in Watrap, Virudhunagar district.
-                                </p>
-                            </div>
-                        </div>
-                    @else
-                        <!-- Tamil Timeline Nodes -->
-                        <!-- 2025 - Present -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #e65100 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-danger text-white fw-bold text-wrap" style="font-size: 0.72rem;">2025 — இன்று வரை</span>
-                                    <small class="text-primary fw-semibold">தற்போதைய பொறுப்பு</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநில துணைத் தலைவர் — விவசாய அணி (Kisan Morcha)</h5>
-                                <p class="text-muted small mb-0">
-                                    பாரதிய ஜனதா கட்சி (BJP) — தமிழ்நாடு. மாநிலம் தழுவிய உழவர் நலம், விவசாயக் குறைதீர்க்கும் முன்னெடுப்புகள், மத்திய அரசு திட்டங்களை மக்களிடம் கொண்டு சேர்த்தல் மற்றும் கிராமப்புற கட்டமைப்புப் பணிகள்.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2022 - 2025 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #1b5e20 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2022 — 2025</span>
-                                    <small class="text-muted">மாநிலச் செயற்குழு</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலச் செயலாளர் — விவசாய அணி, பாஜக தமிழ்நாடு</h5>
-                                <p class="text-muted small mb-0">
-                                    விவசாயிகள் மாநாடுகள், கள ஆய்வு முகாம்கள், உழவர் விழிப்புணர்வுப் பயணங்கள் மற்றும் தென் மாவட்ட விவசாயிகளின் பாசனப் பிரச்சனைகளுக்குத் தீர்வு காணும் போராட்டங்களை முன்னின்று நடத்தினார்.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2020 - 2025 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0284c7 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2020 — 2025</span>
-                                    <small class="text-muted">மத்திய திட்டங்கள்</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலப் பொறுப்பாளர் (மத்திய திட்டங்கள்) & மண்டல இணைப் பொறுப்பாளர்</h5>
-                                <p class="text-muted small mb-0">
-                                    பிரதமரின் கிசான் சம்மான் நிதி (PM-Kisan), கிசான் கடன் அட்டை (KCC) மற்றும் இயற்கை விவசாய ஊக்குவிப்பு திட்டங்களுக்கான மாநிலப் பொறுப்பாளராகச் செயல்பட்டார்.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2020 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #eab308 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2020</span>
-                                    <small class="text-muted">கொரோனா கால சேவை</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">சிறு, குறு வணிகர்கள் மற்றும் MSME கடன் வழிகாட்டுதல்</h5>
-                                <p class="text-muted small mb-0">
-                                    கொரோனா பெருந்தொற்றுப் பொதுமுடக்கத்தால் பாதிக்கப்பட்ட வணிகர்கள் மற்றும் சிறு நிறுவனங்களுக்கு மத்திய அரசின் பிணையில்லா அவசரகாலக் கடன் (ECLGS) கிடைக்க வங்கிகளுடன் ஒருங்கிணைந்து வழிகாட்டினார்.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2014 - 2017 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #6366f1 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2014 — 2017</span>
-                                    <small class="text-muted">வணிகர் அணி</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநிலச் செயலாளர் — வணிகர் அணி, பாஜக தமிழ்நாடு</h5>
-                                <p class="text-muted small mb-0">
-                                    தமிழ்நாடு முழுவதும் உள்ள வணிகர் சங்கங்கள், மொத்த விற்பனை அமைப்புகள் மற்றும் தொழில்முனைவோரை ஒருங்கிணைத்து வர்த்தக வளர்ச்சிக்கு உறுதுணையாக நின்றார்.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2012 - 2016 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ec4899 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2012 — 2016</span>
-                                    <small class="text-muted">தகவல் தொழில்நுட்பம்</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">மாநில தகவல் தொழில்நுட்பப் பிரிவு & அழைப்பு மையத் தலைமை</h5>
-                                <p class="text-muted small mb-0">
-                                    தமிழ்நாடு மாநில அளவிலான தேர்தல் அழைப்பு மையம் (State Call Centre) மற்றும் தகவல் தொழில்நுட்ப உள்கட்டமைப்பை நிறுவி, சாதனை அளவிலான உறுப்பினர் சேர்க்கையை ஒருங்கிணைத்தார்.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2003 - 2008 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #0d9488 !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-secondary text-white text-wrap" style="font-size: 0.72rem;">2003 — 2008</span>
-                                    <small class="text-muted">விருதுநகர் மாவட்ட நிர்வாகம்</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">விருதுநகர் மாவட்ட செயற்குழு உறுப்பினர் & இளைஞரணி</h5>
-                                <p class="text-muted small mb-0">
-                                    விருதுநகர் மாவட்ட இளைஞரணி மாநாடுகள், வாக்காளர் விழிப்புணர்வு இயக்கங்கள் மற்றும் மக்கள் நலப் போராட்டங்களை முன்னின்று நடத்தினார்.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 2001 -->
-                        <div class="col-md-6">
-                            <div class="p-3 rounded-3 border bg-light h-100" style="border-left: 4px solid #ea580c !important;">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-1.5">
-                                    <span class="badge bg-dark text-white text-wrap" style="font-size: 0.72rem;">2001 — அடித்தள ஆரம்பம்</span>
-                                    <small class="text-muted">விருதுநகர் மாவட்டம்</small>
-                                </div>
-                                <h5 class="fw-bold text-dark fs-6 mb-1">வத்திராயிருப்பு ஒன்றிய இளைஞரணித் தலைவர்</h5>
-                                <p class="text-muted small mb-0">
-                                    விருதுநகர் மாவட்டம் வத்திராயிருப்பு ஒன்றிய அளவில் தனது நேரடி மக்கள் பணியைத் தொடங்கி, கிராமப்புற அடித்தள மக்களின் நலனுக்காகச் செயலாற்றினார்.
-                                </p>
-                            </div>
-                        </div>
-                    @endif
-                </div>
-            </div>
-
-            <!-- =========================================================================
-                 THE GUIDING IDEOLOGY: ANTYODAYA & DIGITAL CITIZEN SERVICE
-                 ========================================================================= -->
-            <div class="row g-3 g-md-4 mb-4 mb-md-5">
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-top: 4px solid #ff7722 !important;">
-                        <div class="rounded-circle bg-warning-subtle text-danger d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px; font-size: 20px;">
-                            <i class="bi bi-people-fill"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-2 fs-5">
-                            {{ app()->getLocale() === 'en' ? 'Antyodaya Civic Mission' : 'கடைக்கோடி மனிதனுக்கும் சேவை (அந்தியோதயா)' }}
-                        </h5>
-                        <p class="text-muted small mb-0">
-                            @if(app()->getLocale() === 'en')
-                                Inspired by Pandit Deendayal Upadhyaya's Antyodaya principle, ensuring that government welfare and basic civic infrastructure reach the most underprivileged rural family in Virudhunagar and across Tamil Nadu.
-                            @else
-                                பண்டிட் தீனதயாள் உபாத்யாயாவின் 'அந்தியோதயா' தத்துவத்தின்படி, வரிசையில் நிற்கும் கடைக்கோடி மனிதனுக்கும் அடிப்படை அரசு நலன்களும் பொது உட்கட்டமைப்புகளும் சென்றடைவதை உறுதி செய்தல்.
-                            @endif
-                        </p>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-top: 4px solid #0284c7 !important;">
-                        <div class="rounded-circle bg-info-subtle text-info d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px; font-size: 20px;">
-                            <i class="bi bi-laptop"></i>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 rounded-4 bg-light border text-center h-100">
+                            <div class="fs-2 text-primary mb-2"><i class="bi bi-droplet-fill"></i></div>
+                            <h6 class="fw-bold text-navy mb-1 small">{{ app()->getLocale() === 'en' ? 'Drinking Water' : 'குடிநீர் விநியோகம்' }}</h6>
+                            <small class="text-muted" style="font-size: 0.75rem;">குடிநீர் பற்றாக்குறை, குழாய் உடைப்பு & தூய்மை</small>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2 fs-5">
-                            {{ app()->getLocale() === 'en' ? 'Digital India Transparency' : 'டிஜிட்டல் இந்தியா வெளிப்படைத்தன்மை' }}
-                        </h5>
-                        <p class="text-muted small mb-0">
-                            @if(app()->getLocale() === 'en')
-                                A transparent, direct digital governance framework where citizens register civic issues with live geotagged proof and track resolution progress without middlemen or administrative friction.
-                            @else
-                                இடைத்தரகர்கள் இன்றி பொதுமக்கள் தங்கள் பகுதியில் உள்ள பிரச்சனைகளை நேரடியாகவும், லைவ் ஜிபிஎஸ் சான்றுகளுடனும் பதிவு செய்து நிலையை உடனடி கண்காணிக்கும் வெளிப்படையான முறை.
-                            @endif
-                        </p>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-top: 4px solid #138808 !important;">
-                        <div class="rounded-circle bg-success-subtle text-success d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px; font-size: 20px;">
-                            <i class="bi bi-tree-fill"></i>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 rounded-4 bg-light border text-center h-100">
+                            <div class="fs-2 text-warning mb-2"><i class="bi bi-lightning-charge-fill"></i></div>
+                            <h6 class="fw-bold text-navy mb-1 small">{{ app()->getLocale() === 'en' ? 'Electricity & Lighting' : 'மின்சாரம் & தெருவிளக்கு' }}</h6>
+                            <small class="text-muted" style="font-size: 0.75rem;">தெருவிளக்கு எரியாமை, மின்கம்ப பழுது</small>
                         </div>
-                        <h5 class="fw-bold text-dark mb-2 fs-5">
-                            {{ app()->getLocale() === 'en' ? 'Farmers & Rural Development' : 'உழவர் & ஊரக வளர்ச்சி' }}
-                        </h5>
-                        <p class="text-muted small mb-0">
-                            @if(app()->getLocale() === 'en')
-                                Dedicated priority to addressing irrigation challenges, drinking water leakages, rural road repairs, and essential infrastructure needs across all agrarian villages and municipal wards.
-                            @else
-                                விவசாயக் குடும்பங்களின் பாசன வசதி, குடிநீர் தட்டுப்பாடு, ஊரகச் சாலைகள் மற்றும் அடிப்படை உட்கட்டமைப்புத் தேவைகளுக்கு முன்னுரிமை அளித்து தீர்வு காணும் செயல்பாடு.
-                            @endif
-                        </p>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 rounded-4 bg-light border text-center h-100">
+                            <div class="fs-2 text-success mb-2"><i class="bi bi-trash3-fill"></i></div>
+                            <h6 class="fw-bold text-navy mb-1 small">{{ app()->getLocale() === 'en' ? 'Sanitation & Hygiene' : 'சுகாதாரம் & துப்புரவு' }}</h6>
+                            <small class="text-muted" style="font-size: 0.75rem;">சாக்கடை அடைப்பு, குப்பை அகற்றுதல்</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 rounded-4 bg-light border text-center h-100">
+                            <div class="fs-2 text-info mb-2"><i class="bi bi-mortarboard-fill"></i></div>
+                            <h6 class="fw-bold text-navy mb-1 small">{{ app()->getLocale() === 'en' ? 'Education & Schools' : 'கல்வி & பள்ளிகள்' }}</h6>
+                            <small class="text-muted" style="font-size: 0.75rem;">பள்ளி உள்கட்டமைப்பு, கல்வி உதவிகள்</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 rounded-4 bg-light border text-center h-100">
+                            <div class="fs-2 text-danger mb-2"><i class="bi bi-hospital-fill"></i></div>
+                            <h6 class="fw-bold text-navy mb-1 small">{{ app()->getLocale() === 'en' ? 'Healthcare & Clinics' : 'மருத்துவம் & பொது சுகாதாரம்' }}</h6>
+                            <small class="text-muted" style="font-size: 0.75rem;">ஆரம்ப சுகாதார நிலையங்கள், மருத்துவ வசதிகள்</small>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Disclaimer Notice -->
-            <div class="disclaimer-banner d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2 gap-sm-3 p-3 p-sm-4 mb-4 mb-md-5 rounded-3">
-                <i class="bi bi-shield-exclamation fs-2 text-danger flex-shrink-0"></i>
-                <div>
-                    <h5 class="fw-bold text-danger mb-1 fs-6">{{ __('messages.disclaimer_title') }}</h5>
-                    <p class="mb-0 text-dark small">{{ __('messages.disclaimer_text') }}</p>
-                </div>
-            </div>
-
-            <!-- Mission & Vision -->
-            <div class="row g-3 g-md-4 mb-4 mb-md-5">
-                <div class="col-md-6">
-                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-left: 5px solid var(--primary-color) !important;">
-                        <div class="d-flex align-items-center gap-2 mb-3">
-                            <span class="badge bg-warning text-dark p-2 rounded-3"><i class="bi bi-bullseye fs-5"></i></span>
-                            <h4 class="fw-bold mb-0 fs-5">{{ app()->getLocale() === 'en' ? 'Our Mission' : 'நோக்கம் (Our Mission)' }}</h4>
-                        </div>
-                        <p class="text-secondary mb-0 leading-relaxed small">
-                            @if(app()->getLocale() === 'en')
-                                To provide the people of Tamil Nadu, and specifically every citizen across the 10 taluks and 600 villages of Virudhunagar District, a transparent, bilingual, digital petition portal that eliminates middlemen, ensures administrative accountability, and follows through until issues are resolved.
-                            @else
-                                தமிழ்நாட்டின் அனைத்து பகுதி மக்களுக்கும், குறிப்பாக விருதுநகர் மாவட்டத்தின் 10 வட்டங்கள் மற்றும் 600 வருவாய் கிராமங்களில் வாழும் அடித்தட்டு உழவர்கள், தொழிலாளர்கள் மற்றும் குடும்பங்களின் அடிப்படைத் தேவைகளுக்கும் அரசு நிர்வாகத்திற்கும் இடையே நம்பகமான பாலமாக அமைந்து, ஒவ்வொரு கோரிக்கையையும் வெளிப்படைத்தன்மையுடன் தீர்வு காண்பதே எங்களின் முதன்மை நோக்கம்.
-                            @endif
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 border-0 shadow-sm p-3.5 p-sm-4 rounded-4" style="border-left: 5px solid var(--secondary-color) !important;">
-                        <div class="d-flex align-items-center gap-2 mb-3">
-                            <span class="badge bg-success text-white p-2 rounded-3"><i class="bi bi-eye-fill fs-5"></i></span>
-                            <h4 class="fw-bold mb-0 fs-5">{{ app()->getLocale() === 'en' ? 'Our Vision' : 'தொலைநோக்கு (Our Vision)' }}</h4>
-                        </div>
-                        <p class="text-secondary mb-0 leading-relaxed small">
-                            @if(app()->getLocale() === 'en')
-                                A responsive, citizen-first civic ecosystem where community problems—from drinking water pipeline leakages to rural road repairs—are documented with authentic geolocation data and resolved with measurable service level agreements.
-                            @else
-                                குடிநீர் குழாய் உடைப்பு முதல் கிராமப்புற சாலை சீரமைப்பு வரை அனைத்து பொதுப் பிரச்சனைகளும் உண்மையான களத்தரவுகளுடன் ஆவணப்படுத்தப்பட்டு, காலக்கெடுவுடன் தீர்க்கப்படும் ஒரு முன்மாதிரி மாவட்ட மக்கள் நிர்வாகத்தை உருவாக்கி அதைத் தமிழ்நாடு முழுமைக்கும் முன்மாதிரியாக மாற்றுதல்.
-                            @endif
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Key Operating Principles -->
-            <div class="card border-0 shadow-sm rounded-4 p-3 p-sm-4 p-md-5 mb-5 bg-white">
-                <h3 class="fw-bold text-dark mb-4 text-center fs-4 fs-md-3">
-                    {{ app()->getLocale() === 'en' ? 'Core Pillars of Tamil Nadu Makkal Kural' : 'தமிழ்நாடு மக்கள் குரலின் முதன்மைக் கொள்கைகள்' }}
+            <!-- 6. CORE OPERATING PRINCIPLES -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4 mb-md-5 bg-white">
+                <h3 class="fw-bold text-navy mb-4 text-center fs-4 fs-md-3">
+                    {{ app()->getLocale() === 'en' ? 'Our Core Operating Principles' : 'எங்கள் முதன்மைக் கொள்கைகள்' }}
                 </h3>
                 <div class="row g-4">
                     <div class="col-md-4 text-center">
-                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; font-size: 24px; color: var(--primary-color);">
-                            <i class="bi bi-shield-lock"></i>
+                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 54px; height: 54px; font-size: 24px; color: #ea580c;">
+                            <i class="bi bi-shield-lock-fill"></i>
                         </div>
-                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Privacy & Citizen Security' : 'தனியுரிமை & தகவல் பாதுகாப்பு' }}</h5>
+                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Citizen Privacy & Security' : 'தனியுரிமை & தகவல் பாதுகாப்பு' }}</h5>
                         <p class="text-muted small mb-0">
-                            {{ app()->getLocale() === 'en' ? 'Citizen phone numbers and private addresses are strictly protected and never disclosed on public feeds.' : 'மனுதாரர்களின் தொலைபேசி எண் மற்றும் வீட்டு முகவரி போன்ற தனிப்பட்ட விபரங்கள் பொதுவெளியில் பகிரப்படாமல் முழுமையாகப் பாதுகாக்கப்படுகின்றன.' }}
+                            {{ app()->getLocale() === 'en' ? 'Citizen phone numbers and private addresses are strictly protected and never disclosed publicly.' : 'மனுதாரர்களின் தொலைபேசி எண் மற்றும் முகவரி போன்ற தனிப்பட்ட விவரங்கள் பொதுவெளியில் பகிரப்படாமல் முழுமையாகப் பாதுகாக்கப்படுகின்றன.' }}
                         </p>
                     </div>
 
                     <div class="col-md-4 text-center">
-                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; font-size: 24px; color: var(--secondary-color);">
-                            <i class="bi bi-diagram-3"></i>
+                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 54px; height: 54px; font-size: 24px; color: #16a34a;">
+                            <i class="bi bi-geo-alt-fill"></i>
                         </div>
-                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Accurate Administrative Mapping' : 'துல்லியமான நிர்வாகக் கட்டமைப்பு' }}</h5>
+                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Authentic Civic Mapping' : 'துல்லியமான பகுதி விவரங்கள்' }}</h5>
                         <p class="text-muted small mb-0">
-                            {{ app()->getLocale() === 'en' ? 'Covers all 3 Revenue Divisions (Aruppukkottai, Sivakasi, Sattur) and 10 Revenue Taluks with authentic revenue village datasets.' : 'அருப்புக்கோட்டை, சிவகாசி, சாத்தூர் ஆகிய 3 வருவாய் கோட்டங்கள், 10 தாலுகாக்கள் மற்றும் 600 வருவாய் கிராமங்களையும் உள்ளடக்கிய நேரடி கட்டமைப்பு.' }}
+                            {{ app()->getLocale() === 'en' ? 'Every complaint is accurately mapped to its district, taluk, ward, or revenue village for direct administrative action.' : 'ஒவ்வொரு புகாரும் அதன் மாவட்டம், வட்டம், கிராமம் மற்றும் வார்டு வாரியாக துல்லியமாக ஆவணப்படுத்தப்படுகிறது.' }}
                         </p>
                     </div>
 
                     <div class="col-md-4 text-center">
-                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; font-size: 24px; color: #0284c7;">
+                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 54px; height: 54px; font-size: 24px; color: #0284c7;">
                             <i class="bi bi-clock-history"></i>
                         </div>
-                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Clear Accountability' : 'வெளிப்படையான கண்காணிப்பு' }}</h5>
+                        <h5 class="fw-bold mb-2 fs-6">{{ app()->getLocale() === 'en' ? 'Full Transparency' : 'வெளிப்படையான கண்காணிப்பு' }}</h5>
                         <p class="text-muted small mb-0">
-                            {{ app()->getLocale() === 'en' ? 'Every grievance gets an immutable audit log from registration, officer assignment, and department referral to verified on-site resolution.' : 'மனு பதிவு முதல் அதிகாரி நியமனம், துறைக்குப் பரிந்துரை மற்றும் களத் தீர்வு வரை ஒவ்வொரு கட்டமும் வெளிப்படையாக ஆவணப்படுத்தப்படுகிறது.' }}
+                            {{ app()->getLocale() === 'en' ? 'From registration to departmental referral and verified on-site completion, progress is tracked clearly.' : 'மனு பதிவு முதல் துறைக்கு பரிந்துரைப்பது மற்றும் களத் தீர்வு வரை ஒவ்வொரு கட்டமும் வெளிப்படையாக கண்காணிக்கப்படுகிறது.' }}
                         </p>
                     </div>
+                </div>
+            </div>
+
+            <!-- 7. OFFICIAL DISCLAIMER BANNER -->
+            <div class="disclaimer-banner d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 p-3 p-sm-4 mb-4 mb-md-5 rounded-4 shadow-xs" style="background-color: #fff7ed; border: 1px solid #fed7aa;">
+                <i class="bi bi-info-circle-fill fs-2 text-warning flex-shrink-0"></i>
+                <div>
+                    <h5 class="fw-bold text-dark mb-1 fs-6">
+                        {{ app()->getLocale() === 'en' ? 'Independent Civic Portal Disclaimer' : 'சுயாதீன மக்கள் குறைதீர்ப்பு உதவி தளம்' }}
+                    </h5>
+                    <p class="mb-0 text-secondary small">
+                        {{ __('messages.disclaimer_text') }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- 8. CALL TO ACTION -->
+            <div class="card border-0 rounded-4 p-4 p-md-5 text-white text-center shadow-sm" style="background-color: #0b1f3a;">
+                <h3 class="fw-bold mb-2 fs-4 fs-md-3">
+                    {{ app()->getLocale() === 'en' ? 'Have a civic problem in your neighborhood?' : 'உங்கள் பகுதியில் பொதுப் பிரச்சனை உள்ளதா?' }}
+                </h3>
+                <p class="text-white-50 small mb-4 mx-auto" style="max-width: 600px;">
+                    {{ app()->getLocale() === 'en' ? 'Submit your complaint online with photos or check the live progress of an existing petition anytime.' : 'புகாரை உடனடியாக புகைப்படங்களுடன் பதிவு செய்யுங்கள் அல்லது உங்கள் புகாரின் நடவடிக்கை நிலையை உடனே ஆன்லைனில் தெரிந்து கொள்ளுங்கள்.' }}
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-2 gap-sm-3">
+                    <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 shadow-sm">
+                        <i class="bi bi-pencil-fill"></i>
+                        <span>{{ app()->getLocale() === 'en' ? 'Submit Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
+                    </a>
+                    <a href="{{ route('complaints.track') }}" class="btn btn-outline-light rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2">
+                        <i class="bi bi-search"></i>
+                        <span>{{ app()->getLocale() === 'en' ? 'Track Grievance' : 'புகார் நிலையை அறியுங்கள்' }}</span>
+                    </a>
+                    <a href="tel:+919384995222" class="btn btn-light rounded-pill px-3.5 py-2.5 fw-bold text-dark d-inline-flex align-items-center gap-2">
+                        <i class="bi bi-telephone-fill text-success"></i>
+                        <span>+91 9384995222</span>
+                    </a>
                 </div>
             </div>
 
