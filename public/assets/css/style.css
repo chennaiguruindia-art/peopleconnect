@@ -1229,11 +1229,11 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  width: 62%;
+  width: 68%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 90% center;
+  background-position: 72% center;
   z-index: 1;
 }
 
@@ -1259,8 +1259,19 @@ img {
 
 @media (min-width: 992px) {
   .hero-curved-banner {
-    min-height: calc(100vh - 110px);
-    max-height: 700px;
+    min-height: 530px;
+    max-height: 620px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero-curved-banner {
+    min-height: 550px;
+    max-height: 640px;
+  }
+  .hero-curved-banner .banner-photo-bg {
+    width: 66%;
+    background-position: 70% center;
   }
 }
 
@@ -1286,10 +1297,10 @@ img {
 }
 
 .mobile-hero-photo {
-  height: 230px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
-  object-position: 80% center;
+  object-position: center center;
   display: block;
 }
 

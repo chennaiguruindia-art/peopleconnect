@@ -7,50 +7,69 @@
 <!-- 1. HERO SECTION -->
 <!-- A. DESKTOP PANORAMIC CURVED HERO (d-none d-lg-block) -->
 <section class="hero-curved-banner position-relative overflow-hidden w-100 border-bottom d-none d-lg-block">
-    <!-- Background Image on Right (Using existing banner1.png with proper positioning) -->
-    <div class="banner-photo-bg" style="background-image: url('{{ asset('assets/images/banner/banner.jpg') }}');"></div>
+    <!-- Background Image on Right with crisp framing of Modi ji and the people -->
+    <div class="banner-photo-bg" style="background-image: url('{{ asset('assets/images/banner/banner1.jpg') }}');"></div>
 
-    <!-- Curved SVG Panel on Left (Desktop & Tablet) -->
+    <!-- Curved SVG Panel on Left - Slimmer & smoother curve so full crowd and Modi ji are visible without any cut-off -->
     <svg class="banner-curve-svg" viewBox="0 0 1000 560" preserveAspectRatio="none">
-        <path d="M 0,0 L 440,0 C 495,30 475,300 565,560 L 0,560 Z" fill="#ffffff" />
-        <path d="M 440,0 C 495,30 475,300 565,560" fill="none" stroke="#ea580c" stroke-width="7" stroke-linecap="round" />
+        <path d="M 0,0 L 350,0 C 400,30 380,300 440,560 L 0,560 Z" fill="#ffffff" />
+        <path d="M 350,0 C 400,30 380,300 440,560" fill="none" stroke="#ea580c" stroke-width="6" stroke-linecap="round" />
     </svg>
+
+    <!-- Floating Badge over photo on bottom right -->
+    <div class="position-absolute bottom-0 end-0 m-3 m-xl-4 p-2 px-3 rounded-pill bg-dark bg-opacity-75 text-white small fw-bold shadow-lg d-none d-xl-flex align-items-center gap-2 z-3 border border-white border-opacity-25" style="backdrop-filter: blur(8px);">
+        <span class="d-inline-block rounded-circle bg-success" style="width: 8px; height: 8px;"></span>
+        <span>மக்களோடு நாம் • அந்தியோதயா மக்கள் சேவை</span>
+    </div>
 
     <!-- Desktop Banner Text Content -->
     <div class="container-fluid px-3 px-md-4 px-xl-5 position-relative z-2 h-100">
         <div class="row align-items-center h-100">
             <div class="col-lg-5 col-xl-5 py-4 py-lg-5 ps-2 ps-md-4 ps-lg-5">
                 <div class="hero-text-wrapper" style="max-width: 440px;">
+                    <!-- Hooky Mission Pill Badge -->
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-warning bg-opacity-10 text-dark border border-warning border-opacity-50 fw-bold small mb-3">
+                        <span class="badge rounded-pill text-white" style="background-color: #ea580c; font-size: 0.72rem;">அந்தியோதயா</span>
+                        <span style="font-size: 0.82rem; color: #0b1f3a;">கடைக்கோடி மக்களின் நேரடி குறைதீர்ப்பு தளம்</span>
+                    </div>
+
                     <h1 class="hero-people-heading mb-2 mb-md-3 notranslate" translate="no">
                         @if(app()->getLocale() === 'en')
-                            <span class="d-block text-navy">Your Voice.</span>
-                            <span class="d-block text-navy">Your Community.</span>
-                            <span class="d-block text-orange">Your Connection.</span>
+                            <span class="d-block text-navy" style="font-weight: 800;">People's Voice.</span>
+                            <span class="d-block text-navy" style="font-weight: 800;">Direct Service.</span>
+                            <span class="d-block text-orange" style="font-weight: 900; color: #ea580c !important;">Fast Redressal!</span>
                         @else
-                            <span class="d-block text-navy">உங்கள் குரல்.</span>
-                            <span class="d-block text-navy">உங்கள் பகுதி.</span>
-                            <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
+                            <span class="d-block text-navy" style="font-weight: 800;">மக்களின் குரல்.</span>
+                            <span class="d-block text-navy" style="font-weight: 800;">நேரடி சேவை.</span>
+                            <span class="d-block text-orange" style="font-weight: 900; color: #ea580c !important;">உடனடி தீர்வு!</span>
                         @endif
                     </h1>
                     
                     <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-3 my-md-4 notranslate" translate="no">
-                        <p class="hero-desc-text text-secondary mb-0 fw-medium">
+                        <p class="hero-desc-text text-dark mb-1 fw-semibold" style="font-size: 0.98rem; line-height: 1.6;">
                             @if(app()->getLocale() === 'en')
-                                Register public issues in your area and securely track administrative action in real-time.
+                                "Direct bridge between citizens and administration — ensuring transparency, zero middlemen, and fast-track resolution for every community across Tamil Nadu."
                             @else
-                                உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
+                                "மக்களின் குறைகளை நேரடியாகக் கேட்டு, இடைத்தரகர்கள் இன்றி உடனடி தீர்வு காண்பதே நல்லாட்சியின் அடையாளம். உங்கள் பகுதி பிரச்சனைகளை இன்றே பதிவு செய்யுங்கள்!"
                             @endif
                         </p>
+                        <div class="d-flex flex-wrap gap-2 pt-1 text-secondary" style="font-size: 0.80rem;">
+                            <span><i class="bi bi-check-circle-fill text-success me-1"></i>100% வெளிப்படையானது</span>
+                            <span>•</span>
+                            <span><i class="bi bi-lightning-charge-fill text-warning me-1"></i>நேரடி கண்காணிப்பு</span>
+                            <span>•</span>
+                            <span><i class="bi bi-geo-alt-fill text-danger me-1"></i>38 மாவட்டங்கள்</span>
+                        </div>
                     </div>
 
                     <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-4 notranslate" translate="no">
                         <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-3.5 px-md-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2 text-nowrap">
                             <i class="bi bi-pencil-fill"></i>
-                            <span>{{ app()->getLocale() === 'en' ? 'Submit Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
+                            <span>{{ app()->getLocale() === 'en' ? 'Register Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
                         </a>
                         <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-3.5 px-md-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 text-nowrap">
                             <i class="bi bi-search"></i>
-                            <span>{{ app()->getLocale() === 'en' ? 'Track Grievance' : 'புகார் நிலையை அறியுங்கள்' }}</span>
+                            <span>{{ app()->getLocale() === 'en' ? 'Track Status' : 'புகார் நிலையை அறியுங்கள்' }}</span>
                         </a>
                     </div>
                 </div>
@@ -63,7 +82,7 @@
 <section class="mobile-hero-section d-lg-none bg-white border-bottom pb-4">
     <!-- 1. Mobile People Photo with Curved Accent Wave Bottom -->
     <div class="mobile-hero-photo-wrapper position-relative overflow-hidden">
-        <img src="{{ asset('assets/images/banner/banner.png') }}" 
+        <img src="{{ asset('assets/images/banner/banner1.jpg') }}" 
              alt="Public Grievance Platform - People" 
              class="img-fluid w-100 mobile-hero-photo">
         
@@ -72,41 +91,57 @@
             <path d="M 0,36 Q 250,0 500,36 L 500,36 L 0,36 Z" fill="#ffffff" />
             <path d="M 0,34 Q 250,-2 500,34" fill="none" stroke="#ea580c" stroke-width="4" />
         </svg>
+
+        <div class="position-absolute bottom-0 end-0 me-3 mb-4 badge bg-dark bg-opacity-75 text-white rounded-pill px-2.5 py-1 small fw-bold z-3">
+            <span class="d-inline-block rounded-circle bg-success me-1" style="width: 7px; height: 7px;"></span>மக்களோடு நாம்
+        </div>
     </div>
 
     <!-- 2. Mobile Hero Content Below Photo -->
     <div class="container px-3 pt-2">
+        <div class="d-inline-flex align-items-center gap-1.5 px-2.5 py-0.5 rounded-pill bg-warning bg-opacity-10 text-dark border border-warning border-opacity-50 fw-bold small mb-2">
+            <span class="badge rounded-pill text-white" style="background-color: #ea580c; font-size: 0.68rem;">அந்தியோதயா</span>
+            <span style="font-size: 0.75rem; color: #0b1f3a;">கடைக்கோடி மக்களின் நேரடி குறைதீர்ப்பு</span>
+        </div>
+
         <h1 class="hero-people-heading-mobile mb-2 notranslate" translate="no">
             @if(app()->getLocale() === 'en')
-                <span class="d-block text-navy">Your Voice.</span>
-                <span class="d-block text-navy">Your Community.</span>
-                <span class="d-block text-orange">Your Connection.</span>
+                <span class="d-block text-navy">People's Voice.</span>
+                <span class="d-block text-navy">Direct Service.</span>
+                <span class="d-block text-orange">Fast Redressal!</span>
             @else
-                <span class="d-block text-navy">உங்கள் குரல்.</span>
-                <span class="d-block text-navy">உங்கள் பகுதி.</span>
-                <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
+                <span class="d-block text-navy">மக்களின் குரல்.</span>
+                <span class="d-block text-navy">நேரடி சேவை.</span>
+                <span class="d-block text-orange">உடனடி தீர்வு!</span>
             @endif
         </h1>
 
         <div class="hero-quote-bar-mobile border-start border-4 border-warning ps-3 my-3 notranslate" translate="no">
-            <p class="text-secondary mb-0 fw-medium" style="font-size: 0.92rem; line-height: 1.55;">
+            <p class="text-dark mb-1 fw-semibold" style="font-size: 0.90rem; line-height: 1.55;">
                 @if(app()->getLocale() === 'en')
-                    Register public issues in your area and securely track administrative action in real-time.
+                    "Direct bridge between citizens and administration — ensuring transparency, zero middlemen, and fast-track resolution."
                 @else
-                    உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
+                    "மக்களின் குறைகளை நேரடியாகக் கேட்டு, இடைத்தரகர்கள் இன்றி உடனடி தீர்வு காண்பதே நல்லாட்சியின் அடையாளம்."
                 @endif
             </p>
+            <div class="d-flex flex-wrap gap-2 text-secondary" style="font-size: 0.74rem;">
+                <span>✓ 100% வெளிப்படையானது</span>
+                <span>•</span>
+                <span>✓ நேரடி கண்காணிப்பு</span>
+                <span>•</span>
+                <span>✓ 38 மாவட்டங்கள்</span>
+            </div>
         </div>
 
         <!-- Touch-Friendly Full-Width Action Buttons -->
         <div class="d-flex flex-column gap-2 mt-3 notranslate" translate="no">
             <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill py-2.5 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2">
                 <i class="bi bi-pencil-fill"></i>
-                <span>{{ app()->getLocale() === 'en' ? 'Submit Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
+                <span>{{ app()->getLocale() === 'en' ? 'Register Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
             </a>
             <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill py-2.5 fw-bold d-flex align-items-center justify-content-center gap-2">
                 <i class="bi bi-search"></i>
-                <span>{{ app()->getLocale() === 'en' ? 'Track Grievance' : 'புகார் நிலையை அறியுங்கள்' }}</span>
+                <span>{{ app()->getLocale() === 'en' ? 'Track Status' : 'புகார் நிலையை அறியுங்கள்' }}</span>
             </a>
         </div>
     </div>
@@ -117,11 +152,12 @@
     <div class="container">
         <div class="text-center mb-4">
             <div class="text-primary fw-bold text-uppercase small tracking-wide mb-1" style="letter-spacing: 1px;">
-                LIVE TRANSPARENCY / நேரடி புள்ளிவிவரங்கள்
+                🇮🇳 நல்லாட்சி & வெளிப்படைத்தன்மை / GOOD GOVERNANCE & TRANSPARENCY
             </div>
-            <h2 class="fw-extrabold text-navy mb-0 fs-2 fs-md-1">
-                Real-Time District Grievance Metrics
+            <h2 class="fw-extrabold text-navy mb-1 fs-2 fs-md-1">
+                தமிழ்நாட்டின் 38 மாவட்டங்களிலும் நேரடி மக்கள் சேவை
             </h2>
+            <p class="text-secondary small mb-0">Real-Time District Public Grievance Resolution Metrics Across Tamil Nadu</p>
         </div>
 
         <div class="row g-3 justify-content-center">
