@@ -11,9 +11,9 @@ return [
 
     // Navigation
     'nav_home' => 'முகப்பு',
-    'nav_about' => 'எங்களை பற்றி',
-    'nav_submit_complaint' => 'கோரிக்கை பதிவு',
-    'nav_track_complaint' => 'கோரிக்கை நிலை அறிதல்',
+    'nav_about' => 'எங்களைப் பற்றி',
+    'nav_submit_complaint' => 'புகார் பதிவு',
+    'nav_track_complaint' => 'புகார் நிலை',
     'nav_public_issues' => 'பொது பிரச்சனைகள்',
     'nav_district_info' => 'மாவட்ட விபரங்கள்',
     'nav_updates' => 'செய்திகள் & நிகழ்வுகள்',
