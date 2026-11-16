@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/select2-bootstrap-5-theme.min.css') }}">
 
     <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v=3.3">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v=3.5">
     @stack('styles')
 </head>
 <body>

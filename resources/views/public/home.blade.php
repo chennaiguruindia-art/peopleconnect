@@ -12,8 +12,8 @@
 
     <!-- Curved SVG Panel on Left - Graceful curve separating text and photo -->
     <svg class="banner-curve-svg" viewBox="0 0 1000 540" preserveAspectRatio="none">
-        <path d="M 0,0 L 440,0 C 490,40 460,300 530,540 L 0,540 Z" fill="#ffffff" />
-        <path d="M 440,0 C 490,40 460,300 530,540" fill="none" stroke="#ea580c" stroke-width="6" stroke-linecap="round" />
+        <path d="M 0,0 L 480,0 C 520,50 490,280 550,540 L 0,540 Z" fill="#ffffff" />
+        <path d="M 480,0 C 520,50 490,280 550,540" fill="none" stroke="#ea580c" stroke-width="6" stroke-linecap="round" />
     </svg>
 
     <!-- Floating Badge over photo on bottom right -->
