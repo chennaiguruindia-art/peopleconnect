@@ -23,38 +23,44 @@
             <ul class="navbar-nav ms-auto align-items-lg-center gap-1 gap-xl-2 my-2 my-lg-0">
                 <li class="nav-item">
                     <a class="nav-link nav-pill-link text-nowrap {{ request()->routeIs('home') ? 'active-pill' : '' }}" href="{{ route('home') }}">
+                        <i class="bi bi-house-door-fill nav-icon-pill me-2 d-lg-none"></i>
                         <span>{{ __('messages.nav_home') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-pill-link text-nowrap {{ request()->routeIs('complaints.create') ? 'active-pill' : '' }}" href="{{ route('complaints.create') }}">
+                        <i class="bi bi-pencil-square nav-icon-pill me-2 d-lg-none"></i>
                         <span>{{ __('messages.nav_submit_complaint') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-pill-link text-nowrap {{ request()->routeIs('complaints.track') ? 'active-pill' : '' }}" href="{{ route('complaints.track') }}">
+                        <i class="bi bi-search nav-icon-pill me-2 d-lg-none"></i>
                         <span>{{ __('messages.nav_track_complaint') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-pill-link text-nowrap {{ request()->routeIs('about') ? 'active-pill' : '' }}" href="{{ route('about') }}">
+                        <i class="bi bi-info-circle-fill nav-icon-pill me-2 d-lg-none"></i>
                         <span>{{ __('messages.nav_about') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-pill-link text-nowrap {{ request()->routeIs('updates*') ? 'active-pill' : '' }}" href="{{ route('updates') }}">
+                        <i class="bi bi-newspaper nav-icon-pill me-2 d-lg-none"></i>
                         <span>{{ __('messages.nav_updates') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-pill-link text-nowrap {{ request()->routeIs('contact') ? 'active-pill' : '' }}" href="{{ route('contact') }}">
+                        <i class="bi bi-telephone-fill nav-icon-pill me-2 d-lg-none"></i>
                         <span>{{ __('messages.nav_contact') }}</span>
                     </a>
                 </li>
 
                 <!-- Citizen Login Navy Pill Button -->
                 <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                    <a href="{{ route('admin.login') }}" class="btn btn-navy-pill rounded-pill px-3.5 py-1.5 fw-bold d-inline-flex align-items-center justify-content-center gap-1.5 text-white shadow-xs text-nowrap">
+                    <a href="{{ route('admin.login') }}" class="btn btn-navy-pill rounded-pill px-3.5 py-1.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2 text-white shadow-xs text-nowrap">
                         <i class="bi bi-person-fill"></i>
                         <span>Citizen Login</span>
                     </a>

@@ -24,25 +24,35 @@
             <div class="col-lg-5 col-xl-5 py-4 py-lg-5 ps-2 ps-md-4 ps-lg-5">
                 <div class="hero-text-wrapper" style="max-width: 440px;">
                     <h1 class="hero-people-heading mb-2 mb-md-3 notranslate" translate="no">
-                        <span class="d-block text-navy">உங்கள் குரல்.</span>
-                        <span class="d-block text-navy">உங்கள் பகுதி.</span>
-                        <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
+                        @if(app()->getLocale() === 'en')
+                            <span class="d-block text-navy">Your Voice.</span>
+                            <span class="d-block text-navy">Your Community.</span>
+                            <span class="d-block text-orange">Your Connection.</span>
+                        @else
+                            <span class="d-block text-navy">உங்கள் குரல்.</span>
+                            <span class="d-block text-navy">உங்கள் பகுதி.</span>
+                            <span class="d-block text-orange">உங்கள் இணைப்பு.</span>
+                        @endif
                     </h1>
                     
                     <div class="hero-quote-bar border-start border-4 border-warning ps-3 my-3 my-md-4 notranslate" translate="no">
                         <p class="hero-desc-text text-secondary mb-0 fw-medium">
-                            உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
+                            @if(app()->getLocale() === 'en')
+                                Register public issues in your area and securely track administrative action in real-time.
+                            @else
+                                உங்கள் பகுதியில் உள்ள பொதுப் பிரச்சனைகளைப் பதிவு செய்து, அதன் நடவடிக்கை நிலையை பாதுகாப்பாகக் கண்காணியுங்கள்.
+                            @endif
                         </p>
                     </div>
 
                     <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mt-4 notranslate" translate="no">
                         <a href="{{ route('complaints.create') }}" class="btn btn-hero-orange rounded-pill px-3.5 px-md-4 py-2.5 fw-bold shadow-sm d-inline-flex align-items-center gap-2 text-nowrap">
                             <i class="bi bi-pencil-fill"></i>
-                            <span>புகாரைப் பதிவு செய்யுங்கள்</span>
+                            <span>{{ app()->getLocale() === 'en' ? 'Submit Grievance' : 'புகாரைப் பதிவு செய்யுங்கள்' }}</span>
                         </a>
                         <a href="{{ route('complaints.track') }}" class="btn btn-hero-outline rounded-pill px-3.5 px-md-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 text-nowrap">
                             <i class="bi bi-search"></i>
-                            <span>புகார் நிலையை அறியுங்கள்</span>
+                            <span>{{ app()->getLocale() === 'en' ? 'Track Grievance' : 'புகார் நிலையை அறியுங்கள்' }}</span>
                         </a>
                     </div>
                 </div>
