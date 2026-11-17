@@ -33,7 +33,7 @@
                 <ul class="list-unstyled d-flex flex-column gap-2 small">
                     <li class="d-flex align-items-center gap-2">
                         <i class="bi bi-envelope-fill text-warning"></i>
-                        <a href="mailto:support@thepeopleconnect.in" class="text-secondary text-decoration-none hover-white">support@thepeopleconnect.in</a>
+                        <a href="mailto:thepeopleconnectofficial@gmail.com" class="text-secondary text-decoration-none hover-white">thepeopleconnectofficial@gmail.com</a>
                     </li>
                     <li class="d-flex align-items-center gap-2">
                         <i class="bi bi-telephone-fill text-warning"></i>

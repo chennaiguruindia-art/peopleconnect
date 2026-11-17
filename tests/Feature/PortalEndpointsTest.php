@@ -214,7 +214,7 @@ class PortalEndpointsTest extends TestCase
         $this->assertArrayNotHasKey('live_address', $trackRes->json('data'));
 
         // Verify admin CAN view the live GPS location on admin show page
-        $admin = User::where('email', 'admin@virudhunagar.org')->first();
+        $admin = User::where('email', 'thepeopleconnectofficial@gmail.com')->first();
         $adminShowRes = $this->actingAs($admin)->get(route('admin.complaints.show', $complaint->id));
         $adminShowRes->assertStatus(200);
         $adminShowRes->assertSee('Live GPS Location');
@@ -224,7 +224,7 @@ class PortalEndpointsTest extends TestCase
 
     public function test_admin_authentication_and_dashboard_access(): void
     {
-        $admin = User::where('email', 'admin@virudhunagar.org')->first();
+        $admin = User::where('email', 'thepeopleconnectofficial@gmail.com')->first();
         $this->assertNotNull($admin);
 
         // Dashboard without auth redirects to login
@@ -233,7 +233,7 @@ class PortalEndpointsTest extends TestCase
 
         // Admin login
         $loginRes = $this->post('/admin/login', [
-            'email' => 'admin@virudhunagar.org',
+            'email' => 'thepeopleconnectofficial@gmail.com',
             'password' => 'password123',
         ]);
         $loginRes->assertRedirect(route('admin.dashboard'));

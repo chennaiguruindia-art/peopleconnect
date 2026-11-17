@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label small fw-bold">Contact Email</label>
-                            <input type="email" name="contact_email" class="form-control" value="{{ \App\Models\SystemSetting::get('contact_email', 'kural@virudhunagar.org') }}" required>
+                            <input type="email" name="contact_email" class="form-control" value="{{ \App\Models\SystemSetting::get('contact_email', 'thepeopleconnectofficial@gmail.com') }}" required>
                         </div>
                     </div>
 

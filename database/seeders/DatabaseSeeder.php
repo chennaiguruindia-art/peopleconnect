@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
         // 2. Single Common Administrator
         $adminUser = User::create([
             'name' => 'Virudhunagar Admin',
-            'email' => 'admin@virudhunagar.org',
+            'email' => 'thepeopleconnectofficial@gmail.com',
             'mobile' => '9443012345',
             'password' => Hash::make('password123'),
             'role_id' => $superAdminRole->id,
@@ -96,7 +96,7 @@ class DatabaseSeeder extends Seeder
         Admin::create([
             'user_id' => $adminUser->id,
             'name' => 'Virudhunagar Admin',
-            'email' => 'admin@virudhunagar.org',
+            'email' => 'thepeopleconnectofficial@gmail.com',
             'mobile' => '9443012345',
             'password' => Hash::make('password123'),
             'role_id' => $superAdminRole->id,
@@ -350,7 +350,7 @@ class DatabaseSeeder extends Seeder
             ['key' => 'tagline_en', 'value' => 'Your Voice, Your Community, Your Development.', 'group' => 'general', 'description' => 'English Tagline'],
             ['key' => 'tagline_ta', 'value' => 'மக்களின் குரல், மக்களின் கோரிக்கை.', 'group' => 'general', 'description' => 'Tamil Tagline'],
             ['key' => 'contact_phone', 'value' => '+91 9384995222', 'group' => 'contact', 'description' => 'Helpline Phone Number'],
-            ['key' => 'contact_email', 'value' => 'kural@virudhunagar.org', 'group' => 'contact', 'description' => 'Portal Contact Email'],
+            ['key' => 'contact_email', 'value' => 'thepeopleconnectofficial@gmail.com', 'group' => 'contact', 'description' => 'Portal Contact Email'],
             ['key' => 'office_address', 'value' => 'Civic Grievance Facilitation Center, Madurai Main Road, Virudhunagar - 626001', 'group' => 'contact', 'description' => 'Office Address'],
             ['key' => 'disclaimer_en', 'value' => 'குரலற்ற மகளின் குரல் is an independent civic-service grievance facilitation platform. It is not an official government agency and is dedicated to public welfare and civic coordination.', 'group' => 'legal', 'description' => 'Independent disclaimer'],
             ['key' => 'disclaimer_ta', 'value' => 'விருதுநகர் மக்கள் குரல் என்பது ஒரு சுயாதீன பொது சேவை குறைதீர்க்கும் தளம். இது எந்த ஒரு அரசுத் துறையின் நேரடி அதிகாரப்பூர்வ தளம் அல்ல; மக்கள் நலன் மற்றும் சமூக ஒருங்கிணைப்பிற்காக இயங்குகிறது.', 'group' => 'legal', 'description' => 'Tamil disclaimer'],

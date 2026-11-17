@@ -44,7 +44,7 @@ class ComplaintStatusWorkflowTest extends TestCase
 
     public function test_complaint_show_page_has_only_update_status_and_no_assign_or_refer_buttons(): void
     {
-        $admin = User::where('email', 'admin@virudhunagar.org')->first();
+        $admin = User::where('email', 'thepeopleconnectofficial@gmail.com')->first();
         $this->actingAs($admin);
 
         $complaint = $this->getOrCreateTestComplaint();
@@ -69,7 +69,7 @@ class ComplaintStatusWorkflowTest extends TestCase
 
     public function test_updating_status_to_resolved_requires_proof_attachment(): void
     {
-        $admin = User::where('email', 'admin@virudhunagar.org')->first();
+        $admin = User::where('email', 'thepeopleconnectofficial@gmail.com')->first();
         $this->actingAs($admin);
 
         $complaint = $this->getOrCreateTestComplaint();
@@ -88,7 +88,7 @@ class ComplaintStatusWorkflowTest extends TestCase
     {
         Storage::fake('public');
 
-        $admin = User::where('email', 'admin@virudhunagar.org')->first();
+        $admin = User::where('email', 'thepeopleconnectofficial@gmail.com')->first();
         $this->actingAs($admin);
 
         $complaint = $this->getOrCreateTestComplaint();
@@ -118,7 +118,7 @@ class ComplaintStatusWorkflowTest extends TestCase
 
     public function test_updating_status_to_in_progress_does_not_require_proof(): void
     {
-        $admin = User::where('email', 'admin@virudhunagar.org')->first();
+        $admin = User::where('email', 'thepeopleconnectofficial@gmail.com')->first();
         $this->actingAs($admin);
 
         $complaint = $this->getOrCreateTestComplaint();

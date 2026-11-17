@@ -37,7 +37,7 @@
                 </div>
                 <h5 class="fw-bold mb-1">Email Facilitation</h5>
                 <p class="text-muted small mb-2">For written appeals and queries</p>
-                <a href="mailto:kural@virudhunagar.org" class="fw-bold text-success fs-5 text-decoration-none text-break">kural@virudhunagar.org</a>
+                <a href="mailto:thepeopleconnectofficial@gmail.com" class="fw-bold text-success fs-5 text-decoration-none text-break">thepeopleconnectofficial@gmail.com</a>
             </div>
         </div>
 

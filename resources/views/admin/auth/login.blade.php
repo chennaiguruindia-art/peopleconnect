@@ -56,7 +56,7 @@
                         <label for="adminEmail" class="form-label small fw-bold">Admin Email Address</label>
                         <div class="input-group">
                             <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
-                            <input type="email" name="email" id="adminEmail" class="form-control" value="{{ old('email') }}" placeholder="admin@example.com" required autofocus autocomplete="email">
+                            <input type="email" name="email" id="adminEmail" class="form-control" value="{{ old('email') }}" placeholder="thepeopleconnectofficial@gmail.com" required autofocus autocomplete="email">
                         </div>
                     </div>
 
