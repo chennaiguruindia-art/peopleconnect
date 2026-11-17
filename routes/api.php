@@ -48,7 +48,7 @@ Route::prefix('v1')->group(function () {
             Route::post('/request-otp', [CitizenAuthApiController::class, 'requestOtp']);
             Route::post('/verify-otp', [CitizenAuthApiController::class, 'verifyOtp']);
 
-            Route::middleware('auth:sanctum')->group(function () {
+            Route::middleware('api.auth')->group(function () {
                 Route::get('/profile', [CitizenAuthApiController::class, 'profile']);
                 Route::post('/logout', [CitizenAuthApiController::class, 'logout']);
             });
@@ -71,14 +71,14 @@ Route::prefix('v1')->group(function () {
         Route::prefix('auth')->group(function () {
             Route::post('/login', [AdminAuthApiController::class, 'login']);
 
-            Route::middleware('auth:sanctum')->group(function () {
+            Route::middleware('api.auth')->group(function () {
                 Route::get('/me', [AdminAuthApiController::class, 'me']);
                 Route::post('/logout', [AdminAuthApiController::class, 'logout']);
             });
         });
 
         // Protected Admin / Officer Routes
-        Route::middleware(['auth:sanctum'])->group(function () {
+        Route::middleware(['api.auth'])->group(function () {
 
             // Dashboard
             Route::get('/dashboard/stats', [AdminDashboardApiController::class, 'stats']);
