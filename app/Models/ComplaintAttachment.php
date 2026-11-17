@@ -17,6 +17,13 @@ class ComplaintAttachment extends Model
         'uploaded_by',
     ];
 
+    protected $appends = ['url'];
+
+    public function getUrlAttribute(): string
+    {
+        return asset('storage/' . $this->file_path);
+    }
+
     public function complaint(): BelongsTo
     {
         return $this->belongsTo(Complaint::class);
