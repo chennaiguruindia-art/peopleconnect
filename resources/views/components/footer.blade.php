@@ -39,6 +39,10 @@
                         <i class="bi bi-telephone-fill text-warning"></i>
                         <a href="tel:+919384995222" class="text-secondary text-decoration-none hover-white fw-bold">+91 9384995222</a>
                     </li>
+                    <li class="d-flex align-items-center gap-2">
+                        <i class="bi bi-instagram text-warning"></i>
+                        <a href="https://www.instagram.com/thepeopleconnectofficial" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none hover-white">@thepeopleconnectofficial</a>
+                    </li>
                     <li class="text-white-50 small mt-1">
                         (பணிநேரம்: காலை 10.00 - மாலை 6.00)
                     </li>

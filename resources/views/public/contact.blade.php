@@ -43,13 +43,12 @@
 
         <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm rounded-4 p-3.5 p-sm-4 text-center">
-                <div class="rounded-circle bg-warning-subtle text-warning d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 56px; height: 56px; font-size: 24px;">
-                    <i class="bi bi-geo-alt"></i>
+                <div class="rounded-circle text-white d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 56px; height: 56px; font-size: 24px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">
+                    <i class="bi bi-instagram"></i>
                 </div>
-                <h5 class="fw-bold mb-1">Facilitation Center</h5>
-                <p class="text-muted small mb-0">
-                    Civic Grievance Facilitation Center, Madurai Main Road, Virudhunagar, குரலற்ற மகளின் குரல் - 626001
-                </p>
+                <h5 class="fw-bold mb-1">Instagram</h5>
+                <p class="text-muted small mb-2">Official social channel & updates</p>
+                <a href="https://www.instagram.com/thepeopleconnectofficial" target="_blank" rel="noopener noreferrer" class="fw-bold fs-5 text-decoration-none text-break" style="color: #d6249f;">@thepeopleconnectofficial</a>
             </div>
         </div>
     </div>
