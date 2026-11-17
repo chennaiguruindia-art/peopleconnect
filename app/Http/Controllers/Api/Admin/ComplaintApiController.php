@@ -165,18 +165,33 @@ class ComplaintApiController extends Controller
 
             // Save resolution attachment if provided
             if ($request->hasFile('resolution_photo')) {
-                $file = $request->file('resolution_photo');
-                $filePath = $file->store('attachments/resolutions', 'public');
+                try {
+                    $file = $request->file('resolution_photo');
+                    $targetDir = public_path('storage/attachments/resolutions');
+                    if (!is_dir($targetDir)) {
+                        @mkdir($targetDir, 0777, true);
+                    }
 
-                ComplaintAttachment::create([
-                    'complaint_id' => $complaint->id,
-                    'file_path' => $filePath,
-                    'file_name' => $file->getClientOriginalName(),
-                    'file_type' => $file->getClientMimeType(),
-                    'file_size' => $file->getSize(),
-                    'attachment_type' => 'resolution_proof',
-                    'uploaded_by' => $request->user()?->id,
-                ]);
+                    try {
+                        $filePath = $file->store('attachments/resolutions', 'public');
+                    } catch (\Throwable $fsEx) {
+                        $fileName = \Illuminate\Support\Str::random(40) . '.' . $file->getClientOriginalExtension();
+                        $file->move($targetDir, $fileName);
+                        $filePath = 'attachments/resolutions/' . $fileName;
+                    }
+
+                    ComplaintAttachment::create([
+                        'complaint_id' => $complaint->id,
+                        'file_path' => $filePath,
+                        'file_name' => $file->getClientOriginalName(),
+                        'file_type' => $file->getClientMimeType(),
+                        'file_size' => $file->getSize(),
+                        'attachment_type' => 'resolution_proof',
+                        'uploaded_by' => $request->user()?->id,
+                    ]);
+                } catch (\Throwable $fileEx) {
+                    \Illuminate\Support\Facades\Log::warning('Resolution photo upload notice: ' . $fileEx->getMessage());
+                }
             }
 
             // Record audit history

@@ -104,32 +104,62 @@ class ComplaintController extends Controller
 
             // Save Photo Attachment
             if ($request->hasFile('photo')) {
-                $photo = $request->file('photo');
-                $photoPath = $photo->store('attachments/photos', 'public');
+                try {
+                    $photo = $request->file('photo');
+                    $targetDir = public_path('storage/attachments/photos');
+                    if (!is_dir($targetDir)) {
+                        @mkdir($targetDir, 0777, true);
+                    }
 
-                ComplaintAttachment::create([
-                    'complaint_id' => $complaint->id,
-                    'file_path' => $photoPath,
-                    'file_name' => $photo->getClientOriginalName(),
-                    'file_type' => $photo->getClientMimeType(),
-                    'file_size' => $photo->getSize(),
-                    'attachment_type' => 'photo',
-                ]);
+                    try {
+                        $photoPath = $photo->store('attachments/photos', 'public');
+                    } catch (\Throwable $fsEx) {
+                        $fileName = Str::random(40) . '.' . $photo->getClientOriginalExtension();
+                        $photo->move($targetDir, $fileName);
+                        $photoPath = 'attachments/photos/' . $fileName;
+                    }
+
+                    ComplaintAttachment::create([
+                        'complaint_id' => $complaint->id,
+                        'file_path' => $photoPath,
+                        'file_name' => $photo->getClientOriginalName(),
+                        'file_type' => $photo->getClientMimeType(),
+                        'file_size' => $photo->getSize(),
+                        'attachment_type' => 'photo',
+                    ]);
+                } catch (\Throwable $fileEx) {
+                    \Illuminate\Support\Facades\Log::warning('Photo upload notice: ' . $fileEx->getMessage());
+                }
             }
 
             // Save Document Attachment
             if ($request->hasFile('document')) {
-                $doc = $request->file('document');
-                $docPath = $doc->store('attachments/documents', 'public');
+                try {
+                    $doc = $request->file('document');
+                    $targetDir = public_path('storage/attachments/documents');
+                    if (!is_dir($targetDir)) {
+                        @mkdir($targetDir, 0777, true);
+                    }
 
-                ComplaintAttachment::create([
-                    'complaint_id' => $complaint->id,
-                    'file_path' => $docPath,
-                    'file_name' => $doc->getClientOriginalName(),
-                    'file_type' => $doc->getClientMimeType(),
-                    'file_size' => $doc->getSize(),
-                    'attachment_type' => 'document',
-                ]);
+                    try {
+                        $docPath = $doc->store('attachments/documents', 'public');
+                    } catch (\Throwable $fsEx) {
+                        $fileName = Str::random(40) . '.' . $doc->getClientOriginalExtension();
+                        $doc->move($targetDir, $fileName);
+                        $docPath = 'attachments/documents/' . $fileName;
+                    }
+
+                    ComplaintAttachment::create([
+                        'complaint_id' => $complaint->id,
+                        'file_path' => $docPath,
+                        'file_name' => $doc->getClientOriginalName(),
+                        'file_type' => $doc->getClientMimeType(),
+                        'file_size' => $doc->getSize(),
+                        'attachment_type' => 'document',
+                    ]);
+                } catch (\Throwable $fileEx) {
+                    \Illuminate\Support\Facades\Log::warning('Document upload notice: ' . $fileEx->getMessage());
+                }
             }
 
             // Initial Audit History

@@ -23,11 +23,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Auto-create cache/data directory if missing on Windows IIS/Plesk
+        // Auto-create cache and storage directories if missing on Windows IIS/Plesk
         try {
-            $dataDir = storage_path('framework/cache/data');
-            if (!is_dir($dataDir)) {
-                @mkdir($dataDir, 0777, true);
+            $requiredDirs = [
+                storage_path('framework/cache/data'),
+                public_path('storage'),
+                public_path('storage/attachments'),
+                public_path('storage/attachments/photos'),
+                public_path('storage/attachments/documents'),
+                public_path('storage/attachments/resolutions'),
+                public_path('storage/attachments/evidence'),
+            ];
+            foreach ($requiredDirs as $dir) {
+                if (!is_dir($dir)) {
+                    @mkdir($dir, 0777, true);
+                }
             }
         } catch (\Throwable $e) {
             // Ignore

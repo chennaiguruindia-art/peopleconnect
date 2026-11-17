@@ -125,18 +125,33 @@ class ComplaintController extends Controller
 
             // Handle evidence upload if present
             if ($request->hasFile('resolution_photo')) {
-                $file = $request->file('resolution_photo');
-                $path = $file->store('attachments/evidence', 'public');
+                try {
+                    $file = $request->file('resolution_photo');
+                    $targetDir = public_path('storage/attachments/evidence');
+                    if (!is_dir($targetDir)) {
+                        @mkdir($targetDir, 0777, true);
+                    }
 
-                ComplaintAttachment::create([
-                    'complaint_id' => $complaint->id,
-                    'file_path' => $path,
-                    'file_name' => $file->getClientOriginalName(),
-                    'file_type' => $file->getClientMimeType(),
-                    'file_size' => $file->getSize(),
-                    'attachment_type' => 'evidence_resolution',
-                    'uploaded_by' => Auth::id(),
-                ]);
+                    try {
+                        $path = $file->store('attachments/evidence', 'public');
+                    } catch (\Throwable $fsEx) {
+                        $fileName = \Illuminate\Support\Str::random(40) . '.' . $file->getClientOriginalExtension();
+                        $file->move($targetDir, $fileName);
+                        $path = 'attachments/evidence/' . $fileName;
+                    }
+
+                    ComplaintAttachment::create([
+                        'complaint_id' => $complaint->id,
+                        'file_path' => $path,
+                        'file_name' => $file->getClientOriginalName(),
+                        'file_type' => $file->getClientMimeType(),
+                        'file_size' => $file->getSize(),
+                        'attachment_type' => 'evidence_resolution',
+                        'uploaded_by' => Auth::id(),
+                    ]);
+                } catch (\Throwable $fileEx) {
+                    \Illuminate\Support\Facades\Log::warning('Evidence photo upload notice: ' . $fileEx->getMessage());
+                }
             }
 
             // Always log into complaint_history
