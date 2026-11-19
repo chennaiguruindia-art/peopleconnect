@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', __('messages.site_name')) - {{ __('messages.tagline') }}</title>
-    <meta name="description" content="Public grievance and civic issue reporting platform for Virudhunagar District, குரலற்ற மகளின் குரல்.">
+    <meta name="description" content="Public grievance and civic issue reporting platform for Tirunelveli District, குரலற்ற மகளின் குரல்.">
     <link rel="icon" type="image/png" href="{{ asset('assets/images/logo/logo.png') }}?v=2">
 
     <!-- Bootstrap 5 CSS -->

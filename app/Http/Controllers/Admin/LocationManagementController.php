@@ -15,9 +15,12 @@ class LocationManagementController extends Controller
 {
     public function index(Request $request): View
     {
-        $district = District::first();
-        $divisions = RevenueDivision::withCount('taluks')->get();
-        $taluks = Taluk::with(['revenueDivision', 'revenueVillages'])->withCount('revenueVillages')->get();
+        $district = District::where('is_active', true)->first() ?? District::first();
+        $divisions = RevenueDivision::where('district_id', $district?->id)->withCount('taluks')->get();
+        $taluks = Taluk::whereIn('revenue_division_id', $divisions->pluck('id'))
+            ->with(['revenueDivision', 'revenueVillages'])
+            ->withCount('revenueVillages')
+            ->get();
 
         $selectedTalukId = $request->get('taluk_id', $taluks->first()?->id);
         $villages = RevenueVillage::where('taluk_id', $selectedTalukId)->paginate(15);

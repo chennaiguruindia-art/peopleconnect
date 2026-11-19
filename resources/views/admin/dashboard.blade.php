@@ -220,7 +220,7 @@
                             <div class="fw-semibold text-dark">{{ $c->citizen_name }}</div>
                             <small class="text-muted">{{ $c->masked_mobile }}</small>
                         </td>
-                        <td>{{ $c->taluk?->name ?? 'Virudhunagar' }}</td>
+                        <td>{{ $c->taluk?->name ?? 'Tirunelveli' }}</td>
                         <td><span class="badge bg-light text-dark border">{{ $c->category->name }}</span></td>
                         <td>
                             <span class="badge bg-{{ $c->priority === 'urgent' ? 'danger' : ($c->priority === 'high' ? 'warning text-dark' : 'secondary') }}">

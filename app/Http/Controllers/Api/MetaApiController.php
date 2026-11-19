@@ -119,7 +119,7 @@ class MetaApiController extends Controller
             'slogan_ta' => 'குரலற்ற மக்களின் குரல்',
             'contact_email' => SystemSetting::get('contact_email', 'thepeopleconnectofficial@gmail.com'),
             'contact_phone' => SystemSetting::get('contact_phone', '+91 9384995222'),
-            'office_address' => SystemSetting::get('office_address', 'Civic Grievance Facilitation Center, Madurai Main Road, Virudhunagar - 626001'),
+            'office_address' => SystemSetting::get('office_address', 'Civic Grievance Facilitation Center, Tirunelveli - 627001'),
             'instagram_handle' => '@thepeopleconnectofficial',
             'instagram_url' => 'https://www.instagram.com/thepeopleconnectofficial',
             'operating_hours' => 'Mon - Sat (9:00 AM - 6:00 PM)',
@@ -139,13 +139,13 @@ class MetaApiController extends Controller
         $directory = [
             [
                 'service' => 'Police Control Room',
-                'numbers' => ['100', '04562-280100'],
+                'numbers' => ['100', '0462-2565500'],
                 'primary_call' => '100',
                 'category' => 'Police',
             ],
             [
                 'service' => 'Fire & Rescue Services',
-                'numbers' => ['101', '04562-243101'],
+                'numbers' => ['101', '0462-2572101'],
                 'primary_call' => '101',
                 'category' => 'Fire',
             ],

@@ -6,7 +6,7 @@
 <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
     <div>
         <h3 class="fw-bold text-dark mb-0">Location Master Management</h3>
-        <p class="text-muted small mb-0">Manage Revenue Divisions, 10 Taluks, and verified Revenue Villages of Virudhunagar.</p>
+        <p class="text-muted small mb-0">Manage Revenue Divisions, {{ $taluks->count() }} Taluks, and verified Revenue Villages of {{ $district->name_en ?? 'Tirunelveli' }}.</p>
     </div>
     <a href="{{ route('admin.locations.create') }}" class="btn btn-primary btn-sm" style="background-color: var(--admin-primary); border-color: var(--admin-primary);">
         <i class="bi bi-plus-lg me-1"></i> Add Revenue Village
@@ -18,9 +18,9 @@
     <div class="col-md-4">
         <div class="metric-card border-total">
             <div>
-                <div class="metric-value">3</div>
+                <div class="metric-value">{{ $divisions->count() }}</div>
                 <div class="metric-label">Revenue Divisions</div>
-                <small class="text-muted">Aruppukkottai, Sivakasi, Sattur</small>
+                <small class="text-muted">{{ $divisions->pluck('name_en')->join(', ') }}</small>
             </div>
             <div class="metric-icon bg-primary-subtle text-primary"><i class="bi bi-diagram-3-fill"></i></div>
         </div>
@@ -30,7 +30,7 @@
             <div>
                 <div class="metric-value text-success">{{ $taluks->count() }}</div>
                 <div class="metric-label">Revenue Taluks</div>
-                <small class="text-muted">10 Taluks across the district</small>
+                <small class="text-muted">{{ $taluks->count() }} Taluks across the district</small>
             </div>
             <div class="metric-icon bg-success-subtle text-success"><i class="bi bi-geo-alt-fill"></i></div>
         </div>

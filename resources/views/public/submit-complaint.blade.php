@@ -626,7 +626,7 @@
                                 <select name="district_id" id="districtSelect" class="form-select" required>
                                     <option value="">-- {{ __('messages.select_district') }} --</option>
                                     @foreach($districts as $d)
-                                        <option value="{{ $d->id }}">{{ $d->name }} ({{ $d->name_en }})</option>
+                                        <option value="{{ $d->id }}" {{ $districts->count() === 1 ? 'selected' : '' }}>{{ $d->name }} ({{ $d->name_en }})</option>
                                     @endforeach
                                 </select>
                             </div>

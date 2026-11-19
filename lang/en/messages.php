@@ -5,7 +5,7 @@ return [
     'site_name' => 'Tamil Nadu Makkal Kural',
     'site_name_ta' => 'தமிழ்நாடு மக்கள் குரல்',
     'tagline' => 'Your Voice, Your Community, Your Development.',
-    'district_name' => 'Virudhunagar District',
+    'district_name' => 'Tirunelveli District',
     'disclaimer_title' => 'People Grievance Redressal Platform',
     'disclaimer_text' => 'This is not an official government website. It is an independent, non-governmental civic facilitation initiative by Naveena Vivasayi Rajesh Gurusamy to systematically document and coordinate public civic grievances with relevant authorities for community welfare.',
 
@@ -23,8 +23,8 @@ return [
     'nav_admin_login' => 'Officer / Staff Portal',
 
     // Hero Section
-    'hero_title' => 'Direct Civic Grievance Facilitation for Virudhunagar District',
-    'hero_subtitle' => 'Empowering citizens across all 10 Taluks and 3 Revenue Divisions to register grievances on water, roads, sanitation, electricity, and local civic issues with transparent tracking.',
+    'hero_title' => 'Direct Civic Grievance Facilitation for Tirunelveli District',
+    'hero_subtitle' => 'Empowering citizens across all 8 Taluks and 2 Revenue Divisions to register grievances on water, roads, sanitation, electricity, and local civic issues with transparent tracking.',
     'btn_submit_now' => 'Register Grievance Online',
     'btn_track_now' => 'Track Your Grievance Status',
     'btn_explore_issues' => 'View Public Issues',
@@ -129,11 +129,11 @@ return [
 
     // Admin Dashboard & Layout
     'admin_portal' => 'Admin Portal',
-    'admin_topbar_title' => 'Virudhunagar Grievance Facilitation Administration',
+    'admin_topbar_title' => 'Tirunelveli Grievance Facilitation Administration',
     'admin_view_public' => 'View Public Portal',
     'admin_dashboard' => 'Dashboard',
     'admin_overview' => 'District Grievance Overview',
-    'admin_subtitle' => 'Virudhunagar District Public Grievance Administration & Real-Time Monitoring',
+    'admin_subtitle' => 'Tirunelveli District Public Grievance Administration & Real-Time Monitoring',
     'admin_live_analytics' => 'Live Analytics',
     'admin_export_csv' => 'Export Master CSV',
     'admin_view_all_complaints' => 'View All Complaints',
@@ -148,7 +148,7 @@ return [
     'admin_monthly_inflow' => 'Monthly Grievances Inflow',
     'admin_last_6_months' => 'Last 6 Months (Live Data)',
     'admin_status_dist' => 'Status Distribution',
-    'admin_taluk_volume' => 'Taluk-wise Grievances (10 Taluks)',
+    'admin_taluk_volume' => 'Taluk-wise Grievances (8 Taluks)',
     'admin_category_breakdown' => 'Category Breakdown',
     'admin_recent_grievances' => 'Latest Registered Grievances',
     'admin_complaint_id' => 'Complaint ID',

@@ -52,6 +52,11 @@
         setupSelect2($('#villageSelect'), '-- முதலில் வட்டம் தேர்வு செய்க --');
         setupSelect2($('#categorySelect'), '-- கோரிக்கை வகை தேர்வு செய்க --');
 
+        // If district is pre-selected on page load (e.g. single district active), automatically trigger load
+        if ($('#districtSelect').val()) {
+            $('#districtSelect').trigger('change');
+        }
+
         // When District changes -> Load Revenue Divisions
         $('#districtSelect').on('change', function() {
             var districtId = $(this).val();

@@ -152,7 +152,7 @@
                         </div>
                         <div class="col-6">
                             <label class="form-label small fw-bold">Email Address <span class="text-danger">*</span></label>
-                            <input type="email" name="email" class="form-control form-control-sm" placeholder="officer@virudhunagar.org" required>
+                            <input type="email" name="email" class="form-control form-control-sm" placeholder="officer@tirunelveli.org" required>
                         </div>
                     </div>
                     <div class="row g-2 mb-3">

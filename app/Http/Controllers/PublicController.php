@@ -27,7 +27,7 @@ class PublicController extends Controller
     public function districtInformation(Request $request): View
     {
         $districts = District::where('is_active', true)->orderBy('name_en')->get();
-        $selectedDistrictId = $request->input('district_id', District::where('code', 'VIR')->value('id') ?? $districts->first()?->id);
+        $selectedDistrictId = $request->input('district_id', $districts->first()?->id);
         $district = District::find($selectedDistrictId);
 
         $divisions = RevenueDivision::with(['taluks.revenueVillages'])->where('district_id', $district?->id)->get();

@@ -43,22 +43,22 @@
     <ul class="nav nav-pills justify-content-center mb-4 gap-2 flex-column flex-sm-row" id="districtTabs" role="tablist">
         <li class="nav-item flex-fill text-center" role="presentation">
             <button class="nav-link active px-3 py-2 fw-bold w-100" id="divisions-tab" data-bs-toggle="pill" data-bs-target="#divisions-pane" type="button" role="tab">
-                <i class="bi bi-diagram-3 me-1"></i> Revenue Divisions & Taluks (10)
+                <i class="bi bi-diagram-3 me-1"></i> Revenue Divisions & Taluks ({{ $divisions->sum(fn($d) => $d->taluks->count()) }})
             </button>
         </li>
         <li class="nav-item flex-fill text-center" role="presentation">
             <button class="nav-link px-3 py-2 fw-bold w-100" id="urban-tab" data-bs-toggle="pill" data-bs-target="#urban-pane" type="button" role="tab">
-                <i class="bi bi-buildings me-1"></i> Municipalities & Corp (6)
+                <i class="bi bi-buildings me-1"></i> Municipalities & Corp ({{ $municipalities->count() }})
             </button>
         </li>
         <li class="nav-item flex-fill text-center" role="presentation">
             <button class="nav-link px-3 py-2 fw-bold w-100" id="town-tab" data-bs-toggle="pill" data-bs-target="#town-pane" type="button" role="tab">
-                <i class="bi bi-shop me-1"></i> Town Panchayats (9)
+                <i class="bi bi-shop me-1"></i> Town Panchayats ({{ $townPanchayats->count() }})
             </button>
         </li>
         <li class="nav-item flex-fill text-center" role="presentation">
             <button class="nav-link px-3 py-2 fw-bold w-100" id="blocks-tab" data-bs-toggle="pill" data-bs-target="#blocks-pane" type="button" role="tab">
-                <i class="bi bi-tree me-1"></i> Development Blocks (11)
+                <i class="bi bi-tree me-1"></i> Development Blocks ({{ $blocks->count() }})
             </button>
         </li>
     </ul>

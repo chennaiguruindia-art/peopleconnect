@@ -25,7 +25,7 @@ class VirudhunagarNewsService
             'limit' => 15,
         ],
         [
-            'url' => 'https://news.google.com/rss/search?q=Virudhunagar+விருதுநகர்&hl=ta&gl=IN&ceid=IN:ta',
+            'url' => 'https://news.google.com/rss/search?q=Tirunelveli+திருநெல்வேலி&hl=ta&gl=IN&ceid=IN:ta',
             'lang' => 'ta',
             'limit' => 10,
         ],

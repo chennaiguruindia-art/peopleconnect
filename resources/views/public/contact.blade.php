@@ -60,13 +60,13 @@
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="p-3 bg-light border rounded-3 h-100">
                     <div class="small text-muted">Police Control Room</div>
-                    <div class="fs-6 fs-md-5 fw-bold text-danger text-break">100 / 04562-280100</div>
+                    <div class="fs-6 fs-md-5 fw-bold text-danger text-break">100 / 0462-2565500</div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="p-3 bg-light border rounded-3 h-100">
                     <div class="small text-muted">Fire & Rescue Services</div>
-                    <div class="fs-6 fs-md-5 fw-bold text-danger text-break">101 / 04562-243101</div>
+                    <div class="fs-6 fs-md-5 fw-bold text-danger text-break">101 / 0462-2572101</div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3">

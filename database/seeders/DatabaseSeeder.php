@@ -92,7 +92,7 @@ class DatabaseSeeder extends Seeder
         $adminUser = User::updateOrCreate(
             ['email' => 'thepeopleconnectofficial@gmail.com'],
             [
-                'name' => 'Virudhunagar Admin',
+                'name' => 'Tirunelveli Admin',
                 'mobile' => '9443012345',
                 'password' => Hash::make('password123'),
                 'role_id' => $superAdminRole->id,
@@ -107,7 +107,7 @@ class DatabaseSeeder extends Seeder
             ['email' => 'thepeopleconnectofficial@gmail.com'],
             [
                 'user_id' => $adminUser->id,
-                'name' => 'Virudhunagar Admin',
+                'name' => 'Tirunelveli Admin',
                 'mobile' => '9443012345',
                 'password' => Hash::make('password123'),
                 'role_id' => $superAdminRole->id,
@@ -122,7 +122,11 @@ class DatabaseSeeder extends Seeder
         $this->call(OfficialVirudhunagarLocationsSeeder::class);
         $this->call(OfficialTamilNaduRevenueVillagesSeeder::class);
 
-        $district = District::where('code', 'VNR-3326')->first();
+        // Set Tirunelveli as primary active district and keep all other districts intact but inactive
+        District::where('name_en', 'not like', '%Tirunelveli%')->update(['is_active' => false]);
+        District::where('name_en', 'like', '%Tirunelveli%')->update(['is_active' => true]);
+
+        $district = District::where('name_en', 'like', '%Tirunelveli%')->first() ?? District::where('code', 'VNR-3326')->first();
 
         // Development Blocks (Panchayat Unions)
         $blocksData = [
@@ -389,14 +393,14 @@ class DatabaseSeeder extends Seeder
         // 5. System Settings
         $settings = [
             ['key' => 'site_name_en', 'value' => 'குரலற்ற மகளின் குரல்', 'group' => 'general', 'description' => 'Portal Name in English'],
-            ['key' => 'site_name_ta', 'value' => 'விருதுநகர் மக்கள் குரல்', 'group' => 'general', 'description' => 'Portal Name in Tamil'],
+            ['key' => 'site_name_ta', 'value' => 'திருநெல்வேலி மக்கள் குரல்', 'group' => 'general', 'description' => 'Portal Name in Tamil'],
             ['key' => 'tagline_en', 'value' => 'Your Voice, Your Community, Your Development.', 'group' => 'general', 'description' => 'English Tagline'],
             ['key' => 'tagline_ta', 'value' => 'மக்களின் குரல், மக்களின் கோரிக்கை.', 'group' => 'general', 'description' => 'Tamil Tagline'],
             ['key' => 'contact_phone', 'value' => '+91 9384995222', 'group' => 'contact', 'description' => 'Helpline Phone Number'],
             ['key' => 'contact_email', 'value' => 'thepeopleconnectofficial@gmail.com', 'group' => 'contact', 'description' => 'Portal Contact Email'],
-            ['key' => 'office_address', 'value' => 'Civic Grievance Facilitation Center, Madurai Main Road, Virudhunagar - 626001', 'group' => 'contact', 'description' => 'Office Address'],
+            ['key' => 'office_address', 'value' => 'Civic Grievance Facilitation Center, Tirunelveli - 627001', 'group' => 'contact', 'description' => 'Office Address'],
             ['key' => 'disclaimer_en', 'value' => 'குரலற்ற மகளின் குரல் is an independent civic-service grievance facilitation platform. It is not an official government agency and is dedicated to public welfare and civic coordination.', 'group' => 'legal', 'description' => 'Independent disclaimer'],
-            ['key' => 'disclaimer_ta', 'value' => 'விருதுநகர் மக்கள் குரல் என்பது ஒரு மக்கள் குறைதீர் தளம். இது எந்த ஒரு அரசுத் துறையின் நேரடி அதிகாரப்பூர்வ தளம் அல்ல; மக்கள் நலன் மற்றும் சமூக ஒருங்கிணைப்பிற்காக இயங்குகிறது.', 'group' => 'legal', 'description' => 'Tamil disclaimer'],
+            ['key' => 'disclaimer_ta', 'value' => 'திருநெல்வேலி மக்கள் குரல் என்பது ஒரு மக்கள் குறைதீர் தளம். இது எந்த ஒரு அரசுத் துறையின் நேரடி அதிகாரப்பூர்வ தளம் அல்ல; மக்கள் நலன் மற்றும் சமூக ஒருங்கிணைப்பிற்காக இயங்குகிறது.', 'group' => 'legal', 'description' => 'Tamil disclaimer'],
             ['key' => 'otp_enabled', 'value' => '1', 'group' => 'security', 'description' => 'OTP verification mode (1 = test/live OTP enabled)'],
         ];
 
@@ -406,30 +410,30 @@ class DatabaseSeeder extends Seeder
 
         // 6. Public Updates / News
         PublicUpdate::create([
-            'title_en' => 'Summer Drinking Water Pipeline Overhaul in Virudhunagar and Sattur',
-            'title_ta' => 'விருதுநகர் மற்றும் சாத்தூரில் கோடை கால குடிநீர் குழாய் சீரமைப்பு பணிகள் தீவிரம்',
-            'content_en' => 'The TWAD Board has commenced comprehensive desilting and pipeline enhancement works along the Vaigai water scheme to guarantee uninterrupted supply across Virudhunagar and Sattur municipalities during the approaching summer season.',
-            'content_ta' => 'வருகின்ற கோடைகாலத்தில் விருதுநகர் மற்றும் சாத்தூர் நகராட்சி பகுதிகளில் தடையின்றி குடிநீர் வழங்குவதை உறுதி செய்யும் வகையில் வைகை குடிநீர் திட்ட பிரதான குழாய்களில் தூர்வாருதல் மற்றும் பராமரிப்பு பணிகள் முடுக்கிவிடப்பட்டுள்ளன.',
+            'title_en' => 'Summer Drinking Water Pipeline Overhaul in Tirunelveli and Cheranmahadevi',
+            'title_ta' => 'திருநெல்வேலி மற்றும் சேரன்மகாதேவியில் கோடை கால குடிநீர் குழாய் சீரமைப்பு பணிகள் தீவிரம்',
+            'content_en' => 'The TWAD Board has commenced comprehensive desilting and pipeline enhancement works along the Thamirabarani water scheme to guarantee uninterrupted supply across Tirunelveli and Palayamkottai municipalities during the approaching summer season.',
+            'content_ta' => 'வருகின்ற கோடைகாலத்தில் திருநெல்வேலி மற்றும் பாளையங்கோட்டை பகுதிகளில் தடையின்றி குடிநீர் வழங்குவதை உறுதி செய்யும் வகையில் தாமிரபரணி குடிநீர் திட்ட பிரதான குழாய்களில் தூர்வாருதல் மற்றும் பராமரிப்பு பணிகள் முடுக்கிவிடப்பட்டுள்ளன.',
             'category' => 'Water Supply',
             'published_at' => Carbon::now()->subDays(2),
             'is_active' => true,
         ]);
 
         PublicUpdate::create([
-            'title_en' => 'Sivakasi Ring Road & Drainage Decongestion Drive Underway',
-            'title_ta' => 'சிவகாசி வெளிவட்டச் சாலை மற்றும் மழைநீர் வடிகால் சீரமைப்பு பணிகள் தொடக்கம்',
-            'content_en' => 'Sivakasi City Corporation engineers have initiated major clearing of blocked arterial drains alongside the industrial corridor to avert seasonal waterlogging.',
-            'content_ta' => 'சிவகாசி மாநகராட்சி சார்பில் தொழிற்பேட்டை இணைப்பு சாலைகள் மற்றும் பிரதான மழைநீர் வடிகால்களில் தூர்வாரும் பணிகள் முழுவீச்சில் நடைபெற்று வருகின்றன.',
+            'title_en' => 'Palayamkottai & Tirunelveli Town Ring Road Drainage Decongestion Drive Underway',
+            'title_ta' => 'பாளையங்கோட்டை மற்றும் திருநெல்வேலி மாநகர வெளிவட்டச் சாலை மழைநீர் வடிகால் சீரமைப்பு பணிகள் தொடக்கம்',
+            'content_en' => 'Tirunelveli City Corporation engineers have initiated major clearing of blocked arterial drains alongside the main corridor to avert seasonal waterlogging.',
+            'content_ta' => 'திருநெல்வேலி மாநகராட்சி சார்பில் இணைப்பு சாலைகள் மற்றும் பிரதான மழைநீர் வடிகால்களில் தூர்வாரும் பணிகள் முழுவீச்சில் நடைபெற்று வருகின்றன.',
             'category' => 'Infrastructure',
             'published_at' => Carbon::now()->subDays(5),
             'is_active' => true,
         ]);
 
         PublicUpdate::create([
-            'title_en' => 'Special Dengue Prevention and Health Camps in Rajapalayam and Watrap',
-            'title_ta' => 'ராஜபாளையம் மற்றும் வத்திராயிருப்பில் சிறப்பு டெங்கு தடுப்பு மற்றும் சுகாதார முகாம்கள்',
+            'title_en' => 'Special Dengue Prevention and Health Camps in Ambasamudram and Nanguneri',
+            'title_ta' => 'அம்பாசமுத்திரம் மற்றும் நாங்குநேரியில் சிறப்பு டெங்கு தடுப்பு மற்றும் சுகாதார முகாம்கள்',
             'content_en' => 'Mobile medical teams and sanitary squads are conducting source reduction and intensive door-to-door fogging operations in high-risk taluks.',
-            'content_ta' => 'ராஜபாளையம் மற்றும் வத்திராயிருப்பு வட்டாரங்களில் சுகாதாரத் துறை மூலம் கொசுப்புழு ஒழிப்பு மற்றும் வீடு வீடாக நிலவேம்பு குடிநீர் வழங்கும் சிறப்பு முகாம்கள் தொடங்கப்பட்டுள்ளன.',
+            'content_ta' => 'அம்பாசமுத்திரம் மற்றும் நாங்குநேரி வட்டாரங்களில் சுகாதாரத் துறை மூலம் கொசுப்புழு ஒழிப்பு மற்றும் வீடு வீடாக நிலவேம்பு குடிநீர் வழங்கும் சிறப்பு முகாம்கள் தொடங்கப்பட்டுள்ளன.',
             'category' => 'Public Health',
             'published_at' => Carbon::now()->subDays(7),
             'is_active' => true,

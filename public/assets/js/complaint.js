@@ -96,7 +96,7 @@
             var $submitBtn = $('#btnSubmitComplaint');
             var origBtnText = $submitBtn.html();
             $submitBtn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-2"></span> Submitting Grievance / பதிவாகிறது...');
-            showLoading('Encrypting and submitting your grievance to Virudhunagar Civic Portal...');
+            showLoading('Encrypting and submitting your grievance to Tirunelveli Civic Portal...');
 
             $.ajax({
                 url: '/complaints',

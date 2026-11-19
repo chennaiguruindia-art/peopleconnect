@@ -59,7 +59,7 @@ class ComplaintController extends Controller
             if ($liveLat && $liveLng && empty($liveAddress)) {
                 try {
                     $geoRes = \Illuminate\Support\Facades\Http::timeout(3)
-                        ->withHeaders(['User-Agent' => 'VirudhunagarCivicPortal/1.0'])
+                        ->withHeaders(['User-Agent' => 'TirunelveliCivicPortal/1.0'])
                         ->get("https://nominatim.openstreetmap.org/reverse", [
                             'format' => 'json',
                             'lat' => $liveLat,

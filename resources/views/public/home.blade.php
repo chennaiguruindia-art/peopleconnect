@@ -57,7 +57,7 @@
                             <span>•</span>
                             <span><i class="bi bi-lightning-charge-fill text-warning me-1"></i>நேரடி கண்காணிப்பு</span>
                             <span>•</span>
-                            <span><i class="bi bi-geo-alt-fill text-danger me-1"></i>38 மாவட்டங்கள்</span>
+                            <span><i class="bi bi-geo-alt-fill text-danger me-1"></i>திருநெல்வேலி மாவட்டம்</span>
                         </div>
                     </div>
 
@@ -127,7 +127,7 @@
                 <span>•</span>
                 <span>✓ நேரடி கண்காணிப்பு</span>
                 <span>•</span>
-                <span>✓ 38 மாவட்டங்கள்</span>
+                <span>✓ திருநெல்வேலி மாவட்டம்</span>
             </div>
         </div>
 
@@ -153,9 +153,9 @@
                 🇮🇳 நல்லாட்சி & வெளிப்படைத்தன்மை / GOOD GOVERNANCE & TRANSPARENCY
             </div>
             <h2 class="fw-extrabold text-navy mb-1 fs-2 fs-md-1">
-                தமிழ்நாட்டின் 38 மாவட்டங்களிலும் நேரடி மக்கள் சேவை
+                திருநெல்வேலி மாவட்டத்தில் நேரடி மக்கள் சேவை
             </h2>
-            <p class="text-secondary small mb-0">Real-Time District People Grievance Resolution Metrics Across Tamil Nadu</p>
+            <p class="text-secondary small mb-0">Real-Time District People Grievance Resolution Metrics - Tirunelveli District</p>
         </div>
 
         <div class="row g-3 justify-content-center">
@@ -163,7 +163,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #ea580c !important;">
                     <div class="stat-number fw-extrabold" style="font-size: 2.15rem; color: #ea580c; line-height: 1.1;">
-                       0
+                        {{ $stats['total'] }}
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         மொத்த<br>கோரிக்கைகள்
@@ -175,7 +175,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #16a34a !important;">
                     <div class="stat-number fw-extrabold text-success" style="font-size: 2.15rem; line-height: 1.1;">
-                        0
+                        {{ $stats['resolved'] }}
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         தீர்வு<br>காணப்பட்டவை
@@ -187,7 +187,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #2563eb !important;">
                     <div class="stat-number fw-extrabold text-primary" style="font-size: 2.15rem; line-height: 1.1;">
-                        0
+                        {{ $stats['in_progress'] }}
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         நடவடிக்கையில்<br>உள்ளவை
@@ -199,7 +199,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #0891b2 !important;">
                     <div class="stat-number fw-extrabold" style="font-size: 2.15rem; color: #0891b2; line-height: 1.1;">
-                        0
+                        {{ $stats['referred'] }}
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         துறைக்கு<br>பரிந்துரைக்கப்பட்டவை
@@ -211,7 +211,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #d97706 !important;">
                     <div class="stat-number fw-extrabold" style="font-size: 2.15rem; color: #d97706; line-height: 1.1;">
-                        0
+                        {{ $stats['taluks'] }}
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         வருவாய் வட்டங்கள்<br>(தாலுகாக்கள்)
@@ -223,7 +223,7 @@
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="card text-center p-3 p-md-4 bg-white rounded-4 border shadow-xs h-100" style="border-top: 4px solid #7c3aed !important;">
                     <div class="stat-number fw-extrabold" style="font-size: 2.15rem; color: #7c3aed; line-height: 1.1;">
-                        0
+                        {{ $stats['villages'] }}
                     </div>
                     <div class="stat-label small fw-semibold text-secondary mt-2" style="font-size: 0.85rem; line-height: 1.35;">
                         வருவாய்<br>கிராமங்கள்
