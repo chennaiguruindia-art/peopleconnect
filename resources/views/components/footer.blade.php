@@ -67,9 +67,13 @@
 
     <!-- Bottom Disclaimer Strip (Darker Blue) -->
     <div class="py-2.5 text-center text-white-50 small border-top border-white border-opacity-10" style="background-color: #071527; font-size: 0.82rem;">
-        <div class="container d-flex align-items-center justify-content-center gap-2">
-            <i class="bi bi-info-circle-fill text-warning"></i>
-            <span>மக்கள் குறைதீர் தளம். அரசு இணையதளம் அல்ல.</span>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                <i class="bi bi-info-circle-fill text-warning"></i>
+                <span class="text-white-50">அரசு இணையதளம் அல்ல (Not an Official Government Website)</span>
+                <span class="text-secondary opacity-50 d-none d-sm-inline">•</span>
+                <span class="text-white-50">நவீன விவசாயி ராஜேஷ் குருசாமியின் மக்கள் குறைதீர் வழிகாட்டல் சேவை தளம்</span>
+            </div>
         </div>
     </div>
 </footer>

@@ -7,7 +7,7 @@ return [
     'tagline' => 'Your Voice, Your Community, Your Development.',
     'district_name' => 'Virudhunagar District',
     'disclaimer_title' => 'People Grievance Redressal Platform',
-    'disclaimer_text' => 'Tamil Nadu Makkal Kural is an independent, non-governmental public welfare grievance facilitation portal. It helps citizens record civic issues, follow up with relevant authorities, and ensure community progress without official government affiliation.',
+    'disclaimer_text' => 'This is not an official government website. It is an independent, non-governmental civic facilitation initiative by Naveena Vivasayi Rajesh Gurusamy to systematically document and coordinate public civic grievances with relevant authorities for community welfare.',
 
     // Navigation
     'nav_home' => 'Home',
