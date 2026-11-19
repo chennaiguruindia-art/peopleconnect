@@ -344,7 +344,7 @@
                 <i class="bi bi-info-circle-fill fs-2 text-warning flex-shrink-0"></i>
                 <div>
                     <h5 class="fw-bold text-dark mb-1 fs-6">
-                        {{ app()->getLocale() === 'en' ? 'Independent Civic Portal Disclaimer' : 'சுயாதீன மக்கள் குறைதீர்ப்பு உதவி தளம்' }}
+                        {{ app()->getLocale() === 'en' ? 'People Grievance Redressal Platform' : 'மக்கள் குறைதீர் தளம்' }}
                     </h5>
                     <p class="mb-0 text-secondary small">
                         {{ __('messages.disclaimer_text') }}

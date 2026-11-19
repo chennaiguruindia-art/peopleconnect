@@ -305,14 +305,25 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'code' => 'CAT-REV',
-                'name_en' => 'Revenue & Land Matters',
-                'name_ta' => 'வருவாய் மற்றும் நில நிர்வாகம்',
-                'description_en' => 'Patta transfer delays, land survey, certificates and revenue assistance issues.',
-                'description_ta' => 'பட்டா மாறுதல் தாமதம், நில அளவீடு, சான்றிதழ்கள் மற்றும் வருவாய்த்துறை உதவிகள்.',
+                'name_en' => 'Revenue Department (Land, Patta & Certificates)',
+                'name_ta' => 'வருவாய்த் துறை (பட்டா, நிலம் & சான்றிதழ்கள்)',
+                'description_en' => 'Patta transfer delays, land survey, legal heir/income/caste certificates and revenue assistance issues.',
+                'description_ta' => 'பட்டா மாறுதல் தாமதம், நில அளவீடு, வாரிசு/வருமானம்/சாதி சான்றிதழ்கள் மற்றும் வருவாய்த்துறை உதவிகள்.',
                 'icon' => 'bi-file-earmark-text',
-                'department_name_en' => 'Revenue & Disaster Management',
-                'department_name_ta' => 'வருவாய் மற்றும் பேரிடர் மேலாண்மைத் துறை',
-                'sla_days' => 21,
+                'department_name_en' => 'Revenue Department',
+                'department_name_ta' => 'வருவாய்த் துறை',
+                'sla_days' => 14,
+            ],
+            [
+                'code' => 'CAT-SCH',
+                'name_en' => 'Government Schemes & Welfare Assistance',
+                'name_ta' => 'அரசுத் திட்டங்கள் & நலத்திட்ட உதவிகள்',
+                'description_en' => 'Central & State government welfare schemes, pensions, financial assistance, housing schemes and citizen subsidies.',
+                'description_ta' => 'மத்திய மற்றும் மாநில அரசு நலத்திட்டங்கள், முதியோர்/விதவை உதவித்தொகை, மகளிர் உரிமைத்தொகை மற்றும் அரசு மானியங்கள் தொடர்பான கோரிக்கைகள்.',
+                'icon' => 'bi-award',
+                'department_name_en' => 'Social Welfare & Government Schemes Department',
+                'department_name_ta' => 'சமூக நலத்துறை & அரசு திட்டங்கள் பிரிவு',
+                'sla_days' => 15,
             ],
             [
                 'code' => 'CAT-PDS',
@@ -336,6 +347,17 @@ class DatabaseSeeder extends Seeder
                 'department_name_ta' => 'வருவாய்த்துறை மற்றும் உள்ளாட்சி நிர்வாகம்',
                 'sla_days' => 30,
             ],
+            [
+                'code' => 'CAT-OTH',
+                'name_en' => 'Others / Miscellaneous',
+                'name_ta' => 'இதர புகார்கள் / பிற கோரிக்கைகள்',
+                'description_en' => 'General public grievances, community requests and civic issues not covered under specific departments.',
+                'description_ta' => 'பிற துறைகளில் வகைப்படுத்தப்படாத இதர பொது மக்கள் குறைதீர்ப்பு மற்றும் பொதுக் கோரிக்கைகள்.',
+                'icon' => 'bi-three-dots',
+                'department_name_en' => 'Public Grievance Redressal Cell',
+                'department_name_ta' => 'பொது குறைதீர்ப்பு மற்றும் மக்கள் தொடர்பு பிரிவு',
+                'sla_days' => 7,
+            ],
         ];
 
         $createdCategories = [];
@@ -353,7 +375,7 @@ class DatabaseSeeder extends Seeder
             ['key' => 'contact_email', 'value' => 'thepeopleconnectofficial@gmail.com', 'group' => 'contact', 'description' => 'Portal Contact Email'],
             ['key' => 'office_address', 'value' => 'Civic Grievance Facilitation Center, Madurai Main Road, Virudhunagar - 626001', 'group' => 'contact', 'description' => 'Office Address'],
             ['key' => 'disclaimer_en', 'value' => 'குரலற்ற மகளின் குரல் is an independent civic-service grievance facilitation platform. It is not an official government agency and is dedicated to public welfare and civic coordination.', 'group' => 'legal', 'description' => 'Independent disclaimer'],
-            ['key' => 'disclaimer_ta', 'value' => 'விருதுநகர் மக்கள் குரல் என்பது ஒரு சுயாதீன பொது சேவை குறைதீர்க்கும் தளம். இது எந்த ஒரு அரசுத் துறையின் நேரடி அதிகாரப்பூர்வ தளம் அல்ல; மக்கள் நலன் மற்றும் சமூக ஒருங்கிணைப்பிற்காக இயங்குகிறது.', 'group' => 'legal', 'description' => 'Tamil disclaimer'],
+            ['key' => 'disclaimer_ta', 'value' => 'விருதுநகர் மக்கள் குரல் என்பது ஒரு மக்கள் குறைதீர் தளம். இது எந்த ஒரு அரசுத் துறையின் நேரடி அதிகாரப்பூர்வ தளம் அல்ல; மக்கள் நலன் மற்றும் சமூக ஒருங்கிணைப்பிற்காக இயங்குகிறது.', 'group' => 'legal', 'description' => 'Tamil disclaimer'],
             ['key' => 'otp_enabled', 'value' => '1', 'group' => 'security', 'description' => 'OTP verification mode (1 = test/live OTP enabled)'],
         ];
 
