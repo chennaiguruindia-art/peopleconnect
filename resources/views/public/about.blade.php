@@ -178,17 +178,25 @@
                                 </p>
                             @endif
 
-                            <div class="row g-2 mt-2">
-                                <div class="col-sm-6">
-                                    <div class="p-2.5 rounded-3 bg-light border d-flex align-items-center gap-2">
-                                        <i class="bi bi-check-circle-fill text-success fs-5"></i>
-                                        <span class="small fw-semibold text-dark">{{ app()->getLocale() === 'en' ? 'Direct Last-Mile Reach' : 'கடைக்கோடி மக்களுக்கும் நேரடி சேவை' }}</span>
+                            <div class="row g-3 mt-1">
+                                <div class="col-12 col-sm-6">
+                                    <div class="p-3 rounded-4 bg-light border shadow-xs d-flex align-items-center h-100">
+                                        <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 38px; height: 38px;">
+                                            <i class="bi bi-check-circle-fill fs-5"></i>
+                                        </div>
+                                        <div class="small fw-bold text-dark lh-sm">
+                                            {{ app()->getLocale() === 'en' ? 'Direct Last-Mile Reach' : 'கடைக்கோடி மக்களுக்கும் நேரடி சேவை' }}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="p-2.5 rounded-3 bg-light border d-flex align-items-center gap-2">
-                                        <i class="bi bi-shield-fill-check text-primary fs-5"></i>
-                                        <span class="small fw-semibold text-dark">{{ app()->getLocale() === 'en' ? 'Transparent Administration' : 'நேர்மையான வெளிப்படையான செயல்பாடு' }}</span>
+                                <div class="col-12 col-sm-6">
+                                    <div class="p-3 rounded-4 bg-light border shadow-xs d-flex align-items-center h-100">
+                                        <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 38px; height: 38px;">
+                                            <i class="bi bi-shield-fill-check fs-5"></i>
+                                        </div>
+                                        <div class="small fw-bold text-dark lh-sm">
+                                            {{ app()->getLocale() === 'en' ? 'Transparent Administration' : 'நேர்மையான வெளிப்படையான செயல்பாடு' }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
