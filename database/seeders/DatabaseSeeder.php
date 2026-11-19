@@ -34,33 +34,41 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // 1. Roles & Permissions
-        $superAdminRole = Role::create([
-            'name' => 'super_admin',
-            'display_name' => 'Super Administrator',
-            'display_name_ta' => 'முதன்மை நிர்வாகி',
-            'description' => 'Full administrative access to the entire portal',
-        ]);
+        $superAdminRole = Role::firstOrCreate(
+            ['name' => 'super_admin'],
+            [
+                'display_name' => 'Super Administrator',
+                'display_name_ta' => 'முதன்மை நிர்வாகி',
+                'description' => 'Full administrative access to the entire portal',
+            ]
+        );
 
-        $adminRole = Role::create([
-            'name' => 'admin',
-            'display_name' => 'Portal Administrator',
-            'display_name_ta' => 'தள நிர்வாகி',
-            'description' => 'General portal administration and grievance oversight',
-        ]);
+        $adminRole = Role::firstOrCreate(
+            ['name' => 'admin'],
+            [
+                'display_name' => 'Portal Administrator',
+                'display_name_ta' => 'தள நிர்வாகி',
+                'description' => 'General portal administration and grievance oversight',
+            ]
+        );
 
-        $staffRole = Role::create([
-            'name' => 'staff',
-            'display_name' => 'Grievance Officer',
-            'display_name_ta' => 'கோரிக்கை அதிகாரி',
-            'description' => 'Handles, reviews and acts on assigned complaints',
-        ]);
+        $staffRole = Role::firstOrCreate(
+            ['name' => 'staff'],
+            [
+                'display_name' => 'Grievance Officer',
+                'display_name_ta' => 'கோரிக்கை அதிகாரி',
+                'description' => 'Handles, reviews and acts on assigned complaints',
+            ]
+        );
 
-        $citizenRole = Role::create([
-            'name' => 'citizen',
-            'display_name' => 'Citizen',
-            'display_name_ta' => 'பொதுமக்கள்',
-            'description' => 'Public portal citizen user',
-        ]);
+        $citizenRole = Role::firstOrCreate(
+            ['name' => 'citizen'],
+            [
+                'display_name' => 'Citizen',
+                'display_name_ta' => 'பொதுமக்கள்',
+                'description' => 'Public portal citizen user',
+            ]
+        );
 
         $permissions = [
             ['name' => 'manage_complaints', 'display_name' => 'Manage Grievances'],
@@ -75,35 +83,39 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($permissions as $perm) {
-            $createdPerm = Permission::create($perm);
-            $superAdminRole->permissions()->attach($createdPerm->id);
-            $adminRole->permissions()->attach($createdPerm->id);
+            $createdPerm = Permission::firstOrCreate(['name' => $perm['name']], $perm);
+            $superAdminRole->permissions()->syncWithoutDetaching([$createdPerm->id]);
+            $adminRole->permissions()->syncWithoutDetaching([$createdPerm->id]);
         }
 
         // 2. Single Common Administrator
-        $adminUser = User::create([
-            'name' => 'Virudhunagar Admin',
-            'email' => 'thepeopleconnectofficial@gmail.com',
-            'mobile' => '9443012345',
-            'password' => Hash::make('password123'),
-            'role_id' => $superAdminRole->id,
-            'designation' => 'District Grievance Coordinator',
-            'department' => 'Citizen Facilitation Cell',
-            'is_active' => true,
-            'email_verified_at' => now(),
-        ]);
+        $adminUser = User::updateOrCreate(
+            ['email' => 'thepeopleconnectofficial@gmail.com'],
+            [
+                'name' => 'Virudhunagar Admin',
+                'mobile' => '9443012345',
+                'password' => Hash::make('password123'),
+                'role_id' => $superAdminRole->id,
+                'designation' => 'District Grievance Coordinator',
+                'department' => 'Citizen Facilitation Cell',
+                'is_active' => true,
+                'email_verified_at' => now(),
+            ]
+        );
 
-        Admin::create([
-            'user_id' => $adminUser->id,
-            'name' => 'Virudhunagar Admin',
-            'email' => 'thepeopleconnectofficial@gmail.com',
-            'mobile' => '9443012345',
-            'password' => Hash::make('password123'),
-            'role_id' => $superAdminRole->id,
-            'department' => 'Citizen Facilitation Cell',
-            'designation' => 'District Grievance Coordinator',
-            'is_active' => true,
-        ]);
+        Admin::updateOrCreate(
+            ['email' => 'thepeopleconnectofficial@gmail.com'],
+            [
+                'user_id' => $adminUser->id,
+                'name' => 'Virudhunagar Admin',
+                'mobile' => '9443012345',
+                'password' => Hash::make('password123'),
+                'role_id' => $superAdminRole->id,
+                'department' => 'Citizen Facilitation Cell',
+                'designation' => 'District Grievance Coordinator',
+                'is_active' => true,
+            ]
+        );
 
         // 3. All 38 Districts, Revenue Divisions & Taluks of குரலற்ற மகளின் குரல்
         $this->call(TamilNaduAllDistrictsSeeder::class);
@@ -129,13 +141,15 @@ class DatabaseSeeder extends Seeder
 
         $createdBlocks = [];
         foreach ($blocksData as $b) {
-            $createdBlocks[$b['en']] = DevelopmentBlock::create([
-                'district_id' => $district->id,
-                'code' => $b['code'],
-                'name_en' => $b['en'],
-                'name_ta' => $b['ta'],
-                'is_active' => true,
-            ]);
+            $createdBlocks[$b['en']] = DevelopmentBlock::updateOrCreate(
+                ['code' => $b['code']],
+                [
+                    'district_id' => $district->id,
+                    'name_en' => $b['en'],
+                    'name_ta' => $b['ta'],
+                    'is_active' => true,
+                ]
+            );
         }
 
         // Sample Village Panchayats for Virudhunagar & Sivakasi Blocks
@@ -156,13 +170,15 @@ class DatabaseSeeder extends Seeder
             $blockModel = $createdBlocks[$blockName] ?? null;
             if ($blockModel) {
                 foreach ($panchayats as $p) {
-                    VillagePanchayat::create([
-                        'development_block_id' => $blockModel->id,
-                        'code' => $p['code'],
-                        'name_en' => $p['en'],
-                        'name_ta' => $p['ta'],
-                        'is_active' => true,
-                    ]);
+                    VillagePanchayat::updateOrCreate(
+                        ['code' => $p['code']],
+                        [
+                            'development_block_id' => $blockModel->id,
+                            'name_en' => $p['en'],
+                            'name_ta' => $p['ta'],
+                            'is_active' => true,
+                        ]
+                    );
                 }
             }
         }
@@ -178,21 +194,24 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($municipalitiesData as $m) {
-            $mun = Municipality::create([
-                'district_id' => $district->id,
-                'code' => $m['code'],
-                'name_en' => $m['en'],
-                'name_ta' => $m['ta'],
-                'type' => $m['type'],
-                'is_active' => true,
-            ]);
+            $mun = Municipality::updateOrCreate(
+                ['code' => $m['code']],
+                [
+                    'district_id' => $district->id,
+                    'name_en' => $m['en'],
+                    'name_ta' => $m['ta'],
+                    'type' => $m['type'],
+                    'is_active' => true,
+                ]
+            );
 
             // Add sample wards for Virudhunagar & Sivakasi
             if (in_array($m['code'], ['MUN-VNR', 'MUN-SVI'])) {
                 for ($w = 1; $w <= 10; $w++) {
-                    Ward::create([
+                    Ward::firstOrCreate([
                         'municipality_id' => $mun->id,
                         'ward_number' => (string)$w,
+                    ], [
                         'name_en' => "Ward No. {$w}",
                         'name_ta' => "வார்டு எண் {$w}",
                         'is_active' => true,
@@ -215,13 +234,15 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($townPanchayatsData as $tp) {
-            TownPanchayat::create([
-                'district_id' => $district->id,
-                'code' => $tp['code'],
-                'name_en' => $tp['en'],
-                'name_ta' => $tp['ta'],
-                'is_active' => true,
-            ]);
+            TownPanchayat::updateOrCreate(
+                ['code' => $tp['code']],
+                [
+                    'district_id' => $district->id,
+                    'name_en' => $tp['en'],
+                    'name_ta' => $tp['ta'],
+                    'is_active' => true,
+                ]
+            );
         }
 
         // 4. Complaint Categories
@@ -362,7 +383,7 @@ class DatabaseSeeder extends Seeder
 
         $createdCategories = [];
         foreach ($categoriesData as $cat) {
-            $createdCategories[] = ComplaintCategory::create($cat);
+            $createdCategories[] = ComplaintCategory::updateOrCreate(['code' => $cat['code']], $cat);
         }
 
         // 5. System Settings
@@ -380,7 +401,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($settings as $s) {
-            SystemSetting::create($s);
+            SystemSetting::updateOrCreate(['key' => $s['key']], $s);
         }
 
         // 6. Public Updates / News
