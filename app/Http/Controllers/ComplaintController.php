@@ -25,7 +25,12 @@ class ComplaintController extends Controller
         $districts = District::where('is_active', true)->orderBy('name_en')->get();
         $categories = ComplaintCategory::where('is_active', true)->get();
 
-        return view('public.submit-complaint', compact('districts', 'categories'));
+        $activeDistrict = ($districts->count() === 1) ? $districts->first() : null;
+        $divisions = $activeDistrict
+            ? RevenueDivision::where('district_id', $activeDistrict->id)->where('is_active', true)->orderBy('name_en')->get()
+            : collect();
+
+        return view('public.submit-complaint', compact('districts', 'categories', 'divisions'));
     }
 
     public function store(StoreComplaintRequest $request): JsonResponse

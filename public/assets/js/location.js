@@ -47,25 +47,32 @@
 
         // Initialize Select2 on existing dropdowns on page load
         setupSelect2($('#districtSelect'), '-- மாவட்டம் தேர்வு செய்க --');
-        setupSelect2($('#divisionSelect'), '-- முதலில் மாவட்டம் தேர்வு செய்க --');
+        setupSelect2($('#divisionSelect'), ($('#divisionSelect option').length > 1) ? '-- வருவாய் கோட்டம் தேர்வு செய்க --' : '-- முதலில் மாவட்டம் தேர்வு செய்க --');
         setupSelect2($('#talukSelect'), '-- முதலில் வருவாய் கோட்டம் தேர்வு செய்க --');
         setupSelect2($('#villageSelect'), '-- முதலில் வட்டம் தேர்வு செய்க --');
         setupSelect2($('#categorySelect'), '-- கோரிக்கை வகை தேர்வு செய்க --');
 
-        // If district is pre-selected on page load (e.g. single district active), automatically trigger load
-        if ($('#districtSelect').val()) {
-            $('#districtSelect').trigger('change');
-        }
-
-        // When District changes -> Load Revenue Divisions
-        $('#districtSelect').on('change', function() {
-            var districtId = $(this).val();
+        // Helper function to load Revenue Divisions
+        function loadDivisions(districtId, keepCurrent) {
             var $divisionSelect = $('#divisionSelect');
             var $talukSelect = $('#talukSelect');
             var $villageSelect = $('#villageSelect');
             var $villageSelectGroup = $('#villageSelectGroup');
             var $villageManualGroup = $('#villageManualGroup');
             var $customInput = $('#customVillageInput');
+
+            if (!districtId) {
+                $divisionSelect.html('<option value="">-- முதலில் மாவட்டம் தேர்வு செய்க --</option>').prop('disabled', true);
+                setupSelect2($divisionSelect, '-- முதலில் மாவட்டம் தேர்வு செய்க --');
+                return;
+            }
+
+            // If divisions are already rendered in the DOM for this district and have options
+            if (keepCurrent && $divisionSelect.find('option:not([value=""])').length > 0) {
+                $divisionSelect.prop('disabled', false);
+                setupSelect2($divisionSelect, '-- வருவாய் கோட்டம் தேர்வு செய்க --');
+                return;
+            }
 
             $divisionSelect.html('<option value="">-- வருவாய் கோட்டம் ஏற்றுகிறது... --</option>').prop('disabled', true);
             $talukSelect.html('<option value="">-- முதலில் வருவாய் கோட்டம் தேர்வு செய்க --</option>').prop('disabled', true);
@@ -78,12 +85,6 @@
             $villageSelectGroup.removeClass('d-none');
             $villageManualGroup.addClass('d-none');
             $customInput.val('');
-
-            if (!districtId) {
-                $divisionSelect.html('<option value="">-- முதலில் மாவட்டம் தேர்வு செய்க --</option>');
-                setupSelect2($divisionSelect, '-- முதலில் மாவட்டம் தேர்வு செய்க --');
-                return;
-            }
 
             $.ajax({
                 url: '/locations/divisions',
@@ -108,7 +109,18 @@
                     setupSelect2($divisionSelect, '-- வருவாய் கோட்டம் பெற இயலவில்லை --');
                 }
             });
+        }
+
+        // When District changes -> Load Revenue Divisions
+        $('#districtSelect').on('change select2:select', function() {
+            loadDivisions($(this).val(), false);
         });
+
+        // If district is pre-selected on page load (e.g. single district active), automatically trigger load
+        var initialDistrictId = $('#districtSelect').val();
+        if (initialDistrictId) {
+            loadDivisions(initialDistrictId, true);
+        }
 
         // When Revenue Division changes -> Load Taluks
         $('#divisionSelect').on('change', function() {

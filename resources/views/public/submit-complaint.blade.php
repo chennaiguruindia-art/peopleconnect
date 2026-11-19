@@ -638,8 +638,15 @@
                                     <span>{{ __('messages.lbl_division') }}</span>
                                     <span class="required-star">*</span>
                                 </label>
-                                <select name="revenue_division_id" id="divisionSelect" class="form-select" required disabled>
-                                    <option value="">-- {{ __('messages.select_district_first') }} --</option>
+                                <select name="revenue_division_id" id="divisionSelect" class="form-select" required {{ (!empty($divisions) && $divisions->isNotEmpty()) ? '' : 'disabled' }}>
+                                    @if(!empty($divisions) && $divisions->isNotEmpty())
+                                        <option value="">-- {{ __('messages.select_division') }} --</option>
+                                        @foreach($divisions as $div)
+                                            <option value="{{ $div->id }}">{{ $div->name }} ({{ $div->name_en }})</option>
+                                        @endforeach
+                                    @else
+                                        <option value="">-- {{ __('messages.select_district_first') }} --</option>
+                                    @endif
                                 </select>
                             </div>
 

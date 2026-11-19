@@ -48,8 +48,8 @@
 
     <!-- Core JS Assets -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
-    <script src="{{ asset('assets/js/location.js') }}"></script>
-    <script src="{{ asset('assets/js/complaint.js') }}"></script>
+    <script src="{{ asset('assets/js/location.js') }}?v=2.2"></script>
+    <script src="{{ asset('assets/js/complaint.js') }}?v=2.2"></script>
     <!-- Gemini AI Dynamic Page Translator -->
     <script src="{{ asset('assets/js/api-translator.js') }}"></script>
 
