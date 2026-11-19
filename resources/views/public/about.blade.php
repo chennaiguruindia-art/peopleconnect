@@ -136,6 +136,67 @@
                 </div>
             </div>
 
+            <!-- LEADERSHIP & CIVIC VISION (பாரதப் பிரதமர் & தலைமைத்துவ உத்வேகம்) -->
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4 mb-md-5 bg-white">
+                <div class="p-1" style="background: linear-gradient(90deg, #ea580c, #ffffff, #16a34a);"></div>
+                <div class="card-body p-4 p-md-5">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-5 text-center">
+                            <div class="position-relative d-inline-block w-100">
+                                <img src="{{ asset('assets/images/bjp/images.jpg') }}" 
+                                     alt="Prime Minister Narendra Modi and Leadership" 
+                                     class="img-fluid rounded-4 shadow-sm border" 
+                                     style="max-height: 440px; width: 100%; object-fit: cover; object-position: top center;">
+                                <div class="badge bg-dark bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x mb-2 px-3 py-1.5 rounded-pill small">
+                                    <i class="bi bi-person-check-fill text-warning me-1"></i>
+                                    {{ app()->getLocale() === 'en' ? 'Leadership Vision & Guidance' : 'தலைமைத்துவ வழிகாட்டல் & மக்கள் சேவை' }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <span class="badge bg-warning-subtle text-dark border border-warning px-2.5 py-1 fw-bold small mb-2 text-uppercase" style="letter-spacing: 0.5px;">
+                                <i class="bi bi-star-fill text-danger me-1"></i>
+                                {{ app()->getLocale() === 'en' ? 'Inspiration & Governance Principles' : 'மக்கள் சேவை உத்வேகம் & நெறிமுறைகள்' }}
+                            </span>
+                            <h3 class="fw-extrabold text-navy fs-4 fs-md-3 mb-3">
+                                {{ app()->getLocale() === 'en' ? 'Inspired by Antyodaya & Grassroots Public Service' : 'அந்தியோதயா தொலைநோக்கு & அர்ப்பணிப்புள்ள மக்கள் சேவை' }}
+                            </h3>
+
+                            @if(app()->getLocale() === 'en')
+                                <p class="text-secondary leading-relaxed mb-3">
+                                    According to the public service principles articulated by the Bharatiya Janata Party (BJP) and Prime Minister Narendra Modi’s core governance philosophy of <em>"Sabka Saath, Sabka Vikas, Sabka Vishwas, Sabka Prayas"</em>, the foremost priority of public engagement is dedicated, transparent service to every citizen and uplifting the last person in society (<em>Antyodaya</em>).
+                                </p>
+                                <p class="text-secondary leading-relaxed mb-3">
+                                    Guided by this proactive leadership vision, this grievance facilitation initiative works continuously on the ground to systematically record, follow up, and resolve essential community needs—including safe drinking water, reliable electricity, rural roads, public health, and welfare benefits—through seamless administrative coordination.
+                                </p>
+                            @else
+                                <p class="text-secondary leading-relaxed mb-3">
+                                    பாரதிய ஜனதா கட்சியின் அதிகாரப்பூர்வ மக்கள் சேவைக் கொள்கைகள் மற்றும் பாரதப் பிரதமர் நரேந்திர மோடி அவர்களின் <em>"அனைவருடன் இணைந்து, அனைவரின் வளர்ச்சிக்காக" (Sabka Saath, Sabka Vikas, Sabka Vishwas)</em> மற்றும் <em>'அந்தியோதயா' (கடைக்கோடி ஏழை எளிய மனிதனுக்கும் அதிகாரம் அளித்தல்)</em> என்ற உயரிய தொலைநோக்கின்படி, மக்கள் சேவையே அரசியலின் தலையாய கடமையாகும்.
+                                </p>
+                                <p class="text-secondary leading-relaxed mb-3">
+                                    இத்தலைமைத்துவ வழிகாட்டலின் அடிப்படையில், பொதுமக்கள் தங்கள் பகுதியில் சந்திக்கும் குடிநீர், சாலை, மின்சாரம், சுகாதாரம் மற்றும் அரசு நலத்திட்ட உதவிகள் போன்ற அன்றாடக் கோரிக்கைகளை வெளிப்படைத்தன்மையுடன் ஆவணப்படுத்தி, அரசு மற்றும் உள்ளாட்சித் துறைகள் மூலம் துரித தீர்வு காணும் மக்கள் சேவை பாலமாக இத்தளம் அர்ப்பணிப்புடன் இயங்குகிறது.
+                                </p>
+                            @endif
+
+                            <div class="row g-2 mt-2">
+                                <div class="col-sm-6">
+                                    <div class="p-2.5 rounded-3 bg-light border d-flex align-items-center gap-2">
+                                        <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                                        <span class="small fw-semibold text-dark">{{ app()->getLocale() === 'en' ? 'Direct Last-Mile Reach' : 'கடைக்கோடி மக்களுக்கும் நேரடி சேவை' }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-2.5 rounded-3 bg-light border d-flex align-items-center gap-2">
+                                        <i class="bi bi-shield-fill-check text-primary fs-5"></i>
+                                        <span class="small fw-semibold text-dark">{{ app()->getLocale() === 'en' ? 'Transparent Administration' : 'நேர்மையான வெளிப்படையான செயல்பாடு' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 3. MISSION & VISION -->
             <div class="row g-3 g-md-4 mb-4 mb-md-5">
                 <div class="col-md-6">
